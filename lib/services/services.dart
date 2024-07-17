@@ -1,4 +1,5 @@
 export 'src/api_client.dart';
+export 'src/authentication_service.dart';
 export 'src/business_units_service.dart';
 export 'src/departments_service.dart';
 export 'src/depots_service.dart';
