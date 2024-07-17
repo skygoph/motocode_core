@@ -19,7 +19,7 @@ There are two options to inject the services.
       void main() async {
         ....
         final baseUrl = 'URL_HERE'
-        await setupCustomLocator(baseUrl);
+        await setupCustomLocator(baseUrl, );
         ...
       }
 

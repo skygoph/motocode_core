@@ -1,5 +1,17 @@
 # Release Notes
 
+## 0.0.7
+
+* **fix:** Added missing id in models
+
+## 0.0.6
+
+* **fix:** Inject FirebaseCrashlytics
+
+## 0.0.5
+
+* **fix:** Inject StackedLocator instance directly from the apps
+
 ## 0.0.4
 
 * **update:** Add LICENSE

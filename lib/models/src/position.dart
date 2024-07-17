@@ -6,6 +6,7 @@ part 'position.g.dart';
 @freezed
 class Position with _$Position {
   const factory Position({
+    int? id,
     String? name,
     DateTime? createdDate,
   }) = _Position;

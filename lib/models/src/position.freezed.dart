@@ -20,6 +20,7 @@ Position _$PositionFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Position {
+  int? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   DateTime? get createdDate => throw _privateConstructorUsedError;
 
@@ -34,7 +35,7 @@ abstract class $PositionCopyWith<$Res> {
   factory $PositionCopyWith(Position value, $Res Function(Position) then) =
       _$PositionCopyWithImpl<$Res, Position>;
   @useResult
-  $Res call({String? name, DateTime? createdDate});
+  $Res call({int? id, String? name, DateTime? createdDate});
 }
 
 /// @nodoc
@@ -50,10 +51,15 @@ class _$PositionCopyWithImpl<$Res, $Val extends Position>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = freezed,
     Object? createdDate = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -74,7 +80,7 @@ abstract class _$$PositionImplCopyWith<$Res>
       __$$PositionImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? name, DateTime? createdDate});
+  $Res call({int? id, String? name, DateTime? createdDate});
 }
 
 /// @nodoc
@@ -88,10 +94,15 @@ class __$$PositionImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = freezed,
     Object? createdDate = freezed,
   }) {
     return _then(_$PositionImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -107,11 +118,13 @@ class __$$PositionImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$PositionImpl implements _Position {
-  const _$PositionImpl({this.name, this.createdDate});
+  const _$PositionImpl({this.id, this.name, this.createdDate});
 
   factory _$PositionImpl.fromJson(Map<String, dynamic> json) =>
       _$$PositionImplFromJson(json);
 
+  @override
+  final int? id;
   @override
   final String? name;
   @override
@@ -119,7 +132,7 @@ class _$PositionImpl implements _Position {
 
   @override
   String toString() {
-    return 'Position(name: $name, createdDate: $createdDate)';
+    return 'Position(id: $id, name: $name, createdDate: $createdDate)';
   }
 
   @override
@@ -127,6 +140,7 @@ class _$PositionImpl implements _Position {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PositionImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.createdDate, createdDate) ||
                 other.createdDate == createdDate));
@@ -134,7 +148,7 @@ class _$PositionImpl implements _Position {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, createdDate);
+  int get hashCode => Object.hash(runtimeType, id, name, createdDate);
 
   @JsonKey(ignore: true)
   @override
@@ -151,12 +165,16 @@ class _$PositionImpl implements _Position {
 }
 
 abstract class _Position implements Position {
-  const factory _Position({final String? name, final DateTime? createdDate}) =
-      _$PositionImpl;
+  const factory _Position(
+      {final int? id,
+      final String? name,
+      final DateTime? createdDate}) = _$PositionImpl;
 
   factory _Position.fromJson(Map<String, dynamic> json) =
       _$PositionImpl.fromJson;
 
+  @override
+  int? get id;
   @override
   String? get name;
   @override

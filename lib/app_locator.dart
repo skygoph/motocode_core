@@ -3,8 +3,6 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:motocode_core/motocode_core.dart';
 import 'package:stacked_shared/stacked_shared.dart';
 
-final _locator = StackedLocator.instance;
-
 /// Register all the models and services with the locator
 /// Sets the base url, sample https://localhost:7000
 ///
@@ -13,13 +11,18 @@ final _locator = StackedLocator.instance;
 ///   ...
 ///
 ///   await setupLocator();
-///   await setupCustomLocator('https://localhost:7000');
+///   await setupCustomLocator('https://localhost:7000',
+///           locator,
+///           FirebaseCrashlytics.instance,
+///          );
 ///   ....
 /// }
 ///
 /// ```
 Future<void> setupMotocodeLocator(
-  String baseUrl, {
+  String baseUrl,
+  StackedLocator locator,
+  FirebaseCrashlytics crashlytics, {
   String? environment,
   EnvironmentFilter? environmentFilter,
 }) async {
@@ -38,28 +41,26 @@ Future<void> setupMotocodeLocator(
   baseUrl = '$baseUrl/api';
 
   // Register dependencies
-  _locator.registerLazySingleton(() => ApiClient(dio, baseUrl: baseUrl));
+  locator.registerLazySingleton(() => ApiClient(dio, baseUrl: baseUrl));
 
-  final apiClient = _locator<ApiClient>();
-  final crashlytics = FirebaseCrashlytics.instance;
+  final apiClient = locator<ApiClient>();
 
-  _locator.registerLazySingleton(
+  locator.registerLazySingleton(
       () => AuthenticationService(apiClient, crashlytics));
-  _locator.registerLazySingleton(
+  locator.registerLazySingleton(
       () => BusinessUnitsService(apiClient, crashlytics));
-  _locator
+  locator
       .registerLazySingleton(() => DepartmentsService(apiClient, crashlytics));
-  _locator
+  locator
       .registerLazySingleton(() => DepotTypesService(apiClient, crashlytics));
-  _locator.registerLazySingleton(() => DepotsService(apiClient, crashlytics));
-  _locator
+  locator.registerLazySingleton(() => DepotsService(apiClient, crashlytics));
+  locator
       .registerLazySingleton(() => EnrollmentsService(apiClient, crashlytics));
-  _locator
-      .registerLazySingleton(() => PositionsService(apiClient, crashlytics));
-  _locator.registerLazySingleton(() => QrCodesService(apiClient, crashlytics));
-  _locator.registerLazySingleton(() => RolesService(apiClient, crashlytics));
-  _locator.registerLazySingleton(
+  locator.registerLazySingleton(() => PositionsService(apiClient, crashlytics));
+  locator.registerLazySingleton(() => QrCodesService(apiClient, crashlytics));
+  locator.registerLazySingleton(() => RolesService(apiClient, crashlytics));
+  locator.registerLazySingleton(
       () => ScannedQrCodesService(apiClient, crashlytics));
-  _locator.registerLazySingleton(() => StatusesService(apiClient, crashlytics));
-  _locator.registerLazySingleton(() => UsersService(apiClient, crashlytics));
+  locator.registerLazySingleton(() => StatusesService(apiClient, crashlytics));
+  locator.registerLazySingleton(() => UsersService(apiClient, crashlytics));
 }

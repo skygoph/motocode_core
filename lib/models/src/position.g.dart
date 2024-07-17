@@ -8,6 +8,7 @@ part of 'position.dart';
 
 _$PositionImpl _$$PositionImplFromJson(Map<String, dynamic> json) =>
     _$PositionImpl(
+      id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
       createdDate: json['createdDate'] == null
           ? null
@@ -16,6 +17,7 @@ _$PositionImpl _$$PositionImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$PositionImplToJson(_$PositionImpl instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'name': instance.name,
       'createdDate': instance.createdDate?.toIso8601String(),
     };

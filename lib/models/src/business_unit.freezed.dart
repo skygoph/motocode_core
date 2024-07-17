@@ -20,6 +20,7 @@ BusinessUnit _$BusinessUnitFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$BusinessUnit {
+  int? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   DateTime? get createdDate => throw _privateConstructorUsedError;
 
@@ -35,7 +36,7 @@ abstract class $BusinessUnitCopyWith<$Res> {
           BusinessUnit value, $Res Function(BusinessUnit) then) =
       _$BusinessUnitCopyWithImpl<$Res, BusinessUnit>;
   @useResult
-  $Res call({String? name, DateTime? createdDate});
+  $Res call({int? id, String? name, DateTime? createdDate});
 }
 
 /// @nodoc
@@ -51,10 +52,15 @@ class _$BusinessUnitCopyWithImpl<$Res, $Val extends BusinessUnit>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = freezed,
     Object? createdDate = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -75,7 +81,7 @@ abstract class _$$BusinessUnitImplCopyWith<$Res>
       __$$BusinessUnitImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? name, DateTime? createdDate});
+  $Res call({int? id, String? name, DateTime? createdDate});
 }
 
 /// @nodoc
@@ -89,10 +95,15 @@ class __$$BusinessUnitImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = freezed,
     Object? createdDate = freezed,
   }) {
     return _then(_$BusinessUnitImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -108,11 +119,13 @@ class __$$BusinessUnitImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$BusinessUnitImpl implements _BusinessUnit {
-  const _$BusinessUnitImpl({this.name, this.createdDate});
+  const _$BusinessUnitImpl({this.id, this.name, this.createdDate});
 
   factory _$BusinessUnitImpl.fromJson(Map<String, dynamic> json) =>
       _$$BusinessUnitImplFromJson(json);
 
+  @override
+  final int? id;
   @override
   final String? name;
   @override
@@ -120,7 +133,7 @@ class _$BusinessUnitImpl implements _BusinessUnit {
 
   @override
   String toString() {
-    return 'BusinessUnit(name: $name, createdDate: $createdDate)';
+    return 'BusinessUnit(id: $id, name: $name, createdDate: $createdDate)';
   }
 
   @override
@@ -128,6 +141,7 @@ class _$BusinessUnitImpl implements _BusinessUnit {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BusinessUnitImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.createdDate, createdDate) ||
                 other.createdDate == createdDate));
@@ -135,7 +149,7 @@ class _$BusinessUnitImpl implements _BusinessUnit {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, createdDate);
+  int get hashCode => Object.hash(runtimeType, id, name, createdDate);
 
   @JsonKey(ignore: true)
   @override
@@ -153,11 +167,15 @@ class _$BusinessUnitImpl implements _BusinessUnit {
 
 abstract class _BusinessUnit implements BusinessUnit {
   const factory _BusinessUnit(
-      {final String? name, final DateTime? createdDate}) = _$BusinessUnitImpl;
+      {final int? id,
+      final String? name,
+      final DateTime? createdDate}) = _$BusinessUnitImpl;
 
   factory _BusinessUnit.fromJson(Map<String, dynamic> json) =
       _$BusinessUnitImpl.fromJson;
 
+  @override
+  int? get id;
   @override
   String? get name;
   @override
