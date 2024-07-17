@@ -18,7 +18,7 @@ final _locator = StackedLocator.instance;
 /// }
 ///
 /// ```
-Future<void> setupCustomLocator(
+Future<void> setupMotocodeLocator(
   String baseUrl, {
   String? environment,
   EnvironmentFilter? environmentFilter,

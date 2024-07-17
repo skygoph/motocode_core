@@ -17,13 +17,15 @@ A shared services to all motocode-related application
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+1. Setup Locator.
+2. List of models.
+3. List of services.
 
 ## Getting started
 
 There are two options to inject the services.
 
-1. Call `setupCustomLocator` in the `main.dart` file.
+1. Call `setupMotocodeLocator` in the `main.dart` file.
 
     ```dart
       void main() async {
