@@ -67,6 +67,23 @@ abstract class ApiClient {
   @GET('/depot-types/{id}/depots')
   Future<List<Depot>> getDepotsWithDepotType(@Path('id') int depotTypeId);
 
+  /// ********** Enrollments API ********** ///
+  @GET('/enrollments')
+  Future<List<ScannedQrCode>> getEnrollments();
+
+  /// ********** Positions API ********** ///
+  @GET('/positions')
+  Future<List<Position>> getPositions();
+  @GET('/positions/{id}')
+  Future<Position> getPosition(@Path('id') int positionId);
+  @POST('/positions')
+  Future<void> createPosition(@Body() Map<String, dynamic> data);
+  @PUT('/positions/{id}')
+  Future<void> updatePosition(
+    @Path('id') int positionId,
+    @Body() Map<String, dynamic> data,
+  );
+
   /// ********** QrCodes API ********** ///
   @GET('/qr-codes')
   Future<List<QrCode>> getQrCodes();
@@ -77,6 +94,19 @@ abstract class ApiClient {
   @PUT('/qr-codes/{id}')
   Future<void> updateQrCode(
     @Path('id') int qrCodeId,
+    @Body() Map<String, dynamic> data,
+  );
+
+  /// ********** Roles API ********** ///
+  @GET('/roles')
+  Future<List<UserRole>> getRoles();
+  @GET('/roles/{id}')
+  Future<UserRole> getRole(@Path('id') int roleId);
+  @POST('/roles')
+  Future<void> createRole(@Body() Map<String, dynamic> data);
+  @PUT('/roles/{id}')
+  Future<void> updateRole(
+    @Path('id') int roleId,
     @Body() Map<String, dynamic> data,
   );
 
@@ -176,6 +206,10 @@ User deserializeUser(Map<String, dynamic> data) {
   return User.fromJson(data);
 }
 
+UserRole deserializeUserRole(Map<String, dynamic> data) {
+  return UserRole.fromJson(data);
+}
+
 List<BusinessUnit> deserializeBusinessUnitList(List<dynamic> data) {
   return data.map((e) => BusinessUnit.fromJson(e)).toList();
 }
@@ -210,6 +244,10 @@ List<QrCode> deserializeQrCodeList(List<dynamic> data) {
 
 List<User> deserializeUserList(List<dynamic> data) {
   return data.map((e) => User.fromJson(e)).toList();
+}
+
+List<UserRole> deserializeUserRoleList(List<dynamic> data) {
+  return data.map((e) => UserRole.fromJson(e)).toList();
 }
 
 // **************************************************************************

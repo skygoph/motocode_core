@@ -5,7 +5,10 @@ part 'user_role.g.dart';
 
 @freezed
 class UserRole with _$UserRole {
-  const factory UserRole({String? name}) = _UserRole;
+  const factory UserRole({
+    int? id,
+    String? name,
+  }) = _UserRole;
 
   factory UserRole.fromJson(Map<String, dynamic> json) =>
       _$UserRoleFromJson(json);

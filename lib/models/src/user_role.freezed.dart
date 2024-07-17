@@ -20,6 +20,7 @@ UserRole _$UserRoleFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserRole {
+  int? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -33,7 +34,7 @@ abstract class $UserRoleCopyWith<$Res> {
   factory $UserRoleCopyWith(UserRole value, $Res Function(UserRole) then) =
       _$UserRoleCopyWithImpl<$Res, UserRole>;
   @useResult
-  $Res call({String? name});
+  $Res call({int? id, String? name});
 }
 
 /// @nodoc
@@ -49,9 +50,14 @@ class _$UserRoleCopyWithImpl<$Res, $Val extends UserRole>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -68,7 +74,7 @@ abstract class _$$UserRoleImplCopyWith<$Res>
       __$$UserRoleImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? name});
+  $Res call({int? id, String? name});
 }
 
 /// @nodoc
@@ -82,9 +88,14 @@ class __$$UserRoleImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = freezed,
   }) {
     return _then(_$UserRoleImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -96,17 +107,19 @@ class __$$UserRoleImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$UserRoleImpl implements _UserRole {
-  const _$UserRoleImpl({this.name});
+  const _$UserRoleImpl({this.id, this.name});
 
   factory _$UserRoleImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserRoleImplFromJson(json);
 
   @override
+  final int? id;
+  @override
   final String? name;
 
   @override
   String toString() {
-    return 'UserRole(name: $name)';
+    return 'UserRole(id: $id, name: $name)';
   }
 
   @override
@@ -114,12 +127,13 @@ class _$UserRoleImpl implements _UserRole {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserRoleImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name);
+  int get hashCode => Object.hash(runtimeType, id, name);
 
   @JsonKey(ignore: true)
   @override
@@ -136,11 +150,13 @@ class _$UserRoleImpl implements _UserRole {
 }
 
 abstract class _UserRole implements UserRole {
-  const factory _UserRole({final String? name}) = _$UserRoleImpl;
+  const factory _UserRole({final int? id, final String? name}) = _$UserRoleImpl;
 
   factory _UserRole.fromJson(Map<String, dynamic> json) =
       _$UserRoleImpl.fromJson;
 
+  @override
+  int? get id;
   @override
   String? get name;
   @override

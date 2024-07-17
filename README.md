@@ -21,20 +21,83 @@ TODO: List what your package can do. Maybe include images, gifs, or videos.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+There are two options to inject the services.
+
+1. Call `setupCustomLocator` in the `main.dart` file.
+
+    ```dart
+      void main() async {
+        ....
+        final baseUrl = 'URL_HERE'
+        await setupCustomLocator(baseUrl);
+        ...
+      }
+
+2. Inject the services by creating a custom locator. Create or update file `app.locator.custom.dart`.
+
+    ```dart
+    // Initialize Dio
+    final dio = Dio(
+        BaseOptions(
+          connectTimeout: Duration(seconds: 10),
+          responseType: ResponseType.json,
+        ),
+      )..interceptors.add(
+          LogInterceptor(
+            requestBody: true,
+            responseBody: true,
+          ),
+        );
+
+    var baseUrl = 'https://localhost:7000/api';
+    if (true) {
+    baseUrl = ksUrl;
+    }
+
+    /// IMPORTANT: Register [ApiClient] first
+    _locator.registerLazySingleton(() => ApiClient(dio, baseUrl: baseUrl));
+
+    // Register all the needed service only
+    final apiClient = _locator<ApiClient>();
+    final crashlytics = FirebaseCrashlytics.instance;
+
+    _locator.registerLazySingleton(() => BusinessUnitsService(apiClient, crashlytics));
+    _locator.registerLazySingleton(() => DepartmentsService(apiClient, crashlytics));
+
+    // Add other services here
+    ... 
+    ```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Listing of available models or services.
 
-```dart
-const like = 'sample';
-```
+### List of usable **Models**
 
-## Additional information
+- Branch
+- BusinessUnit
+- Department
+- DepotType
+- Depot
+- Position
+- QrCode
+- ScannedQrCode
+- Status
+- UserRole
+- User
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+### List of services
+
+- ApiClient;
+- AuthenticationService
+- BusinessUnitsService
+- DepartmentsService
+- DepotTypesService
+- DepotsService
+- EnrollmentsService
+- PositionsService
+- QrCodesService
+- RolesService
+- ScannedQrCodesService
+- StatusesService
+- UsersService

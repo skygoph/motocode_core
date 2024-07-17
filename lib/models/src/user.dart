@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:motocode_core/enums/app_enums.dart';
+import 'package:motocode_core/enums/enums.dart';
 import 'package:motocode_core/models/src/branch.dart';
 import 'package:motocode_core/models/src/business_unit.dart';
 import 'package:motocode_core/models/src/department.dart';
