@@ -1157,7 +1157,7 @@ class _ApiClient implements ApiClient {
   }
 
   @override
-  Future<User> getUser(int id) async {
+  Future<User> getUser(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -1210,7 +1210,7 @@ class _ApiClient implements ApiClient {
 
   @override
   Future<User> updateUser(
-    int id,
+    String id,
     Map<String, dynamic> data,
   ) async {
     final _extra = <String, dynamic>{};

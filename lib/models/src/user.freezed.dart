@@ -21,25 +21,27 @@ User _$UserFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$User {
   String get id => throw _privateConstructorUsedError;
-  String? get firstName => throw _privateConstructorUsedError;
-  String? get lastName => throw _privateConstructorUsedError;
-  String? get email => throw _privateConstructorUsedError;
-  int? get userRoleId => throw _privateConstructorUsedError;
+  String get firstName => throw _privateConstructorUsedError;
+  String get lastName => throw _privateConstructorUsedError;
+  String get email => throw _privateConstructorUsedError;
+  int? get statusId => throw _privateConstructorUsedError;
   int? get departmentId => throw _privateConstructorUsedError;
   int? get businessUnitId => throw _privateConstructorUsedError;
-  String get password => throw _privateConstructorUsedError;
   int? get positionId => throw _privateConstructorUsedError;
-  int? get statusId => throw _privateConstructorUsedError;
+  String? get creatorId => throw _privateConstructorUsedError;
+  String get createdDate => throw _privateConstructorUsedError;
+  int? get userRoleId => throw _privateConstructorUsedError;
   double? get latitude => throw _privateConstructorUsedError;
   double? get longitude => throw _privateConstructorUsedError;
+  String? get password => throw _privateConstructorUsedError;
+  String? get roleName => throw _privateConstructorUsedError;
   Department? get department => throw _privateConstructorUsedError;
-  List<Branch>? get branch => throw _privateConstructorUsedError;
-  List<Depot>? get depot => throw _privateConstructorUsedError;
   BusinessUnit? get businessUnit => throw _privateConstructorUsedError;
   Position? get position => throw _privateConstructorUsedError;
   Status? get status => throw _privateConstructorUsedError;
-  UserRole? get userRole => throw _privateConstructorUsedError;
-  String? get createdDate => throw _privateConstructorUsedError;
+  List<String>? get userRoles => throw _privateConstructorUsedError;
+  List<Branch>? get branches => throw _privateConstructorUsedError;
+  List<Depot>? get depots => throw _privateConstructorUsedError;
   List<Status>? get statuses => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -54,32 +56,33 @@ abstract class $UserCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      String? firstName,
-      String? lastName,
-      String? email,
-      int? userRoleId,
+      String firstName,
+      String lastName,
+      String email,
+      int? statusId,
       int? departmentId,
       int? businessUnitId,
-      String password,
       int? positionId,
-      int? statusId,
+      String? creatorId,
+      String createdDate,
+      int? userRoleId,
       double? latitude,
       double? longitude,
+      String? password,
+      String? roleName,
       Department? department,
-      List<Branch>? branch,
-      List<Depot>? depot,
       BusinessUnit? businessUnit,
       Position? position,
       Status? status,
-      UserRole? userRole,
-      String? createdDate,
+      List<String>? userRoles,
+      List<Branch>? branches,
+      List<Depot>? depots,
       List<Status>? statuses});
 
   $DepartmentCopyWith<$Res>? get department;
   $BusinessUnitCopyWith<$Res>? get businessUnit;
   $PositionCopyWith<$Res>? get position;
   $StatusCopyWith<$Res>? get status;
-  $UserRoleCopyWith<$Res>? get userRole;
 }
 
 /// @nodoc
@@ -96,25 +99,27 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   @override
   $Res call({
     Object? id = null,
-    Object? firstName = freezed,
-    Object? lastName = freezed,
-    Object? email = freezed,
-    Object? userRoleId = freezed,
+    Object? firstName = null,
+    Object? lastName = null,
+    Object? email = null,
+    Object? statusId = freezed,
     Object? departmentId = freezed,
     Object? businessUnitId = freezed,
-    Object? password = null,
     Object? positionId = freezed,
-    Object? statusId = freezed,
+    Object? creatorId = freezed,
+    Object? createdDate = null,
+    Object? userRoleId = freezed,
     Object? latitude = freezed,
     Object? longitude = freezed,
+    Object? password = freezed,
+    Object? roleName = freezed,
     Object? department = freezed,
-    Object? branch = freezed,
-    Object? depot = freezed,
     Object? businessUnit = freezed,
     Object? position = freezed,
     Object? status = freezed,
-    Object? userRole = freezed,
-    Object? createdDate = freezed,
+    Object? userRoles = freezed,
+    Object? branches = freezed,
+    Object? depots = freezed,
     Object? statuses = freezed,
   }) {
     return _then(_value.copyWith(
@@ -122,21 +127,21 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      firstName: freezed == firstName
+      firstName: null == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lastName: freezed == lastName
+              as String,
+      lastName: null == lastName
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      email: freezed == email
+              as String,
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      userRoleId: freezed == userRoleId
-          ? _value.userRoleId
-          : userRoleId // ignore: cast_nullable_to_non_nullable
+              as String,
+      statusId: freezed == statusId
+          ? _value.statusId
+          : statusId // ignore: cast_nullable_to_non_nullable
               as int?,
       departmentId: freezed == departmentId
           ? _value.departmentId
@@ -146,17 +151,21 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.businessUnitId
           : businessUnitId // ignore: cast_nullable_to_non_nullable
               as int?,
-      password: null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
       positionId: freezed == positionId
           ? _value.positionId
           : positionId // ignore: cast_nullable_to_non_nullable
               as int?,
-      statusId: freezed == statusId
-          ? _value.statusId
-          : statusId // ignore: cast_nullable_to_non_nullable
+      creatorId: freezed == creatorId
+          ? _value.creatorId
+          : creatorId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdDate: null == createdDate
+          ? _value.createdDate
+          : createdDate // ignore: cast_nullable_to_non_nullable
+              as String,
+      userRoleId: freezed == userRoleId
+          ? _value.userRoleId
+          : userRoleId // ignore: cast_nullable_to_non_nullable
               as int?,
       latitude: freezed == latitude
           ? _value.latitude
@@ -166,18 +175,18 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double?,
+      password: freezed == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
+      roleName: freezed == roleName
+          ? _value.roleName
+          : roleName // ignore: cast_nullable_to_non_nullable
+              as String?,
       department: freezed == department
           ? _value.department
           : department // ignore: cast_nullable_to_non_nullable
               as Department?,
-      branch: freezed == branch
-          ? _value.branch
-          : branch // ignore: cast_nullable_to_non_nullable
-              as List<Branch>?,
-      depot: freezed == depot
-          ? _value.depot
-          : depot // ignore: cast_nullable_to_non_nullable
-              as List<Depot>?,
       businessUnit: freezed == businessUnit
           ? _value.businessUnit
           : businessUnit // ignore: cast_nullable_to_non_nullable
@@ -190,14 +199,18 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Status?,
-      userRole: freezed == userRole
-          ? _value.userRole
-          : userRole // ignore: cast_nullable_to_non_nullable
-              as UserRole?,
-      createdDate: freezed == createdDate
-          ? _value.createdDate
-          : createdDate // ignore: cast_nullable_to_non_nullable
-              as String?,
+      userRoles: freezed == userRoles
+          ? _value.userRoles
+          : userRoles // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      branches: freezed == branches
+          ? _value.branches
+          : branches // ignore: cast_nullable_to_non_nullable
+              as List<Branch>?,
+      depots: freezed == depots
+          ? _value.depots
+          : depots // ignore: cast_nullable_to_non_nullable
+              as List<Depot>?,
       statuses: freezed == statuses
           ? _value.statuses
           : statuses // ignore: cast_nullable_to_non_nullable
@@ -252,18 +265,6 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
       return _then(_value.copyWith(status: value) as $Val);
     });
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $UserRoleCopyWith<$Res>? get userRole {
-    if (_value.userRole == null) {
-      return null;
-    }
-
-    return $UserRoleCopyWith<$Res>(_value.userRole!, (value) {
-      return _then(_value.copyWith(userRole: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -275,25 +276,27 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      String? firstName,
-      String? lastName,
-      String? email,
-      int? userRoleId,
+      String firstName,
+      String lastName,
+      String email,
+      int? statusId,
       int? departmentId,
       int? businessUnitId,
-      String password,
       int? positionId,
-      int? statusId,
+      String? creatorId,
+      String createdDate,
+      int? userRoleId,
       double? latitude,
       double? longitude,
+      String? password,
+      String? roleName,
       Department? department,
-      List<Branch>? branch,
-      List<Depot>? depot,
       BusinessUnit? businessUnit,
       Position? position,
       Status? status,
-      UserRole? userRole,
-      String? createdDate,
+      List<String>? userRoles,
+      List<Branch>? branches,
+      List<Depot>? depots,
       List<Status>? statuses});
 
   @override
@@ -304,8 +307,6 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
   $PositionCopyWith<$Res>? get position;
   @override
   $StatusCopyWith<$Res>? get status;
-  @override
-  $UserRoleCopyWith<$Res>? get userRole;
 }
 
 /// @nodoc
@@ -319,25 +320,27 @@ class __$$UserImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? firstName = freezed,
-    Object? lastName = freezed,
-    Object? email = freezed,
-    Object? userRoleId = freezed,
+    Object? firstName = null,
+    Object? lastName = null,
+    Object? email = null,
+    Object? statusId = freezed,
     Object? departmentId = freezed,
     Object? businessUnitId = freezed,
-    Object? password = null,
     Object? positionId = freezed,
-    Object? statusId = freezed,
+    Object? creatorId = freezed,
+    Object? createdDate = null,
+    Object? userRoleId = freezed,
     Object? latitude = freezed,
     Object? longitude = freezed,
+    Object? password = freezed,
+    Object? roleName = freezed,
     Object? department = freezed,
-    Object? branch = freezed,
-    Object? depot = freezed,
     Object? businessUnit = freezed,
     Object? position = freezed,
     Object? status = freezed,
-    Object? userRole = freezed,
-    Object? createdDate = freezed,
+    Object? userRoles = freezed,
+    Object? branches = freezed,
+    Object? depots = freezed,
     Object? statuses = freezed,
   }) {
     return _then(_$UserImpl(
@@ -345,21 +348,21 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      firstName: freezed == firstName
+      firstName: null == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lastName: freezed == lastName
+              as String,
+      lastName: null == lastName
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      email: freezed == email
+              as String,
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      userRoleId: freezed == userRoleId
-          ? _value.userRoleId
-          : userRoleId // ignore: cast_nullable_to_non_nullable
+              as String,
+      statusId: freezed == statusId
+          ? _value.statusId
+          : statusId // ignore: cast_nullable_to_non_nullable
               as int?,
       departmentId: freezed == departmentId
           ? _value.departmentId
@@ -369,17 +372,21 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.businessUnitId
           : businessUnitId // ignore: cast_nullable_to_non_nullable
               as int?,
-      password: null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
       positionId: freezed == positionId
           ? _value.positionId
           : positionId // ignore: cast_nullable_to_non_nullable
               as int?,
-      statusId: freezed == statusId
-          ? _value.statusId
-          : statusId // ignore: cast_nullable_to_non_nullable
+      creatorId: freezed == creatorId
+          ? _value.creatorId
+          : creatorId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdDate: null == createdDate
+          ? _value.createdDate
+          : createdDate // ignore: cast_nullable_to_non_nullable
+              as String,
+      userRoleId: freezed == userRoleId
+          ? _value.userRoleId
+          : userRoleId // ignore: cast_nullable_to_non_nullable
               as int?,
       latitude: freezed == latitude
           ? _value.latitude
@@ -389,18 +396,18 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double?,
+      password: freezed == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
+      roleName: freezed == roleName
+          ? _value.roleName
+          : roleName // ignore: cast_nullable_to_non_nullable
+              as String?,
       department: freezed == department
           ? _value.department
           : department // ignore: cast_nullable_to_non_nullable
               as Department?,
-      branch: freezed == branch
-          ? _value._branch
-          : branch // ignore: cast_nullable_to_non_nullable
-              as List<Branch>?,
-      depot: freezed == depot
-          ? _value._depot
-          : depot // ignore: cast_nullable_to_non_nullable
-              as List<Depot>?,
       businessUnit: freezed == businessUnit
           ? _value.businessUnit
           : businessUnit // ignore: cast_nullable_to_non_nullable
@@ -413,14 +420,18 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Status?,
-      userRole: freezed == userRole
-          ? _value.userRole
-          : userRole // ignore: cast_nullable_to_non_nullable
-              as UserRole?,
-      createdDate: freezed == createdDate
-          ? _value.createdDate
-          : createdDate // ignore: cast_nullable_to_non_nullable
-              as String?,
+      userRoles: freezed == userRoles
+          ? _value._userRoles
+          : userRoles // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      branches: freezed == branches
+          ? _value._branches
+          : branches // ignore: cast_nullable_to_non_nullable
+              as List<Branch>?,
+      depots: freezed == depots
+          ? _value._depots
+          : depots // ignore: cast_nullable_to_non_nullable
+              as List<Depot>?,
       statuses: freezed == statuses
           ? _value._statuses
           : statuses // ignore: cast_nullable_to_non_nullable
@@ -437,25 +448,28 @@ class _$UserImpl extends _User {
       required this.firstName,
       required this.lastName,
       required this.email,
-      required this.userRoleId,
+      required this.statusId,
       required this.departmentId,
       required this.businessUnitId,
-      required this.password,
       required this.positionId,
-      required this.statusId,
+      required this.creatorId,
+      required this.createdDate,
+      required this.userRoleId,
       required this.latitude,
       required this.longitude,
+      required this.password,
+      this.roleName,
       this.department,
-      final List<Branch>? branch,
-      final List<Depot>? depot,
       this.businessUnit,
       this.position,
       this.status,
-      this.userRole,
-      this.createdDate,
+      final List<String>? userRoles,
+      final List<Branch>? branches,
+      final List<Depot>? depots,
       final List<Status>? statuses})
-      : _branch = branch,
-        _depot = depot,
+      : _userRoles = userRoles,
+        _branches = branches,
+        _depots = depots,
         _statuses = statuses,
         super._();
 
@@ -465,59 +479,71 @@ class _$UserImpl extends _User {
   @override
   final String id;
   @override
-  final String? firstName;
+  final String firstName;
   @override
-  final String? lastName;
+  final String lastName;
   @override
-  final String? email;
+  final String email;
   @override
-  final int? userRoleId;
+  final int? statusId;
   @override
   final int? departmentId;
   @override
   final int? businessUnitId;
   @override
-  final String password;
-  @override
   final int? positionId;
   @override
-  final int? statusId;
+  final String? creatorId;
+  @override
+  final String createdDate;
+  @override
+  final int? userRoleId;
   @override
   final double? latitude;
   @override
   final double? longitude;
   @override
+  final String? password;
+  @override
+  final String? roleName;
+  @override
   final Department? department;
-  final List<Branch>? _branch;
-  @override
-  List<Branch>? get branch {
-    final value = _branch;
-    if (value == null) return null;
-    if (_branch is EqualUnmodifiableListView) return _branch;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  final List<Depot>? _depot;
-  @override
-  List<Depot>? get depot {
-    final value = _depot;
-    if (value == null) return null;
-    if (_depot is EqualUnmodifiableListView) return _depot;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
   @override
   final BusinessUnit? businessUnit;
   @override
   final Position? position;
   @override
   final Status? status;
+  final List<String>? _userRoles;
   @override
-  final UserRole? userRole;
+  List<String>? get userRoles {
+    final value = _userRoles;
+    if (value == null) return null;
+    if (_userRoles is EqualUnmodifiableListView) return _userRoles;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<Branch>? _branches;
   @override
-  final String? createdDate;
+  List<Branch>? get branches {
+    final value = _branches;
+    if (value == null) return null;
+    if (_branches is EqualUnmodifiableListView) return _branches;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<Depot>? _depots;
+  @override
+  List<Depot>? get depots {
+    final value = _depots;
+    if (value == null) return null;
+    if (_depots is EqualUnmodifiableListView) return _depots;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   final List<Status>? _statuses;
   @override
   List<Status>? get statuses {
@@ -530,7 +556,7 @@ class _$UserImpl extends _User {
 
   @override
   String toString() {
-    return 'User(id: $id, firstName: $firstName, lastName: $lastName, email: $email, userRoleId: $userRoleId, departmentId: $departmentId, businessUnitId: $businessUnitId, password: $password, positionId: $positionId, statusId: $statusId, latitude: $latitude, longitude: $longitude, department: $department, branch: $branch, depot: $depot, businessUnit: $businessUnit, position: $position, status: $status, userRole: $userRole, createdDate: $createdDate, statuses: $statuses)';
+    return 'User(id: $id, firstName: $firstName, lastName: $lastName, email: $email, statusId: $statusId, departmentId: $departmentId, businessUnitId: $businessUnitId, positionId: $positionId, creatorId: $creatorId, createdDate: $createdDate, userRoleId: $userRoleId, latitude: $latitude, longitude: $longitude, password: $password, roleName: $roleName, department: $department, businessUnit: $businessUnit, position: $position, status: $status, userRoles: $userRoles, branches: $branches, depots: $depots, statuses: $statuses)';
   }
 
   @override
@@ -544,35 +570,39 @@ class _$UserImpl extends _User {
             (identical(other.lastName, lastName) ||
                 other.lastName == lastName) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.userRoleId, userRoleId) ||
-                other.userRoleId == userRoleId) &&
+            (identical(other.statusId, statusId) ||
+                other.statusId == statusId) &&
             (identical(other.departmentId, departmentId) ||
                 other.departmentId == departmentId) &&
             (identical(other.businessUnitId, businessUnitId) ||
                 other.businessUnitId == businessUnitId) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
             (identical(other.positionId, positionId) ||
                 other.positionId == positionId) &&
-            (identical(other.statusId, statusId) ||
-                other.statusId == statusId) &&
+            (identical(other.creatorId, creatorId) ||
+                other.creatorId == creatorId) &&
+            (identical(other.createdDate, createdDate) ||
+                other.createdDate == createdDate) &&
+            (identical(other.userRoleId, userRoleId) ||
+                other.userRoleId == userRoleId) &&
             (identical(other.latitude, latitude) ||
                 other.latitude == latitude) &&
             (identical(other.longitude, longitude) ||
                 other.longitude == longitude) &&
+            (identical(other.password, password) ||
+                other.password == password) &&
+            (identical(other.roleName, roleName) ||
+                other.roleName == roleName) &&
             (identical(other.department, department) ||
                 other.department == department) &&
-            const DeepCollectionEquality().equals(other._branch, _branch) &&
-            const DeepCollectionEquality().equals(other._depot, _depot) &&
             (identical(other.businessUnit, businessUnit) ||
                 other.businessUnit == businessUnit) &&
             (identical(other.position, position) ||
                 other.position == position) &&
             (identical(other.status, status) || other.status == status) &&
-            (identical(other.userRole, userRole) ||
-                other.userRole == userRole) &&
-            (identical(other.createdDate, createdDate) ||
-                other.createdDate == createdDate) &&
+            const DeepCollectionEquality()
+                .equals(other._userRoles, _userRoles) &&
+            const DeepCollectionEquality().equals(other._branches, _branches) &&
+            const DeepCollectionEquality().equals(other._depots, _depots) &&
             const DeepCollectionEquality().equals(other._statuses, _statuses));
   }
 
@@ -584,22 +614,24 @@ class _$UserImpl extends _User {
         firstName,
         lastName,
         email,
-        userRoleId,
+        statusId,
         departmentId,
         businessUnitId,
-        password,
         positionId,
-        statusId,
+        creatorId,
+        createdDate,
+        userRoleId,
         latitude,
         longitude,
+        password,
+        roleName,
         department,
-        const DeepCollectionEquality().hash(_branch),
-        const DeepCollectionEquality().hash(_depot),
         businessUnit,
         position,
         status,
-        userRole,
-        createdDate,
+        const DeepCollectionEquality().hash(_userRoles),
+        const DeepCollectionEquality().hash(_branches),
+        const DeepCollectionEquality().hash(_depots),
         const DeepCollectionEquality().hash(_statuses)
       ]);
 
@@ -620,25 +652,27 @@ class _$UserImpl extends _User {
 abstract class _User extends User {
   const factory _User(
       {required final String id,
-      required final String? firstName,
-      required final String? lastName,
-      required final String? email,
-      required final int? userRoleId,
+      required final String firstName,
+      required final String lastName,
+      required final String email,
+      required final int? statusId,
       required final int? departmentId,
       required final int? businessUnitId,
-      required final String password,
       required final int? positionId,
-      required final int? statusId,
+      required final String? creatorId,
+      required final String createdDate,
+      required final int? userRoleId,
       required final double? latitude,
       required final double? longitude,
+      required final String? password,
+      final String? roleName,
       final Department? department,
-      final List<Branch>? branch,
-      final List<Depot>? depot,
       final BusinessUnit? businessUnit,
       final Position? position,
       final Status? status,
-      final UserRole? userRole,
-      final String? createdDate,
+      final List<String>? userRoles,
+      final List<Branch>? branches,
+      final List<Depot>? depots,
       final List<Status>? statuses}) = _$UserImpl;
   const _User._() : super._();
 
@@ -647,33 +681,35 @@ abstract class _User extends User {
   @override
   String get id;
   @override
-  String? get firstName;
+  String get firstName;
   @override
-  String? get lastName;
+  String get lastName;
   @override
-  String? get email;
+  String get email;
   @override
-  int? get userRoleId;
+  int? get statusId;
   @override
   int? get departmentId;
   @override
   int? get businessUnitId;
   @override
-  String get password;
-  @override
   int? get positionId;
   @override
-  int? get statusId;
+  String? get creatorId;
+  @override
+  String get createdDate;
+  @override
+  int? get userRoleId;
   @override
   double? get latitude;
   @override
   double? get longitude;
   @override
+  String? get password;
+  @override
+  String? get roleName;
+  @override
   Department? get department;
-  @override
-  List<Branch>? get branch;
-  @override
-  List<Depot>? get depot;
   @override
   BusinessUnit? get businessUnit;
   @override
@@ -681,9 +717,11 @@ abstract class _User extends User {
   @override
   Status? get status;
   @override
-  UserRole? get userRole;
+  List<String>? get userRoles;
   @override
-  String? get createdDate;
+  List<Branch>? get branches;
+  @override
+  List<Depot>? get depots;
   @override
   List<Status>? get statuses;
   @override

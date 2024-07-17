@@ -144,12 +144,14 @@ abstract class ApiClient {
   @GET('/users')
   Future<List<User>> getUsers();
   @GET('/users/{id}')
-  Future<User> getUser(@Path('id') int id);
+  Future<User> getUser(@Path('id') String id);
   @POST('/users')
   Future<void> createUser(@Body() Map<String, dynamic> data);
   @PUT('/users/{id}')
   Future<User> updateUser(
-      @Path('id') int id, @Body() Map<String, dynamic> data);
+    @Path('id') String id,
+    @Body() Map<String, dynamic> data,
+  );
   @GET('/users/{id}/scanned-qr-codes')
   Future<List<ScannedQrCode>> getScannedQrCodesWithUser(
     @Path('id') String userId,
@@ -160,7 +162,8 @@ abstract class ApiClient {
   Future<List<Depot>> getDepotsWithUser(@Path('id') String userId);
   @GET('/users/{id}/business-units')
   Future<List<BusinessUnit>> getBusinessUnitsWithUser(
-      @Path('id') String userId);
+    @Path('id') String userId,
+  );
   @GET('/users/{id}/departments')
   Future<List<Department>> getDepartmentsWithUser(@Path('id') String userId);
   @GET('/users/{id}/positions')

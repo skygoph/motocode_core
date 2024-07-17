@@ -5,12 +5,19 @@ part 'depot_type.g.dart';
 
 @freezed
 class DepotType with _$DepotType {
+  const DepotType._();
+
   const factory DepotType({
-    int? id,
+    final int? id,
     String? name,
     String? description,
   }) = _DepotType;
 
   factory DepotType.fromJson(Map<String, dynamic> json) =>
       _$DepotTypeFromJson(json);
+
+  Map<String, dynamic> mapToRequest() => {
+        'name': name,
+        'description': description,
+      };
 }

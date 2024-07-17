@@ -5,6 +5,8 @@ part 'department.g.dart';
 
 @freezed
 class Department with _$Department {
+  const Department._();
+
   const factory Department({
     int? id,
     String? name,
@@ -13,4 +15,8 @@ class Department with _$Department {
 
   factory Department.fromJson(Map<String, dynamic> json) =>
       _$DepartmentFromJson(json);
+
+  Map<String, dynamic> mapToRequest() => {
+        'name': name,
+      };
 }

@@ -117,8 +117,8 @@ class __$$PositionImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PositionImpl implements _Position {
-  const _$PositionImpl({this.id, this.name, this.createdDate});
+class _$PositionImpl extends _Position {
+  const _$PositionImpl({this.id, this.name, this.createdDate}) : super._();
 
   factory _$PositionImpl.fromJson(Map<String, dynamic> json) =>
       _$$PositionImplFromJson(json);
@@ -164,11 +164,12 @@ class _$PositionImpl implements _Position {
   }
 }
 
-abstract class _Position implements Position {
+abstract class _Position extends Position {
   const factory _Position(
       {final int? id,
       final String? name,
       final DateTime? createdDate}) = _$PositionImpl;
+  const _Position._() : super._();
 
   factory _Position.fromJson(Map<String, dynamic> json) =
       _$PositionImpl.fromJson;

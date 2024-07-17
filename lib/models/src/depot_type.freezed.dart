@@ -117,8 +117,8 @@ class __$$DepotTypeImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$DepotTypeImpl implements _DepotType {
-  const _$DepotTypeImpl({this.id, this.name, this.description});
+class _$DepotTypeImpl extends _DepotType {
+  const _$DepotTypeImpl({this.id, this.name, this.description}) : super._();
 
   factory _$DepotTypeImpl.fromJson(Map<String, dynamic> json) =>
       _$$DepotTypeImplFromJson(json);
@@ -164,11 +164,12 @@ class _$DepotTypeImpl implements _DepotType {
   }
 }
 
-abstract class _DepotType implements DepotType {
+abstract class _DepotType extends DepotType {
   const factory _DepotType(
       {final int? id,
       final String? name,
       final String? description}) = _$DepotTypeImpl;
+  const _DepotType._() : super._();
 
   factory _DepotType.fromJson(Map<String, dynamic> json) =
       _$DepotTypeImpl.fromJson;

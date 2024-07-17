@@ -2,31 +2,74 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:motocode_core/models/models.dart';
 import 'package:motocode_core/services/src/api_client.dart';
 
+/// Service to handle depots api requests
 class DepotsService {
-  final ApiClient _apiClient;
-  final FirebaseCrashlytics? _crashlytics;
-
+  /// Constructor for the [DepotsService]
   DepotsService(this._apiClient, this._crashlytics);
 
+  /// The API client to make requests to the server
+  final ApiClient _apiClient;
+
+  /// The Crashlytics instance to log errors
+  final FirebaseCrashlytics? _crashlytics;
+
+  /// Get all depots
+  ///
+  /// This function sends a request to the API client to get all depots.
+  /// If the request is successful, it returns a list of depots.
+  /// In case of an error, the error is recorded in Crashlytics and the error is rethrown.
+  ///
+  /// Returns a [Future<List<Depot>>] containing a list of depots.
+  ///
+  /// Throws an error if the request fails for any reason.
   Future<List<Depot>> getDepots() => _apiClient.getDepots().catchError((error) {
         _crashlytics?.recordError(error, StackTrace.current);
         throw error;
       });
 
+  /// Get a depot by id
+  ///
+  /// This function sends a request to the API client to get a depot by id.
+  /// If the request is successful, it returns the depot.
+  /// In case of an error, the error is recorded in Crashlytics and the error is rethrown.
+  ///
+  /// [depotId] The id of the depot to get.
+  ///
+  /// Returns a [Future<Depot>] containing the depot.
+  ///
+  /// Throws an error if the request fails for any reason.
   Future<Depot> getDepot(int depotId) =>
       _apiClient.getDepot(depotId).catchError((error) {
         _crashlytics?.recordError(error, StackTrace.current);
         throw error;
       });
 
-  Future<void> createDepot(Map<String, dynamic> data) =>
-      _apiClient.createDepot(data).catchError((error) {
+  /// Create a depot
+  ///
+  /// This function sends a request to the API client to create a depot.
+  /// If the request is successful, it returns void.
+  /// In case of an error, the error is recorded in Crashlytics and the error is rethrown.
+  ///
+  /// [data] The data to create the depot with.
+  ///
+  /// Throws an error if the request fails for any reason.
+  Future<void> createDepot(Depot data) =>
+      _apiClient.createDepot(data.mapToRequest()).catchError((error) {
         _crashlytics?.recordError(error, StackTrace.current);
         throw error;
       });
 
-  Future<void> updateDepot(int depotId, Map<String, dynamic> data) =>
-      _apiClient.updateDepot(depotId, data).catchError((error) {
+  /// Update a depot
+  ///
+  /// This function sends a request to the API client to update a depot.
+  /// If the request is successful, it returns void.
+  /// In case of an error, the error is recorded in Crashlytics and the error is rethrown.
+  ///
+  /// [data] The data to update the depot with.
+  ///
+  /// Throws an error if the request fails for any reason.
+  Future<void> updateDepot(Depot data) =>
+      _apiClient.updateDepot(data.id, data.mapToRequest()).catchError((error) {
         _crashlytics?.recordError(error, StackTrace.current);
         throw error;
       });

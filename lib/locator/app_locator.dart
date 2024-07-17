@@ -37,9 +37,11 @@ Future<void> setupMotocodeLocator({
   final apiClient = locator<ApiClient>();
 
   locator.registerLazySingleton(
-      () => AuthenticationService(apiClient, crashlytics));
+    () => AuthenticationService(apiClient, crashlytics),
+  );
   locator.registerLazySingleton(
-      () => BusinessUnitsService(apiClient, crashlytics));
+    () => BusinessUnitsService(apiClient, crashlytics),
+  );
   locator
       .registerLazySingleton(() => DepartmentsService(apiClient, crashlytics));
   locator
@@ -51,7 +53,8 @@ Future<void> setupMotocodeLocator({
   locator.registerLazySingleton(() => QrCodesService(apiClient, crashlytics));
   locator.registerLazySingleton(() => RolesService(apiClient, crashlytics));
   locator.registerLazySingleton(
-      () => ScannedQrCodesService(apiClient, crashlytics));
+    () => ScannedQrCodesService(apiClient, crashlytics),
+  );
   locator.registerLazySingleton(() => StatusesService(apiClient, crashlytics));
   locator.registerLazySingleton(() => UsersService(apiClient, crashlytics));
 }

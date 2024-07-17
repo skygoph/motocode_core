@@ -118,8 +118,8 @@ class __$$DepartmentImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$DepartmentImpl implements _Department {
-  const _$DepartmentImpl({this.id, this.name, this.createdDate});
+class _$DepartmentImpl extends _Department {
+  const _$DepartmentImpl({this.id, this.name, this.createdDate}) : super._();
 
   factory _$DepartmentImpl.fromJson(Map<String, dynamic> json) =>
       _$$DepartmentImplFromJson(json);
@@ -165,11 +165,12 @@ class _$DepartmentImpl implements _Department {
   }
 }
 
-abstract class _Department implements Department {
+abstract class _Department extends Department {
   const factory _Department(
       {final int? id,
       final String? name,
       final DateTime? createdDate}) = _$DepartmentImpl;
+  const _Department._() : super._();
 
   factory _Department.fromJson(Map<String, dynamic> json) =
       _$DepartmentImpl.fromJson;

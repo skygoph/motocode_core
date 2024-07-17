@@ -8,26 +8,32 @@ part of 'scanned_qr_code.dart';
 
 _$ScannedQrCodeImpl _$$ScannedQrCodeImplFromJson(Map<String, dynamic> json) =>
     _$ScannedQrCodeImpl(
-      id: (json['id'] as num?)?.toInt(),
+      id: (json['id'] as num).toInt(),
+      qrCodeId: (json['qrCodeId'] as num).toInt(),
+      depotId: (json['depotId'] as num).toInt(),
+      statusId: (json['statusId'] as num).toInt(),
+      userId: json['userId'] as String?,
+      createdDate: json['createdDate'] as String?,
       qrCode: json['qrCode'] == null
           ? null
           : QrCode.fromJson(json['qrCode'] as Map<String, dynamic>),
-      qrCodeId: (json['qrCodeId'] as num?)?.toInt(),
-      branchId: (json['branchId'] as num?)?.toInt(),
+      user: json['user'] == null
+          ? null
+          : User.fromJson(json['user'] as Map<String, dynamic>),
       status: json['status'] == null
           ? null
           : Status.fromJson(json['status'] as Map<String, dynamic>),
-      statusId: (json['statusId'] as num?)?.toInt(),
-      createdDate: json['createdDate'] as String?,
     );
 
 Map<String, dynamic> _$$ScannedQrCodeImplToJson(_$ScannedQrCodeImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'qrCode': instance.qrCode,
       'qrCodeId': instance.qrCodeId,
-      'branchId': instance.branchId,
-      'status': instance.status,
+      'depotId': instance.depotId,
       'statusId': instance.statusId,
+      'userId': instance.userId,
       'createdDate': instance.createdDate,
+      'qrCode': instance.qrCode,
+      'user': instance.user,
+      'status': instance.status,
     };

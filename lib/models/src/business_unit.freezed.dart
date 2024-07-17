@@ -118,8 +118,8 @@ class __$$BusinessUnitImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$BusinessUnitImpl implements _BusinessUnit {
-  const _$BusinessUnitImpl({this.id, this.name, this.createdDate});
+class _$BusinessUnitImpl extends _BusinessUnit {
+  const _$BusinessUnitImpl({this.id, this.name, this.createdDate}) : super._();
 
   factory _$BusinessUnitImpl.fromJson(Map<String, dynamic> json) =>
       _$$BusinessUnitImplFromJson(json);
@@ -165,11 +165,12 @@ class _$BusinessUnitImpl implements _BusinessUnit {
   }
 }
 
-abstract class _BusinessUnit implements BusinessUnit {
+abstract class _BusinessUnit extends BusinessUnit {
   const factory _BusinessUnit(
       {final int? id,
       final String? name,
       final DateTime? createdDate}) = _$BusinessUnitImpl;
+  const _BusinessUnit._() : super._();
 
   factory _BusinessUnit.fromJson(Map<String, dynamic> json) =
       _$BusinessUnitImpl.fromJson;

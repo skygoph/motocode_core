@@ -5,6 +5,8 @@ part 'position.g.dart';
 
 @freezed
 class Position with _$Position {
+  const Position._();
+
   const factory Position({
     int? id,
     String? name,
@@ -13,4 +15,8 @@ class Position with _$Position {
 
   factory Position.fromJson(Map<String, dynamic> json) =>
       _$PositionFromJson(json);
+
+  Map<String, dynamic> mapToRequest() => {
+        'name': name,
+      };
 }

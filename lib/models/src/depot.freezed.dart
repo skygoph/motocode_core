@@ -25,6 +25,8 @@ mixin _$Depot {
   String get location => throw _privateConstructorUsedError;
   double? get latitude => throw _privateConstructorUsedError;
   double? get longitude => throw _privateConstructorUsedError;
+  int? get businessUnitId => throw _privateConstructorUsedError;
+  int? get depotTypeId => throw _privateConstructorUsedError;
   BusinessUnit? get businessUnit => throw _privateConstructorUsedError;
   DepotType? get depotType => throw _privateConstructorUsedError;
 
@@ -44,6 +46,8 @@ abstract class $DepotCopyWith<$Res> {
       String location,
       double? latitude,
       double? longitude,
+      int? businessUnitId,
+      int? depotTypeId,
       BusinessUnit? businessUnit,
       DepotType? depotType});
 
@@ -69,6 +73,8 @@ class _$DepotCopyWithImpl<$Res, $Val extends Depot>
     Object? location = null,
     Object? latitude = freezed,
     Object? longitude = freezed,
+    Object? businessUnitId = freezed,
+    Object? depotTypeId = freezed,
     Object? businessUnit = freezed,
     Object? depotType = freezed,
   }) {
@@ -93,6 +99,14 @@ class _$DepotCopyWithImpl<$Res, $Val extends Depot>
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double?,
+      businessUnitId: freezed == businessUnitId
+          ? _value.businessUnitId
+          : businessUnitId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      depotTypeId: freezed == depotTypeId
+          ? _value.depotTypeId
+          : depotTypeId // ignore: cast_nullable_to_non_nullable
+              as int?,
       businessUnit: freezed == businessUnit
           ? _value.businessUnit
           : businessUnit // ignore: cast_nullable_to_non_nullable
@@ -142,6 +156,8 @@ abstract class _$$DepotImplCopyWith<$Res> implements $DepotCopyWith<$Res> {
       String location,
       double? latitude,
       double? longitude,
+      int? businessUnitId,
+      int? depotTypeId,
       BusinessUnit? businessUnit,
       DepotType? depotType});
 
@@ -167,6 +183,8 @@ class __$$DepotImplCopyWithImpl<$Res>
     Object? location = null,
     Object? latitude = freezed,
     Object? longitude = freezed,
+    Object? businessUnitId = freezed,
+    Object? depotTypeId = freezed,
     Object? businessUnit = freezed,
     Object? depotType = freezed,
   }) {
@@ -191,6 +209,14 @@ class __$$DepotImplCopyWithImpl<$Res>
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double?,
+      businessUnitId: freezed == businessUnitId
+          ? _value.businessUnitId
+          : businessUnitId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      depotTypeId: freezed == depotTypeId
+          ? _value.depotTypeId
+          : depotTypeId // ignore: cast_nullable_to_non_nullable
+              as int?,
       businessUnit: freezed == businessUnit
           ? _value.businessUnit
           : businessUnit // ignore: cast_nullable_to_non_nullable
@@ -205,15 +231,18 @@ class __$$DepotImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$DepotImpl implements _Depot {
+class _$DepotImpl extends _Depot {
   const _$DepotImpl(
       {required this.id,
       required this.name,
       required this.location,
       this.latitude,
       this.longitude,
+      this.businessUnitId,
+      this.depotTypeId,
       this.businessUnit,
-      this.depotType});
+      this.depotType})
+      : super._();
 
   factory _$DepotImpl.fromJson(Map<String, dynamic> json) =>
       _$$DepotImplFromJson(json);
@@ -229,13 +258,17 @@ class _$DepotImpl implements _Depot {
   @override
   final double? longitude;
   @override
+  final int? businessUnitId;
+  @override
+  final int? depotTypeId;
+  @override
   final BusinessUnit? businessUnit;
   @override
   final DepotType? depotType;
 
   @override
   String toString() {
-    return 'Depot(id: $id, name: $name, location: $location, latitude: $latitude, longitude: $longitude, businessUnit: $businessUnit, depotType: $depotType)';
+    return 'Depot(id: $id, name: $name, location: $location, latitude: $latitude, longitude: $longitude, businessUnitId: $businessUnitId, depotTypeId: $depotTypeId, businessUnit: $businessUnit, depotType: $depotType)';
   }
 
   @override
@@ -251,6 +284,10 @@ class _$DepotImpl implements _Depot {
                 other.latitude == latitude) &&
             (identical(other.longitude, longitude) ||
                 other.longitude == longitude) &&
+            (identical(other.businessUnitId, businessUnitId) ||
+                other.businessUnitId == businessUnitId) &&
+            (identical(other.depotTypeId, depotTypeId) ||
+                other.depotTypeId == depotTypeId) &&
             (identical(other.businessUnit, businessUnit) ||
                 other.businessUnit == businessUnit) &&
             (identical(other.depotType, depotType) ||
@@ -260,7 +297,7 @@ class _$DepotImpl implements _Depot {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, location, latitude,
-      longitude, businessUnit, depotType);
+      longitude, businessUnitId, depotTypeId, businessUnit, depotType);
 
   @JsonKey(ignore: true)
   @override
@@ -276,15 +313,18 @@ class _$DepotImpl implements _Depot {
   }
 }
 
-abstract class _Depot implements Depot {
+abstract class _Depot extends Depot {
   const factory _Depot(
       {required final int id,
       required final String name,
       required final String location,
       final double? latitude,
       final double? longitude,
+      final int? businessUnitId,
+      final int? depotTypeId,
       final BusinessUnit? businessUnit,
       final DepotType? depotType}) = _$DepotImpl;
+  const _Depot._() : super._();
 
   factory _Depot.fromJson(Map<String, dynamic> json) = _$DepotImpl.fromJson;
 
@@ -298,6 +338,10 @@ abstract class _Depot implements Depot {
   double? get latitude;
   @override
   double? get longitude;
+  @override
+  int? get businessUnitId;
+  @override
+  int? get depotTypeId;
   @override
   BusinessUnit? get businessUnit;
   @override

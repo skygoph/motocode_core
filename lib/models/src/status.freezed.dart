@@ -104,8 +104,8 @@ class __$$StatusImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$StatusImpl implements _Status {
-  const _$StatusImpl({required this.id, required this.name});
+class _$StatusImpl extends _Status {
+  const _$StatusImpl({required this.id, required this.name}) : super._();
 
   factory _$StatusImpl.fromJson(Map<String, dynamic> json) =>
       _$$StatusImplFromJson(json);
@@ -147,9 +147,10 @@ class _$StatusImpl implements _Status {
   }
 }
 
-abstract class _Status implements Status {
+abstract class _Status extends Status {
   const factory _Status({required final int? id, required final String name}) =
       _$StatusImpl;
+  const _Status._() : super._();
 
   factory _Status.fromJson(Map<String, dynamic> json) = _$StatusImpl.fromJson;
 

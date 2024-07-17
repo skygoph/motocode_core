@@ -126,12 +126,13 @@ class __$$BranchImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$BranchImpl implements _Branch {
+class _$BranchImpl extends _Branch {
   const _$BranchImpl(
       {required this.name,
       required this.location,
       required this.createdDate,
-      this.id});
+      this.id})
+      : super._();
 
   factory _$BranchImpl.fromJson(Map<String, dynamic> json) =>
       _$$BranchImplFromJson(json);
@@ -181,12 +182,13 @@ class _$BranchImpl implements _Branch {
   }
 }
 
-abstract class _Branch implements Branch {
+abstract class _Branch extends Branch {
   const factory _Branch(
       {required final String name,
       required final String location,
       required final DateTime? createdDate,
       final int? id}) = _$BranchImpl;
+  const _Branch._() : super._();
 
   factory _Branch.fromJson(Map<String, dynamic> json) = _$BranchImpl.fromJson;
 
