@@ -1,15 +1,3 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
 
 # Motocode Core
 
@@ -92,14 +80,64 @@ Listing of available models or services.
 
 - ApiClient;
 - AuthenticationService
+  - `POST api/login`
 - BusinessUnitsService
+  - `GET api/business-units`
+  - `GET api/business-units/{id}`
+  - `POST api/business-units`
+  - `PUT api/business-units`
 - DepartmentsService
+  - `GET api/departments`
+  - `GET api/departments/{id}`
+  - `POST api/departments`
+  - `PUT api/departments`
 - DepotTypesService
+  - `GET api/depot-types`
+  - `GET api/depot-types/{id}`
+  - `GET api/depot-types/{id}/depots`
+  - `POST api/depot-types`
+  - `PUT api/depot-types`
 - DepotsService
+  - `GET api/depots`
+  - `GET api/depots/{id}`
+  - `POST api/depots`
+  - `PUT api/depots`
 - EnrollmentsService
+  - `GET api/enrollments`
 - PositionsService
+  - `GET api/positions`
+  - `GET api/positions/{id}`
+  - `POST api/positions`
+  - `PUT api/positions`
 - QrCodesService
+  - `GET api/qr-codes`
+  - `GET api/qr-codes/{id}`
+  - `POST api/qr-codes`
+  - `PUT api/qr-codes`
 - RolesService
+  - `GET api/roles`
+  - `GET api/roles/{id}`
+  - `POST api/roles`
+  - `PUT api/roles`
 - ScannedQrCodesService
+  - `GET api/scanned-qr-codes`
+  - `GET api/scanned-qr-codes/{id}`
+  - `POST api/scanned-qr-codes`
+  - `PUT api/scanned-qr-codes`
 - StatusesService
+  - `GET api/statuses`
+  - `GET api/statuses/{id}`
+  - `GET api/statuses/{id}/scanned-qr-codes`
+  - `POST api/statuses`
+  - `PUT api/statuses`
 - UsersService
+  - `GET api/users`
+  - `GET api/users/{id}`
+  - `GET api/users/{id}/scanned-qr-codes`
+  - `GET api/users/{id}/statuses`
+  - `GET api/users/{id}/depots`
+  - `GET api/users/{id}/business-units`
+  - `GET api/users/{id}/departments`
+  - `GET api/users/{id}/positions`
+  - `POST api/users`
+  - `PUT api/users`
