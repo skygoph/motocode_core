@@ -1,3 +1,13 @@
+# Release Notes
+
+## 0.0.3
+
+* **update:** Add LICENSE
+
+## 0.0.2
+
+* **feat:** Integrate Authentication service
+
 ## 0.0.1
 
-* TODO: Describe initial release.
+* Initial commit.

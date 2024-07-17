@@ -1,6 +1,7 @@
 name: motocode_core
-description: "A new Flutter package project."
+description: "Core package for Skygo Motocode project"
 version: 0.0.3
+repository: https://github.com/skygoph/motocode_core
 
 environment:
   sdk: ">=3.4.3 <4.0.0"
