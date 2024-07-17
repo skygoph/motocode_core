@@ -3,13 +3,13 @@ import 'package:motocode_core/motocode_core.dart';
 
 class EnrollmentsService {
   final ApiClient _apiClient;
-  final FirebaseCrashlytics _crashlytics;
+  final FirebaseCrashlytics? _crashlytics;
 
   EnrollmentsService(this._apiClient, this._crashlytics);
 
   Future<List<ScannedQrCode>> getEnrollments() =>
       _apiClient.getEnrollments().catchError((error) {
-        _crashlytics.recordError(error, StackTrace.current);
+        _crashlytics?.recordError(error, StackTrace.current);
         throw error;
       });
 }

@@ -1,5 +1,10 @@
 # Release Notes
 
+## 0.0.8
+
+* **fix:** Support crashlytics as nullable
+* **fix:** Convert *setupMotocodeLocator*'s params as named arguments
+
 ## 0.0.7
 
 * **fix:** Added missing id in models

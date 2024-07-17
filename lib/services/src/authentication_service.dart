@@ -3,7 +3,7 @@ import 'package:motocode_core/motocode_core.dart';
 
 class AuthenticationService {
   final ApiClient _apiClient;
-  final FirebaseCrashlytics _crashlytics;
+  final FirebaseCrashlytics? _crashlytics;
 
   AuthenticationService(this._apiClient, this._crashlytics);
 
@@ -12,7 +12,7 @@ class AuthenticationService {
         'email': email,
         'password': password,
       }).catchError((error) {
-        _crashlytics.recordError(error, StackTrace.current);
+        _crashlytics?.recordError(error, StackTrace.current);
         throw error;
       });
 }

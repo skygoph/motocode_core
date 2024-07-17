@@ -11,33 +11,24 @@ import 'package:stacked_shared/stacked_shared.dart';
 ///   ...
 ///
 ///   await setupLocator();
-///   await setupCustomLocator('https://localhost:7000',
-///           locator,
-///           FirebaseCrashlytics.instance,
+///   await setupMotocodeLocator(
+///     baseUrl: 'https://localhost:7000',
+///     locator: StackedLocator.instance,
+///     dio: Dio(),
+///     crashlytics: FirebaseCrashlytics.instance,
 ///          );
 ///   ....
 /// }
 ///
 /// ```
-Future<void> setupMotocodeLocator(
-  String baseUrl,
-  StackedLocator locator,
-  FirebaseCrashlytics crashlytics, {
+Future<void> setupMotocodeLocator({
+  required String baseUrl,
+  required StackedLocator locator,
+  required Dio dio,
   String? environment,
   EnvironmentFilter? environmentFilter,
+  FirebaseCrashlytics? crashlytics,
 }) async {
-  final dio = Dio(
-    BaseOptions(
-      connectTimeout: const Duration(seconds: 10),
-      responseType: ResponseType.json,
-    ),
-  )..interceptors.add(
-      LogInterceptor(
-        requestBody: true,
-        responseBody: true,
-      ),
-    );
-
   baseUrl = '$baseUrl/api';
 
   // Register dependencies

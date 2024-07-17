@@ -19,7 +19,7 @@ There are two options to inject the services.
       void main() async {
         ....
         final baseUrl = 'URL_HERE'
-        await setupCustomLocator(baseUrl, );
+        await setupMotocodeLocator(baseUrl, );
         ...
       }
 
@@ -39,10 +39,7 @@ There are two options to inject the services.
           ),
         );
 
-    var baseUrl = 'https://localhost:7000/api';
-    if (true) {
-    baseUrl = ksUrl;
-    }
+    var baseUrl = '<BASE_URL_HERE>/api';
 
     /// IMPORTANT: Register [ApiClient] first
     _locator.registerLazySingleton(() => ApiClient(dio, baseUrl: baseUrl));
