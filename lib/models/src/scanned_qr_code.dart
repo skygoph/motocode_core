@@ -9,8 +9,8 @@ class ScannedQrCode with _$ScannedQrCode {
   const ScannedQrCode._();
 
   const factory ScannedQrCode({
-    required final int id,
-    required final int qrCodeId,
+    required int? id,
+    required int qrCodeId,
     required int depotId,
     required int statusId,
     required String? userId,

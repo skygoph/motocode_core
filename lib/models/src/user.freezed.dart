@@ -39,7 +39,7 @@ mixin _$User {
   BusinessUnit? get businessUnit => throw _privateConstructorUsedError;
   Position? get position => throw _privateConstructorUsedError;
   Status? get status => throw _privateConstructorUsedError;
-  List<String>? get userRoles => throw _privateConstructorUsedError;
+  List<UserRole>? get userRoles => throw _privateConstructorUsedError;
   List<Branch>? get branches => throw _privateConstructorUsedError;
   List<Depot>? get depots => throw _privateConstructorUsedError;
   List<Status>? get statuses => throw _privateConstructorUsedError;
@@ -74,7 +74,7 @@ abstract class $UserCopyWith<$Res> {
       BusinessUnit? businessUnit,
       Position? position,
       Status? status,
-      List<String>? userRoles,
+      List<UserRole>? userRoles,
       List<Branch>? branches,
       List<Depot>? depots,
       List<Status>? statuses});
@@ -202,7 +202,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
       userRoles: freezed == userRoles
           ? _value.userRoles
           : userRoles // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<UserRole>?,
       branches: freezed == branches
           ? _value.branches
           : branches // ignore: cast_nullable_to_non_nullable
@@ -294,7 +294,7 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       BusinessUnit? businessUnit,
       Position? position,
       Status? status,
-      List<String>? userRoles,
+      List<UserRole>? userRoles,
       List<Branch>? branches,
       List<Depot>? depots,
       List<Status>? statuses});
@@ -423,7 +423,7 @@ class __$$UserImplCopyWithImpl<$Res>
       userRoles: freezed == userRoles
           ? _value._userRoles
           : userRoles // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<UserRole>?,
       branches: freezed == branches
           ? _value._branches
           : branches // ignore: cast_nullable_to_non_nullable
@@ -463,7 +463,7 @@ class _$UserImpl extends _User {
       this.businessUnit,
       this.position,
       this.status,
-      final List<String>? userRoles,
+      final List<UserRole>? userRoles,
       final List<Branch>? branches,
       final List<Depot>? depots,
       final List<Status>? statuses})
@@ -514,9 +514,9 @@ class _$UserImpl extends _User {
   final Position? position;
   @override
   final Status? status;
-  final List<String>? _userRoles;
+  final List<UserRole>? _userRoles;
   @override
-  List<String>? get userRoles {
+  List<UserRole>? get userRoles {
     final value = _userRoles;
     if (value == null) return null;
     if (_userRoles is EqualUnmodifiableListView) return _userRoles;
@@ -670,7 +670,7 @@ abstract class _User extends User {
       final BusinessUnit? businessUnit,
       final Position? position,
       final Status? status,
-      final List<String>? userRoles,
+      final List<UserRole>? userRoles,
       final List<Branch>? branches,
       final List<Depot>? depots,
       final List<Status>? statuses}) = _$UserImpl;
@@ -717,7 +717,7 @@ abstract class _User extends User {
   @override
   Status? get status;
   @override
-  List<String>? get userRoles;
+  List<UserRole>? get userRoles;
   @override
   List<Branch>? get branches;
   @override

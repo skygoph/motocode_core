@@ -35,7 +35,7 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
           ? null
           : Status.fromJson(json['status'] as Map<String, dynamic>),
       userRoles: (json['userRoles'] as List<dynamic>?)
-          ?.map((e) => e as String)
+          ?.map((e) => UserRole.fromJson(e as Map<String, dynamic>))
           .toList(),
       branches: (json['branches'] as List<dynamic>?)
           ?.map((e) => Branch.fromJson(e as Map<String, dynamic>))

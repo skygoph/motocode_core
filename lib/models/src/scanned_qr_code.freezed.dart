@@ -20,7 +20,7 @@ ScannedQrCode _$ScannedQrCodeFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ScannedQrCode {
-  int get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   int get qrCodeId => throw _privateConstructorUsedError;
   int get depotId => throw _privateConstructorUsedError;
   int get statusId => throw _privateConstructorUsedError;
@@ -43,7 +43,7 @@ abstract class $ScannedQrCodeCopyWith<$Res> {
       _$ScannedQrCodeCopyWithImpl<$Res, ScannedQrCode>;
   @useResult
   $Res call(
-      {int id,
+      {int? id,
       int qrCodeId,
       int depotId,
       int statusId,
@@ -71,7 +71,7 @@ class _$ScannedQrCodeCopyWithImpl<$Res, $Val extends ScannedQrCode>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? qrCodeId = null,
     Object? depotId = null,
     Object? statusId = null,
@@ -82,10 +82,10 @@ class _$ScannedQrCodeCopyWithImpl<$Res, $Val extends ScannedQrCode>
     Object? status = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       qrCodeId: null == qrCodeId
           ? _value.qrCodeId
           : qrCodeId // ignore: cast_nullable_to_non_nullable
@@ -167,7 +167,7 @@ abstract class _$$ScannedQrCodeImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int id,
+      {int? id,
       int qrCodeId,
       int depotId,
       int statusId,
@@ -196,7 +196,7 @@ class __$$ScannedQrCodeImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? qrCodeId = null,
     Object? depotId = null,
     Object? statusId = null,
@@ -207,10 +207,10 @@ class __$$ScannedQrCodeImplCopyWithImpl<$Res>
     Object? status = freezed,
   }) {
     return _then(_$ScannedQrCodeImpl(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       qrCodeId: null == qrCodeId
           ? _value.qrCodeId
           : qrCodeId // ignore: cast_nullable_to_non_nullable
@@ -266,7 +266,7 @@ class _$ScannedQrCodeImpl extends _ScannedQrCode {
       _$$ScannedQrCodeImplFromJson(json);
 
   @override
-  final int id;
+  final int? id;
   @override
   final int qrCodeId;
   @override
@@ -329,7 +329,7 @@ class _$ScannedQrCodeImpl extends _ScannedQrCode {
 
 abstract class _ScannedQrCode extends ScannedQrCode {
   const factory _ScannedQrCode(
-      {required final int id,
+      {required final int? id,
       required final int qrCodeId,
       required final int depotId,
       required final int statusId,
@@ -344,7 +344,7 @@ abstract class _ScannedQrCode extends ScannedQrCode {
       _$ScannedQrCodeImpl.fromJson;
 
   @override
-  int get id;
+  int? get id;
   @override
   int get qrCodeId;
   @override

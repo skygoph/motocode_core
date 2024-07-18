@@ -69,10 +69,13 @@ class ScannedQrCodesService {
   /// [data] The data to update the scanned qr code with.
   ///
   /// Throws an error if the request fails for any reason.
-  Future<void> updateScannedQrCode(ScannedQrCode data) => _apiClient
-          .updateScannedQrCode(data.id, data.mapToRequest())
-          .catchError((error) {
-        _crashlytics?.recordError(error, StackTrace.current);
-        throw error;
-      });
+  Future<void> updateScannedQrCode(ScannedQrCode data) {
+    assert(data.id != null, 'ScannedQrCode id must not be null');
+    return _apiClient
+        .updateScannedQrCode(data.id!, data.mapToRequest())
+        .catchError((error) {
+      _crashlytics?.recordError(error, StackTrace.current);
+      throw error;
+    });
+  }
 }

@@ -1,11 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:motocode_core/enums/enums.dart';
-import 'package:motocode_core/models/src/branch.dart';
-import 'package:motocode_core/models/src/business_unit.dart';
-import 'package:motocode_core/models/src/department.dart';
-import 'package:motocode_core/models/src/depot.dart';
-import 'package:motocode_core/models/src/position.dart';
-import 'package:motocode_core/models/src/status.dart';
+import 'package:motocode_core/models/models.dart';
 
 part 'user.freezed.dart';
 part 'user.g.dart';
@@ -34,7 +29,7 @@ class User with _$User {
     BusinessUnit? businessUnit,
     Position? position,
     Status? status,
-    List<String>? userRoles,
+    List<UserRole>? userRoles,
     List<Branch>? branches,
     List<Depot>? depots,
     List<Status>? statuses,

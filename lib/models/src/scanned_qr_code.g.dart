@@ -8,7 +8,7 @@ part of 'scanned_qr_code.dart';
 
 _$ScannedQrCodeImpl _$$ScannedQrCodeImplFromJson(Map<String, dynamic> json) =>
     _$ScannedQrCodeImpl(
-      id: (json['id'] as num).toInt(),
+      id: (json['id'] as num?)?.toInt(),
       qrCodeId: (json['qrCodeId'] as num).toInt(),
       depotId: (json['depotId'] as num).toInt(),
       statusId: (json['statusId'] as num).toInt(),
