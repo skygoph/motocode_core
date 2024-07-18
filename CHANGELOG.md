@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.1.2
+
+* [update] Supported additional endpoints for qrcodes
+
 ## 0.1.1
 
 * [fix] Change from string to class type in UserRole
