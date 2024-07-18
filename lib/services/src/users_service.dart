@@ -175,4 +175,21 @@ class UsersService {
         _crashlytics?.recordError(error, StackTrace.current);
         throw error;
       });
+
+  /// Get all the list of [User] from the [User]
+  ///
+  /// This function sends a request to the API client to get all [User].
+  /// If the request is successful, it returns a list of [User].
+  /// In case of an error, the error is recorded in Crashlytics and the error is rethrown.
+  ///
+  /// [creatorId] The id of the creator to get the [User] from.
+  ///
+  /// Returns a [Future<List<User>] containing a list of [User].
+  ///
+  /// Throws an error if the request fails for any reason.
+  Future<List<User>> getUsersWithCreator(String creatorId) =>
+      _apiClient.getUsersWithCreator(creatorId).catchError((error) {
+        _crashlytics?.recordError(error, StackTrace.current);
+        throw error;
+      });
 }

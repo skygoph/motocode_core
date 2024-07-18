@@ -22,6 +22,7 @@ analyzer:
     # - "**_test.dart"
     - "**_helpers.dart"
     - "**.md"
+    - "**/api_client.dart"
 
 linter:
   rules:

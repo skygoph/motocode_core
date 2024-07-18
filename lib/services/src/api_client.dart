@@ -22,9 +22,7 @@ abstract class ApiClient {
   Future<void> createBusinessUnit(@Body() Map<String, dynamic> data);
   @PUT('/business-units/{id}')
   Future<void> updateBusinessUnit(
-    @Path('id') int businessUnitId,
-    @Body() Map<String, dynamic> data,
-  );
+      @Path('id') int businessUnitId, @Body() Map<String, dynamic> data);
 
   /// ********** Departments API ********** ///
   @GET('/departments')
@@ -35,9 +33,7 @@ abstract class ApiClient {
   Future<void> createDepartment(@Body() Map<String, dynamic> data);
   @PUT('/departments/{id}')
   Future<void> updateDepartment(
-    @Path('id') int departmentId,
-    @Body() Map<String, dynamic> data,
-  );
+      @Path('id') int departmentId, @Body() Map<String, dynamic> data);
 
   /// ********** Depots API ********** ///
   @GET('/depots')
@@ -48,9 +44,7 @@ abstract class ApiClient {
   Future<void> createDepot(@Body() Map<String, dynamic> data);
   @PUT('/depots/{id}')
   Future<void> updateDepot(
-    @Path('id') int depotId,
-    @Body() Map<String, dynamic> data,
-  );
+      @Path('id') int depotId, @Body() Map<String, dynamic> data);
 
   /// ********** DepotTypes API ********** ///
   @GET('/depot-types')
@@ -61,9 +55,7 @@ abstract class ApiClient {
   Future<void> createDepotType(@Body() Map<String, dynamic> data);
   @PUT('/depot-types/{id}')
   Future<void> updateDepotType(
-    @Path('id') int depotTypeId,
-    @Body() Map<String, dynamic> data,
-  );
+      @Path('id') int depotTypeId, @Body() Map<String, dynamic> data);
   @GET('/depot-types/{id}/depots')
   Future<List<Depot>> getDepotsWithDepotType(@Path('id') int depotTypeId);
 
@@ -80,9 +72,7 @@ abstract class ApiClient {
   Future<void> createPosition(@Body() Map<String, dynamic> data);
   @PUT('/positions/{id}')
   Future<void> updatePosition(
-    @Path('id') int positionId,
-    @Body() Map<String, dynamic> data,
-  );
+      @Path('id') int positionId, @Body() Map<String, dynamic> data);
 
   /// ********** QrCodes API ********** ///
   @GET('/qr-codes')
@@ -93,9 +83,10 @@ abstract class ApiClient {
   Future<void> createQrCode(@Body() Map<String, dynamic> data);
   @PUT('/qr-codes/{id}')
   Future<void> updateQrCode(
-    @Path('id') int qrCodeId,
-    @Body() Map<String, dynamic> data,
-  );
+      @Path('id') int qrCodeId, @Body() Map<String, dynamic> data);
+  @GET('/qr-codes/{id}/scanned-qr-codes')
+  Future<List<ScannedQrCode>> getScannedQrCodesWithQrCode(
+      @Path('id') int qrCodeId);
 
   /// ********** Roles API ********** ///
   @GET('/roles')
@@ -106,9 +97,7 @@ abstract class ApiClient {
   Future<void> createRole(@Body() Map<String, dynamic> data);
   @PUT('/roles/{id}')
   Future<void> updateRole(
-    @Path('id') int roleId,
-    @Body() Map<String, dynamic> data,
-  );
+      @Path('id') int roleId, @Body() Map<String, dynamic> data);
 
   /// ********** ScannedQrCodes API ********** ///
   @GET('/scanned-qr-codes')
@@ -117,11 +106,6 @@ abstract class ApiClient {
   Future<ScannedQrCode> getScannedQrCode(@Path('id') int scannedQrCodeId);
   @POST('/scanned-qr-codes')
   Future<void> createScannedQrCode(@Body() Map<String, dynamic> data);
-  @PUT('/scanned-qr-codes/{id}')
-  Future<void> updateScannedQrCode(
-    @Path('id') int scannedQrCodeId,
-    @Body() Map<String, dynamic> data,
-  );
 
   /// ************ Status API ******************** ///
   @GET('/statuses')
@@ -132,13 +116,12 @@ abstract class ApiClient {
   Future<void> createStatus(@Body() Map<String, dynamic> data);
   @PUT('/statuses/{id}')
   Future<void> updateStatus(
-    @Path('id') int statusId,
-    @Body() Map<String, dynamic> data,
-  );
+      @Path('id') int statusId, @Body() Map<String, dynamic> data);
   @GET('/statuses/{id}/scanned-qr-codes')
   Future<List<ScannedQrCode>> getScannedQrCodesWithStatus(
-    @Path('id') int statusId,
-  );
+      @Path('id') int statusId);
+  @GET('/statuses/{id}/qr-codes')
+  Future<List<QrCode>> getQrCodesWithStatus(@Path('id') int statusId);
 
   /// ************ Users API ******************** ///
   @GET('/users')
@@ -149,25 +132,23 @@ abstract class ApiClient {
   Future<void> createUser(@Body() Map<String, dynamic> data);
   @PUT('/users/{id}')
   Future<User> updateUser(
-    @Path('id') String id,
-    @Body() Map<String, dynamic> data,
-  );
+      @Path('id') String id, @Body() Map<String, dynamic> data);
   @GET('/users/{id}/scanned-qr-codes')
   Future<List<ScannedQrCode>> getScannedQrCodesWithUser(
-    @Path('id') String userId,
-  );
+      @Path('id') String userId);
   @GET('/users/{id}/statuses')
   Future<List<Status>> getStatusesWithUser(@Path('id') String userId);
   @GET('/users/{id}/depots')
   Future<List<Depot>> getDepotsWithUser(@Path('id') String userId);
   @GET('/users/{id}/business-units')
   Future<List<BusinessUnit>> getBusinessUnitsWithUser(
-    @Path('id') String userId,
-  );
+      @Path('id') String userId);
   @GET('/users/{id}/departments')
   Future<List<Department>> getDepartmentsWithUser(@Path('id') String userId);
   @GET('/users/{id}/positions')
   Future<List<Position>> getPositionsWithUser(@Path('id') String userId);
+  @GET('/users/{creatorId}/users')
+  Future<List<User>> getUsersWithCreator(@Path('creatorId') String creatorId);
 }
 
 // **************************************************************************

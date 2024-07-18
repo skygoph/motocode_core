@@ -59,23 +59,4 @@ class ScannedQrCodesService {
         _crashlytics?.recordError(error, StackTrace.current);
         throw error;
       });
-
-  /// Update a scanned qr code
-  ///
-  /// This function sends a request to the API client to update a scanned qr code.
-  /// If the request is successful, it returns void.
-  /// In case of an error, the error is recorded in Crashlytics and the error is rethrown.
-  ///
-  /// [data] The data to update the scanned qr code with.
-  ///
-  /// Throws an error if the request fails for any reason.
-  Future<void> updateScannedQrCode(ScannedQrCode data) {
-    assert(data.id != null, 'ScannedQrCode id must not be null');
-    return _apiClient
-        .updateScannedQrCode(data.id!, data.mapToRequest())
-        .catchError((error) {
-      _crashlytics?.recordError(error, StackTrace.current);
-      throw error;
-    });
-  }
 }

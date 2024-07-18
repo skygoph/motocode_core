@@ -76,4 +76,21 @@ class QrCodesService {
       throw error;
     });
   }
+
+  /// Get all scanned qr codes with a specific qr code
+  ///
+  /// This function sends a request to the API client to get all scanned qr codes with a specific qr code.
+  /// If the request is successful, it returns a list of [ScannedQrCode].
+  /// In case of an error, the error is recorded in Crashlytics and the error is rethrown.
+  ///
+  /// [qrCodeId] The id of the qr code to get scanned qr codes with.
+  ///
+  /// Returns a [Future<List<ScannedQrCode>] containing a list of scanned qr codes.
+  ///
+  /// Throws an error if the request fails for any reason.
+  Future<List<ScannedQrCode>> getScannedQrCodesWithQrCode(int qrCodeId) =>
+      _apiClient.getScannedQrCodesWithQrCode(qrCodeId).catchError((error) {
+        _crashlytics?.recordError(error, StackTrace.current);
+        throw error;
+      });
 }

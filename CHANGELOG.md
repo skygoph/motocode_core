@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.1.1
+
+* [fix] Change from string to class type in UserRole
+
 ## 0.1.0
 
 * [update] Add documentation to each methods

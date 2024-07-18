@@ -767,6 +767,36 @@ class _ApiClient implements ApiClient {
   }
 
   @override
+  Future<List<ScannedQrCode>> getScannedQrCodesWithQrCode(int qrCodeId) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<List<dynamic>>(_setStreamType<List<ScannedQrCode>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/qr-codes/${qrCodeId}/scanned-qr-codes',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    var _value = await compute(
+      deserializeScannedQrCodeList,
+      _result.data!.cast<Map<String, dynamic>>(),
+    );
+    return _value;
+  }
+
+  @override
   Future<List<UserRole>> getRoles() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -959,34 +989,6 @@ class _ApiClient implements ApiClient {
   }
 
   @override
-  Future<void> updateScannedQrCode(
-    int scannedQrCodeId,
-    Map<String, dynamic> data,
-  ) async {
-    final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(data);
-    await _dio.fetch<void>(_setStreamType<void>(Options(
-      method: 'PUT',
-      headers: _headers,
-      extra: _extra,
-    )
-        .compose(
-          _dio.options,
-          '/scanned-qr-codes/${scannedQrCodeId}',
-          queryParameters: queryParameters,
-          data: _data,
-        )
-        .copyWith(
-            baseUrl: _combineBaseUrls(
-          _dio.options.baseUrl,
-          baseUrl,
-        ))));
-  }
-
-  @override
   Future<List<Status>> getStatuses() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -1121,6 +1123,36 @@ class _ApiClient implements ApiClient {
             ))));
     var _value = await compute(
       deserializeScannedQrCodeList,
+      _result.data!.cast<Map<String, dynamic>>(),
+    );
+    return _value;
+  }
+
+  @override
+  Future<List<QrCode>> getQrCodesWithStatus(int statusId) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _result =
+        await _dio.fetch<List<dynamic>>(_setStreamType<List<QrCode>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/statuses/${statusId}/qr-codes',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    var _value = await compute(
+      deserializeQrCodeList,
       _result.data!.cast<Map<String, dynamic>>(),
     );
     return _value;
@@ -1414,6 +1446,36 @@ class _ApiClient implements ApiClient {
             ))));
     var _value = await compute(
       deserializePositionList,
+      _result.data!.cast<Map<String, dynamic>>(),
+    );
+    return _value;
+  }
+
+  @override
+  Future<List<User>> getUsersWithCreator(String creatorId) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _result =
+        await _dio.fetch<List<dynamic>>(_setStreamType<List<User>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/users/${creatorId}/users',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    var _value = await compute(
+      deserializeUserList,
       _result.data!.cast<Map<String, dynamic>>(),
     );
     return _value;

@@ -108,9 +108,10 @@ Listing of available models or services.
   - `PUT api/positions`
 - QrCodesService
   - `GET api/qr-codes`
-  - `GET api/qr-codes/{id}`
   - `POST api/qr-codes`
-  - `PUT api/qr-codes`
+  - `GET api/qr-codes/{id}`
+  - `PUT api/qr-codes/{id}`
+  - `GET api/qr-codes/{id}/scanned-qr-codes`
 - RolesService
   - `GET api/roles`
   - `GET api/roles/{id}`
@@ -118,23 +119,24 @@ Listing of available models or services.
   - `PUT api/roles`
 - ScannedQrCodesService
   - `GET api/scanned-qr-codes`
-  - `GET api/scanned-qr-codes/{id}`
   - `POST api/scanned-qr-codes`
-  - `PUT api/scanned-qr-codes`
+  - `GET api/scanned-qr-codes/{id}`
 - StatusesService
   - `GET api/statuses`
-  - `GET api/statuses/{id}`
-  - `GET api/statuses/{id}/scanned-qr-codes`
   - `POST api/statuses`
-  - `PUT api/statuses`
+  - `GET api/statuses/{id}`
+  - `PUT api/statuses/{id}`
+  - `GET api/statuses/{id}/scanned-qr-codes`
+  - `GET api/statuses/{id}/qr-codes`
 - UsersService
-  - `GET api/users`
-  - `GET api/users/{id}`
-  - `GET api/users/{id}/scanned-qr-codes`
-  - `GET api/users/{id}/statuses`
-  - `GET api/users/{id}/depots`
-  - `GET api/users/{id}/business-units`
-  - `GET api/users/{id}/departments`
-  - `GET api/users/{id}/positions`
-  - `POST api/users`
-  - `PUT api/users`
+  - `GET api/users` - Get all the users
+  - `POST api/users` - Create a user
+  - `GET api/users/{id}` - Get specific user
+  - `PUT api/users/{id}` - Update a user
+  - `GET api/users/{id}/scanned-qr-codes` - Get all the scanned qr codes by user
+  - `GET api/users/{id}/statuses` - Get a list of status of user
+  - `GET api/users/{id}/depots` - Get a list of depots of user
+  - `GET api/users/{id}/business-units` - Get a list of business unit of user
+  - `GET api/users/{id}/departments` - Get a list of departments of the user
+  - `GET api/users/{id}/positions`  - Get a list of positions of the user
+  - `GET api/users/{creatorId}/users` - Get all the users created by a creator

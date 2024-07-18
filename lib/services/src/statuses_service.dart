@@ -94,4 +94,21 @@ class StatusesService {
         _crashlytics?.recordError(error, StackTrace.current);
         throw error;
       });
+
+  /// Get all qr codes with a specific status
+  ///
+  /// This function sends a request to the API client to get all qr codes with a specific status.
+  /// If the request is successful, it returns a list of [QrCode].
+  /// In case of an error, the error is recorded in Crashlytics and the error is rethrown.
+  ///
+  /// [statusId] The id of the status to get qr codes with.
+  ///
+  /// Returns a [Future<List<QrCode>] containing a list of qr codes.
+  ///
+  /// Throws an error if the request fails for any reason.
+  Future<List<QrCode>> getQrCodesWithStatus(int statusId) =>
+      _apiClient.getQrCodesWithStatus(statusId).catchError((error) {
+        _crashlytics?.recordError(error, StackTrace.current);
+        throw error;
+      });
 }
