@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.1.3
+
+* [fix] Add missing id attribute in *mapToRequest*
+
 ## 0.1.2
 
 * [update] Supported additional endpoints for qrcodes
