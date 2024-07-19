@@ -17,6 +17,7 @@ class BusinessUnit with _$BusinessUnit {
       _$BusinessUnitFromJson(json);
 
   Map<String, dynamic> mapToRequest() => {
+        'id': id,
         'name': name,
       };
 }

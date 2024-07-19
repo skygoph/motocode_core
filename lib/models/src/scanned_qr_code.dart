@@ -24,6 +24,7 @@ class ScannedQrCode with _$ScannedQrCode {
       _$ScannedQrCodeFromJson(json);
 
   Map<String, dynamic> mapToRequest() => {
+        'id': id,
         'controlNumber': qrCode?.controlNumber,
         'chassisNumber': qrCode?.chassisNumber,
         'engineNumber': qrCode?.engineNumber,

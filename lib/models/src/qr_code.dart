@@ -42,6 +42,7 @@ class QrCode with _$QrCode {
   factory QrCode.fromJson(Map<String, dynamic> json) => _$QrCodeFromJson(json);
 
   Map<String, dynamic> mapToRequest() => {
+        'id': id,
         'chassisNumber': chassisNumber,
         'engineNumber': engineNumber,
         'model': model,

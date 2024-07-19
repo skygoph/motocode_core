@@ -17,6 +17,7 @@ class Department with _$Department {
       _$DepartmentFromJson(json);
 
   Map<String, dynamic> mapToRequest() => {
+        'id': id,
         'name': name,
       };
 }

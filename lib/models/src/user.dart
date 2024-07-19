@@ -47,6 +47,7 @@ class User with _$User {
       statusId == UserScanningStateEnum.IN_HO_WAREHOUSE.id;
 
   Map<String, dynamic> mapToRequest() => {
+        'id': id,
         'firstName': firstName,
         'lastName': lastName,
         'email': email,

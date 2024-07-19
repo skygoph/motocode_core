@@ -17,6 +17,7 @@ class Branch with _$Branch {
   factory Branch.fromJson(Map<String, dynamic> json) => _$BranchFromJson(json);
 
   Map<String, dynamic> mapToRequest() => {
+        'id': id,
         'name': name,
         'location': location,
       };

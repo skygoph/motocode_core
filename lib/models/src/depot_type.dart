@@ -17,6 +17,7 @@ class DepotType with _$DepotType {
       _$DepotTypeFromJson(json);
 
   Map<String, dynamic> mapToRequest() => {
+        'id': id,
         'name': name,
         'description': description,
       };

@@ -16,6 +16,7 @@ class UserRole with _$UserRole {
       _$UserRoleFromJson(json);
 
   Map<String, dynamic> mapToRequest() => {
+        'id': id,
         'name': name,
       };
 }

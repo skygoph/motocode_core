@@ -17,6 +17,7 @@ class Position with _$Position {
       _$PositionFromJson(json);
 
   Map<String, dynamic> mapToRequest() => {
+        'id': id,
         'name': name,
       };
 }

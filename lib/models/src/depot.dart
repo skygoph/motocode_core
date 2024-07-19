@@ -24,6 +24,7 @@ class Depot with _$Depot {
   factory Depot.fromJson(Map<String, dynamic> json) => _$DepotFromJson(json);
 
   Map<String, dynamic> mapToRequest() => {
+        'id': id,
         'name': name,
         'location': location,
         'latitude': latitude,
