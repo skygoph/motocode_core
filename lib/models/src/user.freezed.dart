@@ -35,6 +35,7 @@ mixin _$User {
   double? get longitude => throw _privateConstructorUsedError;
   String? get password => throw _privateConstructorUsedError;
   String? get roleName => throw _privateConstructorUsedError;
+  int? get userStatus => throw _privateConstructorUsedError;
   Department? get department => throw _privateConstructorUsedError;
   BusinessUnit? get businessUnit => throw _privateConstructorUsedError;
   Position? get position => throw _privateConstructorUsedError;
@@ -70,6 +71,7 @@ abstract class $UserCopyWith<$Res> {
       double? longitude,
       String? password,
       String? roleName,
+      int? userStatus,
       Department? department,
       BusinessUnit? businessUnit,
       Position? position,
@@ -113,6 +115,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? longitude = freezed,
     Object? password = freezed,
     Object? roleName = freezed,
+    Object? userStatus = freezed,
     Object? department = freezed,
     Object? businessUnit = freezed,
     Object? position = freezed,
@@ -183,6 +186,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.roleName
           : roleName // ignore: cast_nullable_to_non_nullable
               as String?,
+      userStatus: freezed == userStatus
+          ? _value.userStatus
+          : userStatus // ignore: cast_nullable_to_non_nullable
+              as int?,
       department: freezed == department
           ? _value.department
           : department // ignore: cast_nullable_to_non_nullable
@@ -290,6 +297,7 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       double? longitude,
       String? password,
       String? roleName,
+      int? userStatus,
       Department? department,
       BusinessUnit? businessUnit,
       Position? position,
@@ -334,6 +342,7 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? longitude = freezed,
     Object? password = freezed,
     Object? roleName = freezed,
+    Object? userStatus = freezed,
     Object? department = freezed,
     Object? businessUnit = freezed,
     Object? position = freezed,
@@ -404,6 +413,10 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.roleName
           : roleName // ignore: cast_nullable_to_non_nullable
               as String?,
+      userStatus: freezed == userStatus
+          ? _value.userStatus
+          : userStatus // ignore: cast_nullable_to_non_nullable
+              as int?,
       department: freezed == department
           ? _value.department
           : department // ignore: cast_nullable_to_non_nullable
@@ -459,6 +472,7 @@ class _$UserImpl extends _User {
       required this.longitude,
       required this.password,
       this.roleName,
+      this.userStatus,
       this.department,
       this.businessUnit,
       this.position,
@@ -506,6 +520,8 @@ class _$UserImpl extends _User {
   final String? password;
   @override
   final String? roleName;
+  @override
+  final int? userStatus;
   @override
   final Department? department;
   @override
@@ -556,7 +572,7 @@ class _$UserImpl extends _User {
 
   @override
   String toString() {
-    return 'User(id: $id, firstName: $firstName, lastName: $lastName, email: $email, statusId: $statusId, departmentId: $departmentId, businessUnitId: $businessUnitId, positionId: $positionId, creatorId: $creatorId, createdDate: $createdDate, userRoleId: $userRoleId, latitude: $latitude, longitude: $longitude, password: $password, roleName: $roleName, department: $department, businessUnit: $businessUnit, position: $position, status: $status, userRoles: $userRoles, branches: $branches, depots: $depots, statuses: $statuses)';
+    return 'User(id: $id, firstName: $firstName, lastName: $lastName, email: $email, statusId: $statusId, departmentId: $departmentId, businessUnitId: $businessUnitId, positionId: $positionId, creatorId: $creatorId, createdDate: $createdDate, userRoleId: $userRoleId, latitude: $latitude, longitude: $longitude, password: $password, roleName: $roleName, userStatus: $userStatus, department: $department, businessUnit: $businessUnit, position: $position, status: $status, userRoles: $userRoles, branches: $branches, depots: $depots, statuses: $statuses)';
   }
 
   @override
@@ -592,6 +608,8 @@ class _$UserImpl extends _User {
                 other.password == password) &&
             (identical(other.roleName, roleName) ||
                 other.roleName == roleName) &&
+            (identical(other.userStatus, userStatus) ||
+                other.userStatus == userStatus) &&
             (identical(other.department, department) ||
                 other.department == department) &&
             (identical(other.businessUnit, businessUnit) ||
@@ -625,6 +643,7 @@ class _$UserImpl extends _User {
         longitude,
         password,
         roleName,
+        userStatus,
         department,
         businessUnit,
         position,
@@ -666,6 +685,7 @@ abstract class _User extends User {
       required final double? longitude,
       required final String? password,
       final String? roleName,
+      final int? userStatus,
       final Department? department,
       final BusinessUnit? businessUnit,
       final Position? position,
@@ -708,6 +728,8 @@ abstract class _User extends User {
   String? get password;
   @override
   String? get roleName;
+  @override
+  int? get userStatus;
   @override
   Department? get department;
   @override

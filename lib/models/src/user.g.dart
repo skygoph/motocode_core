@@ -22,6 +22,7 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       longitude: (json['longitude'] as num?)?.toDouble(),
       password: json['password'] as String?,
       roleName: json['roleName'] as String?,
+      userStatus: (json['userStatus'] as num?)?.toInt(),
       department: json['department'] == null
           ? null
           : Department.fromJson(json['department'] as Map<String, dynamic>),
@@ -65,6 +66,7 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
       'longitude': instance.longitude,
       'password': instance.password,
       'roleName': instance.roleName,
+      'userStatus': instance.userStatus,
       'department': instance.department,
       'businessUnit': instance.businessUnit,
       'position': instance.position,
