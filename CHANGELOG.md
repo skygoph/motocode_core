@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.1.4
+
+* [fix] Update return request for model User
+
 ## 0.1.3
 
 * [fix] Add missing id attribute in *mapToRequest*
