@@ -16,7 +16,7 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       businessUnitId: (json['businessUnitId'] as num?)?.toInt(),
       positionId: (json['positionId'] as num?)?.toInt(),
       creatorId: json['creatorId'] as String?,
-      createdDate: json['createdDate'] as String,
+      createdDate: json['createdDate'] as String?,
       userRoleId: (json['userRoleId'] as num?)?.toInt(),
       latitude: (json['latitude'] as num?)?.toDouble(),
       longitude: (json['longitude'] as num?)?.toDouble(),

@@ -25,10 +25,12 @@ mixin _$ScannedQrCode {
   int get depotId => throw _privateConstructorUsedError;
   int get statusId => throw _privateConstructorUsedError;
   String? get userId => throw _privateConstructorUsedError;
-  String? get createdDate => throw _privateConstructorUsedError;
+  DateTime get createdDate => throw _privateConstructorUsedError;
+  DateTime? get endedDate => throw _privateConstructorUsedError;
+  Depot? get depot => throw _privateConstructorUsedError;
   QrCode? get qrCode => throw _privateConstructorUsedError;
-  User? get user => throw _privateConstructorUsedError;
   Status? get status => throw _privateConstructorUsedError;
+  User? get user => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -48,14 +50,17 @@ abstract class $ScannedQrCodeCopyWith<$Res> {
       int depotId,
       int statusId,
       String? userId,
-      String? createdDate,
+      DateTime createdDate,
+      DateTime? endedDate,
+      Depot? depot,
       QrCode? qrCode,
-      User? user,
-      Status? status});
+      Status? status,
+      User? user});
 
+  $DepotCopyWith<$Res>? get depot;
   $QrCodeCopyWith<$Res>? get qrCode;
-  $UserCopyWith<$Res>? get user;
   $StatusCopyWith<$Res>? get status;
+  $UserCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -76,10 +81,12 @@ class _$ScannedQrCodeCopyWithImpl<$Res, $Val extends ScannedQrCode>
     Object? depotId = null,
     Object? statusId = null,
     Object? userId = freezed,
-    Object? createdDate = freezed,
+    Object? createdDate = null,
+    Object? endedDate = freezed,
+    Object? depot = freezed,
     Object? qrCode = freezed,
-    Object? user = freezed,
     Object? status = freezed,
+    Object? user = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -102,23 +109,43 @@ class _$ScannedQrCodeCopyWithImpl<$Res, $Val extends ScannedQrCode>
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdDate: freezed == createdDate
+      createdDate: null == createdDate
           ? _value.createdDate
           : createdDate // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as DateTime,
+      endedDate: freezed == endedDate
+          ? _value.endedDate
+          : endedDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      depot: freezed == depot
+          ? _value.depot
+          : depot // ignore: cast_nullable_to_non_nullable
+              as Depot?,
       qrCode: freezed == qrCode
           ? _value.qrCode
           : qrCode // ignore: cast_nullable_to_non_nullable
               as QrCode?,
-      user: freezed == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User?,
       status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Status?,
+      user: freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DepotCopyWith<$Res>? get depot {
+    if (_value.depot == null) {
+      return null;
+    }
+
+    return $DepotCopyWith<$Res>(_value.depot!, (value) {
+      return _then(_value.copyWith(depot: value) as $Val);
+    });
   }
 
   @override
@@ -135,18 +162,6 @@ class _$ScannedQrCodeCopyWithImpl<$Res, $Val extends ScannedQrCode>
 
   @override
   @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res>? get user {
-    if (_value.user == null) {
-      return null;
-    }
-
-    return $UserCopyWith<$Res>(_value.user!, (value) {
-      return _then(_value.copyWith(user: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $StatusCopyWith<$Res>? get status {
     if (_value.status == null) {
       return null;
@@ -154,6 +169,18 @@ class _$ScannedQrCodeCopyWithImpl<$Res, $Val extends ScannedQrCode>
 
     return $StatusCopyWith<$Res>(_value.status!, (value) {
       return _then(_value.copyWith(status: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res>? get user {
+    if (_value.user == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_value.user!, (value) {
+      return _then(_value.copyWith(user: value) as $Val);
     });
   }
 }
@@ -172,17 +199,21 @@ abstract class _$$ScannedQrCodeImplCopyWith<$Res>
       int depotId,
       int statusId,
       String? userId,
-      String? createdDate,
+      DateTime createdDate,
+      DateTime? endedDate,
+      Depot? depot,
       QrCode? qrCode,
-      User? user,
-      Status? status});
+      Status? status,
+      User? user});
 
+  @override
+  $DepotCopyWith<$Res>? get depot;
   @override
   $QrCodeCopyWith<$Res>? get qrCode;
   @override
-  $UserCopyWith<$Res>? get user;
-  @override
   $StatusCopyWith<$Res>? get status;
+  @override
+  $UserCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -201,10 +232,12 @@ class __$$ScannedQrCodeImplCopyWithImpl<$Res>
     Object? depotId = null,
     Object? statusId = null,
     Object? userId = freezed,
-    Object? createdDate = freezed,
+    Object? createdDate = null,
+    Object? endedDate = freezed,
+    Object? depot = freezed,
     Object? qrCode = freezed,
-    Object? user = freezed,
     Object? status = freezed,
+    Object? user = freezed,
   }) {
     return _then(_$ScannedQrCodeImpl(
       id: freezed == id
@@ -227,22 +260,30 @@ class __$$ScannedQrCodeImplCopyWithImpl<$Res>
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdDate: freezed == createdDate
+      createdDate: null == createdDate
           ? _value.createdDate
           : createdDate // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as DateTime,
+      endedDate: freezed == endedDate
+          ? _value.endedDate
+          : endedDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      depot: freezed == depot
+          ? _value.depot
+          : depot // ignore: cast_nullable_to_non_nullable
+              as Depot?,
       qrCode: freezed == qrCode
           ? _value.qrCode
           : qrCode // ignore: cast_nullable_to_non_nullable
               as QrCode?,
-      user: freezed == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User?,
       status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Status?,
+      user: freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User?,
     ));
   }
 }
@@ -257,9 +298,11 @@ class _$ScannedQrCodeImpl extends _ScannedQrCode {
       required this.statusId,
       required this.userId,
       required this.createdDate,
+      required this.endedDate,
+      required this.depot,
       required this.qrCode,
-      required this.user,
-      required this.status})
+      required this.status,
+      required this.user})
       : super._();
 
   factory _$ScannedQrCodeImpl.fromJson(Map<String, dynamic> json) =>
@@ -276,17 +319,21 @@ class _$ScannedQrCodeImpl extends _ScannedQrCode {
   @override
   final String? userId;
   @override
-  final String? createdDate;
+  final DateTime createdDate;
+  @override
+  final DateTime? endedDate;
+  @override
+  final Depot? depot;
   @override
   final QrCode? qrCode;
   @override
-  final User? user;
-  @override
   final Status? status;
+  @override
+  final User? user;
 
   @override
   String toString() {
-    return 'ScannedQrCode(id: $id, qrCodeId: $qrCodeId, depotId: $depotId, statusId: $statusId, userId: $userId, createdDate: $createdDate, qrCode: $qrCode, user: $user, status: $status)';
+    return 'ScannedQrCode(id: $id, qrCodeId: $qrCodeId, depotId: $depotId, statusId: $statusId, userId: $userId, createdDate: $createdDate, endedDate: $endedDate, depot: $depot, qrCode: $qrCode, status: $status, user: $user)';
   }
 
   @override
@@ -303,15 +350,18 @@ class _$ScannedQrCodeImpl extends _ScannedQrCode {
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.createdDate, createdDate) ||
                 other.createdDate == createdDate) &&
+            (identical(other.endedDate, endedDate) ||
+                other.endedDate == endedDate) &&
+            (identical(other.depot, depot) || other.depot == depot) &&
             (identical(other.qrCode, qrCode) || other.qrCode == qrCode) &&
-            (identical(other.user, user) || other.user == user) &&
-            (identical(other.status, status) || other.status == status));
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.user, user) || other.user == user));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, qrCodeId, depotId, statusId,
-      userId, createdDate, qrCode, user, status);
+      userId, createdDate, endedDate, depot, qrCode, status, user);
 
   @JsonKey(ignore: true)
   @override
@@ -334,10 +384,12 @@ abstract class _ScannedQrCode extends ScannedQrCode {
       required final int depotId,
       required final int statusId,
       required final String? userId,
-      required final String? createdDate,
+      required final DateTime createdDate,
+      required final DateTime? endedDate,
+      required final Depot? depot,
       required final QrCode? qrCode,
-      required final User? user,
-      required final Status? status}) = _$ScannedQrCodeImpl;
+      required final Status? status,
+      required final User? user}) = _$ScannedQrCodeImpl;
   const _ScannedQrCode._() : super._();
 
   factory _ScannedQrCode.fromJson(Map<String, dynamic> json) =
@@ -354,13 +406,17 @@ abstract class _ScannedQrCode extends ScannedQrCode {
   @override
   String? get userId;
   @override
-  String? get createdDate;
+  DateTime get createdDate;
+  @override
+  DateTime? get endedDate;
+  @override
+  Depot? get depot;
   @override
   QrCode? get qrCode;
   @override
-  User? get user;
-  @override
   Status? get status;
+  @override
+  User? get user;
   @override
   @JsonKey(ignore: true)
   _$$ScannedQrCodeImplCopyWith<_$ScannedQrCodeImpl> get copyWith =>

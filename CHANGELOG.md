@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.1.5
+
+* [update] Update ScannedQrCode model with new properties and types
+
 ## 0.1.4
 
 * [fix] Update return request for model User

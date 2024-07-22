@@ -29,7 +29,7 @@ mixin _$User {
   int? get businessUnitId => throw _privateConstructorUsedError;
   int? get positionId => throw _privateConstructorUsedError;
   String? get creatorId => throw _privateConstructorUsedError;
-  String get createdDate => throw _privateConstructorUsedError;
+  String? get createdDate => throw _privateConstructorUsedError;
   int? get userRoleId => throw _privateConstructorUsedError;
   double? get latitude => throw _privateConstructorUsedError;
   double? get longitude => throw _privateConstructorUsedError;
@@ -65,7 +65,7 @@ abstract class $UserCopyWith<$Res> {
       int? businessUnitId,
       int? positionId,
       String? creatorId,
-      String createdDate,
+      String? createdDate,
       int? userRoleId,
       double? latitude,
       double? longitude,
@@ -109,7 +109,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? businessUnitId = freezed,
     Object? positionId = freezed,
     Object? creatorId = freezed,
-    Object? createdDate = null,
+    Object? createdDate = freezed,
     Object? userRoleId = freezed,
     Object? latitude = freezed,
     Object? longitude = freezed,
@@ -162,10 +162,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.creatorId
           : creatorId // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdDate: null == createdDate
+      createdDate: freezed == createdDate
           ? _value.createdDate
           : createdDate // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       userRoleId: freezed == userRoleId
           ? _value.userRoleId
           : userRoleId // ignore: cast_nullable_to_non_nullable
@@ -291,7 +291,7 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       int? businessUnitId,
       int? positionId,
       String? creatorId,
-      String createdDate,
+      String? createdDate,
       int? userRoleId,
       double? latitude,
       double? longitude,
@@ -336,7 +336,7 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? businessUnitId = freezed,
     Object? positionId = freezed,
     Object? creatorId = freezed,
-    Object? createdDate = null,
+    Object? createdDate = freezed,
     Object? userRoleId = freezed,
     Object? latitude = freezed,
     Object? longitude = freezed,
@@ -389,10 +389,10 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.creatorId
           : creatorId // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdDate: null == createdDate
+      createdDate: freezed == createdDate
           ? _value.createdDate
           : createdDate // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       userRoleId: freezed == userRoleId
           ? _value.userRoleId
           : userRoleId // ignore: cast_nullable_to_non_nullable
@@ -461,16 +461,16 @@ class _$UserImpl extends _User {
       required this.firstName,
       required this.lastName,
       required this.email,
-      required this.statusId,
-      required this.departmentId,
-      required this.businessUnitId,
-      required this.positionId,
-      required this.creatorId,
-      required this.createdDate,
-      required this.userRoleId,
-      required this.latitude,
-      required this.longitude,
-      required this.password,
+      this.statusId,
+      this.departmentId,
+      this.businessUnitId,
+      this.positionId,
+      this.creatorId,
+      this.createdDate,
+      this.userRoleId,
+      this.latitude,
+      this.longitude,
+      this.password,
       this.roleName,
       this.userStatus,
       this.department,
@@ -509,7 +509,7 @@ class _$UserImpl extends _User {
   @override
   final String? creatorId;
   @override
-  final String createdDate;
+  final String? createdDate;
   @override
   final int? userRoleId;
   @override
@@ -674,16 +674,16 @@ abstract class _User extends User {
       required final String firstName,
       required final String lastName,
       required final String email,
-      required final int? statusId,
-      required final int? departmentId,
-      required final int? businessUnitId,
-      required final int? positionId,
-      required final String? creatorId,
-      required final String createdDate,
-      required final int? userRoleId,
-      required final double? latitude,
-      required final double? longitude,
-      required final String? password,
+      final int? statusId,
+      final int? departmentId,
+      final int? businessUnitId,
+      final int? positionId,
+      final String? creatorId,
+      final String? createdDate,
+      final int? userRoleId,
+      final double? latitude,
+      final double? longitude,
+      final String? password,
       final String? roleName,
       final int? userStatus,
       final Department? department,
@@ -717,7 +717,7 @@ abstract class _User extends User {
   @override
   String? get creatorId;
   @override
-  String get createdDate;
+  String? get createdDate;
   @override
   int? get userRoleId;
   @override

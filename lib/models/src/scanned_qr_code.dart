@@ -14,10 +14,12 @@ class ScannedQrCode with _$ScannedQrCode {
     required int depotId,
     required int statusId,
     required String? userId,
-    required String? createdDate,
+    required DateTime createdDate,
+    required DateTime? endedDate,
+    required Depot? depot,
     required QrCode? qrCode,
-    required User? user,
     required Status? status,
+    required User? user,
   }) = _ScannedQrCode;
 
   factory ScannedQrCode.fromJson(Map<String, dynamic> json) =>
