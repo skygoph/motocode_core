@@ -78,6 +78,7 @@ Listing of available models or services.
 - ApiClient;
 - AuthenticationService
   - `POST api/login`
+  - `POST api/v2/login`
 - BusinessUnitsService
   - `GET api/business-units`
   - `GET api/business-units/{id}`

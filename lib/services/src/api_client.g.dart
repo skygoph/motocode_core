@@ -47,6 +47,35 @@ class _ApiClient implements ApiClient {
   }
 
   @override
+  Future<LoginResponse> loginWithEmailAndPasswordV2(
+      Map<String, dynamic> data) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(data);
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<LoginResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/v2/login',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final _value = await compute(deserializeLoginResponse, _result.data!);
+    return _value;
+  }
+
+  @override
   Future<List<BusinessUnit>> getBusinessUnits() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};

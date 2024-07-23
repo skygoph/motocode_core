@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.1.6
+
+* [update] Add a new login endpoint
+
 ## 0.1.5
 
 * [update] Update ScannedQrCode model with new properties and types

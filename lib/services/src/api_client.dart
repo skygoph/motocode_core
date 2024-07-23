@@ -12,6 +12,9 @@ abstract class ApiClient {
   /// ********** Authentication API ********** ///
   @POST('/login')
   Future<User> loginWithEmailAndPassword(@Body() Map<String, dynamic> data);
+  @POST('/v2/login')
+  Future<LoginResponse> loginWithEmailAndPasswordV2(
+      @Body() Map<String, dynamic> data);
 
   /// ********** Business Units API ********** ///
   @GET('/business-units')
@@ -168,6 +171,10 @@ Depot deserializeDepot(Map<String, dynamic> data) {
 
 DepotType deserializeDepotType(Map<String, dynamic> data) {
   return DepotType.fromJson(data);
+}
+
+LoginResponse deserializeLoginResponse(Map<String, dynamic> data) {
+  return LoginResponse.fromJson(data);
 }
 
 Position deserializePosition(Map<String, dynamic> data) {
