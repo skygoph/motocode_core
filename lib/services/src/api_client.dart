@@ -134,7 +134,7 @@ abstract class ApiClient {
   @POST('/users')
   Future<void> createUser(@Body() Map<String, dynamic> data);
   @PUT('/users/{id}')
-  Future<User> updateUser(
+  Future<void> updateUser(
       @Path('id') String id, @Body() Map<String, dynamic> data);
   @GET('/users/{id}/scanned-qr-codes')
   Future<List<ScannedQrCode>> getScannedQrCodesWithUser(

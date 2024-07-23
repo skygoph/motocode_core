@@ -11,9 +11,9 @@ class User with _$User {
 
   const factory User({
     required final String id,
-    required final String firstName,
-    required final String lastName,
-    required final String email,
+    String? firstName,
+    String? lastName,
+    String? email,
     int? statusId,
     int? departmentId,
     int? businessUnitId,
