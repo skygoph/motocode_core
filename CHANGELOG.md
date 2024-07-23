@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.1.7
+
+* [chore] Update User model with nullable fields
+
 ## 0.1.6
 
 * [update] Add a new login endpoint
