@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.1.9
+
+* Update models and make attributes nullable
+
 ## 0.1.8
 
 * Update ScannedQrCode model with new properties and types
