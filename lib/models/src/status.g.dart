@@ -8,7 +8,7 @@ part of 'status.dart';
 
 _$StatusImpl _$$StatusImplFromJson(Map<String, dynamic> json) => _$StatusImpl(
       id: (json['id'] as num?)?.toInt(),
-      name: json['name'] as String,
+      name: json['name'] as String?,
     );
 
 Map<String, dynamic> _$$StatusImplToJson(_$StatusImpl instance) =>

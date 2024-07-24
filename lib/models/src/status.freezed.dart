@@ -21,7 +21,7 @@ Status _$StatusFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Status {
   int? get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -33,7 +33,7 @@ abstract class $StatusCopyWith<$Res> {
   factory $StatusCopyWith(Status value, $Res Function(Status) then) =
       _$StatusCopyWithImpl<$Res, Status>;
   @useResult
-  $Res call({int? id, String name});
+  $Res call({int? id, String? name});
 }
 
 /// @nodoc
@@ -50,17 +50,17 @@ class _$StatusCopyWithImpl<$Res, $Val extends Status>
   @override
   $Res call({
     Object? id = freezed,
-    Object? name = null,
+    Object? name = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -72,7 +72,7 @@ abstract class _$$StatusImplCopyWith<$Res> implements $StatusCopyWith<$Res> {
       __$$StatusImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? id, String name});
+  $Res call({int? id, String? name});
 }
 
 /// @nodoc
@@ -87,17 +87,17 @@ class __$$StatusImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? name = null,
+    Object? name = freezed,
   }) {
     return _then(_$StatusImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -105,7 +105,7 @@ class __$$StatusImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$StatusImpl extends _Status {
-  const _$StatusImpl({required this.id, required this.name}) : super._();
+  const _$StatusImpl({this.id, this.name}) : super._();
 
   factory _$StatusImpl.fromJson(Map<String, dynamic> json) =>
       _$$StatusImplFromJson(json);
@@ -113,7 +113,7 @@ class _$StatusImpl extends _Status {
   @override
   final int? id;
   @override
-  final String name;
+  final String? name;
 
   @override
   String toString() {
@@ -148,8 +148,7 @@ class _$StatusImpl extends _Status {
 }
 
 abstract class _Status extends Status {
-  const factory _Status({required final int? id, required final String name}) =
-      _$StatusImpl;
+  const factory _Status({final int? id, final String? name}) = _$StatusImpl;
   const _Status._() : super._();
 
   factory _Status.fromJson(Map<String, dynamic> json) = _$StatusImpl.fromJson;
@@ -157,7 +156,7 @@ abstract class _Status extends Status {
   @override
   int? get id;
   @override
-  String get name;
+  String? get name;
   @override
   @JsonKey(ignore: true)
   _$$StatusImplCopyWith<_$StatusImpl> get copyWith =>

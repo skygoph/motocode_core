@@ -20,7 +20,7 @@ User _$UserFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$User {
-  String get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   String? get firstName => throw _privateConstructorUsedError;
   String? get lastName => throw _privateConstructorUsedError;
   String? get email => throw _privateConstructorUsedError;
@@ -29,7 +29,7 @@ mixin _$User {
   int? get businessUnitId => throw _privateConstructorUsedError;
   int? get positionId => throw _privateConstructorUsedError;
   String? get creatorId => throw _privateConstructorUsedError;
-  String? get createdDate => throw _privateConstructorUsedError;
+  DateTime? get createdDate => throw _privateConstructorUsedError;
   int? get userRoleId => throw _privateConstructorUsedError;
   double? get latitude => throw _privateConstructorUsedError;
   double? get longitude => throw _privateConstructorUsedError;
@@ -56,7 +56,7 @@ abstract class $UserCopyWith<$Res> {
       _$UserCopyWithImpl<$Res, User>;
   @useResult
   $Res call(
-      {String id,
+      {String? id,
       String? firstName,
       String? lastName,
       String? email,
@@ -65,7 +65,7 @@ abstract class $UserCopyWith<$Res> {
       int? businessUnitId,
       int? positionId,
       String? creatorId,
-      String? createdDate,
+      DateTime? createdDate,
       int? userRoleId,
       double? latitude,
       double? longitude,
@@ -100,7 +100,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? firstName = freezed,
     Object? lastName = freezed,
     Object? email = freezed,
@@ -126,10 +126,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? statuses = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       firstName: freezed == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
@@ -165,7 +165,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
       createdDate: freezed == createdDate
           ? _value.createdDate
           : createdDate // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as DateTime?,
       userRoleId: freezed == userRoleId
           ? _value.userRoleId
           : userRoleId // ignore: cast_nullable_to_non_nullable
@@ -282,7 +282,7 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String id,
+      {String? id,
       String? firstName,
       String? lastName,
       String? email,
@@ -291,7 +291,7 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       int? businessUnitId,
       int? positionId,
       String? creatorId,
-      String? createdDate,
+      DateTime? createdDate,
       int? userRoleId,
       double? latitude,
       double? longitude,
@@ -327,7 +327,7 @@ class __$$UserImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? firstName = freezed,
     Object? lastName = freezed,
     Object? email = freezed,
@@ -353,10 +353,10 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? statuses = freezed,
   }) {
     return _then(_$UserImpl(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       firstName: freezed == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
@@ -392,7 +392,7 @@ class __$$UserImplCopyWithImpl<$Res>
       createdDate: freezed == createdDate
           ? _value.createdDate
           : createdDate // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as DateTime?,
       userRoleId: freezed == userRoleId
           ? _value.userRoleId
           : userRoleId // ignore: cast_nullable_to_non_nullable
@@ -457,7 +457,7 @@ class __$$UserImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UserImpl extends _User {
   const _$UserImpl(
-      {required this.id,
+      {this.id,
       this.firstName,
       this.lastName,
       this.email,
@@ -491,7 +491,7 @@ class _$UserImpl extends _User {
       _$$UserImplFromJson(json);
 
   @override
-  final String id;
+  final String? id;
   @override
   final String? firstName;
   @override
@@ -509,7 +509,7 @@ class _$UserImpl extends _User {
   @override
   final String? creatorId;
   @override
-  final String? createdDate;
+  final DateTime? createdDate;
   @override
   final int? userRoleId;
   @override
@@ -670,7 +670,7 @@ class _$UserImpl extends _User {
 
 abstract class _User extends User {
   const factory _User(
-      {required final String id,
+      {final String? id,
       final String? firstName,
       final String? lastName,
       final String? email,
@@ -679,7 +679,7 @@ abstract class _User extends User {
       final int? businessUnitId,
       final int? positionId,
       final String? creatorId,
-      final String? createdDate,
+      final DateTime? createdDate,
       final int? userRoleId,
       final double? latitude,
       final double? longitude,
@@ -699,7 +699,7 @@ abstract class _User extends User {
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
   @override
-  String get id;
+  String? get id;
   @override
   String? get firstName;
   @override
@@ -717,7 +717,7 @@ abstract class _User extends User {
   @override
   String? get creatorId;
   @override
-  String? get createdDate;
+  DateTime? get createdDate;
   @override
   int? get userRoleId;
   @override

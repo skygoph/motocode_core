@@ -9,11 +9,13 @@ part of 'scanned_qr_code.dart';
 _$ScannedQrCodeImpl _$$ScannedQrCodeImplFromJson(Map<String, dynamic> json) =>
     _$ScannedQrCodeImpl(
       id: (json['id'] as num?)?.toInt(),
-      qrCodeId: (json['qrCodeId'] as num).toInt(),
-      depotId: (json['depotId'] as num).toInt(),
-      statusId: (json['statusId'] as num).toInt(),
+      qrCodeId: (json['qrCodeId'] as num?)?.toInt(),
+      depotId: (json['depotId'] as num?)?.toInt(),
+      statusId: (json['statusId'] as num?)?.toInt(),
       userId: json['userId'] as String?,
-      createdDate: DateTime.parse(json['createdDate'] as String),
+      createdDate: json['createdDate'] == null
+          ? null
+          : DateTime.parse(json['createdDate'] as String),
       endedDate: json['endedDate'] == null
           ? null
           : DateTime.parse(json['endedDate'] as String),
@@ -38,7 +40,7 @@ Map<String, dynamic> _$$ScannedQrCodeImplToJson(_$ScannedQrCodeImpl instance) =>
       'depotId': instance.depotId,
       'statusId': instance.statusId,
       'userId': instance.userId,
-      'createdDate': instance.createdDate.toIso8601String(),
+      'createdDate': instance.createdDate?.toIso8601String(),
       'endedDate': instance.endedDate?.toIso8601String(),
       'depot': instance.depot,
       'qrCode': instance.qrCode,

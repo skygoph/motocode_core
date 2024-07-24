@@ -25,7 +25,7 @@ mixin _$ScannedQrCode {
   int? get depotId => throw _privateConstructorUsedError;
   int? get statusId => throw _privateConstructorUsedError;
   String? get userId => throw _privateConstructorUsedError;
-  DateTime get createdDate => throw _privateConstructorUsedError;
+  DateTime? get createdDate => throw _privateConstructorUsedError;
   DateTime? get endedDate => throw _privateConstructorUsedError;
   Depot? get depot => throw _privateConstructorUsedError;
   QrCode? get qrCode => throw _privateConstructorUsedError;
@@ -50,7 +50,7 @@ abstract class $ScannedQrCodeCopyWith<$Res> {
       int? depotId,
       int? statusId,
       String? userId,
-      DateTime createdDate,
+      DateTime? createdDate,
       DateTime? endedDate,
       Depot? depot,
       QrCode? qrCode,
@@ -81,7 +81,7 @@ class _$ScannedQrCodeCopyWithImpl<$Res, $Val extends ScannedQrCode>
     Object? depotId = freezed,
     Object? statusId = freezed,
     Object? userId = freezed,
-    Object? createdDate = null,
+    Object? createdDate = freezed,
     Object? endedDate = freezed,
     Object? depot = freezed,
     Object? qrCode = freezed,
@@ -109,10 +109,10 @@ class _$ScannedQrCodeCopyWithImpl<$Res, $Val extends ScannedQrCode>
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdDate: null == createdDate
+      createdDate: freezed == createdDate
           ? _value.createdDate
           : createdDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
       endedDate: freezed == endedDate
           ? _value.endedDate
           : endedDate // ignore: cast_nullable_to_non_nullable
@@ -199,7 +199,7 @@ abstract class _$$ScannedQrCodeImplCopyWith<$Res>
       int? depotId,
       int? statusId,
       String? userId,
-      DateTime createdDate,
+      DateTime? createdDate,
       DateTime? endedDate,
       Depot? depot,
       QrCode? qrCode,
@@ -232,7 +232,7 @@ class __$$ScannedQrCodeImplCopyWithImpl<$Res>
     Object? depotId = freezed,
     Object? statusId = freezed,
     Object? userId = freezed,
-    Object? createdDate = null,
+    Object? createdDate = freezed,
     Object? endedDate = freezed,
     Object? depot = freezed,
     Object? qrCode = freezed,
@@ -260,10 +260,10 @@ class __$$ScannedQrCodeImplCopyWithImpl<$Res>
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdDate: null == createdDate
+      createdDate: freezed == createdDate
           ? _value.createdDate
           : createdDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
       endedDate: freezed == endedDate
           ? _value.endedDate
           : endedDate // ignore: cast_nullable_to_non_nullable
@@ -292,17 +292,17 @@ class __$$ScannedQrCodeImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ScannedQrCodeImpl extends _ScannedQrCode {
   const _$ScannedQrCodeImpl(
-      {required this.id,
-      required this.qrCodeId,
-      required this.depotId,
-      required this.statusId,
-      required this.userId,
-      required this.createdDate,
-      required this.endedDate,
-      required this.depot,
-      required this.qrCode,
-      required this.status,
-      required this.user})
+      {this.id,
+      this.qrCodeId,
+      this.depotId,
+      this.statusId,
+      this.userId,
+      this.createdDate,
+      this.endedDate,
+      this.depot,
+      this.qrCode,
+      this.status,
+      this.user})
       : super._();
 
   factory _$ScannedQrCodeImpl.fromJson(Map<String, dynamic> json) =>
@@ -319,7 +319,7 @@ class _$ScannedQrCodeImpl extends _ScannedQrCode {
   @override
   final String? userId;
   @override
-  final DateTime createdDate;
+  final DateTime? createdDate;
   @override
   final DateTime? endedDate;
   @override
@@ -379,17 +379,17 @@ class _$ScannedQrCodeImpl extends _ScannedQrCode {
 
 abstract class _ScannedQrCode extends ScannedQrCode {
   const factory _ScannedQrCode(
-      {required final int? id,
-      required final int? qrCodeId,
-      required final int? depotId,
-      required final int? statusId,
-      required final String? userId,
-      required final DateTime createdDate,
-      required final DateTime? endedDate,
-      required final Depot? depot,
-      required final QrCode? qrCode,
-      required final Status? status,
-      required final User? user}) = _$ScannedQrCodeImpl;
+      {final int? id,
+      final int? qrCodeId,
+      final int? depotId,
+      final int? statusId,
+      final String? userId,
+      final DateTime? createdDate,
+      final DateTime? endedDate,
+      final Depot? depot,
+      final QrCode? qrCode,
+      final Status? status,
+      final User? user}) = _$ScannedQrCodeImpl;
   const _ScannedQrCode._() : super._();
 
   factory _ScannedQrCode.fromJson(Map<String, dynamic> json) =
@@ -406,7 +406,7 @@ abstract class _ScannedQrCode extends ScannedQrCode {
   @override
   String? get userId;
   @override
-  DateTime get createdDate;
+  DateTime? get createdDate;
   @override
   DateTime? get endedDate;
   @override

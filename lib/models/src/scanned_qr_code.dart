@@ -9,17 +9,17 @@ class ScannedQrCode with _$ScannedQrCode {
   const ScannedQrCode._();
 
   const factory ScannedQrCode({
-    required int? id,
-    required int? qrCodeId,
-    required int? depotId,
-    required int? statusId,
-    required String? userId,
-    required DateTime createdDate,
-    required DateTime? endedDate,
-    required Depot? depot,
-    required QrCode? qrCode,
-    required Status? status,
-    required User? user,
+    int? id,
+    int? qrCodeId,
+    int? depotId,
+    int? statusId,
+    String? userId,
+    DateTime? createdDate,
+    DateTime? endedDate,
+    Depot? depot,
+    QrCode? qrCode,
+    Status? status,
+    User? user,
   }) = _ScannedQrCode;
 
   factory ScannedQrCode.fromJson(Map<String, dynamic> json) =>

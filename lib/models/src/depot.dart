@@ -10,15 +10,15 @@ class Depot with _$Depot {
   const Depot._();
 
   const factory Depot({
-    required final int id,
-    required String name,
-    required String location,
-    final double? latitude,
-    final double? longitude,
-    final int? businessUnitId,
-    final int? depotTypeId,
-    final BusinessUnit? businessUnit,
-    final DepotType? depotType,
+    int? id,
+    String? name,
+    String? location,
+    double? latitude,
+    double? longitude,
+    int? businessUnitId,
+    int? depotTypeId,
+    BusinessUnit? businessUnit,
+    DepotType? depotType,
   }) = _Depot;
 
   factory Depot.fromJson(Map<String, dynamic> json) => _$DepotFromJson(json);

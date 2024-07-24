@@ -20,9 +20,9 @@ Depot _$DepotFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Depot {
-  int get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get location => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get location => throw _privateConstructorUsedError;
   double? get latitude => throw _privateConstructorUsedError;
   double? get longitude => throw _privateConstructorUsedError;
   int? get businessUnitId => throw _privateConstructorUsedError;
@@ -41,9 +41,9 @@ abstract class $DepotCopyWith<$Res> {
       _$DepotCopyWithImpl<$Res, Depot>;
   @useResult
   $Res call(
-      {int id,
-      String name,
-      String location,
+      {int? id,
+      String? name,
+      String? location,
       double? latitude,
       double? longitude,
       int? businessUnitId,
@@ -68,9 +68,9 @@ class _$DepotCopyWithImpl<$Res, $Val extends Depot>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? location = null,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? location = freezed,
     Object? latitude = freezed,
     Object? longitude = freezed,
     Object? businessUnitId = freezed,
@@ -79,18 +79,18 @@ class _$DepotCopyWithImpl<$Res, $Val extends Depot>
     Object? depotType = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      name: null == name
+              as int?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      location: null == location
+              as String?,
+      location: freezed == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       latitude: freezed == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
@@ -151,9 +151,9 @@ abstract class _$$DepotImplCopyWith<$Res> implements $DepotCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int id,
-      String name,
-      String location,
+      {int? id,
+      String? name,
+      String? location,
       double? latitude,
       double? longitude,
       int? businessUnitId,
@@ -178,9 +178,9 @@ class __$$DepotImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? location = null,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? location = freezed,
     Object? latitude = freezed,
     Object? longitude = freezed,
     Object? businessUnitId = freezed,
@@ -189,18 +189,18 @@ class __$$DepotImplCopyWithImpl<$Res>
     Object? depotType = freezed,
   }) {
     return _then(_$DepotImpl(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      name: null == name
+              as int?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      location: null == location
+              as String?,
+      location: freezed == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       latitude: freezed == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
@@ -233,9 +233,9 @@ class __$$DepotImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$DepotImpl extends _Depot {
   const _$DepotImpl(
-      {required this.id,
-      required this.name,
-      required this.location,
+      {this.id,
+      this.name,
+      this.location,
       this.latitude,
       this.longitude,
       this.businessUnitId,
@@ -248,11 +248,11 @@ class _$DepotImpl extends _Depot {
       _$$DepotImplFromJson(json);
 
   @override
-  final int id;
+  final int? id;
   @override
-  final String name;
+  final String? name;
   @override
-  final String location;
+  final String? location;
   @override
   final double? latitude;
   @override
@@ -315,9 +315,9 @@ class _$DepotImpl extends _Depot {
 
 abstract class _Depot extends Depot {
   const factory _Depot(
-      {required final int id,
-      required final String name,
-      required final String location,
+      {final int? id,
+      final String? name,
+      final String? location,
       final double? latitude,
       final double? longitude,
       final int? businessUnitId,
@@ -329,11 +329,11 @@ abstract class _Depot extends Depot {
   factory _Depot.fromJson(Map<String, dynamic> json) = _$DepotImpl.fromJson;
 
   @override
-  int get id;
+  int? get id;
   @override
-  String get name;
+  String? get name;
   @override
-  String get location;
+  String? get location;
   @override
   double? get latitude;
   @override

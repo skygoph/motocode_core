@@ -7,7 +7,7 @@ part of 'user.dart';
 // **************************************************************************
 
 _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
-      id: json['id'] as String,
+      id: json['id'] as String?,
       firstName: json['firstName'] as String?,
       lastName: json['lastName'] as String?,
       email: json['email'] as String?,
@@ -16,7 +16,9 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       businessUnitId: (json['businessUnitId'] as num?)?.toInt(),
       positionId: (json['positionId'] as num?)?.toInt(),
       creatorId: json['creatorId'] as String?,
-      createdDate: json['createdDate'] as String?,
+      createdDate: json['createdDate'] == null
+          ? null
+          : DateTime.parse(json['createdDate'] as String),
       userRoleId: (json['userRoleId'] as num?)?.toInt(),
       latitude: (json['latitude'] as num?)?.toDouble(),
       longitude: (json['longitude'] as num?)?.toDouble(),
@@ -60,7 +62,7 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
       'businessUnitId': instance.businessUnitId,
       'positionId': instance.positionId,
       'creatorId': instance.creatorId,
-      'createdDate': instance.createdDate,
+      'createdDate': instance.createdDate?.toIso8601String(),
       'userRoleId': instance.userRoleId,
       'latitude': instance.latitude,
       'longitude': instance.longitude,

@@ -8,7 +8,7 @@ class DepotType with _$DepotType {
   const DepotType._();
 
   const factory DepotType({
-    final int? id,
+    int? id,
     String? name,
     String? description,
   }) = _DepotType;

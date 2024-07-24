@@ -68,11 +68,18 @@ class UsersService {
   /// [data] The data to update the user with.
   ///
   /// Throws an error if the request fails for any reason.
-  Future<void> updateUser(User data) =>
-      _apiClient.updateUser(data.id, data.mapToRequest()).catchError((error) {
-        _crashlytics?.recordError(error, StackTrace.current);
-        throw error;
-      });
+  Future<void> updateUser(User data) {
+    if (data.id == null) {
+      throw ArgumentError('User id cannot be null');
+    }
+
+    return _apiClient
+        .updateUser(data.id!, data.mapToRequest())
+        .catchError((error) {
+      _crashlytics?.recordError(error, StackTrace.current);
+      throw error;
+    });
+  }
 
   /// Get all the list of [ScannedQrCode] from the [User]
   ///

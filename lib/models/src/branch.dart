@@ -8,9 +8,9 @@ class Branch with _$Branch {
   const Branch._();
 
   const factory Branch({
-    required final String name,
-    required final String location,
-    required final DateTime? createdDate,
+    String? name,
+    String? location,
+    DateTime? createdDate,
     int? id,
   }) = _Branch;
 

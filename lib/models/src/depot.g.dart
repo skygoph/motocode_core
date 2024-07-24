@@ -7,9 +7,9 @@ part of 'depot.dart';
 // **************************************************************************
 
 _$DepotImpl _$$DepotImplFromJson(Map<String, dynamic> json) => _$DepotImpl(
-      id: (json['id'] as num).toInt(),
-      name: json['name'] as String,
-      location: json['location'] as String,
+      id: (json['id'] as num?)?.toInt(),
+      name: json['name'] as String?,
+      location: json['location'] as String?,
       latitude: (json['latitude'] as num?)?.toDouble(),
       longitude: (json['longitude'] as num?)?.toDouble(),
       businessUnitId: (json['businessUnitId'] as num?)?.toInt(),

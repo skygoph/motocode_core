@@ -7,8 +7,8 @@ part of 'branch.dart';
 // **************************************************************************
 
 _$BranchImpl _$$BranchImplFromJson(Map<String, dynamic> json) => _$BranchImpl(
-      name: json['name'] as String,
-      location: json['location'] as String,
+      name: json['name'] as String?,
+      location: json['location'] as String?,
       createdDate: json['createdDate'] == null
           ? null
           : DateTime.parse(json['createdDate'] as String),

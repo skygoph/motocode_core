@@ -20,8 +20,8 @@ Branch _$BranchFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Branch {
-  String get name => throw _privateConstructorUsedError;
-  String get location => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get location => throw _privateConstructorUsedError;
   DateTime? get createdDate => throw _privateConstructorUsedError;
   int? get id => throw _privateConstructorUsedError;
 
@@ -35,7 +35,7 @@ abstract class $BranchCopyWith<$Res> {
   factory $BranchCopyWith(Branch value, $Res Function(Branch) then) =
       _$BranchCopyWithImpl<$Res, Branch>;
   @useResult
-  $Res call({String name, String location, DateTime? createdDate, int? id});
+  $Res call({String? name, String? location, DateTime? createdDate, int? id});
 }
 
 /// @nodoc
@@ -51,20 +51,20 @@ class _$BranchCopyWithImpl<$Res, $Val extends Branch>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
-    Object? location = null,
+    Object? name = freezed,
+    Object? location = freezed,
     Object? createdDate = freezed,
     Object? id = freezed,
   }) {
     return _then(_value.copyWith(
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      location: null == location
+              as String?,
+      location: freezed == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       createdDate: freezed == createdDate
           ? _value.createdDate
           : createdDate // ignore: cast_nullable_to_non_nullable
@@ -84,7 +84,7 @@ abstract class _$$BranchImplCopyWith<$Res> implements $BranchCopyWith<$Res> {
       __$$BranchImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String name, String location, DateTime? createdDate, int? id});
+  $Res call({String? name, String? location, DateTime? createdDate, int? id});
 }
 
 /// @nodoc
@@ -98,20 +98,20 @@ class __$$BranchImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
-    Object? location = null,
+    Object? name = freezed,
+    Object? location = freezed,
     Object? createdDate = freezed,
     Object? id = freezed,
   }) {
     return _then(_$BranchImpl(
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      location: null == location
+              as String?,
+      location: freezed == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       createdDate: freezed == createdDate
           ? _value.createdDate
           : createdDate // ignore: cast_nullable_to_non_nullable
@@ -127,20 +127,16 @@ class __$$BranchImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$BranchImpl extends _Branch {
-  const _$BranchImpl(
-      {required this.name,
-      required this.location,
-      required this.createdDate,
-      this.id})
+  const _$BranchImpl({this.name, this.location, this.createdDate, this.id})
       : super._();
 
   factory _$BranchImpl.fromJson(Map<String, dynamic> json) =>
       _$$BranchImplFromJson(json);
 
   @override
-  final String name;
+  final String? name;
   @override
-  final String location;
+  final String? location;
   @override
   final DateTime? createdDate;
   @override
@@ -184,18 +180,18 @@ class _$BranchImpl extends _Branch {
 
 abstract class _Branch extends Branch {
   const factory _Branch(
-      {required final String name,
-      required final String location,
-      required final DateTime? createdDate,
+      {final String? name,
+      final String? location,
+      final DateTime? createdDate,
       final int? id}) = _$BranchImpl;
   const _Branch._() : super._();
 
   factory _Branch.fromJson(Map<String, dynamic> json) = _$BranchImpl.fromJson;
 
   @override
-  String get name;
+  String? get name;
   @override
-  String get location;
+  String? get location;
   @override
   DateTime? get createdDate;
   @override

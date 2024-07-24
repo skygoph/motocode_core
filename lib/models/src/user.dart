@@ -10,7 +10,7 @@ class User with _$User {
   const User._();
 
   const factory User({
-    required final String id,
+    String? id,
     String? firstName,
     String? lastName,
     String? email,
@@ -19,7 +19,7 @@ class User with _$User {
     int? businessUnitId,
     int? positionId,
     String? creatorId,
-    String? createdDate,
+    DateTime? createdDate,
     int? userRoleId,
     double? latitude,
     double? longitude,
