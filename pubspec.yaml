@@ -1,6 +1,6 @@
 name: motocode_core
 description: "Core package for Skygo Motocode project"
-version: 0.1.7
+version: 0.1.8
 repository: https://github.com/skygoph/motocode_core
 
 environment:

@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.1.8
+
+* Update ScannedQrCode model with new properties and types
+
 ## 0.1.7
 
 * [chore] Update User model with nullable fields
