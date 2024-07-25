@@ -19,5 +19,6 @@ class BusinessUnit with _$BusinessUnit {
   Map<String, dynamic> mapToRequest() => {
         'id': id,
         'name': name,
+        'createdDate': createdDate?.toUtc().toIso8601String(),
       };
 }

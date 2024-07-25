@@ -11,6 +11,7 @@ class DepotType with _$DepotType {
     int? id,
     String? name,
     String? description,
+    DateTime? createdDate,
   }) = _DepotType;
 
   factory DepotType.fromJson(Map<String, dynamic> json) =>
@@ -20,5 +21,6 @@ class DepotType with _$DepotType {
         'id': id,
         'name': name,
         'description': description,
+        'createdDate': createdDate?.toUtc().toIso8601String(),
       };
 }

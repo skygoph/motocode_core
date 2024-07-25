@@ -36,25 +36,28 @@ Future<void> setupMotocodeLocator({
 
   final apiClient = locator<ApiClient>();
 
+  locator.registerLazySingleton(() =>
+      AuthenticationService(apiClient: apiClient, crashlytics: crashlytics));
+  locator.registerLazySingleton(() =>
+      BusinessUnitsService(apiClient: apiClient, crashlytics: crashlytics));
   locator.registerLazySingleton(
-    () => AuthenticationService(apiClient, crashlytics),
-  );
+      () => DepartmentsService(apiClient: apiClient, crashlytics: crashlytics));
   locator.registerLazySingleton(
-    () => BusinessUnitsService(apiClient, crashlytics),
-  );
-  locator
-      .registerLazySingleton(() => DepartmentsService(apiClient, crashlytics));
-  locator
-      .registerLazySingleton(() => DepotTypesService(apiClient, crashlytics));
-  locator.registerLazySingleton(() => DepotsService(apiClient, crashlytics));
-  locator
-      .registerLazySingleton(() => EnrollmentsService(apiClient, crashlytics));
-  locator.registerLazySingleton(() => PositionsService(apiClient, crashlytics));
-  locator.registerLazySingleton(() => QrCodesService(apiClient, crashlytics));
-  locator.registerLazySingleton(() => RolesService(apiClient, crashlytics));
+      () => DepotTypesService(apiClient: apiClient, crashlytics: crashlytics));
   locator.registerLazySingleton(
-    () => ScannedQrCodesService(apiClient, crashlytics),
-  );
-  locator.registerLazySingleton(() => StatusesService(apiClient, crashlytics));
-  locator.registerLazySingleton(() => UsersService(apiClient, crashlytics));
+      () => DepotsService(apiClient: apiClient, crashlytics: crashlytics));
+  locator.registerLazySingleton(
+      () => EnrollmentsService(apiClient: apiClient, crashlytics: crashlytics));
+  locator.registerLazySingleton(
+      () => PositionsService(apiClient: apiClient, crashlytics: crashlytics));
+  locator.registerLazySingleton(
+      () => QrCodesService(apiClient: apiClient, crashlytics: crashlytics));
+  locator.registerLazySingleton(
+      () => RolesService(apiClient: apiClient, crashlytics: crashlytics));
+  locator.registerLazySingleton(() =>
+      ScannedQrCodesService(apiClient: apiClient, crashlytics: crashlytics));
+  locator.registerLazySingleton(
+      () => StatusesService(apiClient: apiClient, crashlytics: crashlytics));
+  locator.registerLazySingleton(
+      () => UsersService(apiClient: apiClient, crashlytics: crashlytics));
 }

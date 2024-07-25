@@ -22,6 +22,7 @@ Status _$StatusFromJson(Map<String, dynamic> json) {
 mixin _$Status {
   int? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
+  DateTime? get createdDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -33,7 +34,7 @@ abstract class $StatusCopyWith<$Res> {
   factory $StatusCopyWith(Status value, $Res Function(Status) then) =
       _$StatusCopyWithImpl<$Res, Status>;
   @useResult
-  $Res call({int? id, String? name});
+  $Res call({int? id, String? name, DateTime? createdDate});
 }
 
 /// @nodoc
@@ -51,6 +52,7 @@ class _$StatusCopyWithImpl<$Res, $Val extends Status>
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
+    Object? createdDate = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -61,6 +63,10 @@ class _$StatusCopyWithImpl<$Res, $Val extends Status>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
+      createdDate: freezed == createdDate
+          ? _value.createdDate
+          : createdDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ) as $Val);
   }
 }
@@ -72,7 +78,7 @@ abstract class _$$StatusImplCopyWith<$Res> implements $StatusCopyWith<$Res> {
       __$$StatusImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? id, String? name});
+  $Res call({int? id, String? name, DateTime? createdDate});
 }
 
 /// @nodoc
@@ -88,6 +94,7 @@ class __$$StatusImplCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
+    Object? createdDate = freezed,
   }) {
     return _then(_$StatusImpl(
       id: freezed == id
@@ -98,6 +105,10 @@ class __$$StatusImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
+      createdDate: freezed == createdDate
+          ? _value.createdDate
+          : createdDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -105,7 +116,7 @@ class __$$StatusImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$StatusImpl extends _Status {
-  const _$StatusImpl({this.id, this.name}) : super._();
+  const _$StatusImpl({this.id, this.name, this.createdDate}) : super._();
 
   factory _$StatusImpl.fromJson(Map<String, dynamic> json) =>
       _$$StatusImplFromJson(json);
@@ -114,10 +125,12 @@ class _$StatusImpl extends _Status {
   final int? id;
   @override
   final String? name;
+  @override
+  final DateTime? createdDate;
 
   @override
   String toString() {
-    return 'Status(id: $id, name: $name)';
+    return 'Status(id: $id, name: $name, createdDate: $createdDate)';
   }
 
   @override
@@ -126,12 +139,14 @@ class _$StatusImpl extends _Status {
         (other.runtimeType == runtimeType &&
             other is _$StatusImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name));
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.createdDate, createdDate) ||
+                other.createdDate == createdDate));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name);
+  int get hashCode => Object.hash(runtimeType, id, name, createdDate);
 
   @JsonKey(ignore: true)
   @override
@@ -148,7 +163,10 @@ class _$StatusImpl extends _Status {
 }
 
 abstract class _Status extends Status {
-  const factory _Status({final int? id, final String? name}) = _$StatusImpl;
+  const factory _Status(
+      {final int? id,
+      final String? name,
+      final DateTime? createdDate}) = _$StatusImpl;
   const _Status._() : super._();
 
   factory _Status.fromJson(Map<String, dynamic> json) = _$StatusImpl.fromJson;
@@ -157,6 +175,8 @@ abstract class _Status extends Status {
   int? get id;
   @override
   String? get name;
+  @override
+  DateTime? get createdDate;
   @override
   @JsonKey(ignore: true)
   _$$StatusImplCopyWith<_$StatusImpl> get copyWith =>

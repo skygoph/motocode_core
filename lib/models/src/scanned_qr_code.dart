@@ -39,5 +39,7 @@ class ScannedQrCode with _$ScannedQrCode {
         'depotId': depotId,
         'statusId': statusId,
         'userId': userId,
+        'createdDate': createdDate?.toUtc().toIso8601String(),
+        'endedDate': endedDate?.toUtc().toIso8601String(),
       };
 }

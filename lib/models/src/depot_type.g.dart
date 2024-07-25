@@ -11,6 +11,9 @@ _$DepotTypeImpl _$$DepotTypeImplFromJson(Map<String, dynamic> json) =>
       id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
       description: json['description'] as String?,
+      createdDate: json['createdDate'] == null
+          ? null
+          : DateTime.parse(json['createdDate'] as String),
     );
 
 Map<String, dynamic> _$$DepotTypeImplToJson(_$DepotTypeImpl instance) =>
@@ -18,4 +21,5 @@ Map<String, dynamic> _$$DepotTypeImplToJson(_$DepotTypeImpl instance) =>
       'id': instance.id,
       'name': instance.name,
       'description': instance.description,
+      'createdDate': instance.createdDate?.toIso8601String(),
     };

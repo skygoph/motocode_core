@@ -1,5 +1,10 @@
 # Release Notes
 
+## 0.2.0
+
+* Update models with createdDate field
+* Add unit tests on models
+
 ## 0.1.9
 
 * Update models and make attributes nullable

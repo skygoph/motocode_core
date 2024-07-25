@@ -28,6 +28,7 @@ mixin _$QrCode {
   String? get batchNumber => throw _privateConstructorUsedError;
   String? get brand => throw _privateConstructorUsedError;
   String? get controlNumber => throw _privateConstructorUsedError;
+  int? get yearModel => throw _privateConstructorUsedError;
   int? get id => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -49,6 +50,7 @@ abstract class $QrCodeCopyWith<$Res> {
       String? batchNumber,
       String? brand,
       String? controlNumber,
+      int? yearModel,
       int? id});
 }
 
@@ -73,6 +75,7 @@ class _$QrCodeCopyWithImpl<$Res, $Val extends QrCode>
     Object? batchNumber = freezed,
     Object? brand = freezed,
     Object? controlNumber = freezed,
+    Object? yearModel = freezed,
     Object? id = freezed,
   }) {
     return _then(_value.copyWith(
@@ -108,6 +111,10 @@ class _$QrCodeCopyWithImpl<$Res, $Val extends QrCode>
           ? _value.controlNumber
           : controlNumber // ignore: cast_nullable_to_non_nullable
               as String?,
+      yearModel: freezed == yearModel
+          ? _value.yearModel
+          : yearModel // ignore: cast_nullable_to_non_nullable
+              as int?,
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -132,6 +139,7 @@ abstract class _$$QrCodeImplCopyWith<$Res> implements $QrCodeCopyWith<$Res> {
       String? batchNumber,
       String? brand,
       String? controlNumber,
+      int? yearModel,
       int? id});
 }
 
@@ -154,6 +162,7 @@ class __$$QrCodeImplCopyWithImpl<$Res>
     Object? batchNumber = freezed,
     Object? brand = freezed,
     Object? controlNumber = freezed,
+    Object? yearModel = freezed,
     Object? id = freezed,
   }) {
     return _then(_$QrCodeImpl(
@@ -189,6 +198,10 @@ class __$$QrCodeImplCopyWithImpl<$Res>
           ? _value.controlNumber
           : controlNumber // ignore: cast_nullable_to_non_nullable
               as String?,
+      yearModel: freezed == yearModel
+          ? _value.yearModel
+          : yearModel // ignore: cast_nullable_to_non_nullable
+              as int?,
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -209,6 +222,7 @@ class _$QrCodeImpl extends _QrCode {
       this.batchNumber,
       this.brand,
       this.controlNumber,
+      this.yearModel,
       this.id})
       : super._();
 
@@ -232,11 +246,13 @@ class _$QrCodeImpl extends _QrCode {
   @override
   final String? controlNumber;
   @override
+  final int? yearModel;
+  @override
   final int? id;
 
   @override
   String toString() {
-    return 'QrCode(chassisNumber: $chassisNumber, engineNumber: $engineNumber, model: $model, manufacturingDate: $manufacturingDate, color: $color, batchNumber: $batchNumber, brand: $brand, controlNumber: $controlNumber, id: $id)';
+    return 'QrCode(chassisNumber: $chassisNumber, engineNumber: $engineNumber, model: $model, manufacturingDate: $manufacturingDate, color: $color, batchNumber: $batchNumber, brand: $brand, controlNumber: $controlNumber, yearModel: $yearModel, id: $id)';
   }
 
   @override
@@ -257,13 +273,25 @@ class _$QrCodeImpl extends _QrCode {
             (identical(other.brand, brand) || other.brand == brand) &&
             (identical(other.controlNumber, controlNumber) ||
                 other.controlNumber == controlNumber) &&
+            (identical(other.yearModel, yearModel) ||
+                other.yearModel == yearModel) &&
             (identical(other.id, id) || other.id == id));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, chassisNumber, engineNumber,
-      model, manufacturingDate, color, batchNumber, brand, controlNumber, id);
+  int get hashCode => Object.hash(
+      runtimeType,
+      chassisNumber,
+      engineNumber,
+      model,
+      manufacturingDate,
+      color,
+      batchNumber,
+      brand,
+      controlNumber,
+      yearModel,
+      id);
 
   @JsonKey(ignore: true)
   @override
@@ -289,6 +317,7 @@ abstract class _QrCode extends QrCode {
       final String? batchNumber,
       final String? brand,
       final String? controlNumber,
+      final int? yearModel,
       final int? id}) = _$QrCodeImpl;
   const _QrCode._() : super._();
 
@@ -310,6 +339,8 @@ abstract class _QrCode extends QrCode {
   String? get brand;
   @override
   String? get controlNumber;
+  @override
+  int? get yearModel;
   @override
   int? get id;
   @override

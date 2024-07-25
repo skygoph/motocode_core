@@ -5,7 +5,11 @@ import 'package:motocode_core/services/src/api_client.dart';
 /// Service to handle qr codes api requests
 class QrCodesService {
   /// Constructor for the [QrCodesService]
-  QrCodesService(this._apiClient, this._crashlytics);
+  QrCodesService({
+    required ApiClient apiClient,
+    FirebaseCrashlytics? crashlytics,
+  })  : _apiClient = apiClient,
+        _crashlytics = crashlytics;
 
   /// The API client to make requests to the server
   final ApiClient _apiClient;

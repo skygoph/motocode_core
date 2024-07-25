@@ -23,6 +23,7 @@ mixin _$DepotType {
   int? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
+  DateTime? get createdDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +36,8 @@ abstract class $DepotTypeCopyWith<$Res> {
   factory $DepotTypeCopyWith(DepotType value, $Res Function(DepotType) then) =
       _$DepotTypeCopyWithImpl<$Res, DepotType>;
   @useResult
-  $Res call({int? id, String? name, String? description});
+  $Res call(
+      {int? id, String? name, String? description, DateTime? createdDate});
 }
 
 /// @nodoc
@@ -54,6 +56,7 @@ class _$DepotTypeCopyWithImpl<$Res, $Val extends DepotType>
     Object? id = freezed,
     Object? name = freezed,
     Object? description = freezed,
+    Object? createdDate = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -68,6 +71,10 @@ class _$DepotTypeCopyWithImpl<$Res, $Val extends DepotType>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
+      createdDate: freezed == createdDate
+          ? _value.createdDate
+          : createdDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ) as $Val);
   }
 }
@@ -80,7 +87,8 @@ abstract class _$$DepotTypeImplCopyWith<$Res>
       __$$DepotTypeImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? id, String? name, String? description});
+  $Res call(
+      {int? id, String? name, String? description, DateTime? createdDate});
 }
 
 /// @nodoc
@@ -97,6 +105,7 @@ class __$$DepotTypeImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? name = freezed,
     Object? description = freezed,
+    Object? createdDate = freezed,
   }) {
     return _then(_$DepotTypeImpl(
       id: freezed == id
@@ -111,6 +120,10 @@ class __$$DepotTypeImplCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
+      createdDate: freezed == createdDate
+          ? _value.createdDate
+          : createdDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -118,7 +131,9 @@ class __$$DepotTypeImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$DepotTypeImpl extends _DepotType {
-  const _$DepotTypeImpl({this.id, this.name, this.description}) : super._();
+  const _$DepotTypeImpl(
+      {this.id, this.name, this.description, this.createdDate})
+      : super._();
 
   factory _$DepotTypeImpl.fromJson(Map<String, dynamic> json) =>
       _$$DepotTypeImplFromJson(json);
@@ -129,10 +144,12 @@ class _$DepotTypeImpl extends _DepotType {
   final String? name;
   @override
   final String? description;
+  @override
+  final DateTime? createdDate;
 
   @override
   String toString() {
-    return 'DepotType(id: $id, name: $name, description: $description)';
+    return 'DepotType(id: $id, name: $name, description: $description, createdDate: $createdDate)';
   }
 
   @override
@@ -143,12 +160,15 @@ class _$DepotTypeImpl extends _DepotType {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
-                other.description == description));
+                other.description == description) &&
+            (identical(other.createdDate, createdDate) ||
+                other.createdDate == createdDate));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, description);
+  int get hashCode =>
+      Object.hash(runtimeType, id, name, description, createdDate);
 
   @JsonKey(ignore: true)
   @override
@@ -168,7 +188,8 @@ abstract class _DepotType extends DepotType {
   const factory _DepotType(
       {final int? id,
       final String? name,
-      final String? description}) = _$DepotTypeImpl;
+      final String? description,
+      final DateTime? createdDate}) = _$DepotTypeImpl;
   const _DepotType._() : super._();
 
   factory _DepotType.fromJson(Map<String, dynamic> json) =
@@ -180,6 +201,8 @@ abstract class _DepotType extends DepotType {
   String? get name;
   @override
   String? get description;
+  @override
+  DateTime? get createdDate;
   @override
   @JsonKey(ignore: true)
   _$$DepotTypeImplCopyWith<_$DepotTypeImpl> get copyWith =>

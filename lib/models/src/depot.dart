@@ -19,6 +19,7 @@ class Depot with _$Depot {
     int? depotTypeId,
     BusinessUnit? businessUnit,
     DepotType? depotType,
+    DateTime? createdDate,
   }) = _Depot;
 
   factory Depot.fromJson(Map<String, dynamic> json) => _$DepotFromJson(json);
@@ -31,5 +32,6 @@ class Depot with _$Depot {
         'longitude': longitude,
         'businessUnitId': businessUnitId ?? businessUnit?.id,
         'depotTypeId': depotTypeId ?? depotType?.id,
+        'createdDate': createdDate?.toUtc().toIso8601String(),
       };
 }

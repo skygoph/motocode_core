@@ -16,6 +16,7 @@ class QrCode with _$QrCode {
     String? batchNumber,
     String? brand,
     String? controlNumber,
+    int? yearModel,
     int? id,
   }) = _QrCode;
 

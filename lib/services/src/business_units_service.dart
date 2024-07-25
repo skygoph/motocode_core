@@ -5,7 +5,11 @@ import 'package:motocode_core/services/src/api_client.dart';
 /// Service to handle business units api requests
 class BusinessUnitsService {
   /// Constructor for the [BusinessUnitsService]
-  BusinessUnitsService(this._apiClient, this._crashlytics);
+  BusinessUnitsService({
+    required ApiClient apiClient,
+    FirebaseCrashlytics? crashlytics,
+  })  : _apiClient = apiClient,
+        _crashlytics = crashlytics;
 
   /// The API client to make requests to the server
   final ApiClient _apiClient;

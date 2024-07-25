@@ -5,7 +5,11 @@ import 'package:motocode_core/services/src/api_client.dart';
 /// Service to handle statuses api requests
 class StatusesService {
   /// Constructor for the [StatusesService]
-  StatusesService(this._apiClient, this._crashlytics);
+  StatusesService({
+    required ApiClient apiClient,
+    FirebaseCrashlytics? crashlytics,
+  })  : _apiClient = apiClient,
+        _crashlytics = crashlytics;
 
   /// The API client to make requests to the server
   final ApiClient _apiClient;

@@ -19,5 +19,6 @@ class Department with _$Department {
   Map<String, dynamic> mapToRequest() => {
         'id': id,
         'name': name,
+        'createdDate': createdDate?.toUtc().toIso8601String(),
       };
 }

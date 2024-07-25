@@ -8,9 +8,9 @@ class Position with _$Position {
   const Position._();
 
   const factory Position({
-    int? id,
-    String? name,
-    DateTime? createdDate,
+    required int? id,
+    required String? name,
+    required DateTime? createdDate,
   }) = _Position;
 
   factory Position.fromJson(Map<String, dynamic> json) =>
@@ -19,5 +19,6 @@ class Position with _$Position {
   Map<String, dynamic> mapToRequest() => {
         'id': id,
         'name': name,
+        'createdDate': createdDate?.toUtc().toIso8601String(),
       };
 }

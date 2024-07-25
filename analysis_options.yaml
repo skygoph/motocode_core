@@ -11,7 +11,7 @@ analyzer:
   exclude:
     - "**.bottomsheets.dart"
     - "**.dialogs.dart"
-    - "**.locator.dart"
+    - "**_locator.dart"
     - "**.locator.custom.dart"
     - "**.router.dart"
     - "**.logger.dart"

@@ -29,6 +29,7 @@ mixin _$Depot {
   int? get depotTypeId => throw _privateConstructorUsedError;
   BusinessUnit? get businessUnit => throw _privateConstructorUsedError;
   DepotType? get depotType => throw _privateConstructorUsedError;
+  DateTime? get createdDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -49,7 +50,8 @@ abstract class $DepotCopyWith<$Res> {
       int? businessUnitId,
       int? depotTypeId,
       BusinessUnit? businessUnit,
-      DepotType? depotType});
+      DepotType? depotType,
+      DateTime? createdDate});
 
   $BusinessUnitCopyWith<$Res>? get businessUnit;
   $DepotTypeCopyWith<$Res>? get depotType;
@@ -77,6 +79,7 @@ class _$DepotCopyWithImpl<$Res, $Val extends Depot>
     Object? depotTypeId = freezed,
     Object? businessUnit = freezed,
     Object? depotType = freezed,
+    Object? createdDate = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -115,6 +118,10 @@ class _$DepotCopyWithImpl<$Res, $Val extends Depot>
           ? _value.depotType
           : depotType // ignore: cast_nullable_to_non_nullable
               as DepotType?,
+      createdDate: freezed == createdDate
+          ? _value.createdDate
+          : createdDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ) as $Val);
   }
 
@@ -159,7 +166,8 @@ abstract class _$$DepotImplCopyWith<$Res> implements $DepotCopyWith<$Res> {
       int? businessUnitId,
       int? depotTypeId,
       BusinessUnit? businessUnit,
-      DepotType? depotType});
+      DepotType? depotType,
+      DateTime? createdDate});
 
   @override
   $BusinessUnitCopyWith<$Res>? get businessUnit;
@@ -187,6 +195,7 @@ class __$$DepotImplCopyWithImpl<$Res>
     Object? depotTypeId = freezed,
     Object? businessUnit = freezed,
     Object? depotType = freezed,
+    Object? createdDate = freezed,
   }) {
     return _then(_$DepotImpl(
       id: freezed == id
@@ -225,6 +234,10 @@ class __$$DepotImplCopyWithImpl<$Res>
           ? _value.depotType
           : depotType // ignore: cast_nullable_to_non_nullable
               as DepotType?,
+      createdDate: freezed == createdDate
+          ? _value.createdDate
+          : createdDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -241,7 +254,8 @@ class _$DepotImpl extends _Depot {
       this.businessUnitId,
       this.depotTypeId,
       this.businessUnit,
-      this.depotType})
+      this.depotType,
+      this.createdDate})
       : super._();
 
   factory _$DepotImpl.fromJson(Map<String, dynamic> json) =>
@@ -265,10 +279,12 @@ class _$DepotImpl extends _Depot {
   final BusinessUnit? businessUnit;
   @override
   final DepotType? depotType;
+  @override
+  final DateTime? createdDate;
 
   @override
   String toString() {
-    return 'Depot(id: $id, name: $name, location: $location, latitude: $latitude, longitude: $longitude, businessUnitId: $businessUnitId, depotTypeId: $depotTypeId, businessUnit: $businessUnit, depotType: $depotType)';
+    return 'Depot(id: $id, name: $name, location: $location, latitude: $latitude, longitude: $longitude, businessUnitId: $businessUnitId, depotTypeId: $depotTypeId, businessUnit: $businessUnit, depotType: $depotType, createdDate: $createdDate)';
   }
 
   @override
@@ -291,13 +307,25 @@ class _$DepotImpl extends _Depot {
             (identical(other.businessUnit, businessUnit) ||
                 other.businessUnit == businessUnit) &&
             (identical(other.depotType, depotType) ||
-                other.depotType == depotType));
+                other.depotType == depotType) &&
+            (identical(other.createdDate, createdDate) ||
+                other.createdDate == createdDate));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, location, latitude,
-      longitude, businessUnitId, depotTypeId, businessUnit, depotType);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      location,
+      latitude,
+      longitude,
+      businessUnitId,
+      depotTypeId,
+      businessUnit,
+      depotType,
+      createdDate);
 
   @JsonKey(ignore: true)
   @override
@@ -323,7 +351,8 @@ abstract class _Depot extends Depot {
       final int? businessUnitId,
       final int? depotTypeId,
       final BusinessUnit? businessUnit,
-      final DepotType? depotType}) = _$DepotImpl;
+      final DepotType? depotType,
+      final DateTime? createdDate}) = _$DepotImpl;
   const _Depot._() : super._();
 
   factory _Depot.fromJson(Map<String, dynamic> json) = _$DepotImpl.fromJson;
@@ -346,6 +375,8 @@ abstract class _Depot extends Depot {
   BusinessUnit? get businessUnit;
   @override
   DepotType? get depotType;
+  @override
+  DateTime? get createdDate;
   @override
   @JsonKey(ignore: true)
   _$$DepotImplCopyWith<_$DepotImpl> get copyWith =>

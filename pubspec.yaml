@@ -1,6 +1,6 @@
 name: motocode_core
 description: "Core package for Skygo Motocode project"
-version: 0.1.9
+version: 0.2.0
 repository: https://github.com/skygoph/motocode_core
 
 environment:
@@ -10,6 +10,7 @@ environment:
 dependencies:
   dio: ^5.5.0+1
   firebase_crashlytics: ^4.0.3
+  firebase_performance: ^0.10.0+3
   flutter:
     sdk: flutter
   freezed_annotation: ^2.4.4
@@ -24,6 +25,7 @@ dev_dependencies:
     sdk: flutter
   freezed: null
   json_serializable: ^6.8.0
+  mockito: ^5.4.4
   retrofit_generator: ^8.1.2
 
 # For information on the generic Dart part of this file, see the

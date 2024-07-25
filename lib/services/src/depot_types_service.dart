@@ -5,7 +5,11 @@ import 'package:motocode_core/services/src/api_client.dart';
 /// A repository to handle depot types api requests
 class DepotTypesService {
   /// Constructor for the [DepotTypesService]
-  DepotTypesService(this._apiClient, this._crashlytics);
+  DepotTypesService({
+    required ApiClient apiClient,
+    FirebaseCrashlytics? crashlytics,
+  })  : _apiClient = apiClient,
+        _crashlytics = crashlytics;
 
   /// The API client to make requests to the server
   final ApiClient _apiClient;

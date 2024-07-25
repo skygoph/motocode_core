@@ -1,11 +1,14 @@
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
-import 'package:motocode_core/models/src/login_response.dart';
 import 'package:motocode_core/motocode_core.dart';
 
 /// Service to handle authentication
 class AuthenticationService {
   /// Constructor for the [AuthenticationService]
-  AuthenticationService(this._apiClient, this._crashlytics);
+  AuthenticationService({
+    required ApiClient apiClient,
+    FirebaseCrashlytics? crashlytics,
+  })  : _apiClient = apiClient,
+        _crashlytics = crashlytics;
 
   /// The API client to make requests to the server
   final ApiClient _apiClient;

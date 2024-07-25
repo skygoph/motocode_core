@@ -10,6 +10,7 @@ class Status with _$Status {
   const factory Status({
     int? id,
     String? name,
+    DateTime? createdDate,
   }) = _Status;
 
   factory Status.fromJson(Map<String, dynamic> json) => _$StatusFromJson(json);
@@ -17,5 +18,6 @@ class Status with _$Status {
   Map<String, dynamic> mapToRequest() => {
         'id': id,
         'name': name,
+        'createdDate': createdDate?.toUtc().toIso8601String(),
       };
 }

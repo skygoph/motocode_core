@@ -5,7 +5,11 @@ import 'package:motocode_core/services/src/api_client.dart';
 /// A repository that handles departments api requests
 class DepartmentsService {
   /// Constructor for the [DepartmentsService]
-  DepartmentsService(this._apiClient, this._crashlytics);
+  DepartmentsService({
+    required ApiClient apiClient,
+    FirebaseCrashlytics? crashlytics,
+  })  : _apiClient = apiClient,
+        _crashlytics = crashlytics;
 
   /// The API client to make requests to the server
   final ApiClient _apiClient;

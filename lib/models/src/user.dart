@@ -60,11 +60,11 @@ class User with _$User {
         'positionId': positionId,
         'statusId': statusId,
         'statusList': statuses?.map((e) => e.id).toList(),
-        'createdDate': createdDate,
         'userStatus': userStatus,
         'depotList': depots?.map((e) => e.id).toList(),
         'roleNames': userRoles?.map((e) => e.name).toList(),
         'latitude': latitude,
         'longitude': longitude,
+        'createdDate': createdDate?.toUtc().toIso8601String(),
       };
 }

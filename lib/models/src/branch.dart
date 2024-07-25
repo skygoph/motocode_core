@@ -20,5 +20,6 @@ class Branch with _$Branch {
         'id': id,
         'name': name,
         'location': location,
+        'createdDate': createdDate?.toUtc().toIso8601String(),
       };
 }

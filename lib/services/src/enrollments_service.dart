@@ -4,7 +4,11 @@ import 'package:motocode_core/motocode_core.dart';
 /// Service to handle enrollments api requests
 class EnrollmentsService {
   /// Constructor for the [EnrollmentsService]
-  EnrollmentsService(this._apiClient, this._crashlytics);
+  EnrollmentsService({
+    required ApiClient apiClient,
+    FirebaseCrashlytics? crashlytics,
+  })  : _apiClient = apiClient,
+        _crashlytics = crashlytics;
 
   /// The API client to make requests to the server
   final ApiClient _apiClient;
