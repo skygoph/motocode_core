@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.2.1
+
+* Update UserRole model
+
 ## 0.2.0
 
 * Update models with createdDate field

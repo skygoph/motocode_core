@@ -100,7 +100,7 @@ abstract class ApiClient {
   Future<void> createRole(@Body() Map<String, dynamic> data);
   @PUT('/roles/{id}')
   Future<void> updateRole(
-      @Path('id') int roleId, @Body() Map<String, dynamic> data);
+      @Path('id') String roleId, @Body() Map<String, dynamic> data);
 
   /// ********** ScannedQrCodes API ********** ///
   @GET('/scanned-qr-codes')

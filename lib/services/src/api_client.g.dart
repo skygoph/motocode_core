@@ -909,7 +909,7 @@ class _ApiClient implements ApiClient {
 
   @override
   Future<void> updateRole(
-    int roleId,
+    String roleId,
     Map<String, dynamic> data,
   ) async {
     final _extra = <String, dynamic>{};

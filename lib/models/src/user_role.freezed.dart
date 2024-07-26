@@ -20,7 +20,7 @@ UserRole _$UserRoleFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserRole {
-  int? get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -34,7 +34,7 @@ abstract class $UserRoleCopyWith<$Res> {
   factory $UserRoleCopyWith(UserRole value, $Res Function(UserRole) then) =
       _$UserRoleCopyWithImpl<$Res, UserRole>;
   @useResult
-  $Res call({int? id, String? name});
+  $Res call({String? id, String? name});
 }
 
 /// @nodoc
@@ -57,7 +57,7 @@ class _$UserRoleCopyWithImpl<$Res, $Val extends UserRole>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -74,7 +74,7 @@ abstract class _$$UserRoleImplCopyWith<$Res>
       __$$UserRoleImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? id, String? name});
+  $Res call({String? id, String? name});
 }
 
 /// @nodoc
@@ -95,7 +95,7 @@ class __$$UserRoleImplCopyWithImpl<$Res>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -107,13 +107,13 @@ class __$$UserRoleImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$UserRoleImpl extends _UserRole {
-  const _$UserRoleImpl({this.id, this.name}) : super._();
+  const _$UserRoleImpl({required this.id, required this.name}) : super._();
 
   factory _$UserRoleImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserRoleImplFromJson(json);
 
   @override
-  final int? id;
+  final String? id;
   @override
   final String? name;
 
@@ -150,14 +150,16 @@ class _$UserRoleImpl extends _UserRole {
 }
 
 abstract class _UserRole extends UserRole {
-  const factory _UserRole({final int? id, final String? name}) = _$UserRoleImpl;
+  const factory _UserRole(
+      {required final String? id,
+      required final String? name}) = _$UserRoleImpl;
   const _UserRole._() : super._();
 
   factory _UserRole.fromJson(Map<String, dynamic> json) =
       _$UserRoleImpl.fromJson;
 
   @override
-  int? get id;
+  String? get id;
   @override
   String? get name;
   @override
