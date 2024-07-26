@@ -19,7 +19,7 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       createdDate: json['createdDate'] == null
           ? null
           : DateTime.parse(json['createdDate'] as String),
-      userRoleId: (json['userRoleId'] as num?)?.toInt(),
+      userRoleId: json['userRoleId'] as String?,
       latitude: (json['latitude'] as num?)?.toDouble(),
       longitude: (json['longitude'] as num?)?.toDouble(),
       password: json['password'] as String?,

@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.2.2
+
+* Update User Model
+
 ## 0.2.1
 
 * Update UserRole model

@@ -30,7 +30,7 @@ mixin _$User {
   int? get positionId => throw _privateConstructorUsedError;
   String? get creatorId => throw _privateConstructorUsedError;
   DateTime? get createdDate => throw _privateConstructorUsedError;
-  int? get userRoleId => throw _privateConstructorUsedError;
+  String? get userRoleId => throw _privateConstructorUsedError;
   double? get latitude => throw _privateConstructorUsedError;
   double? get longitude => throw _privateConstructorUsedError;
   String? get password => throw _privateConstructorUsedError;
@@ -66,7 +66,7 @@ abstract class $UserCopyWith<$Res> {
       int? positionId,
       String? creatorId,
       DateTime? createdDate,
-      int? userRoleId,
+      String? userRoleId,
       double? latitude,
       double? longitude,
       String? password,
@@ -169,7 +169,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
       userRoleId: freezed == userRoleId
           ? _value.userRoleId
           : userRoleId // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       latitude: freezed == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
@@ -292,7 +292,7 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       int? positionId,
       String? creatorId,
       DateTime? createdDate,
-      int? userRoleId,
+      String? userRoleId,
       double? latitude,
       double? longitude,
       String? password,
@@ -396,7 +396,7 @@ class __$$UserImplCopyWithImpl<$Res>
       userRoleId: freezed == userRoleId
           ? _value.userRoleId
           : userRoleId // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       latitude: freezed == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
@@ -511,7 +511,7 @@ class _$UserImpl extends _User {
   @override
   final DateTime? createdDate;
   @override
-  final int? userRoleId;
+  final String? userRoleId;
   @override
   final double? latitude;
   @override
@@ -680,7 +680,7 @@ abstract class _User extends User {
       final int? positionId,
       final String? creatorId,
       final DateTime? createdDate,
-      final int? userRoleId,
+      final String? userRoleId,
       final double? latitude,
       final double? longitude,
       final String? password,
@@ -719,7 +719,7 @@ abstract class _User extends User {
   @override
   DateTime? get createdDate;
   @override
-  int? get userRoleId;
+  String? get userRoleId;
   @override
   double? get latitude;
   @override
