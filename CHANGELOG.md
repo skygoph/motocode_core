@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.2.3
+
+* Update Status State
+
 ## 0.2.2
 
 * Update User Model
