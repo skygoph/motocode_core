@@ -22,6 +22,7 @@ Position _$PositionFromJson(Map<String, dynamic> json) {
 mixin _$Position {
   int? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
+  String? get roleId => throw _privateConstructorUsedError;
   DateTime? get createdDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -35,7 +36,7 @@ abstract class $PositionCopyWith<$Res> {
   factory $PositionCopyWith(Position value, $Res Function(Position) then) =
       _$PositionCopyWithImpl<$Res, Position>;
   @useResult
-  $Res call({int? id, String? name, DateTime? createdDate});
+  $Res call({int? id, String? name, String? roleId, DateTime? createdDate});
 }
 
 /// @nodoc
@@ -53,6 +54,7 @@ class _$PositionCopyWithImpl<$Res, $Val extends Position>
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
+    Object? roleId = freezed,
     Object? createdDate = freezed,
   }) {
     return _then(_value.copyWith(
@@ -63,6 +65,10 @@ class _$PositionCopyWithImpl<$Res, $Val extends Position>
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      roleId: freezed == roleId
+          ? _value.roleId
+          : roleId // ignore: cast_nullable_to_non_nullable
               as String?,
       createdDate: freezed == createdDate
           ? _value.createdDate
@@ -80,7 +86,7 @@ abstract class _$$PositionImplCopyWith<$Res>
       __$$PositionImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? id, String? name, DateTime? createdDate});
+  $Res call({int? id, String? name, String? roleId, DateTime? createdDate});
 }
 
 /// @nodoc
@@ -96,6 +102,7 @@ class __$$PositionImplCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
+    Object? roleId = freezed,
     Object? createdDate = freezed,
   }) {
     return _then(_$PositionImpl(
@@ -106,6 +113,10 @@ class __$$PositionImplCopyWithImpl<$Res>
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      roleId: freezed == roleId
+          ? _value.roleId
+          : roleId // ignore: cast_nullable_to_non_nullable
               as String?,
       createdDate: freezed == createdDate
           ? _value.createdDate
@@ -119,7 +130,10 @@ class __$$PositionImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$PositionImpl extends _Position {
   const _$PositionImpl(
-      {required this.id, required this.name, required this.createdDate})
+      {required this.id,
+      required this.name,
+      required this.roleId,
+      required this.createdDate})
       : super._();
 
   factory _$PositionImpl.fromJson(Map<String, dynamic> json) =>
@@ -130,11 +144,13 @@ class _$PositionImpl extends _Position {
   @override
   final String? name;
   @override
+  final String? roleId;
+  @override
   final DateTime? createdDate;
 
   @override
   String toString() {
-    return 'Position(id: $id, name: $name, createdDate: $createdDate)';
+    return 'Position(id: $id, name: $name, roleId: $roleId, createdDate: $createdDate)';
   }
 
   @override
@@ -144,13 +160,14 @@ class _$PositionImpl extends _Position {
             other is _$PositionImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.roleId, roleId) || other.roleId == roleId) &&
             (identical(other.createdDate, createdDate) ||
                 other.createdDate == createdDate));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, createdDate);
+  int get hashCode => Object.hash(runtimeType, id, name, roleId, createdDate);
 
   @JsonKey(ignore: true)
   @override
@@ -170,6 +187,7 @@ abstract class _Position extends Position {
   const factory _Position(
       {required final int? id,
       required final String? name,
+      required final String? roleId,
       required final DateTime? createdDate}) = _$PositionImpl;
   const _Position._() : super._();
 
@@ -180,6 +198,8 @@ abstract class _Position extends Position {
   int? get id;
   @override
   String? get name;
+  @override
+  String? get roleId;
   @override
   DateTime? get createdDate;
   @override

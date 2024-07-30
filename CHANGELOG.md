@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.2.6
+
+* Update Position Model
+
 ## 0.2.5
 
 * Update Create Depot mapToRequest
