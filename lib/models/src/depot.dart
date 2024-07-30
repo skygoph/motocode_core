@@ -31,6 +31,7 @@ class Depot with _$Depot {
         'location': location,
         'latitude': latitude,
         'longitude': longitude,
+        'depotStatus': depotStatus,
         'businessUnitId': businessUnitId ?? businessUnit?.id,
         'depotTypeId': depotTypeId ?? depotType?.id,
         'createdDate': createdDate?.toUtc().toIso8601String(),
