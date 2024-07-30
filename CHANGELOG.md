@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.2.4
+
+* Update Depot Model
+
 ## 0.2.3
 
 * Update Status State

@@ -17,6 +17,7 @@ class Depot with _$Depot {
     double? longitude,
     int? businessUnitId,
     int? depotTypeId,
+    int? depotStatus,
     BusinessUnit? businessUnit,
     DepotType? depotType,
     DateTime? createdDate,

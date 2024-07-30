@@ -14,6 +14,7 @@ _$DepotImpl _$$DepotImplFromJson(Map<String, dynamic> json) => _$DepotImpl(
       longitude: (json['longitude'] as num?)?.toDouble(),
       businessUnitId: (json['businessUnitId'] as num?)?.toInt(),
       depotTypeId: (json['depotTypeId'] as num?)?.toInt(),
+      depotStatus: (json['depotStatus'] as num?)?.toInt(),
       businessUnit: json['businessUnit'] == null
           ? null
           : BusinessUnit.fromJson(json['businessUnit'] as Map<String, dynamic>),
@@ -34,6 +35,7 @@ Map<String, dynamic> _$$DepotImplToJson(_$DepotImpl instance) =>
       'longitude': instance.longitude,
       'businessUnitId': instance.businessUnitId,
       'depotTypeId': instance.depotTypeId,
+      'depotStatus': instance.depotStatus,
       'businessUnit': instance.businessUnit,
       'depotType': instance.depotType,
       'createdDate': instance.createdDate?.toIso8601String(),
