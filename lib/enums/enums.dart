@@ -31,15 +31,16 @@ enum DepotTypeEnum {
 enum UserScanningStateEnum {
   ENROLLED(1),
   IN_HO_WAREHOUSE(2),
-  ASSEMBLED(3),
-  DISPATCHED(4),
-  IN_OUTLET(5),
-  IN_WAREHOUSE(6),
-  IN_RECON_CENTER(7),
-  CASH_SALE(8),
-  INSTALLMENT_SALE(9),
-  REPOSSESSED(10),
-  SCRAPPED(11);
+  IN_ASSEMBLY(3),
+  ASSEMBLED(4),
+  DISPATCHED(5),
+  IN_OUTLET(6),
+  IN_WAREHOUSE(7),
+  IN_RECON_CENTER(8),
+  CASH_SALE(9),
+  INSTALLMENT_SALE(10),
+  REPOSSESSED(11),
+  SCRAPPED(12);
 
   const UserScanningStateEnum(this.id);
   final int id;
