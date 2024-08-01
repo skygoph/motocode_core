@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.2.7
+
+* Add boolean getters to check scanning state of user
+
 ## 0.2.6
 
 * Update Position Model

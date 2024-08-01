@@ -39,13 +39,25 @@ class User with _$User {
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
   String get fullName => '$firstName $lastName';
-  bool get isAdmin => statusId == null && userRoleId == 2;
+  bool get isAdmin => statusId == null;
   bool get isDealer =>
       depots?.every((e) => e.depotType?.id == DepotTypeEnum.DEALER.id) ?? false;
 
   bool get isEnrollment => statusId == UserScanningStateEnum.ENROLLED.id;
   bool get isHOInboundChecker =>
       statusId == UserScanningStateEnum.IN_HO_WAREHOUSE.id;
+  bool get isInAssembly => statusId == UserScanningStateEnum.IN_ASSEMBLY.id;
+  bool get isAssembled => statusId == UserScanningStateEnum.ASSEMBLED.id;
+  bool get isDispatched => statusId == UserScanningStateEnum.DISPATCHED.id;
+  bool get isInOutlet => statusId == UserScanningStateEnum.IN_OUTLET.id;
+  bool get isInWarehouse => statusId == UserScanningStateEnum.IN_WAREHOUSE.id;
+  bool get isInReconCenter =>
+      statusId == UserScanningStateEnum.IN_RECON_CENTER.id;
+  bool get isCashSale => statusId == UserScanningStateEnum.CASH_SALE.id;
+  bool get isInstallmentSale =>
+      statusId == UserScanningStateEnum.INSTALLMENT_SALE.id;
+  bool get isRepossessed => statusId == UserScanningStateEnum.REPOSSESSED.id;
+  bool get isScrapped => statusId == UserScanningStateEnum.SCRAPPED.id;
 
   Map<String, dynamic> mapToRequest() => {
         'id': id,
