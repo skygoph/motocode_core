@@ -27,6 +27,7 @@ mixin _$Depot {
   double? get longitude => throw _privateConstructorUsedError;
   int? get businessUnitId => throw _privateConstructorUsedError;
   int? get depotTypeId => throw _privateConstructorUsedError;
+  int? get depotStatus => throw _privateConstructorUsedError;
   BusinessUnit? get businessUnit => throw _privateConstructorUsedError;
   DepotType? get depotType => throw _privateConstructorUsedError;
   DateTime? get createdDate => throw _privateConstructorUsedError;
@@ -49,6 +50,7 @@ abstract class $DepotCopyWith<$Res> {
       double? longitude,
       int? businessUnitId,
       int? depotTypeId,
+      int? depotStatus,
       BusinessUnit? businessUnit,
       DepotType? depotType,
       DateTime? createdDate});
@@ -77,6 +79,7 @@ class _$DepotCopyWithImpl<$Res, $Val extends Depot>
     Object? longitude = freezed,
     Object? businessUnitId = freezed,
     Object? depotTypeId = freezed,
+    Object? depotStatus = freezed,
     Object? businessUnit = freezed,
     Object? depotType = freezed,
     Object? createdDate = freezed,
@@ -109,6 +112,10 @@ class _$DepotCopyWithImpl<$Res, $Val extends Depot>
       depotTypeId: freezed == depotTypeId
           ? _value.depotTypeId
           : depotTypeId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      depotStatus: freezed == depotStatus
+          ? _value.depotStatus
+          : depotStatus // ignore: cast_nullable_to_non_nullable
               as int?,
       businessUnit: freezed == businessUnit
           ? _value.businessUnit
@@ -165,6 +172,7 @@ abstract class _$$DepotImplCopyWith<$Res> implements $DepotCopyWith<$Res> {
       double? longitude,
       int? businessUnitId,
       int? depotTypeId,
+      int? depotStatus,
       BusinessUnit? businessUnit,
       DepotType? depotType,
       DateTime? createdDate});
@@ -193,6 +201,7 @@ class __$$DepotImplCopyWithImpl<$Res>
     Object? longitude = freezed,
     Object? businessUnitId = freezed,
     Object? depotTypeId = freezed,
+    Object? depotStatus = freezed,
     Object? businessUnit = freezed,
     Object? depotType = freezed,
     Object? createdDate = freezed,
@@ -226,6 +235,10 @@ class __$$DepotImplCopyWithImpl<$Res>
           ? _value.depotTypeId
           : depotTypeId // ignore: cast_nullable_to_non_nullable
               as int?,
+      depotStatus: freezed == depotStatus
+          ? _value.depotStatus
+          : depotStatus // ignore: cast_nullable_to_non_nullable
+              as int?,
       businessUnit: freezed == businessUnit
           ? _value.businessUnit
           : businessUnit // ignore: cast_nullable_to_non_nullable
@@ -253,6 +266,7 @@ class _$DepotImpl extends _Depot {
       this.longitude,
       this.businessUnitId,
       this.depotTypeId,
+      this.depotStatus,
       this.businessUnit,
       this.depotType,
       this.createdDate})
@@ -276,6 +290,8 @@ class _$DepotImpl extends _Depot {
   @override
   final int? depotTypeId;
   @override
+  final int? depotStatus;
+  @override
   final BusinessUnit? businessUnit;
   @override
   final DepotType? depotType;
@@ -284,7 +300,7 @@ class _$DepotImpl extends _Depot {
 
   @override
   String toString() {
-    return 'Depot(id: $id, name: $name, location: $location, latitude: $latitude, longitude: $longitude, businessUnitId: $businessUnitId, depotTypeId: $depotTypeId, businessUnit: $businessUnit, depotType: $depotType, createdDate: $createdDate)';
+    return 'Depot(id: $id, name: $name, location: $location, latitude: $latitude, longitude: $longitude, businessUnitId: $businessUnitId, depotTypeId: $depotTypeId, depotStatus: $depotStatus, businessUnit: $businessUnit, depotType: $depotType, createdDate: $createdDate)';
   }
 
   @override
@@ -304,6 +320,8 @@ class _$DepotImpl extends _Depot {
                 other.businessUnitId == businessUnitId) &&
             (identical(other.depotTypeId, depotTypeId) ||
                 other.depotTypeId == depotTypeId) &&
+            (identical(other.depotStatus, depotStatus) ||
+                other.depotStatus == depotStatus) &&
             (identical(other.businessUnit, businessUnit) ||
                 other.businessUnit == businessUnit) &&
             (identical(other.depotType, depotType) ||
@@ -323,6 +341,7 @@ class _$DepotImpl extends _Depot {
       longitude,
       businessUnitId,
       depotTypeId,
+      depotStatus,
       businessUnit,
       depotType,
       createdDate);
@@ -350,6 +369,7 @@ abstract class _Depot extends Depot {
       final double? longitude,
       final int? businessUnitId,
       final int? depotTypeId,
+      final int? depotStatus,
       final BusinessUnit? businessUnit,
       final DepotType? depotType,
       final DateTime? createdDate}) = _$DepotImpl;
@@ -371,6 +391,8 @@ abstract class _Depot extends Depot {
   int? get businessUnitId;
   @override
   int? get depotTypeId;
+  @override
+  int? get depotStatus;
   @override
   BusinessUnit? get businessUnit;
   @override

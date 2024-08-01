@@ -1,5 +1,17 @@
 # Release Notes
 
+## 0.2.6
+
+* Update Position Model
+
+## 0.2.5
+
+* Update Create Depot mapToRequest
+
+## 0.2.4
+
+* Update Depot Model
+
 ## 0.2.3
 
 * Update Status State

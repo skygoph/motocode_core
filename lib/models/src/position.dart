@@ -10,6 +10,7 @@ class Position with _$Position {
   const factory Position({
     required int? id,
     required String? name,
+    required String? roleId,
     required DateTime? createdDate,
   }) = _Position;
 
@@ -19,6 +20,7 @@ class Position with _$Position {
   Map<String, dynamic> mapToRequest() => {
         'id': id,
         'name': name,
+        'roleId': roleId,
         'createdDate': createdDate?.toUtc().toIso8601String(),
       };
 }
