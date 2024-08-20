@@ -23,8 +23,12 @@ mixin _$UserRole {
   String? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
 
+  /// Serializes this UserRole to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of UserRole
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $UserRoleCopyWith<UserRole> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -47,6 +51,8 @@ class _$UserRoleCopyWithImpl<$Res, $Val extends UserRole>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of UserRole
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -85,6 +91,8 @@ class __$$UserRoleImplCopyWithImpl<$Res>
       _$UserRoleImpl _value, $Res Function(_$UserRoleImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UserRole
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -131,11 +139,13 @@ class _$UserRoleImpl extends _UserRole {
             (identical(other.name, name) || other.name == name));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, name);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UserRole
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UserRoleImplCopyWith<_$UserRoleImpl> get copyWith =>
@@ -162,8 +172,11 @@ abstract class _UserRole extends UserRole {
   String? get id;
   @override
   String? get name;
+
+  /// Create a copy of UserRole
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UserRoleImplCopyWith<_$UserRoleImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

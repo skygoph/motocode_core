@@ -25,8 +25,12 @@ mixin _$DepotType {
   String? get description => throw _privateConstructorUsedError;
   DateTime? get createdDate => throw _privateConstructorUsedError;
 
+  /// Serializes this DepotType to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of DepotType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DepotTypeCopyWith<DepotType> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,6 +54,8 @@ class _$DepotTypeCopyWithImpl<$Res, $Val extends DepotType>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of DepotType
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -99,6 +105,8 @@ class __$$DepotTypeImplCopyWithImpl<$Res>
       _$DepotTypeImpl _value, $Res Function(_$DepotTypeImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of DepotType
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -165,12 +173,14 @@ class _$DepotTypeImpl extends _DepotType {
                 other.createdDate == createdDate));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, id, name, description, createdDate);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DepotType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DepotTypeImplCopyWith<_$DepotTypeImpl> get copyWith =>
@@ -203,8 +213,11 @@ abstract class _DepotType extends DepotType {
   String? get description;
   @override
   DateTime? get createdDate;
+
+  /// Create a copy of DepotType
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DepotTypeImplCopyWith<_$DepotTypeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

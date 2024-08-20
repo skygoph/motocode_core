@@ -40,9 +40,6 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       userRoles: (json['userRoles'] as List<dynamic>?)
           ?.map((e) => UserRole.fromJson(e as Map<String, dynamic>))
           .toList(),
-      branches: (json['branches'] as List<dynamic>?)
-          ?.map((e) => Branch.fromJson(e as Map<String, dynamic>))
-          .toList(),
       depots: (json['depots'] as List<dynamic>?)
           ?.map((e) => Depot.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -74,7 +71,6 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
       'position': instance.position,
       'status': instance.status,
       'userRoles': instance.userRoles,
-      'branches': instance.branches,
       'depots': instance.depots,
       'statuses': instance.statuses,
     };

@@ -19,7 +19,11 @@ class ScannedQrCode with _$ScannedQrCode {
     Depot? depot,
     QrCode? qrCode,
     Status? status,
+    Order? order,
+    String? orderId,
+    String? purchaseOrder,
     User? user,
+    String? remarks,
   }) = _ScannedQrCode;
 
   factory ScannedQrCode.fromJson(Map<String, dynamic> json) =>
@@ -35,11 +39,13 @@ class ScannedQrCode with _$ScannedQrCode {
         'color': qrCode?.color,
         'batchNumber': qrCode?.batchNumber,
         'brand': qrCode?.brand,
-        'qrCodeId': qrCodeId,
-        'depotId': depotId,
-        'statusId': statusId,
-        'userId': userId,
+        'qrCodeId': qrCode?.id ?? qrCodeId,
+        'depotId': depot?.id ?? depotId,
+        'statusId': status?.id ?? statusId,
+        'userId': user?.id ?? userId,
         'createdDate': createdDate?.toUtc().toIso8601String(),
         'endedDate': endedDate?.toUtc().toIso8601String(),
+        'remarks': remarks,
+        'orderId': order?.id ?? orderId,
       };
 }

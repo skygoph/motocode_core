@@ -15,7 +15,7 @@ _$QrCodeImpl _$$QrCodeImplFromJson(Map<String, dynamic> json) => _$QrCodeImpl(
       batchNumber: json['batchNumber'] as String?,
       brand: json['brand'] as String?,
       controlNumber: json['controlNumber'] as String?,
-      yearModel: (json['yearModel'] as num?)?.toInt(),
+      year: (json['year'] as num?)?.toInt(),
       id: (json['id'] as num?)?.toInt(),
     );
 
@@ -29,6 +29,6 @@ Map<String, dynamic> _$$QrCodeImplToJson(_$QrCodeImpl instance) =>
       'batchNumber': instance.batchNumber,
       'brand': instance.brand,
       'controlNumber': instance.controlNumber,
-      'yearModel': instance.yearModel,
+      'year': instance.year,
       'id': instance.id,
     };

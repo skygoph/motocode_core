@@ -28,11 +28,15 @@ mixin _$QrCode {
   String? get batchNumber => throw _privateConstructorUsedError;
   String? get brand => throw _privateConstructorUsedError;
   String? get controlNumber => throw _privateConstructorUsedError;
-  int? get yearModel => throw _privateConstructorUsedError;
+  int? get year => throw _privateConstructorUsedError;
   int? get id => throw _privateConstructorUsedError;
 
+  /// Serializes this QrCode to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of QrCode
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $QrCodeCopyWith<QrCode> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -50,7 +54,7 @@ abstract class $QrCodeCopyWith<$Res> {
       String? batchNumber,
       String? brand,
       String? controlNumber,
-      int? yearModel,
+      int? year,
       int? id});
 }
 
@@ -64,6 +68,8 @@ class _$QrCodeCopyWithImpl<$Res, $Val extends QrCode>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of QrCode
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -75,7 +81,7 @@ class _$QrCodeCopyWithImpl<$Res, $Val extends QrCode>
     Object? batchNumber = freezed,
     Object? brand = freezed,
     Object? controlNumber = freezed,
-    Object? yearModel = freezed,
+    Object? year = freezed,
     Object? id = freezed,
   }) {
     return _then(_value.copyWith(
@@ -111,9 +117,9 @@ class _$QrCodeCopyWithImpl<$Res, $Val extends QrCode>
           ? _value.controlNumber
           : controlNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      yearModel: freezed == yearModel
-          ? _value.yearModel
-          : yearModel // ignore: cast_nullable_to_non_nullable
+      year: freezed == year
+          ? _value.year
+          : year // ignore: cast_nullable_to_non_nullable
               as int?,
       id: freezed == id
           ? _value.id
@@ -139,7 +145,7 @@ abstract class _$$QrCodeImplCopyWith<$Res> implements $QrCodeCopyWith<$Res> {
       String? batchNumber,
       String? brand,
       String? controlNumber,
-      int? yearModel,
+      int? year,
       int? id});
 }
 
@@ -151,6 +157,8 @@ class __$$QrCodeImplCopyWithImpl<$Res>
       _$QrCodeImpl _value, $Res Function(_$QrCodeImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of QrCode
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -162,7 +170,7 @@ class __$$QrCodeImplCopyWithImpl<$Res>
     Object? batchNumber = freezed,
     Object? brand = freezed,
     Object? controlNumber = freezed,
-    Object? yearModel = freezed,
+    Object? year = freezed,
     Object? id = freezed,
   }) {
     return _then(_$QrCodeImpl(
@@ -198,9 +206,9 @@ class __$$QrCodeImplCopyWithImpl<$Res>
           ? _value.controlNumber
           : controlNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      yearModel: freezed == yearModel
-          ? _value.yearModel
-          : yearModel // ignore: cast_nullable_to_non_nullable
+      year: freezed == year
+          ? _value.year
+          : year // ignore: cast_nullable_to_non_nullable
               as int?,
       id: freezed == id
           ? _value.id
@@ -222,7 +230,7 @@ class _$QrCodeImpl extends _QrCode {
       this.batchNumber,
       this.brand,
       this.controlNumber,
-      this.yearModel,
+      this.year,
       this.id})
       : super._();
 
@@ -246,13 +254,13 @@ class _$QrCodeImpl extends _QrCode {
   @override
   final String? controlNumber;
   @override
-  final int? yearModel;
+  final int? year;
   @override
   final int? id;
 
   @override
   String toString() {
-    return 'QrCode(chassisNumber: $chassisNumber, engineNumber: $engineNumber, model: $model, manufacturingDate: $manufacturingDate, color: $color, batchNumber: $batchNumber, brand: $brand, controlNumber: $controlNumber, yearModel: $yearModel, id: $id)';
+    return 'QrCode(chassisNumber: $chassisNumber, engineNumber: $engineNumber, model: $model, manufacturingDate: $manufacturingDate, color: $color, batchNumber: $batchNumber, brand: $brand, controlNumber: $controlNumber, year: $year, id: $id)';
   }
 
   @override
@@ -273,12 +281,11 @@ class _$QrCodeImpl extends _QrCode {
             (identical(other.brand, brand) || other.brand == brand) &&
             (identical(other.controlNumber, controlNumber) ||
                 other.controlNumber == controlNumber) &&
-            (identical(other.yearModel, yearModel) ||
-                other.yearModel == yearModel) &&
+            (identical(other.year, year) || other.year == year) &&
             (identical(other.id, id) || other.id == id));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -290,10 +297,12 @@ class _$QrCodeImpl extends _QrCode {
       batchNumber,
       brand,
       controlNumber,
-      yearModel,
+      year,
       id);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of QrCode
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$QrCodeImplCopyWith<_$QrCodeImpl> get copyWith =>
@@ -317,7 +326,7 @@ abstract class _QrCode extends QrCode {
       final String? batchNumber,
       final String? brand,
       final String? controlNumber,
-      final int? yearModel,
+      final int? year,
       final int? id}) = _$QrCodeImpl;
   const _QrCode._() : super._();
 
@@ -340,11 +349,14 @@ abstract class _QrCode extends QrCode {
   @override
   String? get controlNumber;
   @override
-  int? get yearModel;
+  int? get year;
   @override
   int? get id;
+
+  /// Create a copy of QrCode
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$QrCodeImplCopyWith<_$QrCodeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

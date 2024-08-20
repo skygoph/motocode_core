@@ -91,6 +91,12 @@ abstract class ApiClient {
   Future<List<ScannedQrCode>> getScannedQrCodesWithQrCode(
       @Path('id') int qrCodeId);
 
+  /// ********** Orders API ********** ///
+  @GET('/orders')
+  Future<List<Order>> getOrders();
+  @GET('/orders/{purchaseNumber}')
+  Future<List<QrCode>> getOrder(@Path('purchaseNumber') String purchaseNumber);
+
   /// ********** Roles API ********** ///
   @GET('/roles')
   Future<List<UserRole>> getRoles();
@@ -177,6 +183,10 @@ LoginResponse deserializeLoginResponse(Map<String, dynamic> data) {
   return LoginResponse.fromJson(data);
 }
 
+Order deserializeOrder(Map<String, dynamic> data) {
+  return Order.fromJson(data);
+}
+
 Position deserializePosition(Map<String, dynamic> data) {
   return Position.fromJson(data);
 }
@@ -215,6 +225,10 @@ List<Depot> deserializeDepotList(List<dynamic> data) {
 
 List<DepotType> deserializeDepotTypeList(List<dynamic> data) {
   return data.map((e) => DepotType.fromJson(e)).toList();
+}
+
+List<Order> deserializeOrderList(List<dynamic> data) {
+  return data.map((e) => Order.fromJson(e)).toList();
 }
 
 List<Position> deserializePositionList(List<dynamic> data) {
@@ -257,6 +271,10 @@ List<Map<String, dynamic>> serializeScannedQrCodeList(
 // Map<String, dynamic> serializeScannedQrCode(ScannedQrCode scannedQrCode) {
 //   return scannedQrCode.toJson();
 // }
+
+Map<String, dynamic> serializeOrder(Order order) {
+  return order.toJson();
+}
 
 Map<String, dynamic> serializeQrCode(QrCode qrCode) {
   return qrCode.toJson();

@@ -41,12 +41,15 @@ mixin _$User {
   Position? get position => throw _privateConstructorUsedError;
   Status? get status => throw _privateConstructorUsedError;
   List<UserRole>? get userRoles => throw _privateConstructorUsedError;
-  List<Branch>? get branches => throw _privateConstructorUsedError;
   List<Depot>? get depots => throw _privateConstructorUsedError;
   List<Status>? get statuses => throw _privateConstructorUsedError;
 
+  /// Serializes this User to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -77,7 +80,6 @@ abstract class $UserCopyWith<$Res> {
       Position? position,
       Status? status,
       List<UserRole>? userRoles,
-      List<Branch>? branches,
       List<Depot>? depots,
       List<Status>? statuses});
 
@@ -97,6 +99,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -121,7 +125,6 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? position = freezed,
     Object? status = freezed,
     Object? userRoles = freezed,
-    Object? branches = freezed,
     Object? depots = freezed,
     Object? statuses = freezed,
   }) {
@@ -210,10 +213,6 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.userRoles
           : userRoles // ignore: cast_nullable_to_non_nullable
               as List<UserRole>?,
-      branches: freezed == branches
-          ? _value.branches
-          : branches // ignore: cast_nullable_to_non_nullable
-              as List<Branch>?,
       depots: freezed == depots
           ? _value.depots
           : depots // ignore: cast_nullable_to_non_nullable
@@ -225,6 +224,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     ) as $Val);
   }
 
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DepartmentCopyWith<$Res>? get department {
@@ -237,6 +238,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     });
   }
 
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $BusinessUnitCopyWith<$Res>? get businessUnit {
@@ -249,6 +252,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     });
   }
 
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $PositionCopyWith<$Res>? get position {
@@ -261,6 +266,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     });
   }
 
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StatusCopyWith<$Res>? get status {
@@ -303,7 +310,6 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       Position? position,
       Status? status,
       List<UserRole>? userRoles,
-      List<Branch>? branches,
       List<Depot>? depots,
       List<Status>? statuses});
 
@@ -324,6 +330,8 @@ class __$$UserImplCopyWithImpl<$Res>
   __$$UserImplCopyWithImpl(_$UserImpl _value, $Res Function(_$UserImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -348,7 +356,6 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? position = freezed,
     Object? status = freezed,
     Object? userRoles = freezed,
-    Object? branches = freezed,
     Object? depots = freezed,
     Object? statuses = freezed,
   }) {
@@ -437,10 +444,6 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value._userRoles
           : userRoles // ignore: cast_nullable_to_non_nullable
               as List<UserRole>?,
-      branches: freezed == branches
-          ? _value._branches
-          : branches // ignore: cast_nullable_to_non_nullable
-              as List<Branch>?,
       depots: freezed == depots
           ? _value._depots
           : depots // ignore: cast_nullable_to_non_nullable
@@ -478,11 +481,9 @@ class _$UserImpl extends _User {
       this.position,
       this.status,
       final List<UserRole>? userRoles,
-      final List<Branch>? branches,
       final List<Depot>? depots,
       final List<Status>? statuses})
       : _userRoles = userRoles,
-        _branches = branches,
         _depots = depots,
         _statuses = statuses,
         super._();
@@ -540,16 +541,6 @@ class _$UserImpl extends _User {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<Branch>? _branches;
-  @override
-  List<Branch>? get branches {
-    final value = _branches;
-    if (value == null) return null;
-    if (_branches is EqualUnmodifiableListView) return _branches;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
   final List<Depot>? _depots;
   @override
   List<Depot>? get depots {
@@ -572,7 +563,7 @@ class _$UserImpl extends _User {
 
   @override
   String toString() {
-    return 'User(id: $id, firstName: $firstName, lastName: $lastName, email: $email, statusId: $statusId, departmentId: $departmentId, businessUnitId: $businessUnitId, positionId: $positionId, creatorId: $creatorId, createdDate: $createdDate, userRoleId: $userRoleId, latitude: $latitude, longitude: $longitude, password: $password, roleName: $roleName, userStatus: $userStatus, department: $department, businessUnit: $businessUnit, position: $position, status: $status, userRoles: $userRoles, branches: $branches, depots: $depots, statuses: $statuses)';
+    return 'User(id: $id, firstName: $firstName, lastName: $lastName, email: $email, statusId: $statusId, departmentId: $departmentId, businessUnitId: $businessUnitId, positionId: $positionId, creatorId: $creatorId, createdDate: $createdDate, userRoleId: $userRoleId, latitude: $latitude, longitude: $longitude, password: $password, roleName: $roleName, userStatus: $userStatus, department: $department, businessUnit: $businessUnit, position: $position, status: $status, userRoles: $userRoles, depots: $depots, statuses: $statuses)';
   }
 
   @override
@@ -619,12 +610,11 @@ class _$UserImpl extends _User {
             (identical(other.status, status) || other.status == status) &&
             const DeepCollectionEquality()
                 .equals(other._userRoles, _userRoles) &&
-            const DeepCollectionEquality().equals(other._branches, _branches) &&
             const DeepCollectionEquality().equals(other._depots, _depots) &&
             const DeepCollectionEquality().equals(other._statuses, _statuses));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -649,12 +639,13 @@ class _$UserImpl extends _User {
         position,
         status,
         const DeepCollectionEquality().hash(_userRoles),
-        const DeepCollectionEquality().hash(_branches),
         const DeepCollectionEquality().hash(_depots),
         const DeepCollectionEquality().hash(_statuses)
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UserImplCopyWith<_$UserImpl> get copyWith =>
@@ -691,7 +682,6 @@ abstract class _User extends User {
       final Position? position,
       final Status? status,
       final List<UserRole>? userRoles,
-      final List<Branch>? branches,
       final List<Depot>? depots,
       final List<Status>? statuses}) = _$UserImpl;
   const _User._() : super._();
@@ -741,13 +731,14 @@ abstract class _User extends User {
   @override
   List<UserRole>? get userRoles;
   @override
-  List<Branch>? get branches;
-  @override
   List<Depot>? get depots;
   @override
   List<Status>? get statuses;
+
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UserImplCopyWith<_$UserImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

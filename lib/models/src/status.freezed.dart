@@ -22,10 +22,15 @@ Status _$StatusFromJson(Map<String, dynamic> json) {
 mixin _$Status {
   int? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
   DateTime? get createdDate => throw _privateConstructorUsedError;
 
+  /// Serializes this Status to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $StatusCopyWith<Status> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -34,7 +39,8 @@ abstract class $StatusCopyWith<$Res> {
   factory $StatusCopyWith(Status value, $Res Function(Status) then) =
       _$StatusCopyWithImpl<$Res, Status>;
   @useResult
-  $Res call({int? id, String? name, DateTime? createdDate});
+  $Res call(
+      {int? id, String? name, String? description, DateTime? createdDate});
 }
 
 /// @nodoc
@@ -47,11 +53,14 @@ class _$StatusCopyWithImpl<$Res, $Val extends Status>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
+    Object? description = freezed,
     Object? createdDate = freezed,
   }) {
     return _then(_value.copyWith(
@@ -62,6 +71,10 @@ class _$StatusCopyWithImpl<$Res, $Val extends Status>
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String?,
       createdDate: freezed == createdDate
           ? _value.createdDate
@@ -78,7 +91,8 @@ abstract class _$$StatusImplCopyWith<$Res> implements $StatusCopyWith<$Res> {
       __$$StatusImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? id, String? name, DateTime? createdDate});
+  $Res call(
+      {int? id, String? name, String? description, DateTime? createdDate});
 }
 
 /// @nodoc
@@ -89,11 +103,14 @@ class __$$StatusImplCopyWithImpl<$Res>
       _$StatusImpl _value, $Res Function(_$StatusImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
+    Object? description = freezed,
     Object? createdDate = freezed,
   }) {
     return _then(_$StatusImpl(
@@ -105,6 +122,10 @@ class __$$StatusImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
       createdDate: freezed == createdDate
           ? _value.createdDate
           : createdDate // ignore: cast_nullable_to_non_nullable
@@ -114,9 +135,11 @@ class __$$StatusImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true)
 class _$StatusImpl extends _Status {
-  const _$StatusImpl({this.id, this.name, this.createdDate}) : super._();
+  const _$StatusImpl({this.id, this.name, this.description, this.createdDate})
+      : super._();
 
   factory _$StatusImpl.fromJson(Map<String, dynamic> json) =>
       _$$StatusImplFromJson(json);
@@ -126,11 +149,13 @@ class _$StatusImpl extends _Status {
   @override
   final String? name;
   @override
+  final String? description;
+  @override
   final DateTime? createdDate;
 
   @override
   String toString() {
-    return 'Status(id: $id, name: $name, createdDate: $createdDate)';
+    return 'Status(id: $id, name: $name, description: $description, createdDate: $createdDate)';
   }
 
   @override
@@ -140,15 +165,20 @@ class _$StatusImpl extends _Status {
             other is _$StatusImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             (identical(other.createdDate, createdDate) ||
                 other.createdDate == createdDate));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, createdDate);
+  int get hashCode =>
+      Object.hash(runtimeType, id, name, description, createdDate);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StatusImplCopyWith<_$StatusImpl> get copyWith =>
@@ -166,6 +196,7 @@ abstract class _Status extends Status {
   const factory _Status(
       {final int? id,
       final String? name,
+      final String? description,
       final DateTime? createdDate}) = _$StatusImpl;
   const _Status._() : super._();
 
@@ -176,9 +207,14 @@ abstract class _Status extends Status {
   @override
   String? get name;
   @override
-  DateTime? get createdDate;
+  String? get description;
   @override
-  @JsonKey(ignore: true)
+  DateTime? get createdDate;
+
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StatusImplCopyWith<_$StatusImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

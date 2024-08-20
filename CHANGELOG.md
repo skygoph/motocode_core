@@ -1,5 +1,10 @@
 # Release Notes
 
+## 0.2.8
+
+* Add order module
+* Link other models to order
+
 ## 0.2.7
 
 * Add boolean getters to check scanning state of user

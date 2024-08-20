@@ -30,10 +30,18 @@ mixin _$ScannedQrCode {
   Depot? get depot => throw _privateConstructorUsedError;
   QrCode? get qrCode => throw _privateConstructorUsedError;
   Status? get status => throw _privateConstructorUsedError;
+  Order? get order => throw _privateConstructorUsedError;
+  String? get orderId => throw _privateConstructorUsedError;
+  String? get purchaseOrder => throw _privateConstructorUsedError;
   User? get user => throw _privateConstructorUsedError;
+  String? get remarks => throw _privateConstructorUsedError;
 
+  /// Serializes this ScannedQrCode to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ScannedQrCode
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ScannedQrCodeCopyWith<ScannedQrCode> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -55,11 +63,16 @@ abstract class $ScannedQrCodeCopyWith<$Res> {
       Depot? depot,
       QrCode? qrCode,
       Status? status,
-      User? user});
+      Order? order,
+      String? orderId,
+      String? purchaseOrder,
+      User? user,
+      String? remarks});
 
   $DepotCopyWith<$Res>? get depot;
   $QrCodeCopyWith<$Res>? get qrCode;
   $StatusCopyWith<$Res>? get status;
+  $OrderCopyWith<$Res>? get order;
   $UserCopyWith<$Res>? get user;
 }
 
@@ -73,6 +86,8 @@ class _$ScannedQrCodeCopyWithImpl<$Res, $Val extends ScannedQrCode>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ScannedQrCode
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,7 +101,11 @@ class _$ScannedQrCodeCopyWithImpl<$Res, $Val extends ScannedQrCode>
     Object? depot = freezed,
     Object? qrCode = freezed,
     Object? status = freezed,
+    Object? order = freezed,
+    Object? orderId = freezed,
+    Object? purchaseOrder = freezed,
     Object? user = freezed,
+    Object? remarks = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -129,13 +148,31 @@ class _$ScannedQrCodeCopyWithImpl<$Res, $Val extends ScannedQrCode>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Status?,
+      order: freezed == order
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as Order?,
+      orderId: freezed == orderId
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      purchaseOrder: freezed == purchaseOrder
+          ? _value.purchaseOrder
+          : purchaseOrder // ignore: cast_nullable_to_non_nullable
+              as String?,
       user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User?,
+      remarks: freezed == remarks
+          ? _value.remarks
+          : remarks // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
+  /// Create a copy of ScannedQrCode
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DepotCopyWith<$Res>? get depot {
@@ -148,6 +185,8 @@ class _$ScannedQrCodeCopyWithImpl<$Res, $Val extends ScannedQrCode>
     });
   }
 
+  /// Create a copy of ScannedQrCode
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $QrCodeCopyWith<$Res>? get qrCode {
@@ -160,6 +199,8 @@ class _$ScannedQrCodeCopyWithImpl<$Res, $Val extends ScannedQrCode>
     });
   }
 
+  /// Create a copy of ScannedQrCode
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StatusCopyWith<$Res>? get status {
@@ -172,6 +213,22 @@ class _$ScannedQrCodeCopyWithImpl<$Res, $Val extends ScannedQrCode>
     });
   }
 
+  /// Create a copy of ScannedQrCode
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $OrderCopyWith<$Res>? get order {
+    if (_value.order == null) {
+      return null;
+    }
+
+    return $OrderCopyWith<$Res>(_value.order!, (value) {
+      return _then(_value.copyWith(order: value) as $Val);
+    });
+  }
+
+  /// Create a copy of ScannedQrCode
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get user {
@@ -204,7 +261,11 @@ abstract class _$$ScannedQrCodeImplCopyWith<$Res>
       Depot? depot,
       QrCode? qrCode,
       Status? status,
-      User? user});
+      Order? order,
+      String? orderId,
+      String? purchaseOrder,
+      User? user,
+      String? remarks});
 
   @override
   $DepotCopyWith<$Res>? get depot;
@@ -212,6 +273,8 @@ abstract class _$$ScannedQrCodeImplCopyWith<$Res>
   $QrCodeCopyWith<$Res>? get qrCode;
   @override
   $StatusCopyWith<$Res>? get status;
+  @override
+  $OrderCopyWith<$Res>? get order;
   @override
   $UserCopyWith<$Res>? get user;
 }
@@ -224,6 +287,8 @@ class __$$ScannedQrCodeImplCopyWithImpl<$Res>
       _$ScannedQrCodeImpl _value, $Res Function(_$ScannedQrCodeImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ScannedQrCode
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -237,7 +302,11 @@ class __$$ScannedQrCodeImplCopyWithImpl<$Res>
     Object? depot = freezed,
     Object? qrCode = freezed,
     Object? status = freezed,
+    Object? order = freezed,
+    Object? orderId = freezed,
+    Object? purchaseOrder = freezed,
     Object? user = freezed,
+    Object? remarks = freezed,
   }) {
     return _then(_$ScannedQrCodeImpl(
       id: freezed == id
@@ -280,10 +349,26 @@ class __$$ScannedQrCodeImplCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Status?,
+      order: freezed == order
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as Order?,
+      orderId: freezed == orderId
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      purchaseOrder: freezed == purchaseOrder
+          ? _value.purchaseOrder
+          : purchaseOrder // ignore: cast_nullable_to_non_nullable
+              as String?,
       user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User?,
+      remarks: freezed == remarks
+          ? _value.remarks
+          : remarks // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -302,7 +387,11 @@ class _$ScannedQrCodeImpl extends _ScannedQrCode {
       this.depot,
       this.qrCode,
       this.status,
-      this.user})
+      this.order,
+      this.orderId,
+      this.purchaseOrder,
+      this.user,
+      this.remarks})
       : super._();
 
   factory _$ScannedQrCodeImpl.fromJson(Map<String, dynamic> json) =>
@@ -329,11 +418,19 @@ class _$ScannedQrCodeImpl extends _ScannedQrCode {
   @override
   final Status? status;
   @override
+  final Order? order;
+  @override
+  final String? orderId;
+  @override
+  final String? purchaseOrder;
+  @override
   final User? user;
+  @override
+  final String? remarks;
 
   @override
   String toString() {
-    return 'ScannedQrCode(id: $id, qrCodeId: $qrCodeId, depotId: $depotId, statusId: $statusId, userId: $userId, createdDate: $createdDate, endedDate: $endedDate, depot: $depot, qrCode: $qrCode, status: $status, user: $user)';
+    return 'ScannedQrCode(id: $id, qrCodeId: $qrCodeId, depotId: $depotId, statusId: $statusId, userId: $userId, createdDate: $createdDate, endedDate: $endedDate, depot: $depot, qrCode: $qrCode, status: $status, order: $order, orderId: $orderId, purchaseOrder: $purchaseOrder, user: $user, remarks: $remarks)';
   }
 
   @override
@@ -355,15 +452,37 @@ class _$ScannedQrCodeImpl extends _ScannedQrCode {
             (identical(other.depot, depot) || other.depot == depot) &&
             (identical(other.qrCode, qrCode) || other.qrCode == qrCode) &&
             (identical(other.status, status) || other.status == status) &&
-            (identical(other.user, user) || other.user == user));
+            (identical(other.order, order) || other.order == order) &&
+            (identical(other.orderId, orderId) || other.orderId == orderId) &&
+            (identical(other.purchaseOrder, purchaseOrder) ||
+                other.purchaseOrder == purchaseOrder) &&
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.remarks, remarks) || other.remarks == remarks));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, qrCodeId, depotId, statusId,
-      userId, createdDate, endedDate, depot, qrCode, status, user);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      qrCodeId,
+      depotId,
+      statusId,
+      userId,
+      createdDate,
+      endedDate,
+      depot,
+      qrCode,
+      status,
+      order,
+      orderId,
+      purchaseOrder,
+      user,
+      remarks);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ScannedQrCode
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ScannedQrCodeImplCopyWith<_$ScannedQrCodeImpl> get copyWith =>
@@ -389,7 +508,11 @@ abstract class _ScannedQrCode extends ScannedQrCode {
       final Depot? depot,
       final QrCode? qrCode,
       final Status? status,
-      final User? user}) = _$ScannedQrCodeImpl;
+      final Order? order,
+      final String? orderId,
+      final String? purchaseOrder,
+      final User? user,
+      final String? remarks}) = _$ScannedQrCodeImpl;
   const _ScannedQrCode._() : super._();
 
   factory _ScannedQrCode.fromJson(Map<String, dynamic> json) =
@@ -416,9 +539,20 @@ abstract class _ScannedQrCode extends ScannedQrCode {
   @override
   Status? get status;
   @override
+  Order? get order;
+  @override
+  String? get orderId;
+  @override
+  String? get purchaseOrder;
+  @override
   User? get user;
   @override
-  @JsonKey(ignore: true)
+  String? get remarks;
+
+  /// Create a copy of ScannedQrCode
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ScannedQrCodeImplCopyWith<_$ScannedQrCodeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

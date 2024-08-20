@@ -24,8 +24,12 @@ mixin _$BusinessUnit {
   String? get name => throw _privateConstructorUsedError;
   DateTime? get createdDate => throw _privateConstructorUsedError;
 
+  /// Serializes this BusinessUnit to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BusinessUnit
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BusinessUnitCopyWith<BusinessUnit> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -49,6 +53,8 @@ class _$BusinessUnitCopyWithImpl<$Res, $Val extends BusinessUnit>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BusinessUnit
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,6 +98,8 @@ class __$$BusinessUnitImplCopyWithImpl<$Res>
       _$BusinessUnitImpl _value, $Res Function(_$BusinessUnitImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BusinessUnit
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -147,11 +155,13 @@ class _$BusinessUnitImpl extends _BusinessUnit {
                 other.createdDate == createdDate));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, createdDate);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BusinessUnit
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BusinessUnitImplCopyWith<_$BusinessUnitImpl> get copyWith =>
@@ -181,8 +191,11 @@ abstract class _BusinessUnit extends BusinessUnit {
   String? get name;
   @override
   DateTime? get createdDate;
+
+  /// Create a copy of BusinessUnit
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BusinessUnitImplCopyWith<_$BusinessUnitImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

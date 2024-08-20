@@ -28,9 +28,15 @@ _$ScannedQrCodeImpl _$$ScannedQrCodeImplFromJson(Map<String, dynamic> json) =>
       status: json['status'] == null
           ? null
           : Status.fromJson(json['status'] as Map<String, dynamic>),
+      order: json['order'] == null
+          ? null
+          : Order.fromJson(json['order'] as Map<String, dynamic>),
+      orderId: json['orderId'] as String?,
+      purchaseOrder: json['purchaseOrder'] as String?,
       user: json['user'] == null
           ? null
           : User.fromJson(json['user'] as Map<String, dynamic>),
+      remarks: json['remarks'] as String?,
     );
 
 Map<String, dynamic> _$$ScannedQrCodeImplToJson(_$ScannedQrCodeImpl instance) =>
@@ -45,5 +51,9 @@ Map<String, dynamic> _$$ScannedQrCodeImplToJson(_$ScannedQrCodeImpl instance) =>
       'depot': instance.depot,
       'qrCode': instance.qrCode,
       'status': instance.status,
+      'order': instance.order,
+      'orderId': instance.orderId,
+      'purchaseOrder': instance.purchaseOrder,
       'user': instance.user,
+      'remarks': instance.remarks,
     };

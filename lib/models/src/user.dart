@@ -31,7 +31,6 @@ class User with _$User {
     Position? position,
     Status? status,
     List<UserRole>? userRoles,
-    List<Branch>? branches,
     List<Depot>? depots,
     List<Status>? statuses,
   }) = _User;

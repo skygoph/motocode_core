@@ -7,9 +7,11 @@ part 'status.g.dart';
 class Status with _$Status {
   const Status._();
 
+  @JsonSerializable(explicitToJson: true)
   const factory Status({
     int? id,
     String? name,
+    String? description,
     DateTime? createdDate,
   }) = _Status;
 
@@ -18,6 +20,7 @@ class Status with _$Status {
   Map<String, dynamic> mapToRequest() => {
         'id': id,
         'name': name,
+        'description': description,
         'createdDate': createdDate?.toUtc().toIso8601String(),
       };
 }

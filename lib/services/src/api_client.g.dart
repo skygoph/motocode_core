@@ -12,11 +12,14 @@ class _ApiClient implements ApiClient {
   _ApiClient(
     this._dio, {
     this.baseUrl,
+    this.errorLogger,
   });
 
   final Dio _dio;
 
   String? baseUrl;
+
+  final ParseErrorLogger? errorLogger;
 
   @override
   Future<User> loginWithEmailAndPassword(Map<String, dynamic> data) async {
@@ -25,24 +28,30 @@ class _ApiClient implements ApiClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    final _result =
-        await _dio.fetch<Map<String, dynamic>>(_setStreamType<User>(Options(
+    final _options = _setStreamType<User>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/login',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final _value = await compute(deserializeUser, _result.data!);
+        .compose(
+          _dio.options,
+          '/login',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late User _value;
+    try {
+      _value = await compute(deserializeUser, _result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -54,24 +63,30 @@ class _ApiClient implements ApiClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<LoginResponse>(Options(
+    final _options = _setStreamType<LoginResponse>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/v2/login',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final _value = await compute(deserializeLoginResponse, _result.data!);
+        .compose(
+          _dio.options,
+          '/v2/login',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late LoginResponse _value;
+    try {
+      _value = await compute(deserializeLoginResponse, _result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -81,27 +96,33 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<List<dynamic>>(_setStreamType<List<BusinessUnit>>(Options(
+    final _options = _setStreamType<List<BusinessUnit>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/business-units',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    var _value = await compute(
-      deserializeBusinessUnitList,
-      _result.data!.cast<Map<String, dynamic>>(),
-    );
+        .compose(
+          _dio.options,
+          '/business-units',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<BusinessUnit> _value;
+    try {
+      _value = await compute(
+        deserializeBusinessUnitList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -111,24 +132,30 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<BusinessUnit>(Options(
+    final _options = _setStreamType<BusinessUnit>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/business-units/${businessUnitId}',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final _value = await compute(deserializeBusinessUnit, _result.data!);
+        .compose(
+          _dio.options,
+          '/business-units/${businessUnitId}',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late BusinessUnit _value;
+    try {
+      _value = await compute(deserializeBusinessUnit, _result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -139,7 +166,7 @@ class _ApiClient implements ApiClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    await _dio.fetch<void>(_setStreamType<void>(Options(
+    final _options = _setStreamType<void>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -154,7 +181,8 @@ class _ApiClient implements ApiClient {
             baseUrl: _combineBaseUrls(
           _dio.options.baseUrl,
           baseUrl,
-        ))));
+        )));
+    await _dio.fetch<void>(_options);
   }
 
   @override
@@ -167,7 +195,7 @@ class _ApiClient implements ApiClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    await _dio.fetch<void>(_setStreamType<void>(Options(
+    final _options = _setStreamType<void>(Options(
       method: 'PUT',
       headers: _headers,
       extra: _extra,
@@ -182,7 +210,8 @@ class _ApiClient implements ApiClient {
             baseUrl: _combineBaseUrls(
           _dio.options.baseUrl,
           baseUrl,
-        ))));
+        )));
+    await _dio.fetch<void>(_options);
   }
 
   @override
@@ -191,27 +220,33 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<List<dynamic>>(_setStreamType<List<Department>>(Options(
+    final _options = _setStreamType<List<Department>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/departments',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    var _value = await compute(
-      deserializeDepartmentList,
-      _result.data!.cast<Map<String, dynamic>>(),
-    );
+        .compose(
+          _dio.options,
+          '/departments',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<Department> _value;
+    try {
+      _value = await compute(
+        deserializeDepartmentList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -221,24 +256,30 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<Department>(Options(
+    final _options = _setStreamType<Department>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/departments/${departmentId}',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final _value = await compute(deserializeDepartment, _result.data!);
+        .compose(
+          _dio.options,
+          '/departments/${departmentId}',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late Department _value;
+    try {
+      _value = await compute(deserializeDepartment, _result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -249,7 +290,7 @@ class _ApiClient implements ApiClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    await _dio.fetch<void>(_setStreamType<void>(Options(
+    final _options = _setStreamType<void>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -264,7 +305,8 @@ class _ApiClient implements ApiClient {
             baseUrl: _combineBaseUrls(
           _dio.options.baseUrl,
           baseUrl,
-        ))));
+        )));
+    await _dio.fetch<void>(_options);
   }
 
   @override
@@ -277,7 +319,7 @@ class _ApiClient implements ApiClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    await _dio.fetch<void>(_setStreamType<void>(Options(
+    final _options = _setStreamType<void>(Options(
       method: 'PUT',
       headers: _headers,
       extra: _extra,
@@ -292,7 +334,8 @@ class _ApiClient implements ApiClient {
             baseUrl: _combineBaseUrls(
           _dio.options.baseUrl,
           baseUrl,
-        ))));
+        )));
+    await _dio.fetch<void>(_options);
   }
 
   @override
@@ -301,27 +344,33 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<List<dynamic>>(_setStreamType<List<Depot>>(Options(
+    final _options = _setStreamType<List<Depot>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/depots',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    var _value = await compute(
-      deserializeDepotList,
-      _result.data!.cast<Map<String, dynamic>>(),
-    );
+        .compose(
+          _dio.options,
+          '/depots',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<Depot> _value;
+    try {
+      _value = await compute(
+        deserializeDepotList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -331,24 +380,30 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<Map<String, dynamic>>(_setStreamType<Depot>(Options(
+    final _options = _setStreamType<Depot>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/depots/${depotId}',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final _value = await compute(deserializeDepot, _result.data!);
+        .compose(
+          _dio.options,
+          '/depots/${depotId}',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late Depot _value;
+    try {
+      _value = await compute(deserializeDepot, _result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -359,7 +414,7 @@ class _ApiClient implements ApiClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    await _dio.fetch<void>(_setStreamType<void>(Options(
+    final _options = _setStreamType<void>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -374,7 +429,8 @@ class _ApiClient implements ApiClient {
             baseUrl: _combineBaseUrls(
           _dio.options.baseUrl,
           baseUrl,
-        ))));
+        )));
+    await _dio.fetch<void>(_options);
   }
 
   @override
@@ -387,7 +443,7 @@ class _ApiClient implements ApiClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    await _dio.fetch<void>(_setStreamType<void>(Options(
+    final _options = _setStreamType<void>(Options(
       method: 'PUT',
       headers: _headers,
       extra: _extra,
@@ -402,7 +458,8 @@ class _ApiClient implements ApiClient {
             baseUrl: _combineBaseUrls(
           _dio.options.baseUrl,
           baseUrl,
-        ))));
+        )));
+    await _dio.fetch<void>(_options);
   }
 
   @override
@@ -411,27 +468,33 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<List<dynamic>>(_setStreamType<List<DepotType>>(Options(
+    final _options = _setStreamType<List<DepotType>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/depot-types',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    var _value = await compute(
-      deserializeDepotTypeList,
-      _result.data!.cast<Map<String, dynamic>>(),
-    );
+        .compose(
+          _dio.options,
+          '/depot-types',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<DepotType> _value;
+    try {
+      _value = await compute(
+        deserializeDepotTypeList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -441,24 +504,30 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<DepotType>(Options(
+    final _options = _setStreamType<DepotType>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/depot-types/${depotTypeId}',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final _value = await compute(deserializeDepotType, _result.data!);
+        .compose(
+          _dio.options,
+          '/depot-types/${depotTypeId}',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late DepotType _value;
+    try {
+      _value = await compute(deserializeDepotType, _result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -469,7 +538,7 @@ class _ApiClient implements ApiClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    await _dio.fetch<void>(_setStreamType<void>(Options(
+    final _options = _setStreamType<void>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -484,7 +553,8 @@ class _ApiClient implements ApiClient {
             baseUrl: _combineBaseUrls(
           _dio.options.baseUrl,
           baseUrl,
-        ))));
+        )));
+    await _dio.fetch<void>(_options);
   }
 
   @override
@@ -497,7 +567,7 @@ class _ApiClient implements ApiClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    await _dio.fetch<void>(_setStreamType<void>(Options(
+    final _options = _setStreamType<void>(Options(
       method: 'PUT',
       headers: _headers,
       extra: _extra,
@@ -512,7 +582,8 @@ class _ApiClient implements ApiClient {
             baseUrl: _combineBaseUrls(
           _dio.options.baseUrl,
           baseUrl,
-        ))));
+        )));
+    await _dio.fetch<void>(_options);
   }
 
   @override
@@ -521,27 +592,33 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<List<dynamic>>(_setStreamType<List<Depot>>(Options(
+    final _options = _setStreamType<List<Depot>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/depot-types/${depotTypeId}/depots',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    var _value = await compute(
-      deserializeDepotList,
-      _result.data!.cast<Map<String, dynamic>>(),
-    );
+        .compose(
+          _dio.options,
+          '/depot-types/${depotTypeId}/depots',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<Depot> _value;
+    try {
+      _value = await compute(
+        deserializeDepotList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -551,27 +628,33 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<List<dynamic>>(_setStreamType<List<ScannedQrCode>>(Options(
+    final _options = _setStreamType<List<ScannedQrCode>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/enrollments',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    var _value = await compute(
-      deserializeScannedQrCodeList,
-      _result.data!.cast<Map<String, dynamic>>(),
-    );
+        .compose(
+          _dio.options,
+          '/enrollments',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<ScannedQrCode> _value;
+    try {
+      _value = await compute(
+        deserializeScannedQrCodeList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -581,27 +664,33 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<List<dynamic>>(_setStreamType<List<Position>>(Options(
+    final _options = _setStreamType<List<Position>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/positions',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    var _value = await compute(
-      deserializePositionList,
-      _result.data!.cast<Map<String, dynamic>>(),
-    );
+        .compose(
+          _dio.options,
+          '/positions',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<Position> _value;
+    try {
+      _value = await compute(
+        deserializePositionList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -611,24 +700,30 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<Map<String, dynamic>>(_setStreamType<Position>(Options(
+    final _options = _setStreamType<Position>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/positions/${positionId}',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final _value = await compute(deserializePosition, _result.data!);
+        .compose(
+          _dio.options,
+          '/positions/${positionId}',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late Position _value;
+    try {
+      _value = await compute(deserializePosition, _result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -639,7 +734,7 @@ class _ApiClient implements ApiClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    await _dio.fetch<void>(_setStreamType<void>(Options(
+    final _options = _setStreamType<void>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -654,7 +749,8 @@ class _ApiClient implements ApiClient {
             baseUrl: _combineBaseUrls(
           _dio.options.baseUrl,
           baseUrl,
-        ))));
+        )));
+    await _dio.fetch<void>(_options);
   }
 
   @override
@@ -667,7 +763,7 @@ class _ApiClient implements ApiClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    await _dio.fetch<void>(_setStreamType<void>(Options(
+    final _options = _setStreamType<void>(Options(
       method: 'PUT',
       headers: _headers,
       extra: _extra,
@@ -682,7 +778,8 @@ class _ApiClient implements ApiClient {
             baseUrl: _combineBaseUrls(
           _dio.options.baseUrl,
           baseUrl,
-        ))));
+        )));
+    await _dio.fetch<void>(_options);
   }
 
   @override
@@ -691,27 +788,33 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<List<dynamic>>(_setStreamType<List<QrCode>>(Options(
+    final _options = _setStreamType<List<QrCode>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/qr-codes',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    var _value = await compute(
-      deserializeQrCodeList,
-      _result.data!.cast<Map<String, dynamic>>(),
-    );
+        .compose(
+          _dio.options,
+          '/qr-codes',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<QrCode> _value;
+    try {
+      _value = await compute(
+        deserializeQrCodeList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -721,24 +824,30 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<Map<String, dynamic>>(_setStreamType<QrCode>(Options(
+    final _options = _setStreamType<QrCode>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/qr-codes/${qrCodeId}',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final _value = await compute(deserializeQrCode, _result.data!);
+        .compose(
+          _dio.options,
+          '/qr-codes/${qrCodeId}',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late QrCode _value;
+    try {
+      _value = await compute(deserializeQrCode, _result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -749,7 +858,7 @@ class _ApiClient implements ApiClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    await _dio.fetch<void>(_setStreamType<void>(Options(
+    final _options = _setStreamType<void>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -764,7 +873,8 @@ class _ApiClient implements ApiClient {
             baseUrl: _combineBaseUrls(
           _dio.options.baseUrl,
           baseUrl,
-        ))));
+        )));
+    await _dio.fetch<void>(_options);
   }
 
   @override
@@ -777,7 +887,7 @@ class _ApiClient implements ApiClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    await _dio.fetch<void>(_setStreamType<void>(Options(
+    final _options = _setStreamType<void>(Options(
       method: 'PUT',
       headers: _headers,
       extra: _extra,
@@ -792,7 +902,8 @@ class _ApiClient implements ApiClient {
             baseUrl: _combineBaseUrls(
           _dio.options.baseUrl,
           baseUrl,
-        ))));
+        )));
+    await _dio.fetch<void>(_options);
   }
 
   @override
@@ -801,27 +912,105 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<List<dynamic>>(_setStreamType<List<ScannedQrCode>>(Options(
+    final _options = _setStreamType<List<ScannedQrCode>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/qr-codes/${qrCodeId}/scanned-qr-codes',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    var _value = await compute(
-      deserializeScannedQrCodeList,
-      _result.data!.cast<Map<String, dynamic>>(),
-    );
+        .compose(
+          _dio.options,
+          '/qr-codes/${qrCodeId}/scanned-qr-codes',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<ScannedQrCode> _value;
+    try {
+      _value = await compute(
+        deserializeScannedQrCodeList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<List<Order>> getOrders() async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<List<Order>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/orders',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<Order> _value;
+    try {
+      _value = await compute(
+        deserializeOrderList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<List<QrCode>> getOrder(String purchaseNumber) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<List<QrCode>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/orders/${purchaseNumber}',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<QrCode> _value;
+    try {
+      _value = await compute(
+        deserializeQrCodeList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -831,27 +1020,33 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<List<dynamic>>(_setStreamType<List<UserRole>>(Options(
+    final _options = _setStreamType<List<UserRole>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/roles',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    var _value = await compute(
-      deserializeUserRoleList,
-      _result.data!.cast<Map<String, dynamic>>(),
-    );
+        .compose(
+          _dio.options,
+          '/roles',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<UserRole> _value;
+    try {
+      _value = await compute(
+        deserializeUserRoleList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -861,24 +1056,30 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<Map<String, dynamic>>(_setStreamType<UserRole>(Options(
+    final _options = _setStreamType<UserRole>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/roles/${roleId}',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final _value = await compute(deserializeUserRole, _result.data!);
+        .compose(
+          _dio.options,
+          '/roles/${roleId}',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late UserRole _value;
+    try {
+      _value = await compute(deserializeUserRole, _result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -889,7 +1090,7 @@ class _ApiClient implements ApiClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    await _dio.fetch<void>(_setStreamType<void>(Options(
+    final _options = _setStreamType<void>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -904,7 +1105,8 @@ class _ApiClient implements ApiClient {
             baseUrl: _combineBaseUrls(
           _dio.options.baseUrl,
           baseUrl,
-        ))));
+        )));
+    await _dio.fetch<void>(_options);
   }
 
   @override
@@ -917,7 +1119,7 @@ class _ApiClient implements ApiClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    await _dio.fetch<void>(_setStreamType<void>(Options(
+    final _options = _setStreamType<void>(Options(
       method: 'PUT',
       headers: _headers,
       extra: _extra,
@@ -932,7 +1134,8 @@ class _ApiClient implements ApiClient {
             baseUrl: _combineBaseUrls(
           _dio.options.baseUrl,
           baseUrl,
-        ))));
+        )));
+    await _dio.fetch<void>(_options);
   }
 
   @override
@@ -941,27 +1144,33 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<List<dynamic>>(_setStreamType<List<ScannedQrCode>>(Options(
+    final _options = _setStreamType<List<ScannedQrCode>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/scanned-qr-codes',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    var _value = await compute(
-      deserializeScannedQrCodeList,
-      _result.data!.cast<Map<String, dynamic>>(),
-    );
+        .compose(
+          _dio.options,
+          '/scanned-qr-codes',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<ScannedQrCode> _value;
+    try {
+      _value = await compute(
+        deserializeScannedQrCodeList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -971,24 +1180,30 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<ScannedQrCode>(Options(
+    final _options = _setStreamType<ScannedQrCode>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/scanned-qr-codes/${scannedQrCodeId}',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final _value = await compute(deserializeScannedQrCode, _result.data!);
+        .compose(
+          _dio.options,
+          '/scanned-qr-codes/${scannedQrCodeId}',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ScannedQrCode _value;
+    try {
+      _value = await compute(deserializeScannedQrCode, _result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -999,7 +1214,7 @@ class _ApiClient implements ApiClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    await _dio.fetch<void>(_setStreamType<void>(Options(
+    final _options = _setStreamType<void>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -1014,7 +1229,8 @@ class _ApiClient implements ApiClient {
             baseUrl: _combineBaseUrls(
           _dio.options.baseUrl,
           baseUrl,
-        ))));
+        )));
+    await _dio.fetch<void>(_options);
   }
 
   @override
@@ -1023,27 +1239,33 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<List<dynamic>>(_setStreamType<List<Status>>(Options(
+    final _options = _setStreamType<List<Status>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/statuses',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    var _value = await compute(
-      deserializeStatusList,
-      _result.data!.cast<Map<String, dynamic>>(),
-    );
+        .compose(
+          _dio.options,
+          '/statuses',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<Status> _value;
+    try {
+      _value = await compute(
+        deserializeStatusList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -1053,24 +1275,30 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<Map<String, dynamic>>(_setStreamType<Status>(Options(
+    final _options = _setStreamType<Status>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/statuses/${statusId}',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final _value = await compute(deserializeStatus, _result.data!);
+        .compose(
+          _dio.options,
+          '/statuses/${statusId}',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late Status _value;
+    try {
+      _value = await compute(deserializeStatus, _result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -1081,7 +1309,7 @@ class _ApiClient implements ApiClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    await _dio.fetch<void>(_setStreamType<void>(Options(
+    final _options = _setStreamType<void>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -1096,7 +1324,8 @@ class _ApiClient implements ApiClient {
             baseUrl: _combineBaseUrls(
           _dio.options.baseUrl,
           baseUrl,
-        ))));
+        )));
+    await _dio.fetch<void>(_options);
   }
 
   @override
@@ -1109,7 +1338,7 @@ class _ApiClient implements ApiClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    await _dio.fetch<void>(_setStreamType<void>(Options(
+    final _options = _setStreamType<void>(Options(
       method: 'PUT',
       headers: _headers,
       extra: _extra,
@@ -1124,7 +1353,8 @@ class _ApiClient implements ApiClient {
             baseUrl: _combineBaseUrls(
           _dio.options.baseUrl,
           baseUrl,
-        ))));
+        )));
+    await _dio.fetch<void>(_options);
   }
 
   @override
@@ -1133,27 +1363,33 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<List<dynamic>>(_setStreamType<List<ScannedQrCode>>(Options(
+    final _options = _setStreamType<List<ScannedQrCode>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/statuses/${statusId}/scanned-qr-codes',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    var _value = await compute(
-      deserializeScannedQrCodeList,
-      _result.data!.cast<Map<String, dynamic>>(),
-    );
+        .compose(
+          _dio.options,
+          '/statuses/${statusId}/scanned-qr-codes',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<ScannedQrCode> _value;
+    try {
+      _value = await compute(
+        deserializeScannedQrCodeList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -1163,27 +1399,33 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<List<dynamic>>(_setStreamType<List<QrCode>>(Options(
+    final _options = _setStreamType<List<QrCode>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/statuses/${statusId}/qr-codes',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    var _value = await compute(
-      deserializeQrCodeList,
-      _result.data!.cast<Map<String, dynamic>>(),
-    );
+        .compose(
+          _dio.options,
+          '/statuses/${statusId}/qr-codes',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<QrCode> _value;
+    try {
+      _value = await compute(
+        deserializeQrCodeList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -1193,27 +1435,33 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<List<dynamic>>(_setStreamType<List<User>>(Options(
+    final _options = _setStreamType<List<User>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/users',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    var _value = await compute(
-      deserializeUserList,
-      _result.data!.cast<Map<String, dynamic>>(),
-    );
+        .compose(
+          _dio.options,
+          '/users',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<User> _value;
+    try {
+      _value = await compute(
+        deserializeUserList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -1223,24 +1471,30 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<Map<String, dynamic>>(_setStreamType<User>(Options(
+    final _options = _setStreamType<User>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/users/${id}',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final _value = await compute(deserializeUser, _result.data!);
+        .compose(
+          _dio.options,
+          '/users/${id}',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late User _value;
+    try {
+      _value = await compute(deserializeUser, _result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -1251,7 +1505,7 @@ class _ApiClient implements ApiClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    await _dio.fetch<void>(_setStreamType<void>(Options(
+    final _options = _setStreamType<void>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -1266,7 +1520,8 @@ class _ApiClient implements ApiClient {
             baseUrl: _combineBaseUrls(
           _dio.options.baseUrl,
           baseUrl,
-        ))));
+        )));
+    await _dio.fetch<void>(_options);
   }
 
   @override
@@ -1279,7 +1534,7 @@ class _ApiClient implements ApiClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    await _dio.fetch<void>(_setStreamType<void>(Options(
+    final _options = _setStreamType<void>(Options(
       method: 'PUT',
       headers: _headers,
       extra: _extra,
@@ -1294,7 +1549,8 @@ class _ApiClient implements ApiClient {
             baseUrl: _combineBaseUrls(
           _dio.options.baseUrl,
           baseUrl,
-        ))));
+        )));
+    await _dio.fetch<void>(_options);
   }
 
   @override
@@ -1303,27 +1559,33 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<List<dynamic>>(_setStreamType<List<ScannedQrCode>>(Options(
+    final _options = _setStreamType<List<ScannedQrCode>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/users/${userId}/scanned-qr-codes',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    var _value = await compute(
-      deserializeScannedQrCodeList,
-      _result.data!.cast<Map<String, dynamic>>(),
-    );
+        .compose(
+          _dio.options,
+          '/users/${userId}/scanned-qr-codes',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<ScannedQrCode> _value;
+    try {
+      _value = await compute(
+        deserializeScannedQrCodeList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -1333,27 +1595,33 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<List<dynamic>>(_setStreamType<List<Status>>(Options(
+    final _options = _setStreamType<List<Status>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/users/${userId}/statuses',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    var _value = await compute(
-      deserializeStatusList,
-      _result.data!.cast<Map<String, dynamic>>(),
-    );
+        .compose(
+          _dio.options,
+          '/users/${userId}/statuses',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<Status> _value;
+    try {
+      _value = await compute(
+        deserializeStatusList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -1363,27 +1631,33 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<List<dynamic>>(_setStreamType<List<Depot>>(Options(
+    final _options = _setStreamType<List<Depot>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/users/${userId}/depots',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    var _value = await compute(
-      deserializeDepotList,
-      _result.data!.cast<Map<String, dynamic>>(),
-    );
+        .compose(
+          _dio.options,
+          '/users/${userId}/depots',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<Depot> _value;
+    try {
+      _value = await compute(
+        deserializeDepotList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -1393,27 +1667,33 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<List<dynamic>>(_setStreamType<List<BusinessUnit>>(Options(
+    final _options = _setStreamType<List<BusinessUnit>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/users/${userId}/business-units',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    var _value = await compute(
-      deserializeBusinessUnitList,
-      _result.data!.cast<Map<String, dynamic>>(),
-    );
+        .compose(
+          _dio.options,
+          '/users/${userId}/business-units',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<BusinessUnit> _value;
+    try {
+      _value = await compute(
+        deserializeBusinessUnitList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -1423,27 +1703,33 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<List<dynamic>>(_setStreamType<List<Department>>(Options(
+    final _options = _setStreamType<List<Department>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/users/${userId}/departments',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    var _value = await compute(
-      deserializeDepartmentList,
-      _result.data!.cast<Map<String, dynamic>>(),
-    );
+        .compose(
+          _dio.options,
+          '/users/${userId}/departments',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<Department> _value;
+    try {
+      _value = await compute(
+        deserializeDepartmentList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -1453,27 +1739,33 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<List<dynamic>>(_setStreamType<List<Position>>(Options(
+    final _options = _setStreamType<List<Position>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/users/${userId}/positions',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    var _value = await compute(
-      deserializePositionList,
-      _result.data!.cast<Map<String, dynamic>>(),
-    );
+        .compose(
+          _dio.options,
+          '/users/${userId}/positions',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<Position> _value;
+    try {
+      _value = await compute(
+        deserializePositionList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -1483,27 +1775,33 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<List<dynamic>>(_setStreamType<List<User>>(Options(
+    final _options = _setStreamType<List<User>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/users/${creatorId}/users',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    var _value = await compute(
-      deserializeUserList,
-      _result.data!.cast<Map<String, dynamic>>(),
-    );
+        .compose(
+          _dio.options,
+          '/users/${creatorId}/users',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<User> _value;
+    try {
+      _value = await compute(
+        deserializeUserList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 

@@ -9,6 +9,7 @@ part of 'status.dart';
 _$StatusImpl _$$StatusImplFromJson(Map<String, dynamic> json) => _$StatusImpl(
       id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
+      description: json['description'] as String?,
       createdDate: json['createdDate'] == null
           ? null
           : DateTime.parse(json['createdDate'] as String),
@@ -18,5 +19,6 @@ Map<String, dynamic> _$$StatusImplToJson(_$StatusImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
+      'description': instance.description,
       'createdDate': instance.createdDate?.toIso8601String(),
     };
