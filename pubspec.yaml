@@ -1,7 +1,9 @@
 name: motocode_core
 description: >
-  Motocode is a QR Code system for tracking spare parts and motorcycle products. It improves inventory accuracy and operational efficiency by enabling real-time tracking and reducing manual data entry.
-version: 0.2.8
+  Motocode is a QR Code system for tracking spare parts and motorcycle products.
+  It improves inventory accuracy and operational efficiency by enabling
+  real-time tracking and reducing manual data entry.
+version: 0.2.9
 repository: https://github.com/skygoph/motocode_core
 
 environment:
@@ -16,17 +18,17 @@ dependencies:
     sdk: flutter
   freezed_annotation: ^2.4.4
   json_annotation: ^4.9.0
-  retrofit: ^4.1.0
+  retrofit: ^4.2.0
   stacked_shared: ^1.4.1
 
 dev_dependencies:
-  build_runner: ^2.4.11
+  build_runner: ^2.4.12
   flutter_lints: ^3.0.0
   flutter_test:
     sdk: flutter
   freezed: null
   json_serializable: ^6.8.0
   mockito: ^5.4.4
-  retrofit_generator: ^8.1.2
+  retrofit_generator: ^8.2.0
 
 flutter: null

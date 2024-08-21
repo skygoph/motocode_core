@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.2.9
+
+* Add sample project
+
 ## 0.2.8
 
 * Add order module
