@@ -25,12 +25,8 @@ mixin _$EnrolledItem {
   String? get engineNumber => throw _privateConstructorUsedError;
   DateTime? get endedDate => throw _privateConstructorUsedError;
 
-  /// Serializes this EnrolledItem to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of EnrolledItem
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $EnrolledItemCopyWith<EnrolledItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -58,8 +54,6 @@ class _$EnrolledItemCopyWithImpl<$Res, $Val extends EnrolledItem>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of EnrolledItem
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -112,8 +106,6 @@ class __$$EnrolledItemImplCopyWithImpl<$Res>
       _$EnrolledItemImpl _value, $Res Function(_$EnrolledItemImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of EnrolledItem
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -181,14 +173,12 @@ class _$EnrolledItemImpl extends _EnrolledItem {
                 other.endedDate == endedDate));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, id, chassisNumber, engineNumber, endedDate);
 
-  /// Create a copy of EnrolledItem
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$EnrolledItemImplCopyWith<_$EnrolledItemImpl> get copyWith =>
@@ -221,11 +211,8 @@ abstract class _EnrolledItem extends EnrolledItem {
   String? get engineNumber;
   @override
   DateTime? get endedDate;
-
-  /// Create a copy of EnrolledItem
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$EnrolledItemImplCopyWith<_$EnrolledItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

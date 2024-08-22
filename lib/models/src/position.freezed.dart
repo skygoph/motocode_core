@@ -25,12 +25,8 @@ mixin _$Position {
   String? get roleId => throw _privateConstructorUsedError;
   DateTime? get createdDate => throw _privateConstructorUsedError;
 
-  /// Serializes this Position to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of Position
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $PositionCopyWith<Position> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -53,8 +49,6 @@ class _$PositionCopyWithImpl<$Res, $Val extends Position>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of Position
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -103,8 +97,6 @@ class __$$PositionImplCopyWithImpl<$Res>
       _$PositionImpl _value, $Res Function(_$PositionImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of Position
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -173,13 +165,11 @@ class _$PositionImpl extends _Position {
                 other.createdDate == createdDate));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, roleId, createdDate);
 
-  /// Create a copy of Position
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$PositionImplCopyWith<_$PositionImpl> get copyWith =>
@@ -212,11 +202,8 @@ abstract class _Position extends Position {
   String? get roleId;
   @override
   DateTime? get createdDate;
-
-  /// Create a copy of Position
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$PositionImplCopyWith<_$PositionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
