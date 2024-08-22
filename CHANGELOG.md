@@ -1,6 +1,10 @@
 # Release Notes
 
-## 0.2.9
+## 0.3.1
+
+* Updated status enum by adding 'DAMAGED' and 'OFFLOAD' state.
+
+## 0.3.0
 
 * Add OrdersService in app_locator
 

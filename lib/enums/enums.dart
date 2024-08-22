@@ -22,7 +22,8 @@ enum DepotTypeEnum {
   WAREHOUSE(1),
   BRANCH(2),
   DEALER(3),
-  RECON_HUB(4);
+  RECON(4),
+  EVENT(5);
 
   const DepotTypeEnum(this.id);
   final int id;
@@ -37,10 +38,12 @@ enum UserScanningStateEnum {
   IN_OUTLET(6),
   IN_WAREHOUSE(7),
   IN_RECON_CENTER(8),
-  CASH_SALE(9),
-  INSTALLMENT_SALE(10),
+  INSTALLMENT_SALE(9),
+  CASH_SALE(10),
   REPOSSESSED(11),
-  SCRAPPED(12);
+  SCRAPPED(12),
+  DAMAGED(13),
+  OFFLOAD(14);
 
   const UserScanningStateEnum(this.id);
   final int id;
