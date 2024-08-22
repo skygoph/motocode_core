@@ -2,6 +2,10 @@
 
 ## 0.2.9
 
+* Add OrdersService in app_locator
+
+## 0.2.9
+
 * Add sample project
 
 ## 0.2.8
