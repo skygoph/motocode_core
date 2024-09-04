@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.3.2
+
+* Add reset, change, and forgot password feature
+
 ## 0.3.1
 
 * Updated status enum by adding 'DAMAGED' and 'OFFLOAD' state.

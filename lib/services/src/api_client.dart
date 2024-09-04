@@ -15,6 +15,14 @@ abstract class ApiClient {
   @POST('/v2/login')
   Future<LoginResponse> loginWithEmailAndPasswordV2(
       @Body() Map<String, dynamic> data);
+  @POST('/password/ChangePassword')
+  Future<void> changePassword(@Body() Map<String, dynamic> data);
+  @POST('/password/MobileChangePassword')
+  Future<void> changePasswordMobile(@Body() Map<String, dynamic> data);
+  @POST('/password/ForgotPassword')
+  Future<void> forgotPassword(String email);
+  @POST('/password/ResetPassword')
+  Future<void> resetPassword(@Body() Map<String, dynamic> data);
 
   /// ********** Business Units API ********** ///
   @GET('/business-units')

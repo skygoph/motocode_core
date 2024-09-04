@@ -36,8 +36,12 @@ mixin _$ScannedQrCode {
   User? get user => throw _privateConstructorUsedError;
   String? get remarks => throw _privateConstructorUsedError;
 
+  /// Serializes this ScannedQrCode to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ScannedQrCode
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ScannedQrCodeCopyWith<ScannedQrCode> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -82,6 +86,8 @@ class _$ScannedQrCodeCopyWithImpl<$Res, $Val extends ScannedQrCode>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ScannedQrCode
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -165,6 +171,8 @@ class _$ScannedQrCodeCopyWithImpl<$Res, $Val extends ScannedQrCode>
     ) as $Val);
   }
 
+  /// Create a copy of ScannedQrCode
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DepotCopyWith<$Res>? get depot {
@@ -177,6 +185,8 @@ class _$ScannedQrCodeCopyWithImpl<$Res, $Val extends ScannedQrCode>
     });
   }
 
+  /// Create a copy of ScannedQrCode
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $QrCodeCopyWith<$Res>? get qrCode {
@@ -189,6 +199,8 @@ class _$ScannedQrCodeCopyWithImpl<$Res, $Val extends ScannedQrCode>
     });
   }
 
+  /// Create a copy of ScannedQrCode
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StatusCopyWith<$Res>? get status {
@@ -201,6 +213,8 @@ class _$ScannedQrCodeCopyWithImpl<$Res, $Val extends ScannedQrCode>
     });
   }
 
+  /// Create a copy of ScannedQrCode
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OrderCopyWith<$Res>? get order {
@@ -213,6 +227,8 @@ class _$ScannedQrCodeCopyWithImpl<$Res, $Val extends ScannedQrCode>
     });
   }
 
+  /// Create a copy of ScannedQrCode
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get user {
@@ -271,6 +287,8 @@ class __$$ScannedQrCodeImplCopyWithImpl<$Res>
       _$ScannedQrCodeImpl _value, $Res Function(_$ScannedQrCodeImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ScannedQrCode
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -442,7 +460,7 @@ class _$ScannedQrCodeImpl extends _ScannedQrCode {
             (identical(other.remarks, remarks) || other.remarks == remarks));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -462,7 +480,9 @@ class _$ScannedQrCodeImpl extends _ScannedQrCode {
       user,
       remarks);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ScannedQrCode
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ScannedQrCodeImplCopyWith<_$ScannedQrCodeImpl> get copyWith =>
@@ -528,8 +548,11 @@ abstract class _ScannedQrCode extends ScannedQrCode {
   User? get user;
   @override
   String? get remarks;
+
+  /// Create a copy of ScannedQrCode
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ScannedQrCodeImplCopyWith<_$ScannedQrCodeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
