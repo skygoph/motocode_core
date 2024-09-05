@@ -1,20 +1,20 @@
 /// PasswordRequestModel class
 class PasswordRequestModel {
   PasswordRequestModel({
-    required this.userId,
-    required this.token,
-    required this.email,
-    required this.newPassword,
-    required this.confirmPassword,
-    required this.currentPassword,
+    this.userId,
+    this.token,
+    this.email,
+    this.newPassword,
+    this.confirmPassword,
+    this.currentPassword,
   });
 
-  final String userId;
-  final String token;
-  final String email;
-  final String newPassword;
-  final String confirmPassword;
-  final String currentPassword;
+  final String? userId;
+  final String? token;
+  final String? email;
+  final String? newPassword;
+  final String? confirmPassword;
+  final String? currentPassword;
 
   Map<String, dynamic> toJson() {
     return {

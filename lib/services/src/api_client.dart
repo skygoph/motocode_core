@@ -19,8 +19,8 @@ abstract class ApiClient {
   Future<void> changePassword(@Body() Map<String, dynamic> data);
   @POST('/password/MobileChangePassword')
   Future<void> changePasswordMobile(@Body() Map<String, dynamic> data);
-  @POST('/password/ForgotPassword')
-  Future<void> forgotPassword(String email);
+  @POST('/password/ForgotPassword/{email}')
+  Future<void> forgotPassword(@Path('email') String email);
   @POST('/password/ResetPassword')
   Future<void> resetPassword(@Body() Map<String, dynamic> data);
 
