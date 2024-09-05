@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.3.3
+
+* fix the route of forgotpassword 'Include the parameter'
+
 ## 0.3.2
 
 * Add reset, change, and forgot password feature

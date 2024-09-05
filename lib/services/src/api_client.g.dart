@@ -155,7 +155,7 @@ class _ApiClient implements ApiClient {
     )
         .compose(
           _dio.options,
-          '/password/ForgotPassword',
+          '/password/ForgotPassword/${email}',
           queryParameters: queryParameters,
           data: _data,
         )
