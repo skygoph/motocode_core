@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.3.4
+
+* allow null in the password request model.
+
 ## 0.3.3
 
 * fix the route of forgotpassword 'Include the parameter'
