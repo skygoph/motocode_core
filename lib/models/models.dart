@@ -9,5 +9,7 @@ export 'src/position.dart';
 export 'src/qr_code.dart';
 export 'src/scanned_qr_code.dart';
 export 'src/status.dart';
-export 'src/user_role.dart';
+export 'src/sticker.dart';
+export 'src/sticker_transaction.dart';
 export 'src/user.dart';
+export 'src/user_role.dart';
