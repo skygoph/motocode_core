@@ -124,6 +124,12 @@ abstract class ApiClient {
   @POST('/scanned-qr-codes')
   Future<void> createScannedQrCode(@Body() Map<String, dynamic> data);
 
+  /// ********** Sticker API ********** ///
+  @GET('/stickers')
+  Future<List<StickerTransaction>> getStickers();
+  @POST('/sticker')
+  Future<void> createSticker(@Body() Map<String, dynamic> data);
+
   /// ************ Status API ******************** ///
   @GET('/statuses')
   Future<List<Status>> getStatuses();

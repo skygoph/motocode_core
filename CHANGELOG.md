@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.3.5
+
+* Add sticker transaction feature
+
 ## 0.3.4
 
 * allow null in the password request model.

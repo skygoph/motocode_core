@@ -11,4 +11,5 @@ export 'src/qr_codes_service.dart';
 export 'src/roles_service.dart';
 export 'src/scanned_qr_codes_service.dart';
 export 'src/statuses_service.dart';
+export 'src/sticker_service.dart';
 export 'src/users_service.dart';
