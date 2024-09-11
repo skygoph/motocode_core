@@ -1349,7 +1349,7 @@ class _ApiClient implements ApiClient {
     )
         .compose(
           _dio.options,
-          '/stickers',
+          '/sticker',
           queryParameters: queryParameters,
           data: _data,
         )

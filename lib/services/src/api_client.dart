@@ -125,7 +125,7 @@ abstract class ApiClient {
   Future<void> createScannedQrCode(@Body() Map<String, dynamic> data);
 
   /// ********** Sticker API ********** ///
-  @GET('/stickers')
+  @GET('/sticker')
   Future<List<StickerTransaction>> getStickers();
   @POST('/sticker')
   Future<void> createSticker(@Body() Map<String, dynamic> data);
