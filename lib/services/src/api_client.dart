@@ -257,6 +257,10 @@ List<Status> deserializeStatusList(List<dynamic> data) {
   return data.map((e) => Status.fromJson(e)).toList();
 }
 
+List<StickerTransaction> deserializeStickerTransactionList(List<dynamic> data) {
+  return data.map((e) => StickerTransaction.fromJson(e)).toList();
+}
+
 List<QrCode> deserializeQrCodeList(List<dynamic> data) {
   return data.map((e) => QrCode.fromJson(e)).toList();
 }
