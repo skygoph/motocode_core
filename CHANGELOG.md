@@ -1,4 +1,19 @@
 # Release Notes
+## 0.3.9
+
+* add get user by rolename; fixed
+
+## 0.3.8
+
+* add get user by rolename
+
+## 0.3.7
+
+* sticker 404 endpoint issue fixed
+
+## 0.3.6
+
+* deserialized issue fixed
 
 ## 0.3.5
 
