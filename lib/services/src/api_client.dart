@@ -77,6 +77,10 @@ abstract class ApiClient {
   /// ********** Positions API ********** ///
   @GET('/positions')
   Future<List<Position>> getPositions();
+  @GET('/positions?position=user')
+  Future<List<Position>> getUsersPosition();
+  @GET('/positions?position=admin')
+  Future<List<Position>> getAdminsPosition();
   @GET('/positions/{id}')
   Future<Position> getPosition(@Path('id') int positionId);
   @POST('/positions')

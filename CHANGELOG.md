@@ -1,4 +1,8 @@
 # Release Notes
+## 0.4.0
+
+* endpoint position/getUserPosition/getAdminPosition
+
 ## 0.3.9
 
 * add get user by rolename; fixed
