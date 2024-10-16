@@ -1,4 +1,8 @@
 # Release Notes
+## 0.4.1
+
+* add endpoint getUsersByBusinessUnit
+
 ## 0.4.0
 
 * endpoint position/getUserPosition/getAdminPosition

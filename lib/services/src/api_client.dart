@@ -157,6 +157,9 @@ abstract class ApiClient {
   Future<User> getUser(@Path('id') String id);
   @GET('/users/{role_name}/role')
   Future<List<User>> getUserbyRole(@Path('role_name') String role_name);
+  @GET('/users/business-unit/{business_unit_id}')
+  Future<List<User>> getUserbyBusinessUnit(
+      @Path('business_unit_id') int business_unit_id);
   @POST('/users')
   Future<void> createUser(@Body() Map<String, dynamic> data);
   @PUT('/users/{id}')
