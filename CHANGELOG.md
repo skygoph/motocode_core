@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.4.5
+
+* Add IslandGroup/Regional/Interal Area Models and Update the depot added the InternalAreaId
+
 ## 0.4.4
 
 * Fix conflict

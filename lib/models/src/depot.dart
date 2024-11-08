@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:motocode_core/models/src/business_unit.dart';
 import 'package:motocode_core/models/src/depot_type.dart';
+import 'package:motocode_core/models/src/internal_area.dart';
 
 part 'depot.freezed.dart';
 part 'depot.g.dart';
@@ -20,6 +21,8 @@ class Depot with _$Depot {
     int? depotStatus,
     BusinessUnit? businessUnit,
     DepotType? depotType,
+    InternalArea? internalArea,
+    int? internalAreaId,
     DateTime? createdDate,
   }) = _Depot;
 
@@ -32,6 +35,7 @@ class Depot with _$Depot {
         'latitude': latitude,
         'longitude': longitude,
         'depotStatus': depotStatus,
+        'internalAreaId': internalAreaId ?? internalArea?.id,
         'businessUnitId': businessUnitId ?? businessUnit?.id,
         'depotTypeId': depotTypeId ?? depotType?.id,
         'createdDate': createdDate?.toUtc().toIso8601String(),
