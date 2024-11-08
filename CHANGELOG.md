@@ -1,6 +1,6 @@
 # Release Notes
 
-## 0.3.6
+## 0.4.2
 
 * Add Signature Service feature
 
