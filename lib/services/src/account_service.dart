@@ -17,7 +17,7 @@ class AccountService {
   final FirebaseCrashlytics? _crashlytics;
 
   /// Get the signature keys from the server
-  Future<Map<String, dynamic>> getSignatureKeys() =>
+  Future<Signature> getSignatureKeys() =>
       _apiClient.getSignatureKeys().catchError((error) {
         _crashlytics?.recordError(error, StackTrace.current);
         throw error;

@@ -22,12 +22,12 @@ class _ApiClient implements ApiClient {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<Map<String, dynamic>> getSignatureKeys() async {
+  Future<Signature> getSignatureKeys() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<Map<String, dynamic>>(Options(
+    final _options = _setStreamType<Signature>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -44,13 +44,9 @@ class _ApiClient implements ApiClient {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late Map<String, dynamic> _value;
+    late Signature _value;
     try {
-      _value = Map.fromEntries(await Future.wait(_result.data!.entries.map(
-          (e) async => MapEntry(
-              e.key,
-              await compute(
-                  deserializedynamic, e.value as Map<String, dynamic>)))));
+      _value = await compute(deserializeSignature, _result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

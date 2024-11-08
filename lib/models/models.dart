@@ -8,6 +8,7 @@ export 'src/order.dart';
 export 'src/position.dart';
 export 'src/qr_code.dart';
 export 'src/scanned_qr_code.dart';
+export 'src/signature.dart';
 export 'src/status.dart';
 export 'src/sticker.dart';
 export 'src/sticker_transaction.dart';

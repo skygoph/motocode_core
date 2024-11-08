@@ -11,7 +11,7 @@ abstract class ApiClient {
 
   /// ********** Accounts API ********** ///
   @GET('/accounts/sig-keys')
-  Future<Map<String, dynamic>> getSignatureKeys();
+  Future<Signature> getSignatureKeys();
 
   /// ********** Authentication API ********** ///
   @POST('/login')
@@ -190,6 +190,10 @@ abstract class ApiClient {
 // **************************************************************************
 // ************************   Deserializers  ********************************
 // **************************************************************************
+Signature deserializeSignature(Map<String, dynamic> data) {
+  return Signature.fromJson(data);
+}
+
 BusinessUnit deserializeBusinessUnit(Map<String, dynamic> data) {
   return BusinessUnit.fromJson(data);
 }
@@ -289,6 +293,7 @@ List<UserRole> deserializeUserRoleList(List<dynamic> data) {
 // **************************************************************************
 // ************************   Serializers  **********************************
 // **************************************************************************
+
 Map<String, dynamic> serializeUser(User user) {
   return user.toJson();
 }
