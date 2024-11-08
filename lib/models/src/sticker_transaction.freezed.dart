@@ -28,8 +28,12 @@ mixin _$StickerTransaction {
   DateTime? get createdDate => throw _privateConstructorUsedError;
   DateTime? get endedDate => throw _privateConstructorUsedError;
 
+  /// Serializes this StickerTransaction to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of StickerTransaction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $StickerTransactionCopyWith<StickerTransaction> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -63,6 +67,8 @@ class _$StickerTransactionCopyWithImpl<$Res, $Val extends StickerTransaction>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of StickerTransaction
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -106,6 +112,8 @@ class _$StickerTransactionCopyWithImpl<$Res, $Val extends StickerTransaction>
     ) as $Val);
   }
 
+  /// Create a copy of StickerTransaction
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $QrCodeCopyWith<$Res>? get qrCode {
@@ -118,6 +126,8 @@ class _$StickerTransactionCopyWithImpl<$Res, $Val extends StickerTransaction>
     });
   }
 
+  /// Create a copy of StickerTransaction
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StickerCopyWith<$Res>? get sticker {
@@ -162,6 +172,8 @@ class __$$StickerTransactionImplCopyWithImpl<$Res>
       $Res Function(_$StickerTransactionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StickerTransaction
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -260,12 +272,14 @@ class _$StickerTransactionImpl extends _StickerTransaction {
                 other.endedDate == endedDate));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, qrCode, qrCodeId, sticker,
       stickerId, createdDate, endedDate);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StickerTransaction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StickerTransactionImplCopyWith<_$StickerTransactionImpl> get copyWith =>
@@ -308,8 +322,11 @@ abstract class _StickerTransaction extends StickerTransaction {
   DateTime? get createdDate;
   @override
   DateTime? get endedDate;
+
+  /// Create a copy of StickerTransaction
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StickerTransactionImplCopyWith<_$StickerTransactionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

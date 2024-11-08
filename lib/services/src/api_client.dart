@@ -9,6 +9,10 @@ part 'api_client.g.dart';
 abstract class ApiClient {
   factory ApiClient(Dio dio, {String baseUrl}) = _ApiClient;
 
+  /// ********** Accounts API ********** ///
+  @GET('/accounts/sig-keys')
+  Future<Map<String, dynamic>> getSignatureKeys();
+
   /// ********** Authentication API ********** ///
   @POST('/login')
   Future<User> loginWithEmailAndPassword(@Body() Map<String, dynamic> data);

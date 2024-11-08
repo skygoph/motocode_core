@@ -36,6 +36,8 @@ Future<void> setupMotocodeLocator({
 
   final apiClient = locator<ApiClient>();
 
+  locator.registerLazySingleton(
+      () => AccountService(apiClient: apiClient, crashlytics: crashlytics));
   locator.registerLazySingleton(() =>
       AuthenticationService(apiClient: apiClient, crashlytics: crashlytics));
   locator.registerLazySingleton(() =>

@@ -23,6 +23,10 @@
 
 * deserialized issue fixed
 
+## 0.4.2
+
+* Add Signature Service feature
+
 ## 0.3.5
 
 * Add sticker transaction feature
