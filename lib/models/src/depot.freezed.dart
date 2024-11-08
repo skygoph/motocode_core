@@ -30,6 +30,8 @@ mixin _$Depot {
   int? get depotStatus => throw _privateConstructorUsedError;
   BusinessUnit? get businessUnit => throw _privateConstructorUsedError;
   DepotType? get depotType => throw _privateConstructorUsedError;
+  InternalArea? get internalArea => throw _privateConstructorUsedError;
+  int? get internalAreaId => throw _privateConstructorUsedError;
   DateTime? get createdDate => throw _privateConstructorUsedError;
 
   /// Serializes this Depot to a JSON map.
@@ -57,10 +59,13 @@ abstract class $DepotCopyWith<$Res> {
       int? depotStatus,
       BusinessUnit? businessUnit,
       DepotType? depotType,
+      InternalArea? internalArea,
+      int? internalAreaId,
       DateTime? createdDate});
 
   $BusinessUnitCopyWith<$Res>? get businessUnit;
   $DepotTypeCopyWith<$Res>? get depotType;
+  $InternalAreaCopyWith<$Res>? get internalArea;
 }
 
 /// @nodoc
@@ -88,6 +93,8 @@ class _$DepotCopyWithImpl<$Res, $Val extends Depot>
     Object? depotStatus = freezed,
     Object? businessUnit = freezed,
     Object? depotType = freezed,
+    Object? internalArea = freezed,
+    Object? internalAreaId = freezed,
     Object? createdDate = freezed,
   }) {
     return _then(_value.copyWith(
@@ -131,6 +138,14 @@ class _$DepotCopyWithImpl<$Res, $Val extends Depot>
           ? _value.depotType
           : depotType // ignore: cast_nullable_to_non_nullable
               as DepotType?,
+      internalArea: freezed == internalArea
+          ? _value.internalArea
+          : internalArea // ignore: cast_nullable_to_non_nullable
+              as InternalArea?,
+      internalAreaId: freezed == internalAreaId
+          ? _value.internalAreaId
+          : internalAreaId // ignore: cast_nullable_to_non_nullable
+              as int?,
       createdDate: freezed == createdDate
           ? _value.createdDate
           : createdDate // ignore: cast_nullable_to_non_nullable
@@ -165,6 +180,20 @@ class _$DepotCopyWithImpl<$Res, $Val extends Depot>
       return _then(_value.copyWith(depotType: value) as $Val);
     });
   }
+
+  /// Create a copy of Depot
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $InternalAreaCopyWith<$Res>? get internalArea {
+    if (_value.internalArea == null) {
+      return null;
+    }
+
+    return $InternalAreaCopyWith<$Res>(_value.internalArea!, (value) {
+      return _then(_value.copyWith(internalArea: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -185,12 +214,16 @@ abstract class _$$DepotImplCopyWith<$Res> implements $DepotCopyWith<$Res> {
       int? depotStatus,
       BusinessUnit? businessUnit,
       DepotType? depotType,
+      InternalArea? internalArea,
+      int? internalAreaId,
       DateTime? createdDate});
 
   @override
   $BusinessUnitCopyWith<$Res>? get businessUnit;
   @override
   $DepotTypeCopyWith<$Res>? get depotType;
+  @override
+  $InternalAreaCopyWith<$Res>? get internalArea;
 }
 
 /// @nodoc
@@ -216,6 +249,8 @@ class __$$DepotImplCopyWithImpl<$Res>
     Object? depotStatus = freezed,
     Object? businessUnit = freezed,
     Object? depotType = freezed,
+    Object? internalArea = freezed,
+    Object? internalAreaId = freezed,
     Object? createdDate = freezed,
   }) {
     return _then(_$DepotImpl(
@@ -259,6 +294,14 @@ class __$$DepotImplCopyWithImpl<$Res>
           ? _value.depotType
           : depotType // ignore: cast_nullable_to_non_nullable
               as DepotType?,
+      internalArea: freezed == internalArea
+          ? _value.internalArea
+          : internalArea // ignore: cast_nullable_to_non_nullable
+              as InternalArea?,
+      internalAreaId: freezed == internalAreaId
+          ? _value.internalAreaId
+          : internalAreaId // ignore: cast_nullable_to_non_nullable
+              as int?,
       createdDate: freezed == createdDate
           ? _value.createdDate
           : createdDate // ignore: cast_nullable_to_non_nullable
@@ -281,6 +324,8 @@ class _$DepotImpl extends _Depot {
       this.depotStatus,
       this.businessUnit,
       this.depotType,
+      this.internalArea,
+      this.internalAreaId,
       this.createdDate})
       : super._();
 
@@ -308,11 +353,15 @@ class _$DepotImpl extends _Depot {
   @override
   final DepotType? depotType;
   @override
+  final InternalArea? internalArea;
+  @override
+  final int? internalAreaId;
+  @override
   final DateTime? createdDate;
 
   @override
   String toString() {
-    return 'Depot(id: $id, name: $name, location: $location, latitude: $latitude, longitude: $longitude, businessUnitId: $businessUnitId, depotTypeId: $depotTypeId, depotStatus: $depotStatus, businessUnit: $businessUnit, depotType: $depotType, createdDate: $createdDate)';
+    return 'Depot(id: $id, name: $name, location: $location, latitude: $latitude, longitude: $longitude, businessUnitId: $businessUnitId, depotTypeId: $depotTypeId, depotStatus: $depotStatus, businessUnit: $businessUnit, depotType: $depotType, internalArea: $internalArea, internalAreaId: $internalAreaId, createdDate: $createdDate)';
   }
 
   @override
@@ -338,6 +387,10 @@ class _$DepotImpl extends _Depot {
                 other.businessUnit == businessUnit) &&
             (identical(other.depotType, depotType) ||
                 other.depotType == depotType) &&
+            (identical(other.internalArea, internalArea) ||
+                other.internalArea == internalArea) &&
+            (identical(other.internalAreaId, internalAreaId) ||
+                other.internalAreaId == internalAreaId) &&
             (identical(other.createdDate, createdDate) ||
                 other.createdDate == createdDate));
   }
@@ -356,6 +409,8 @@ class _$DepotImpl extends _Depot {
       depotStatus,
       businessUnit,
       depotType,
+      internalArea,
+      internalAreaId,
       createdDate);
 
   /// Create a copy of Depot
@@ -386,6 +441,8 @@ abstract class _Depot extends Depot {
       final int? depotStatus,
       final BusinessUnit? businessUnit,
       final DepotType? depotType,
+      final InternalArea? internalArea,
+      final int? internalAreaId,
       final DateTime? createdDate}) = _$DepotImpl;
   const _Depot._() : super._();
 
@@ -411,6 +468,10 @@ abstract class _Depot extends Depot {
   BusinessUnit? get businessUnit;
   @override
   DepotType? get depotType;
+  @override
+  InternalArea? get internalArea;
+  @override
+  int? get internalAreaId;
   @override
   DateTime? get createdDate;
 
