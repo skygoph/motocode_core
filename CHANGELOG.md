@@ -1,4 +1,13 @@
 # Release Notes
+
+## 0.4.3
+
+* Fix conflict
+
+## 0.4.2
+
+* Add Signature Service feature
+
 ## 0.4.1
 
 * add endpoint getUsersByBusinessUnit
@@ -22,10 +31,6 @@
 ## 0.3.6
 
 * deserialized issue fixed
-
-## 0.4.2
-
-* Add Signature Service feature
 
 ## 0.3.5
 
