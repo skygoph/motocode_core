@@ -31,6 +31,36 @@ class PositionsService {
         throw error;
       });
 
+  /// Get all users position
+  ///
+  /// This function sends a request to the API client to get all users position.
+  /// If the request is successful, it returns a list of positions.
+  /// In case of an error, the error is recorded in Crashlytics and the error is rethrown.
+  ///
+  /// Returns a [Future<List<Position>>] containing a list of positions.
+  ///
+  /// Throws an error if the request fails for any reason.
+  Future<List<Position>> getUsersPosition() =>
+      _apiClient.getUsersPosition().catchError((error) {
+        _crashlytics?.recordError(error, StackTrace.current);
+        throw error;
+      });
+
+  /// Get all admins position
+  ///
+  /// This function sends a request to the API client to get all admins position.
+  /// If the request is successful, it returns a list of positions.
+  /// In case of an error, the error is recorded in Crashlytics and the error is rethrown.
+  ///
+  /// Returns a [Future<List<Position>>] containing a list of positions.
+  ///
+  /// Throws an error if the request fails for any reason.
+  Future<List<Position>> getAdminsPosition() =>
+      _apiClient.getAdminsPosition().catchError((error) {
+        _crashlytics?.recordError(error, StackTrace.current);
+        throw error;
+      });
+
   /// Get a position by id
   ///
   /// This function sends a request to the API client to get a position by id.

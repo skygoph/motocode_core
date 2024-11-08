@@ -81,6 +81,10 @@ abstract class ApiClient {
   /// ********** Positions API ********** ///
   @GET('/positions')
   Future<List<Position>> getPositions();
+  @GET('/positions?position=user')
+  Future<List<Position>> getUsersPosition();
+  @GET('/positions?position=admin')
+  Future<List<Position>> getAdminsPosition();
   @GET('/positions/{id}')
   Future<Position> getPosition(@Path('id') int positionId);
   @POST('/positions')
@@ -129,7 +133,7 @@ abstract class ApiClient {
   Future<void> createScannedQrCode(@Body() Map<String, dynamic> data);
 
   /// ********** Sticker API ********** ///
-  @GET('/stickers')
+  @GET('/sticker')
   Future<List<StickerTransaction>> getStickers();
   @POST('/sticker')
   Future<void> createSticker(@Body() Map<String, dynamic> data);
@@ -155,6 +159,11 @@ abstract class ApiClient {
   Future<List<User>> getUsers();
   @GET('/users/{id}')
   Future<User> getUser(@Path('id') String id);
+  @GET('/users/{role_name}/role')
+  Future<List<User>> getUserbyRole(@Path('role_name') String role_name);
+  @GET('/users/business-unit/{business_unit_id}')
+  Future<List<User>> getUserbyBusinessUnit(
+      @Path('business_unit_id') int business_unit_id);
   @POST('/users')
   Future<void> createUser(@Body() Map<String, dynamic> data);
   @PUT('/users/{id}')
@@ -259,6 +268,10 @@ List<ScannedQrCode> deserializeScannedQrCodeList(List<dynamic> data) {
 
 List<Status> deserializeStatusList(List<dynamic> data) {
   return data.map((e) => Status.fromJson(e)).toList();
+}
+
+List<StickerTransaction> deserializeStickerTransactionList(List<dynamic> data) {
+  return data.map((e) => StickerTransaction.fromJson(e)).toList();
 }
 
 List<QrCode> deserializeQrCodeList(List<dynamic> data) {

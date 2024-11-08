@@ -48,6 +48,40 @@ class UsersService {
         throw error;
       });
 
+  /// Get a user by role
+  ///
+  /// This function sends a request to the API client to get a user by role name.
+  /// If the request is successful, it returns the [User].
+  /// In case of an error, the error is recorded in Crashlytics and the error is rethrown.
+  ///
+  /// [userRole] The parameter of the user to get.
+  ///
+  /// Returns a [Future<User>] containing the [User].
+  ///
+  /// Throws an error if the request fails for any reason.
+  Future<List<User>> getUsersByRole(String userRole) =>
+      _apiClient.getUserbyRole(userRole).catchError((error) {
+        _crashlytics?.recordError(error, StackTrace.current);
+        throw error;
+      });
+
+  /// Get a user by business unit
+  ///
+  /// This function sends a request to the API client to get a user by business unit.
+  /// If the request is successful, it returns the [User].
+  /// In case of an error, the error is recorded in Crashlytics and the error is rethrown.
+  ///
+  /// [userRole] The parameter of the user to get.
+  ///
+  /// Returns a [Future<User>] containing the [User].
+  ///
+  /// Throws an error if the request fails for any reason.
+  Future<List<User>> getUsersByBusinessUnit(int businessUnitId) =>
+      _apiClient.getUserbyBusinessUnit(businessUnitId).catchError((error) {
+        _crashlytics?.recordError(error, StackTrace.current);
+        throw error;
+      });
+
   /// Create a user
   ///
   /// This function sends a request to the API client to create a user.
