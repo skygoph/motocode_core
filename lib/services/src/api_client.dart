@@ -13,6 +13,26 @@ abstract class ApiClient {
   @GET('/accounts/sig-keys')
   Future<Signature> getSignatureKeys();
 
+  /// ********** Areas API ********** ///
+  @GET('/area/islands')
+  Future<List<IslandGroup>> getIslandGroups();
+
+  @GET('/area/regionalareas/{islandGroupId}')
+  Future<List<RegionalArea>> getRegionalAreas(
+      @Path('islandGroupId') int islandGroupId);
+
+  @GET('/area/internalareas/{regionalAreaId}')
+  Future<List<InternalArea>> getInternalAreas(
+      @Path('regionalAreaId') int regionalAreaId);
+
+  @GET('/area/depots/{internalAreaId}')
+  Future<List<Depot>> getDepotByInternalArea(
+      @Path('internalAreaId') int internalAreaId);
+
+  @GET('/area/depots/regional/{regionalAreaId}')
+  Future<List<Depot>> getDepotByRegionalArea(
+      @Path('regionalAreaId') int regionalAreaId);
+
   /// ********** Authentication API ********** ///
   @POST('/login')
   Future<User> loginWithEmailAndPassword(@Body() Map<String, dynamic> data);
