@@ -22,6 +22,43 @@ class _ApiClient implements ApiClient {
   final ParseErrorLogger? errorLogger;
 
   @override
+  Future<Map<String, dynamic>> getSignatureKeys() async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<Map<String, dynamic>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/accounts/sig-keys',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late Map<String, dynamic> _value;
+    try {
+      _value = Map.fromEntries(await Future.wait(_result.data!.entries.map(
+          (e) async => MapEntry(
+              e.key,
+              await compute(
+                  deserializedynamic, e.value as Map<String, dynamic>)))));
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
   Future<User> loginWithEmailAndPassword(Map<String, dynamic> data) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};

@@ -32,8 +32,12 @@ mixin _$Depot {
   DepotType? get depotType => throw _privateConstructorUsedError;
   DateTime? get createdDate => throw _privateConstructorUsedError;
 
+  /// Serializes this Depot to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Depot
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DepotCopyWith<Depot> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -69,6 +73,8 @@ class _$DepotCopyWithImpl<$Res, $Val extends Depot>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Depot
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -132,6 +138,8 @@ class _$DepotCopyWithImpl<$Res, $Val extends Depot>
     ) as $Val);
   }
 
+  /// Create a copy of Depot
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $BusinessUnitCopyWith<$Res>? get businessUnit {
@@ -144,6 +152,8 @@ class _$DepotCopyWithImpl<$Res, $Val extends Depot>
     });
   }
 
+  /// Create a copy of Depot
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DepotTypeCopyWith<$Res>? get depotType {
@@ -191,6 +201,8 @@ class __$$DepotImplCopyWithImpl<$Res>
       _$DepotImpl _value, $Res Function(_$DepotImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Depot
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -330,7 +342,7 @@ class _$DepotImpl extends _Depot {
                 other.createdDate == createdDate));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -346,7 +358,9 @@ class _$DepotImpl extends _Depot {
       depotType,
       createdDate);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Depot
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DepotImplCopyWith<_$DepotImpl> get copyWith =>
@@ -399,8 +413,11 @@ abstract class _Depot extends Depot {
   DepotType? get depotType;
   @override
   DateTime? get createdDate;
+
+  /// Create a copy of Depot
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DepotImplCopyWith<_$DepotImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

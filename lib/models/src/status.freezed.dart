@@ -25,8 +25,12 @@ mixin _$Status {
   String? get description => throw _privateConstructorUsedError;
   DateTime? get createdDate => throw _privateConstructorUsedError;
 
+  /// Serializes this Status to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $StatusCopyWith<Status> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -49,6 +53,8 @@ class _$StatusCopyWithImpl<$Res, $Val extends Status>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -97,6 +103,8 @@ class __$$StatusImplCopyWithImpl<$Res>
       _$StatusImpl _value, $Res Function(_$StatusImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -163,12 +171,14 @@ class _$StatusImpl extends _Status {
                 other.createdDate == createdDate));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, id, name, description, createdDate);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StatusImplCopyWith<_$StatusImpl> get copyWith =>
@@ -200,8 +210,11 @@ abstract class _Status extends Status {
   String? get description;
   @override
   DateTime? get createdDate;
+
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StatusImplCopyWith<_$StatusImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

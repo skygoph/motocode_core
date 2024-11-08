@@ -31,8 +31,12 @@ mixin _$QrCode {
   int? get year => throw _privateConstructorUsedError;
   int? get id => throw _privateConstructorUsedError;
 
+  /// Serializes this QrCode to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of QrCode
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $QrCodeCopyWith<QrCode> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -64,6 +68,8 @@ class _$QrCodeCopyWithImpl<$Res, $Val extends QrCode>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of QrCode
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -151,6 +157,8 @@ class __$$QrCodeImplCopyWithImpl<$Res>
       _$QrCodeImpl _value, $Res Function(_$QrCodeImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of QrCode
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -277,7 +285,7 @@ class _$QrCodeImpl extends _QrCode {
             (identical(other.id, id) || other.id == id));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -292,7 +300,9 @@ class _$QrCodeImpl extends _QrCode {
       year,
       id);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of QrCode
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$QrCodeImplCopyWith<_$QrCodeImpl> get copyWith =>
@@ -342,8 +352,11 @@ abstract class _QrCode extends QrCode {
   int? get year;
   @override
   int? get id;
+
+  /// Create a copy of QrCode
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$QrCodeImplCopyWith<_$QrCodeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
