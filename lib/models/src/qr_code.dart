@@ -18,25 +18,24 @@ class QrCode with _$QrCode {
     String? controlNumber,
     int? year,
     int? id,
+    String? signature,
+    String? identifier,
   }) = _QrCode;
 
-  factory QrCode.fromString(String scannedQrCode) {
+  factory QrCode.fromScannedItem(String scannedQrCode) {
     final results = scannedQrCode.split(',');
 
-    final code = List.generate(
-      10,
-      (index) => results.length > index ? results[index].trim() : '',
-    );
+    // Valid QR Code: LX8PCK501ME010828,161FMJM1329814,SG150,BLACK/RED,___SIGNATURE___
+    if (results.length != 5) {
+      throw Exception('Invalid QR Code');
+    }
 
     return QrCode(
-      chassisNumber: code[0],
-      engineNumber: code[1],
-      model: code[2],
-      manufacturingDate: code[3],
-      color: code[4],
-      batchNumber: code[5],
-      brand: code[6],
-      controlNumber: code[7],
+      chassisNumber: results[0],
+      engineNumber: results[1],
+      model: results[2],
+      color: results[3],
+      signature: results[4],
     );
   }
 
@@ -53,5 +52,7 @@ class QrCode with _$QrCode {
         'brand': brand,
         'controlNumber': controlNumber,
         'year': year,
+        'signature': signature,
+        'identifier': identifier,
       };
 }

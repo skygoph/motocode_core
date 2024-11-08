@@ -230,6 +230,18 @@ DepotType deserializeDepotType(Map<String, dynamic> data) {
   return DepotType.fromJson(data);
 }
 
+List<IslandGroup> deserializeIslandGroupList(List<dynamic> data) {
+  return data.map((e) => IslandGroup.fromJson(e)).toList();
+}
+
+List<RegionalArea> deserializeRegionalAreaList(List<dynamic> data) {
+  return data.map((e) => RegionalArea.fromJson(e)).toList();
+}
+
+List<InternalArea> deserializeInternalAreaList(List<dynamic> data) {
+  return data.map((e) => InternalArea.fromJson(e)).toList();
+}
+
 LoginResponse deserializeLoginResponse(Map<String, dynamic> data) {
   return LoginResponse.fromJson(data);
 }

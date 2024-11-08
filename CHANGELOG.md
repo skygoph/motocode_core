@@ -1,8 +1,12 @@
 # Release Notes
 
+## 0.4.7
+
+* Add 2 attributes in QRCode model and deserialize added api call
+
 ## 0.4.6
 
-* Add Endpoint for IslandGroup/Regional/Interal Area 
+* Add Endpoint for IslandGroup/Regional/Interal Area
 
 ## 0.4.5
 
