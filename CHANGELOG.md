@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.4.10
+
+* Add CreateEnrollmentResponse model and update createEnrollments method to return it
+
 ## 0.4.9
 
 * Update enrollments module
