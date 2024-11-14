@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:motocode_core/motocode_core.dart';
 
@@ -25,9 +27,9 @@ class EnrollmentsService {
   /// Returns a [Future<List<Enrollment>>] containing a list of enrollments.
   ///
   /// Throws an error if the request fails for any reason.
-  Future<List<ScannedQrCode>> getEnrollments() =>
-      _apiClient.getEnrollments().catchError((error) {
-        _crashlytics?.recordError(error, StackTrace.current);
+  Future<List<EnrollmentItem>> createEnrollments() =>
+      _apiClient.createEnrollments().catchError((error) {
+        unawaited(_crashlytics?.recordError(error, StackTrace.current));
         throw error;
       });
 }

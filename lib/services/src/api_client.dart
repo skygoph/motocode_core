@@ -95,8 +95,8 @@ abstract class ApiClient {
   Future<List<Depot>> getDepotsWithDepotType(@Path('id') int depotTypeId);
 
   /// ********** Enrollments API ********** ///
-  @GET('/enrollments')
-  Future<List<ScannedQrCode>> getEnrollments();
+  @POST('/enrollments')
+  Future<List<EnrollmentItem>> createEnrollments();
 
   /// ********** Positions API ********** ///
   @GET('/positions')
@@ -234,6 +234,10 @@ Depot deserializeDepot(Map<String, dynamic> data) {
 
 DepotType deserializeDepotType(Map<String, dynamic> data) {
   return DepotType.fromJson(data);
+}
+
+List<EnrollmentItem> deserializeEnrollmentItemList(List<dynamic> data) {
+  return data.map((e) => EnrollmentItem.fromJson(e)).toList();
 }
 
 List<IslandGroup> deserializeIslandGroupList(List<dynamic> data) {

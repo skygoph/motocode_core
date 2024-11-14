@@ -939,13 +939,13 @@ class _ApiClient implements ApiClient {
   }
 
   @override
-  Future<List<ScannedQrCode>> getEnrollments() async {
+  Future<List<EnrollmentItem>> createEnrollments() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<ScannedQrCode>>(Options(
-      method: 'GET',
+    final _options = _setStreamType<List<EnrollmentItem>>(Options(
+      method: 'POST',
       headers: _headers,
       extra: _extra,
     )
@@ -961,10 +961,10 @@ class _ApiClient implements ApiClient {
           baseUrl,
         )));
     final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<ScannedQrCode> _value;
+    late List<EnrollmentItem> _value;
     try {
       _value = await compute(
-        deserializeScannedQrCodeList,
+        deserializeEnrollmentItemList,
         _result.data!.cast<Map<String, dynamic>>(),
       );
     } on Object catch (e, s) {

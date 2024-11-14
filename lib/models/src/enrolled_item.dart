@@ -3,24 +3,42 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'enrolled_item.freezed.dart';
 part 'enrolled_item.g.dart';
 
+/*
+  {
+    "id": 0,
+    "controlNumber": "string",
+    "chassisNumber": "string",
+    "engineNumber": "string",
+    "model": "string",
+    "manufacturingDate": "string",
+    "color": "string",
+    "batchNumber": "string",
+    "brand": "string",
+    "userId": "string",
+    "depotId": 0,
+    "statusId": 0,
+    "purchaseOrder": "string",
+    "signature": "string"
+  }
+ */
 @freezed
-class EnrolledItem with _$EnrolledItem {
-  const EnrolledItem._();
+class EnrollmentItem with _$EnrollmentItem {
+  const factory EnrollmentItem({
+    required String controlNumber,
+    required String chassisNumber,
+    required String engineNumber,
+    required String model,
+    required String color,
+    required String userId,
+    required int depotId,
+    required int statusId,
+    required String purchaseOrder,
+    required String signature,
+    String? manufacturingDate,
+    String? batchNumber,
+    String? brand,
+  }) = _EnrollmentItem;
 
-  const factory EnrolledItem({
-    int? id,
-    String? chassisNumber,
-    String? engineNumber,
-    DateTime? endedDate,
-  }) = _EnrolledItem;
-
-  factory EnrolledItem.fromJson(Map<String, dynamic> json) =>
-      _$EnrolledItemFromJson(json);
-
-  Map<String, dynamic> mapToRequest() => {
-        'id': id,
-        'chassisNumber': chassisNumber,
-        'engineNumber': engineNumber,
-        'endedDate': endedDate?.toUtc().toIso8601String(),
-      };
+  factory EnrollmentItem.fromJson(Map<String, dynamic> json) =>
+      _$EnrollmentItemFromJson(json);
 }

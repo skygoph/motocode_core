@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.4.9
+
+* Update enrollments module
+
 ## 0.4.8
 
 * Add 2 endpoints for Order Module
