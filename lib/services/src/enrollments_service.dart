@@ -18,17 +18,11 @@ class EnrollmentsService {
   /// The Crashlytics instance to log errors
   final FirebaseCrashlytics? _crashlytics;
 
-  /// Get all enrollments
-  ///
-  /// This function sends a request to the API client to get all enrollments.
-  /// If the request is successful, it returns a list of enrollments.
-  /// In case of an error, the error is recorded in Crashlytics and the error is rethrown.
-  ///
-  /// Returns a [Future<List<Enrollment>>] containing a list of enrollments.
-  ///
-  /// Throws an error if the request fails for any reason.
-  Future<List<EnrollmentItem>> createEnrollments() =>
-      _apiClient.createEnrollments().catchError((error) {
+  /// Enroll a list of QR codes
+  Future<CreateEnrollmentResponse> createEnrollments(
+    List<EnrollmentItem> enrollmentItems,
+  ) =>
+      _apiClient.createEnrollments(enrollmentItems).catchError((error) {
         unawaited(_crashlytics?.recordError(error, StackTrace.current));
         throw error;
       });

@@ -939,12 +939,13 @@ class _ApiClient implements ApiClient {
   }
 
   @override
-  Future<List<EnrollmentItem>> createEnrollments() async {
+  Future<CreateEnrollmentResponse> createEnrollments(
+      List<EnrollmentItem> data) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<EnrollmentItem>>(Options(
+    final _data = await compute(serializeEnrollmentItemList, data);
+    final _options = _setStreamType<CreateEnrollmentResponse>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -960,13 +961,11 @@ class _ApiClient implements ApiClient {
           _dio.options.baseUrl,
           baseUrl,
         )));
-    final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<EnrollmentItem> _value;
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late CreateEnrollmentResponse _value;
     try {
-      _value = await compute(
-        deserializeEnrollmentItemList,
-        _result.data!.cast<Map<String, dynamic>>(),
-      );
+      _value =
+          await compute(deserializeCreateEnrollmentResponse, _result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

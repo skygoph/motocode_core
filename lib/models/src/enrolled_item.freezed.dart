@@ -429,3 +429,201 @@ abstract class _EnrollmentItem implements EnrollmentItem {
   _$$EnrollmentItemImplCopyWith<_$EnrollmentItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+CreateEnrollmentResponse _$CreateEnrollmentResponseFromJson(
+    Map<String, dynamic> json) {
+  return _CreateEnrollmentResponse.fromJson(json);
+}
+
+/// @nodoc
+mixin _$CreateEnrollmentResponse {
+  List<String> get successfulEnrollments => throw _privateConstructorUsedError;
+  List<String> get failedEnrollments => throw _privateConstructorUsedError;
+
+  /// Serializes this CreateEnrollmentResponse to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of CreateEnrollmentResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $CreateEnrollmentResponseCopyWith<CreateEnrollmentResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CreateEnrollmentResponseCopyWith<$Res> {
+  factory $CreateEnrollmentResponseCopyWith(CreateEnrollmentResponse value,
+          $Res Function(CreateEnrollmentResponse) then) =
+      _$CreateEnrollmentResponseCopyWithImpl<$Res, CreateEnrollmentResponse>;
+  @useResult
+  $Res call(
+      {List<String> successfulEnrollments, List<String> failedEnrollments});
+}
+
+/// @nodoc
+class _$CreateEnrollmentResponseCopyWithImpl<$Res,
+        $Val extends CreateEnrollmentResponse>
+    implements $CreateEnrollmentResponseCopyWith<$Res> {
+  _$CreateEnrollmentResponseCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of CreateEnrollmentResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? successfulEnrollments = null,
+    Object? failedEnrollments = null,
+  }) {
+    return _then(_value.copyWith(
+      successfulEnrollments: null == successfulEnrollments
+          ? _value.successfulEnrollments
+          : successfulEnrollments // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      failedEnrollments: null == failedEnrollments
+          ? _value.failedEnrollments
+          : failedEnrollments // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$CreateEnrollmentResponseImplCopyWith<$Res>
+    implements $CreateEnrollmentResponseCopyWith<$Res> {
+  factory _$$CreateEnrollmentResponseImplCopyWith(
+          _$CreateEnrollmentResponseImpl value,
+          $Res Function(_$CreateEnrollmentResponseImpl) then) =
+      __$$CreateEnrollmentResponseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {List<String> successfulEnrollments, List<String> failedEnrollments});
+}
+
+/// @nodoc
+class __$$CreateEnrollmentResponseImplCopyWithImpl<$Res>
+    extends _$CreateEnrollmentResponseCopyWithImpl<$Res,
+        _$CreateEnrollmentResponseImpl>
+    implements _$$CreateEnrollmentResponseImplCopyWith<$Res> {
+  __$$CreateEnrollmentResponseImplCopyWithImpl(
+      _$CreateEnrollmentResponseImpl _value,
+      $Res Function(_$CreateEnrollmentResponseImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CreateEnrollmentResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? successfulEnrollments = null,
+    Object? failedEnrollments = null,
+  }) {
+    return _then(_$CreateEnrollmentResponseImpl(
+      successfulEnrollments: null == successfulEnrollments
+          ? _value._successfulEnrollments
+          : successfulEnrollments // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      failedEnrollments: null == failedEnrollments
+          ? _value._failedEnrollments
+          : failedEnrollments // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$CreateEnrollmentResponseImpl implements _CreateEnrollmentResponse {
+  const _$CreateEnrollmentResponseImpl(
+      {required final List<String> successfulEnrollments,
+      required final List<String> failedEnrollments})
+      : _successfulEnrollments = successfulEnrollments,
+        _failedEnrollments = failedEnrollments;
+
+  factory _$CreateEnrollmentResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CreateEnrollmentResponseImplFromJson(json);
+
+  final List<String> _successfulEnrollments;
+  @override
+  List<String> get successfulEnrollments {
+    if (_successfulEnrollments is EqualUnmodifiableListView)
+      return _successfulEnrollments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_successfulEnrollments);
+  }
+
+  final List<String> _failedEnrollments;
+  @override
+  List<String> get failedEnrollments {
+    if (_failedEnrollments is EqualUnmodifiableListView)
+      return _failedEnrollments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_failedEnrollments);
+  }
+
+  @override
+  String toString() {
+    return 'CreateEnrollmentResponse(successfulEnrollments: $successfulEnrollments, failedEnrollments: $failedEnrollments)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CreateEnrollmentResponseImpl &&
+            const DeepCollectionEquality()
+                .equals(other._successfulEnrollments, _successfulEnrollments) &&
+            const DeepCollectionEquality()
+                .equals(other._failedEnrollments, _failedEnrollments));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_successfulEnrollments),
+      const DeepCollectionEquality().hash(_failedEnrollments));
+
+  /// Create a copy of CreateEnrollmentResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CreateEnrollmentResponseImplCopyWith<_$CreateEnrollmentResponseImpl>
+      get copyWith => __$$CreateEnrollmentResponseImplCopyWithImpl<
+          _$CreateEnrollmentResponseImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$CreateEnrollmentResponseImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _CreateEnrollmentResponse implements CreateEnrollmentResponse {
+  const factory _CreateEnrollmentResponse(
+          {required final List<String> successfulEnrollments,
+          required final List<String> failedEnrollments}) =
+      _$CreateEnrollmentResponseImpl;
+
+  factory _CreateEnrollmentResponse.fromJson(Map<String, dynamic> json) =
+      _$CreateEnrollmentResponseImpl.fromJson;
+
+  @override
+  List<String> get successfulEnrollments;
+  @override
+  List<String> get failedEnrollments;
+
+  /// Create a copy of CreateEnrollmentResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CreateEnrollmentResponseImplCopyWith<_$CreateEnrollmentResponseImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

@@ -42,3 +42,14 @@ class EnrollmentItem with _$EnrollmentItem {
   factory EnrollmentItem.fromJson(Map<String, dynamic> json) =>
       _$EnrollmentItemFromJson(json);
 }
+
+@freezed
+class CreateEnrollmentResponse with _$CreateEnrollmentResponse {
+  const factory CreateEnrollmentResponse({
+    required List<String> successfulEnrollments,
+    required List<String> failedEnrollments,
+  }) = _CreateEnrollmentResponse;
+
+  factory CreateEnrollmentResponse.fromJson(Map<String, dynamic> json) =>
+      _$CreateEnrollmentResponseFromJson(json);
+}

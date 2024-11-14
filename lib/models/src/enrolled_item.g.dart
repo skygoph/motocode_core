@@ -40,3 +40,21 @@ Map<String, dynamic> _$$EnrollmentItemImplToJson(
       'batchNumber': instance.batchNumber,
       'brand': instance.brand,
     };
+
+_$CreateEnrollmentResponseImpl _$$CreateEnrollmentResponseImplFromJson(
+        Map<String, dynamic> json) =>
+    _$CreateEnrollmentResponseImpl(
+      successfulEnrollments: (json['successfulEnrollments'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
+      failedEnrollments: (json['failedEnrollments'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
+    );
+
+Map<String, dynamic> _$$CreateEnrollmentResponseImplToJson(
+        _$CreateEnrollmentResponseImpl instance) =>
+    <String, dynamic>{
+      'successfulEnrollments': instance.successfulEnrollments,
+      'failedEnrollments': instance.failedEnrollments,
+    };
