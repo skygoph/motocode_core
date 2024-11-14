@@ -196,3 +196,266 @@ abstract class _Order extends Order {
   _$$OrderImplCopyWith<_$OrderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+OrderForPrinting _$OrderForPrintingFromJson(Map<String, dynamic> json) {
+  return _OrderForPrinting.fromJson(json);
+}
+
+/// @nodoc
+mixin _$OrderForPrinting {
+  String get qrCodeInformation => throw _privateConstructorUsedError;
+  String get identifier => throw _privateConstructorUsedError;
+  String get chassisNumber => throw _privateConstructorUsedError;
+  String get engineNumber => throw _privateConstructorUsedError;
+  String get colorCode => throw _privateConstructorUsedError;
+  String get modelCode => throw _privateConstructorUsedError;
+
+  /// Serializes this OrderForPrinting to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of OrderForPrinting
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $OrderForPrintingCopyWith<OrderForPrinting> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $OrderForPrintingCopyWith<$Res> {
+  factory $OrderForPrintingCopyWith(
+          OrderForPrinting value, $Res Function(OrderForPrinting) then) =
+      _$OrderForPrintingCopyWithImpl<$Res, OrderForPrinting>;
+  @useResult
+  $Res call(
+      {String qrCodeInformation,
+      String identifier,
+      String chassisNumber,
+      String engineNumber,
+      String colorCode,
+      String modelCode});
+}
+
+/// @nodoc
+class _$OrderForPrintingCopyWithImpl<$Res, $Val extends OrderForPrinting>
+    implements $OrderForPrintingCopyWith<$Res> {
+  _$OrderForPrintingCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of OrderForPrinting
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? qrCodeInformation = null,
+    Object? identifier = null,
+    Object? chassisNumber = null,
+    Object? engineNumber = null,
+    Object? colorCode = null,
+    Object? modelCode = null,
+  }) {
+    return _then(_value.copyWith(
+      qrCodeInformation: null == qrCodeInformation
+          ? _value.qrCodeInformation
+          : qrCodeInformation // ignore: cast_nullable_to_non_nullable
+              as String,
+      identifier: null == identifier
+          ? _value.identifier
+          : identifier // ignore: cast_nullable_to_non_nullable
+              as String,
+      chassisNumber: null == chassisNumber
+          ? _value.chassisNumber
+          : chassisNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      engineNumber: null == engineNumber
+          ? _value.engineNumber
+          : engineNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      colorCode: null == colorCode
+          ? _value.colorCode
+          : colorCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      modelCode: null == modelCode
+          ? _value.modelCode
+          : modelCode // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$OrderForPrintingImplCopyWith<$Res>
+    implements $OrderForPrintingCopyWith<$Res> {
+  factory _$$OrderForPrintingImplCopyWith(_$OrderForPrintingImpl value,
+          $Res Function(_$OrderForPrintingImpl) then) =
+      __$$OrderForPrintingImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String qrCodeInformation,
+      String identifier,
+      String chassisNumber,
+      String engineNumber,
+      String colorCode,
+      String modelCode});
+}
+
+/// @nodoc
+class __$$OrderForPrintingImplCopyWithImpl<$Res>
+    extends _$OrderForPrintingCopyWithImpl<$Res, _$OrderForPrintingImpl>
+    implements _$$OrderForPrintingImplCopyWith<$Res> {
+  __$$OrderForPrintingImplCopyWithImpl(_$OrderForPrintingImpl _value,
+      $Res Function(_$OrderForPrintingImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of OrderForPrinting
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? qrCodeInformation = null,
+    Object? identifier = null,
+    Object? chassisNumber = null,
+    Object? engineNumber = null,
+    Object? colorCode = null,
+    Object? modelCode = null,
+  }) {
+    return _then(_$OrderForPrintingImpl(
+      qrCodeInformation: null == qrCodeInformation
+          ? _value.qrCodeInformation
+          : qrCodeInformation // ignore: cast_nullable_to_non_nullable
+              as String,
+      identifier: null == identifier
+          ? _value.identifier
+          : identifier // ignore: cast_nullable_to_non_nullable
+              as String,
+      chassisNumber: null == chassisNumber
+          ? _value.chassisNumber
+          : chassisNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      engineNumber: null == engineNumber
+          ? _value.engineNumber
+          : engineNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      colorCode: null == colorCode
+          ? _value.colorCode
+          : colorCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      modelCode: null == modelCode
+          ? _value.modelCode
+          : modelCode // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$OrderForPrintingImpl extends _OrderForPrinting {
+  const _$OrderForPrintingImpl(
+      {required this.qrCodeInformation,
+      required this.identifier,
+      required this.chassisNumber,
+      required this.engineNumber,
+      required this.colorCode,
+      required this.modelCode})
+      : super._();
+
+  factory _$OrderForPrintingImpl.fromJson(Map<String, dynamic> json) =>
+      _$$OrderForPrintingImplFromJson(json);
+
+  @override
+  final String qrCodeInformation;
+  @override
+  final String identifier;
+  @override
+  final String chassisNumber;
+  @override
+  final String engineNumber;
+  @override
+  final String colorCode;
+  @override
+  final String modelCode;
+
+  @override
+  String toString() {
+    return 'OrderForPrinting(qrCodeInformation: $qrCodeInformation, identifier: $identifier, chassisNumber: $chassisNumber, engineNumber: $engineNumber, colorCode: $colorCode, modelCode: $modelCode)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OrderForPrintingImpl &&
+            (identical(other.qrCodeInformation, qrCodeInformation) ||
+                other.qrCodeInformation == qrCodeInformation) &&
+            (identical(other.identifier, identifier) ||
+                other.identifier == identifier) &&
+            (identical(other.chassisNumber, chassisNumber) ||
+                other.chassisNumber == chassisNumber) &&
+            (identical(other.engineNumber, engineNumber) ||
+                other.engineNumber == engineNumber) &&
+            (identical(other.colorCode, colorCode) ||
+                other.colorCode == colorCode) &&
+            (identical(other.modelCode, modelCode) ||
+                other.modelCode == modelCode));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, qrCodeInformation, identifier,
+      chassisNumber, engineNumber, colorCode, modelCode);
+
+  /// Create a copy of OrderForPrinting
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OrderForPrintingImplCopyWith<_$OrderForPrintingImpl> get copyWith =>
+      __$$OrderForPrintingImplCopyWithImpl<_$OrderForPrintingImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$OrderForPrintingImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _OrderForPrinting extends OrderForPrinting {
+  const factory _OrderForPrinting(
+      {required final String qrCodeInformation,
+      required final String identifier,
+      required final String chassisNumber,
+      required final String engineNumber,
+      required final String colorCode,
+      required final String modelCode}) = _$OrderForPrintingImpl;
+  const _OrderForPrinting._() : super._();
+
+  factory _OrderForPrinting.fromJson(Map<String, dynamic> json) =
+      _$OrderForPrintingImpl.fromJson;
+
+  @override
+  String get qrCodeInformation;
+  @override
+  String get identifier;
+  @override
+  String get chassisNumber;
+  @override
+  String get engineNumber;
+  @override
+  String get colorCode;
+  @override
+  String get modelCode;
+
+  /// Create a copy of OrderForPrinting
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$OrderForPrintingImplCopyWith<_$OrderForPrintingImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

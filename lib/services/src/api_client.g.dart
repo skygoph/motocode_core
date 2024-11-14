@@ -1367,12 +1367,12 @@ class _ApiClient implements ApiClient {
   }
 
   @override
-  Future<List<QrCode>> getOrder(String purchaseNumber) async {
+  Future<Order> getOrder(String purchaseNumber) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<QrCode>>(Options(
+    final _options = _setStreamType<Order>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -1388,11 +1388,81 @@ class _ApiClient implements ApiClient {
           _dio.options.baseUrl,
           baseUrl,
         )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late Order _value;
+    try {
+      _value = await compute(deserializeOrder, _result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<List<QrCode>> getQrCodeByOrder(String purchaseNumber) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<List<QrCode>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/orders/${purchaseNumber}/qr-codes',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
     final _result = await _dio.fetch<List<dynamic>>(_options);
     late List<QrCode> _value;
     try {
       _value = await compute(
         deserializeQrCodeList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<List<OrderForPrinting>> getOrderForPrinting(
+      String purchaseNumber) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<List<OrderForPrinting>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/orders/${purchaseNumber}/for-printing',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<OrderForPrinting> _value;
+    try {
+      _value = await compute(
+        deserializeOrderForPrintingList,
         _result.data!.cast<Map<String, dynamic>>(),
       );
     } on Object catch (e, s) {

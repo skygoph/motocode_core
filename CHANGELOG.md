@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.4.8
+
+* Add 2 endpoints for Order Module
+
 ## 0.4.7
 
 * Add 2 attributes in QRCode model and deserialize added api call

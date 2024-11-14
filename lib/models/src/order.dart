@@ -21,3 +21,29 @@ class Order with _$Order {
         'orderDate': orderDate?.toUtc().toIso8601String(),
       };
 }
+
+@freezed
+class OrderForPrinting with _$OrderForPrinting {
+  const OrderForPrinting._();
+
+  const factory OrderForPrinting({
+    required String qrCodeInformation,
+    required String identifier,
+    required String chassisNumber,
+    required String engineNumber,
+    required String colorCode,
+    required String modelCode,
+  }) = _OrderForPrinting;
+
+  factory OrderForPrinting.fromJson(Map<String, dynamic> json) =>
+      _$OrderForPrintingFromJson(json);
+
+  Map<String, dynamic> mapToRequest() => {
+        'qrCodeInformation': qrCodeInformation,
+        'identifier': identifier,
+        'chassisNumber': chassisNumber,
+        'engineNumber': engineNumber,
+        'colorCode': colorCode,
+        'modelCode': modelCode,
+      };
+}

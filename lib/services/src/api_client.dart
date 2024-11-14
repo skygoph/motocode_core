@@ -131,7 +131,13 @@ abstract class ApiClient {
   @GET('/orders')
   Future<List<Order>> getOrders();
   @GET('/orders/{purchaseNumber}')
-  Future<List<QrCode>> getOrder(@Path('purchaseNumber') String purchaseNumber);
+  Future<Order> getOrder(@Path('purchaseNumber') String purchaseNumber);
+  @GET('/orders/{purchaseNumber}/qr-codes')
+  Future<List<QrCode>> getQrCodeByOrder(
+      @Path('purchaseNumber') String purchaseNumber);
+  @GET('/orders/{purchaseNumber}/for-printing')
+  Future<List<OrderForPrinting>> getOrderForPrinting(
+      @Path('purchaseNumber') String purchaseNumber);
 
   /// ********** Roles API ********** ///
   @GET('/roles')
@@ -256,6 +262,10 @@ Position deserializePosition(Map<String, dynamic> data) {
 
 QrCode deserializeQrCode(Map<String, dynamic> data) {
   return QrCode.fromJson(data);
+}
+
+List<OrderForPrinting> deserializeOrderForPrintingList(List<dynamic> data) {
+  return data.map((e) => OrderForPrinting.fromJson(e)).toList();
 }
 
 ScannedQrCode deserializeScannedQrCode(Map<String, dynamic> data) {

@@ -20,3 +20,25 @@ Map<String, dynamic> _$$OrderImplToJson(_$OrderImpl instance) =>
       'purchaseOrder': instance.purchaseOrder,
       'orderDate': instance.orderDate?.toIso8601String(),
     };
+
+_$OrderForPrintingImpl _$$OrderForPrintingImplFromJson(
+        Map<String, dynamic> json) =>
+    _$OrderForPrintingImpl(
+      qrCodeInformation: json['qrCodeInformation'] as String,
+      identifier: json['identifier'] as String,
+      chassisNumber: json['chassisNumber'] as String,
+      engineNumber: json['engineNumber'] as String,
+      colorCode: json['colorCode'] as String,
+      modelCode: json['modelCode'] as String,
+    );
+
+Map<String, dynamic> _$$OrderForPrintingImplToJson(
+        _$OrderForPrintingImpl instance) =>
+    <String, dynamic>{
+      'qrCodeInformation': instance.qrCodeInformation,
+      'identifier': instance.identifier,
+      'chassisNumber': instance.chassisNumber,
+      'engineNumber': instance.engineNumber,
+      'colorCode': instance.colorCode,
+      'modelCode': instance.modelCode,
+    };

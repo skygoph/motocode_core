@@ -41,11 +41,25 @@ class OrdersService {
   /// If the request is successful, it returns a list of qr codes.
   /// In case of an error, the error is recorded in Crashlytics and the error is rethrown.
   ///
-  /// Returns a [Future<List<QrCode>>] containing a list of qr codes.
+  /// Returns a [Future<Order>] containing an order detail.
   ///
   /// Throws an error if the request fails for any reason.
-  Future<List<QrCode>> getOrder(String purchaseNumber) =>
+  Future<Order> getOrder(String purchaseNumber) =>
       _apiClient.getOrder(purchaseNumber).catchError((error) async {
+        unawaited(_crashlytics?.recordError(error, StackTrace.current));
+        throw error;
+      });
+
+  /// Get QR codes by purchase number
+  Future<List<QrCode>> getQrCodeByOrder(String purchaseNumber) =>
+      _apiClient.getQrCodeByOrder(purchaseNumber).catchError((error) async {
+        unawaited(_crashlytics?.recordError(error, StackTrace.current));
+        throw error;
+      });
+
+  /// Get order for printing
+  Future<List<OrderForPrinting>> getOrderForPrinting(String purchaseNumber) =>
+      _apiClient.getOrderForPrinting(purchaseNumber).catchError((error) async {
         unawaited(_crashlytics?.recordError(error, StackTrace.current));
         throw error;
       });
