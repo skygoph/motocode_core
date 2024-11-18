@@ -8,7 +8,7 @@ class MCColor with _$MCColor {
   factory MCColor({
     required int id,
     required String name,
-    required String code,
+    required String abbr,
   }) = _MCColor;
 
   factory MCColor.fromJson(Map<String, dynamic> json) =>
@@ -21,7 +21,9 @@ class MCModel with _$MCModel {
     required int id,
     required String productName,
     required String model,
-    required String code,
+    required String abbr,
+    required String brand,
+    required int status,
   }) = _MCModel;
 
   factory MCModel.fromJson(Map<String, dynamic> json) =>

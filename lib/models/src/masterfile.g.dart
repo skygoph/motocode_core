@@ -10,14 +10,14 @@ _$MCColorImpl _$$MCColorImplFromJson(Map<String, dynamic> json) =>
     _$MCColorImpl(
       id: (json['id'] as num).toInt(),
       name: json['name'] as String,
-      code: json['code'] as String,
+      abbr: json['abbr'] as String,
     );
 
 Map<String, dynamic> _$$MCColorImplToJson(_$MCColorImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'code': instance.code,
+      'abbr': instance.abbr,
     };
 
 _$MCModelImpl _$$MCModelImplFromJson(Map<String, dynamic> json) =>
@@ -25,7 +25,9 @@ _$MCModelImpl _$$MCModelImplFromJson(Map<String, dynamic> json) =>
       id: (json['id'] as num).toInt(),
       productName: json['productName'] as String,
       model: json['model'] as String,
-      code: json['code'] as String,
+      abbr: json['abbr'] as String,
+      brand: json['brand'] as String,
+      status: (json['status'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$MCModelImplToJson(_$MCModelImpl instance) =>
@@ -33,5 +35,7 @@ Map<String, dynamic> _$$MCModelImplToJson(_$MCModelImpl instance) =>
       'id': instance.id,
       'productName': instance.productName,
       'model': instance.model,
-      'code': instance.code,
+      'abbr': instance.abbr,
+      'brand': instance.brand,
+      'status': instance.status,
     };

@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.4.11
+
+* Modify MCColor and MCModel to use 'abbr' instead of 'code', adding 'brand' and 'status' fields
+
 ## 0.4.10
 
 * Add CreateEnrollmentResponse model and update createEnrollments method to return it

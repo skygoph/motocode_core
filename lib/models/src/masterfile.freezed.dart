@@ -22,7 +22,7 @@ MCColor _$MCColorFromJson(Map<String, dynamic> json) {
 mixin _$MCColor {
   int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  String get code => throw _privateConstructorUsedError;
+  String get abbr => throw _privateConstructorUsedError;
 
   /// Serializes this MCColor to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -38,7 +38,7 @@ abstract class $MCColorCopyWith<$Res> {
   factory $MCColorCopyWith(MCColor value, $Res Function(MCColor) then) =
       _$MCColorCopyWithImpl<$Res, MCColor>;
   @useResult
-  $Res call({int id, String name, String code});
+  $Res call({int id, String name, String abbr});
 }
 
 /// @nodoc
@@ -58,7 +58,7 @@ class _$MCColorCopyWithImpl<$Res, $Val extends MCColor>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? code = null,
+    Object? abbr = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -69,9 +69,9 @@ class _$MCColorCopyWithImpl<$Res, $Val extends MCColor>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      code: null == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
+      abbr: null == abbr
+          ? _value.abbr
+          : abbr // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -84,7 +84,7 @@ abstract class _$$MCColorImplCopyWith<$Res> implements $MCColorCopyWith<$Res> {
       __$$MCColorImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String name, String code});
+  $Res call({int id, String name, String abbr});
 }
 
 /// @nodoc
@@ -102,7 +102,7 @@ class __$$MCColorImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? code = null,
+    Object? abbr = null,
   }) {
     return _then(_$MCColorImpl(
       id: null == id
@@ -113,9 +113,9 @@ class __$$MCColorImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      code: null == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
+      abbr: null == abbr
+          ? _value.abbr
+          : abbr // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -124,7 +124,7 @@ class __$$MCColorImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$MCColorImpl implements _MCColor {
-  _$MCColorImpl({required this.id, required this.name, required this.code});
+  _$MCColorImpl({required this.id, required this.name, required this.abbr});
 
   factory _$MCColorImpl.fromJson(Map<String, dynamic> json) =>
       _$$MCColorImplFromJson(json);
@@ -134,11 +134,11 @@ class _$MCColorImpl implements _MCColor {
   @override
   final String name;
   @override
-  final String code;
+  final String abbr;
 
   @override
   String toString() {
-    return 'MCColor(id: $id, name: $name, code: $code)';
+    return 'MCColor(id: $id, name: $name, abbr: $abbr)';
   }
 
   @override
@@ -148,12 +148,12 @@ class _$MCColorImpl implements _MCColor {
             other is _$MCColorImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.code, code) || other.code == code));
+            (identical(other.abbr, abbr) || other.abbr == abbr));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, code);
+  int get hashCode => Object.hash(runtimeType, id, name, abbr);
 
   /// Create a copy of MCColor
   /// with the given fields replaced by the non-null parameter values.
@@ -175,7 +175,7 @@ abstract class _MCColor implements MCColor {
   factory _MCColor(
       {required final int id,
       required final String name,
-      required final String code}) = _$MCColorImpl;
+      required final String abbr}) = _$MCColorImpl;
 
   factory _MCColor.fromJson(Map<String, dynamic> json) = _$MCColorImpl.fromJson;
 
@@ -184,7 +184,7 @@ abstract class _MCColor implements MCColor {
   @override
   String get name;
   @override
-  String get code;
+  String get abbr;
 
   /// Create a copy of MCColor
   /// with the given fields replaced by the non-null parameter values.
@@ -203,7 +203,9 @@ mixin _$MCModel {
   int get id => throw _privateConstructorUsedError;
   String get productName => throw _privateConstructorUsedError;
   String get model => throw _privateConstructorUsedError;
-  String get code => throw _privateConstructorUsedError;
+  String get abbr => throw _privateConstructorUsedError;
+  String get brand => throw _privateConstructorUsedError;
+  int get status => throw _privateConstructorUsedError;
 
   /// Serializes this MCModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -219,7 +221,13 @@ abstract class $MCModelCopyWith<$Res> {
   factory $MCModelCopyWith(MCModel value, $Res Function(MCModel) then) =
       _$MCModelCopyWithImpl<$Res, MCModel>;
   @useResult
-  $Res call({int id, String productName, String model, String code});
+  $Res call(
+      {int id,
+      String productName,
+      String model,
+      String abbr,
+      String brand,
+      int status});
 }
 
 /// @nodoc
@@ -240,7 +248,9 @@ class _$MCModelCopyWithImpl<$Res, $Val extends MCModel>
     Object? id = null,
     Object? productName = null,
     Object? model = null,
-    Object? code = null,
+    Object? abbr = null,
+    Object? brand = null,
+    Object? status = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -255,10 +265,18 @@ class _$MCModelCopyWithImpl<$Res, $Val extends MCModel>
           ? _value.model
           : model // ignore: cast_nullable_to_non_nullable
               as String,
-      code: null == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
+      abbr: null == abbr
+          ? _value.abbr
+          : abbr // ignore: cast_nullable_to_non_nullable
               as String,
+      brand: null == brand
+          ? _value.brand
+          : brand // ignore: cast_nullable_to_non_nullable
+              as String,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -270,7 +288,13 @@ abstract class _$$MCModelImplCopyWith<$Res> implements $MCModelCopyWith<$Res> {
       __$$MCModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String productName, String model, String code});
+  $Res call(
+      {int id,
+      String productName,
+      String model,
+      String abbr,
+      String brand,
+      int status});
 }
 
 /// @nodoc
@@ -289,7 +313,9 @@ class __$$MCModelImplCopyWithImpl<$Res>
     Object? id = null,
     Object? productName = null,
     Object? model = null,
-    Object? code = null,
+    Object? abbr = null,
+    Object? brand = null,
+    Object? status = null,
   }) {
     return _then(_$MCModelImpl(
       id: null == id
@@ -304,10 +330,18 @@ class __$$MCModelImplCopyWithImpl<$Res>
           ? _value.model
           : model // ignore: cast_nullable_to_non_nullable
               as String,
-      code: null == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
+      abbr: null == abbr
+          ? _value.abbr
+          : abbr // ignore: cast_nullable_to_non_nullable
               as String,
+      brand: null == brand
+          ? _value.brand
+          : brand // ignore: cast_nullable_to_non_nullable
+              as String,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -319,7 +353,9 @@ class _$MCModelImpl implements _MCModel {
       {required this.id,
       required this.productName,
       required this.model,
-      required this.code});
+      required this.abbr,
+      required this.brand,
+      required this.status});
 
   factory _$MCModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$MCModelImplFromJson(json);
@@ -331,11 +367,15 @@ class _$MCModelImpl implements _MCModel {
   @override
   final String model;
   @override
-  final String code;
+  final String abbr;
+  @override
+  final String brand;
+  @override
+  final int status;
 
   @override
   String toString() {
-    return 'MCModel(id: $id, productName: $productName, model: $model, code: $code)';
+    return 'MCModel(id: $id, productName: $productName, model: $model, abbr: $abbr, brand: $brand, status: $status)';
   }
 
   @override
@@ -347,12 +387,15 @@ class _$MCModelImpl implements _MCModel {
             (identical(other.productName, productName) ||
                 other.productName == productName) &&
             (identical(other.model, model) || other.model == model) &&
-            (identical(other.code, code) || other.code == code));
+            (identical(other.abbr, abbr) || other.abbr == abbr) &&
+            (identical(other.brand, brand) || other.brand == brand) &&
+            (identical(other.status, status) || other.status == status));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, productName, model, code);
+  int get hashCode =>
+      Object.hash(runtimeType, id, productName, model, abbr, brand, status);
 
   /// Create a copy of MCModel
   /// with the given fields replaced by the non-null parameter values.
@@ -375,7 +418,9 @@ abstract class _MCModel implements MCModel {
       {required final int id,
       required final String productName,
       required final String model,
-      required final String code}) = _$MCModelImpl;
+      required final String abbr,
+      required final String brand,
+      required final int status}) = _$MCModelImpl;
 
   factory _MCModel.fromJson(Map<String, dynamic> json) = _$MCModelImpl.fromJson;
 
@@ -386,7 +431,11 @@ abstract class _MCModel implements MCModel {
   @override
   String get model;
   @override
-  String get code;
+  String get abbr;
+  @override
+  String get brand;
+  @override
+  int get status;
 
   /// Create a copy of MCModel
   /// with the given fields replaced by the non-null parameter values.
