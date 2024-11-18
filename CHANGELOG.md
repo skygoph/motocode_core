@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.4.12
+
+* Add 'brand' field to OrderForPrinting model and update related methods
+
 ## 0.4.11
 
 * Modify MCColor and MCModel to use 'abbr' instead of 'code', adding 'brand' and 'status' fields
