@@ -33,6 +33,7 @@ class OrderForPrinting with _$OrderForPrinting {
     required String engineNumber,
     required String colorCode,
     required String modelCode,
+    required String brand,
   }) = _OrderForPrinting;
 
   factory OrderForPrinting.fromJson(Map<String, dynamic> json) =>
@@ -45,5 +46,6 @@ class OrderForPrinting with _$OrderForPrinting {
         'engineNumber': engineNumber,
         'colorCode': colorCode,
         'modelCode': modelCode,
+        'brand': brand,
       };
 }

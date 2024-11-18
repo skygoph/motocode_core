@@ -30,6 +30,7 @@ _$OrderForPrintingImpl _$$OrderForPrintingImplFromJson(
       engineNumber: json['engineNumber'] as String,
       colorCode: json['colorCode'] as String,
       modelCode: json['modelCode'] as String,
+      brand: json['brand'] as String,
     );
 
 Map<String, dynamic> _$$OrderForPrintingImplToJson(
@@ -41,4 +42,5 @@ Map<String, dynamic> _$$OrderForPrintingImplToJson(
       'engineNumber': instance.engineNumber,
       'colorCode': instance.colorCode,
       'modelCode': instance.modelCode,
+      'brand': instance.brand,
     };

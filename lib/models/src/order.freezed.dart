@@ -209,6 +209,7 @@ mixin _$OrderForPrinting {
   String get engineNumber => throw _privateConstructorUsedError;
   String get colorCode => throw _privateConstructorUsedError;
   String get modelCode => throw _privateConstructorUsedError;
+  String get brand => throw _privateConstructorUsedError;
 
   /// Serializes this OrderForPrinting to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -232,7 +233,8 @@ abstract class $OrderForPrintingCopyWith<$Res> {
       String chassisNumber,
       String engineNumber,
       String colorCode,
-      String modelCode});
+      String modelCode,
+      String brand});
 }
 
 /// @nodoc
@@ -256,6 +258,7 @@ class _$OrderForPrintingCopyWithImpl<$Res, $Val extends OrderForPrinting>
     Object? engineNumber = null,
     Object? colorCode = null,
     Object? modelCode = null,
+    Object? brand = null,
   }) {
     return _then(_value.copyWith(
       qrCodeInformation: null == qrCodeInformation
@@ -282,6 +285,10 @@ class _$OrderForPrintingCopyWithImpl<$Res, $Val extends OrderForPrinting>
           ? _value.modelCode
           : modelCode // ignore: cast_nullable_to_non_nullable
               as String,
+      brand: null == brand
+          ? _value.brand
+          : brand // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -300,7 +307,8 @@ abstract class _$$OrderForPrintingImplCopyWith<$Res>
       String chassisNumber,
       String engineNumber,
       String colorCode,
-      String modelCode});
+      String modelCode,
+      String brand});
 }
 
 /// @nodoc
@@ -322,6 +330,7 @@ class __$$OrderForPrintingImplCopyWithImpl<$Res>
     Object? engineNumber = null,
     Object? colorCode = null,
     Object? modelCode = null,
+    Object? brand = null,
   }) {
     return _then(_$OrderForPrintingImpl(
       qrCodeInformation: null == qrCodeInformation
@@ -348,6 +357,10 @@ class __$$OrderForPrintingImplCopyWithImpl<$Res>
           ? _value.modelCode
           : modelCode // ignore: cast_nullable_to_non_nullable
               as String,
+      brand: null == brand
+          ? _value.brand
+          : brand // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -361,7 +374,8 @@ class _$OrderForPrintingImpl extends _OrderForPrinting {
       required this.chassisNumber,
       required this.engineNumber,
       required this.colorCode,
-      required this.modelCode})
+      required this.modelCode,
+      required this.brand})
       : super._();
 
   factory _$OrderForPrintingImpl.fromJson(Map<String, dynamic> json) =>
@@ -379,10 +393,12 @@ class _$OrderForPrintingImpl extends _OrderForPrinting {
   final String colorCode;
   @override
   final String modelCode;
+  @override
+  final String brand;
 
   @override
   String toString() {
-    return 'OrderForPrinting(qrCodeInformation: $qrCodeInformation, identifier: $identifier, chassisNumber: $chassisNumber, engineNumber: $engineNumber, colorCode: $colorCode, modelCode: $modelCode)';
+    return 'OrderForPrinting(qrCodeInformation: $qrCodeInformation, identifier: $identifier, chassisNumber: $chassisNumber, engineNumber: $engineNumber, colorCode: $colorCode, modelCode: $modelCode, brand: $brand)';
   }
 
   @override
@@ -401,13 +417,14 @@ class _$OrderForPrintingImpl extends _OrderForPrinting {
             (identical(other.colorCode, colorCode) ||
                 other.colorCode == colorCode) &&
             (identical(other.modelCode, modelCode) ||
-                other.modelCode == modelCode));
+                other.modelCode == modelCode) &&
+            (identical(other.brand, brand) || other.brand == brand));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, qrCodeInformation, identifier,
-      chassisNumber, engineNumber, colorCode, modelCode);
+      chassisNumber, engineNumber, colorCode, modelCode, brand);
 
   /// Create a copy of OrderForPrinting
   /// with the given fields replaced by the non-null parameter values.
@@ -433,7 +450,8 @@ abstract class _OrderForPrinting extends OrderForPrinting {
       required final String chassisNumber,
       required final String engineNumber,
       required final String colorCode,
-      required final String modelCode}) = _$OrderForPrintingImpl;
+      required final String modelCode,
+      required final String brand}) = _$OrderForPrintingImpl;
   const _OrderForPrinting._() : super._();
 
   factory _OrderForPrinting.fromJson(Map<String, dynamic> json) =
@@ -451,6 +469,8 @@ abstract class _OrderForPrinting extends OrderForPrinting {
   String get colorCode;
   @override
   String get modelCode;
+  @override
+  String get brand;
 
   /// Create a copy of OrderForPrinting
   /// with the given fields replaced by the non-null parameter values.
