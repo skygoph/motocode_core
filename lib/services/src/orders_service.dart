@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
-import 'package:motocode_core/models/src/order.dart';
-import 'package:motocode_core/models/src/qr_code.dart';
+import 'package:motocode_core/models/src/order_module.dart';
+import 'package:motocode_core/models/src/qr_code_module.dart';
 import 'package:motocode_core/services/src/api_client.dart';
 
 /// Orders service

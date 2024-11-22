@@ -30,9 +30,8 @@ mixin _$EnrollmentItem {
   int get statusId => throw _privateConstructorUsedError;
   String get purchaseOrder => throw _privateConstructorUsedError;
   String get signature => throw _privateConstructorUsedError;
-  String? get manufacturingDate => throw _privateConstructorUsedError;
-  String? get batchNumber => throw _privateConstructorUsedError;
-  String? get brand => throw _privateConstructorUsedError;
+  String get invoiceNumber => throw _privateConstructorUsedError;
+  String get invoiceDate => throw _privateConstructorUsedError;
 
   /// Serializes this EnrollmentItem to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -61,9 +60,8 @@ abstract class $EnrollmentItemCopyWith<$Res> {
       int statusId,
       String purchaseOrder,
       String signature,
-      String? manufacturingDate,
-      String? batchNumber,
-      String? brand});
+      String invoiceNumber,
+      String invoiceDate});
 }
 
 /// @nodoc
@@ -91,9 +89,8 @@ class _$EnrollmentItemCopyWithImpl<$Res, $Val extends EnrollmentItem>
     Object? statusId = null,
     Object? purchaseOrder = null,
     Object? signature = null,
-    Object? manufacturingDate = freezed,
-    Object? batchNumber = freezed,
-    Object? brand = freezed,
+    Object? invoiceNumber = null,
+    Object? invoiceDate = null,
   }) {
     return _then(_value.copyWith(
       controlNumber: null == controlNumber
@@ -136,18 +133,14 @@ class _$EnrollmentItemCopyWithImpl<$Res, $Val extends EnrollmentItem>
           ? _value.signature
           : signature // ignore: cast_nullable_to_non_nullable
               as String,
-      manufacturingDate: freezed == manufacturingDate
-          ? _value.manufacturingDate
-          : manufacturingDate // ignore: cast_nullable_to_non_nullable
-              as String?,
-      batchNumber: freezed == batchNumber
-          ? _value.batchNumber
-          : batchNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      brand: freezed == brand
-          ? _value.brand
-          : brand // ignore: cast_nullable_to_non_nullable
-              as String?,
+      invoiceNumber: null == invoiceNumber
+          ? _value.invoiceNumber
+          : invoiceNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      invoiceDate: null == invoiceDate
+          ? _value.invoiceDate
+          : invoiceDate // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -171,9 +164,8 @@ abstract class _$$EnrollmentItemImplCopyWith<$Res>
       int statusId,
       String purchaseOrder,
       String signature,
-      String? manufacturingDate,
-      String? batchNumber,
-      String? brand});
+      String invoiceNumber,
+      String invoiceDate});
 }
 
 /// @nodoc
@@ -199,9 +191,8 @@ class __$$EnrollmentItemImplCopyWithImpl<$Res>
     Object? statusId = null,
     Object? purchaseOrder = null,
     Object? signature = null,
-    Object? manufacturingDate = freezed,
-    Object? batchNumber = freezed,
-    Object? brand = freezed,
+    Object? invoiceNumber = null,
+    Object? invoiceDate = null,
   }) {
     return _then(_$EnrollmentItemImpl(
       controlNumber: null == controlNumber
@@ -244,18 +235,14 @@ class __$$EnrollmentItemImplCopyWithImpl<$Res>
           ? _value.signature
           : signature // ignore: cast_nullable_to_non_nullable
               as String,
-      manufacturingDate: freezed == manufacturingDate
-          ? _value.manufacturingDate
-          : manufacturingDate // ignore: cast_nullable_to_non_nullable
-              as String?,
-      batchNumber: freezed == batchNumber
-          ? _value.batchNumber
-          : batchNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      brand: freezed == brand
-          ? _value.brand
-          : brand // ignore: cast_nullable_to_non_nullable
-              as String?,
+      invoiceNumber: null == invoiceNumber
+          ? _value.invoiceNumber
+          : invoiceNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      invoiceDate: null == invoiceDate
+          ? _value.invoiceDate
+          : invoiceDate // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -274,9 +261,8 @@ class _$EnrollmentItemImpl implements _EnrollmentItem {
       required this.statusId,
       required this.purchaseOrder,
       required this.signature,
-      this.manufacturingDate,
-      this.batchNumber,
-      this.brand});
+      required this.invoiceNumber,
+      required this.invoiceDate});
 
   factory _$EnrollmentItemImpl.fromJson(Map<String, dynamic> json) =>
       _$$EnrollmentItemImplFromJson(json);
@@ -302,15 +288,13 @@ class _$EnrollmentItemImpl implements _EnrollmentItem {
   @override
   final String signature;
   @override
-  final String? manufacturingDate;
+  final String invoiceNumber;
   @override
-  final String? batchNumber;
-  @override
-  final String? brand;
+  final String invoiceDate;
 
   @override
   String toString() {
-    return 'EnrollmentItem(controlNumber: $controlNumber, chassisNumber: $chassisNumber, engineNumber: $engineNumber, model: $model, color: $color, userId: $userId, depotId: $depotId, statusId: $statusId, purchaseOrder: $purchaseOrder, signature: $signature, manufacturingDate: $manufacturingDate, batchNumber: $batchNumber, brand: $brand)';
+    return 'EnrollmentItem(controlNumber: $controlNumber, chassisNumber: $chassisNumber, engineNumber: $engineNumber, model: $model, color: $color, userId: $userId, depotId: $depotId, statusId: $statusId, purchaseOrder: $purchaseOrder, signature: $signature, invoiceNumber: $invoiceNumber, invoiceDate: $invoiceDate)';
   }
 
   @override
@@ -334,11 +318,10 @@ class _$EnrollmentItemImpl implements _EnrollmentItem {
                 other.purchaseOrder == purchaseOrder) &&
             (identical(other.signature, signature) ||
                 other.signature == signature) &&
-            (identical(other.manufacturingDate, manufacturingDate) ||
-                other.manufacturingDate == manufacturingDate) &&
-            (identical(other.batchNumber, batchNumber) ||
-                other.batchNumber == batchNumber) &&
-            (identical(other.brand, brand) || other.brand == brand));
+            (identical(other.invoiceNumber, invoiceNumber) ||
+                other.invoiceNumber == invoiceNumber) &&
+            (identical(other.invoiceDate, invoiceDate) ||
+                other.invoiceDate == invoiceDate));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -355,9 +338,8 @@ class _$EnrollmentItemImpl implements _EnrollmentItem {
       statusId,
       purchaseOrder,
       signature,
-      manufacturingDate,
-      batchNumber,
-      brand);
+      invoiceNumber,
+      invoiceDate);
 
   /// Create a copy of EnrollmentItem
   /// with the given fields replaced by the non-null parameter values.
@@ -388,9 +370,8 @@ abstract class _EnrollmentItem implements EnrollmentItem {
       required final int statusId,
       required final String purchaseOrder,
       required final String signature,
-      final String? manufacturingDate,
-      final String? batchNumber,
-      final String? brand}) = _$EnrollmentItemImpl;
+      required final String invoiceNumber,
+      required final String invoiceDate}) = _$EnrollmentItemImpl;
 
   factory _EnrollmentItem.fromJson(Map<String, dynamic> json) =
       _$EnrollmentItemImpl.fromJson;
@@ -416,11 +397,9 @@ abstract class _EnrollmentItem implements EnrollmentItem {
   @override
   String get signature;
   @override
-  String? get manufacturingDate;
+  String get invoiceNumber;
   @override
-  String? get batchNumber;
-  @override
-  String? get brand;
+  String get invoiceDate;
 
   /// Create a copy of EnrollmentItem
   /// with the given fields replaced by the non-null parameter values.

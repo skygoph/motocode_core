@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:motocode_core/models/src/depot_type.dart';
+import 'package:motocode_core/models/src/location_module.dart';
 
 void main() {
   group('DepotType Model Tests -', () {
@@ -41,7 +41,7 @@ void main() {
       var depotType = DepotType(name: 'name', createdDate: dateNow, id: 1);
 
       // When
-      var request = depotType.mapToRequest();
+      var request = depotType.toJson();
 
       // Then
       expect(request['name'], 'name');

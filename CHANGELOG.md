@@ -1,5 +1,9 @@
 # Release Notes
 
+## 1.0.0
+
+Refactor models and services: rename order model, remove unused models, and update imports
+
 ## 0.4.12
 
 * Add 'brand' field to OrderForPrinting model and update related methods

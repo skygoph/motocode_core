@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:motocode_core/models/src/business_unit.dart';
+import 'package:motocode_core/models/src/location_module.dart';
 
 void main() {
   group('BusinessUnit model -', () {
@@ -47,7 +47,7 @@ void main() {
       );
 
       // When
-      var request = businessUnit.mapToRequest();
+      var request = businessUnit.toJson();
 
       // Then
       expect(request['name'], 'name');

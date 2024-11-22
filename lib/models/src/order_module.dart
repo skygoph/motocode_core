@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'order.freezed.dart';
-part 'order.g.dart';
+part 'order_module.freezed.dart';
+part 'order_module.g.dart';
 
 @freezed
 class Order with _$Order {
@@ -14,12 +14,6 @@ class Order with _$Order {
   }) = _Order;
 
   factory Order.fromJson(Map<String, dynamic> json) => _$OrderFromJson(json);
-
-  Map<String, dynamic> mapToRequest() => {
-        'id': id,
-        'purchaseOrder': purchaseOrder,
-        'orderDate': orderDate?.toUtc().toIso8601String(),
-      };
 }
 
 @freezed
@@ -38,14 +32,4 @@ class OrderForPrinting with _$OrderForPrinting {
 
   factory OrderForPrinting.fromJson(Map<String, dynamic> json) =>
       _$OrderForPrintingFromJson(json);
-
-  Map<String, dynamic> mapToRequest() => {
-        'qrCodeInformation': qrCodeInformation,
-        'identifier': identifier,
-        'chassisNumber': chassisNumber,
-        'engineNumber': engineNumber,
-        'colorCode': colorCode,
-        'modelCode': modelCode,
-        'brand': brand,
-      };
 }

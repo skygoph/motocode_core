@@ -18,9 +18,8 @@ _$EnrollmentItemImpl _$$EnrollmentItemImplFromJson(Map<String, dynamic> json) =>
       statusId: (json['statusId'] as num).toInt(),
       purchaseOrder: json['purchaseOrder'] as String,
       signature: json['signature'] as String,
-      manufacturingDate: json['manufacturingDate'] as String?,
-      batchNumber: json['batchNumber'] as String?,
-      brand: json['brand'] as String?,
+      invoiceNumber: json['invoiceNumber'] as String,
+      invoiceDate: json['invoiceDate'] as String,
     );
 
 Map<String, dynamic> _$$EnrollmentItemImplToJson(
@@ -36,9 +35,8 @@ Map<String, dynamic> _$$EnrollmentItemImplToJson(
       'statusId': instance.statusId,
       'purchaseOrder': instance.purchaseOrder,
       'signature': instance.signature,
-      'manufacturingDate': instance.manufacturingDate,
-      'batchNumber': instance.batchNumber,
-      'brand': instance.brand,
+      'invoiceNumber': instance.invoiceNumber,
+      'invoiceDate': instance.invoiceDate,
     };
 
 _$CreateEnrollmentResponseImpl _$$CreateEnrollmentResponseImplFromJson(

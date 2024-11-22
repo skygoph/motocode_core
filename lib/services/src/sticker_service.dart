@@ -17,32 +17,16 @@ class StickerService {
   /// The Crashlytics instance to log errors
   final FirebaseCrashlytics? _crashlytics;
 
-  /// Get all sticker transactions
-  ///
-  /// This function sends a request to the API client to get all sticker transactions.
-  /// If the request is successful, it returns a list of StickerTransaction.
-  /// In case of an error, the error is recorded in Crashlytics and the error is rethrown.
-  ///
-  /// Returns a [Future<List<StickerTransaction>>] containing a list of sticker transactions.
-  ///
-  /// Throws an error if the request fails for any reason.
+  /// Get all sticker transactions.
   Future<List<StickerTransaction>> getStickers() =>
       _apiClient.getStickers().catchError((error) {
         _crashlytics?.recordError(error, StackTrace.current);
         throw error;
       });
 
-  /// Create a sticker transaction
-  ///
-  /// This function sends a request to the API client to create a sticker transaction.
-  /// If the request is successful, it returns void.
-  /// In case of an error, the error is recorded in Crashlytics and the error is rethrown.
-  ///
-  /// [data] The data to create the sticker transaction with.
-  ///
-  /// Throws an error if the request fails for any reason.
+  /// Create a sticker transaction.
   Future<void> createSticker(StickerTransaction data) =>
-      _apiClient.createSticker(data.mapToRequest()).catchError((error) {
+      _apiClient.createSticker(data.toJson()).catchError((error) {
         _crashlytics?.recordError(error, StackTrace.current);
         throw error;
       });

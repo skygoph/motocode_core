@@ -1,10 +1,32 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'login_response.dart';
+part of 'contracts_module.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
+
+_$PasswordRequestModelImpl _$$PasswordRequestModelImplFromJson(
+        Map<String, dynamic> json) =>
+    _$PasswordRequestModelImpl(
+      userId: json['userId'] as String?,
+      token: json['token'] as String?,
+      email: json['email'] as String?,
+      newPassword: json['newPassword'] as String?,
+      confirmPassword: json['confirmPassword'] as String?,
+      currentPassword: json['currentPassword'] as String?,
+    );
+
+Map<String, dynamic> _$$PasswordRequestModelImplToJson(
+        _$PasswordRequestModelImpl instance) =>
+    <String, dynamic>{
+      'userId': instance.userId,
+      'token': instance.token,
+      'email': instance.email,
+      'newPassword': instance.newPassword,
+      'confirmPassword': instance.confirmPassword,
+      'currentPassword': instance.currentPassword,
+    };
 
 _$LoginResponseImpl _$$LoginResponseImplFromJson(Map<String, dynamic> json) =>
     _$LoginResponseImpl(

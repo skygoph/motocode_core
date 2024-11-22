@@ -58,9 +58,8 @@ class DepartmentsService {
   /// [data] The data to create the department with.
   ///
   /// Throws an error if the request fails for any reason.
-  Future<void> createDepartment(Department department) => _apiClient
-          .createDepartment(department.mapToRequest())
-          .catchError((error) {
+  Future<void> createDepartment(Department department) =>
+      _apiClient.createDepartment(department.toJson()).catchError((error) {
         _crashlytics?.recordError(error, StackTrace.current);
         throw error;
       });
@@ -74,7 +73,7 @@ class DepartmentsService {
     assert(department.id != null);
 
     return _apiClient
-        .updateDepartment(department.id!, department.mapToRequest())
+        .updateDepartment(department.id!, department.toJson())
         .catchError((error) {
       _crashlytics?.recordError(error, StackTrace.current);
       throw error;

@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'scanned_qr_code.dart';
+part of 'qr_code_module.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,6 +13,303 @@ T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+QrCode _$QrCodeFromJson(Map<String, dynamic> json) {
+  return _QrCode.fromJson(json);
+}
+
+/// @nodoc
+mixin _$QrCode {
+  String get chassisNumber => throw _privateConstructorUsedError;
+  String get engineNumber => throw _privateConstructorUsedError;
+  String get model => throw _privateConstructorUsedError;
+  String get color => throw _privateConstructorUsedError;
+  String? get controlNumber => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
+  String? get signature => throw _privateConstructorUsedError;
+  String? get identifier => throw _privateConstructorUsedError;
+
+  /// Serializes this QrCode to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of QrCode
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $QrCodeCopyWith<QrCode> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $QrCodeCopyWith<$Res> {
+  factory $QrCodeCopyWith(QrCode value, $Res Function(QrCode) then) =
+      _$QrCodeCopyWithImpl<$Res, QrCode>;
+  @useResult
+  $Res call(
+      {String chassisNumber,
+      String engineNumber,
+      String model,
+      String color,
+      String? controlNumber,
+      int? id,
+      String? signature,
+      String? identifier});
+}
+
+/// @nodoc
+class _$QrCodeCopyWithImpl<$Res, $Val extends QrCode>
+    implements $QrCodeCopyWith<$Res> {
+  _$QrCodeCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of QrCode
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? chassisNumber = null,
+    Object? engineNumber = null,
+    Object? model = null,
+    Object? color = null,
+    Object? controlNumber = freezed,
+    Object? id = freezed,
+    Object? signature = freezed,
+    Object? identifier = freezed,
+  }) {
+    return _then(_value.copyWith(
+      chassisNumber: null == chassisNumber
+          ? _value.chassisNumber
+          : chassisNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      engineNumber: null == engineNumber
+          ? _value.engineNumber
+          : engineNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      model: null == model
+          ? _value.model
+          : model // ignore: cast_nullable_to_non_nullable
+              as String,
+      color: null == color
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as String,
+      controlNumber: freezed == controlNumber
+          ? _value.controlNumber
+          : controlNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
+      signature: freezed == signature
+          ? _value.signature
+          : signature // ignore: cast_nullable_to_non_nullable
+              as String?,
+      identifier: freezed == identifier
+          ? _value.identifier
+          : identifier // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$QrCodeImplCopyWith<$Res> implements $QrCodeCopyWith<$Res> {
+  factory _$$QrCodeImplCopyWith(
+          _$QrCodeImpl value, $Res Function(_$QrCodeImpl) then) =
+      __$$QrCodeImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String chassisNumber,
+      String engineNumber,
+      String model,
+      String color,
+      String? controlNumber,
+      int? id,
+      String? signature,
+      String? identifier});
+}
+
+/// @nodoc
+class __$$QrCodeImplCopyWithImpl<$Res>
+    extends _$QrCodeCopyWithImpl<$Res, _$QrCodeImpl>
+    implements _$$QrCodeImplCopyWith<$Res> {
+  __$$QrCodeImplCopyWithImpl(
+      _$QrCodeImpl _value, $Res Function(_$QrCodeImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of QrCode
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? chassisNumber = null,
+    Object? engineNumber = null,
+    Object? model = null,
+    Object? color = null,
+    Object? controlNumber = freezed,
+    Object? id = freezed,
+    Object? signature = freezed,
+    Object? identifier = freezed,
+  }) {
+    return _then(_$QrCodeImpl(
+      chassisNumber: null == chassisNumber
+          ? _value.chassisNumber
+          : chassisNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      engineNumber: null == engineNumber
+          ? _value.engineNumber
+          : engineNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      model: null == model
+          ? _value.model
+          : model // ignore: cast_nullable_to_non_nullable
+              as String,
+      color: null == color
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as String,
+      controlNumber: freezed == controlNumber
+          ? _value.controlNumber
+          : controlNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
+      signature: freezed == signature
+          ? _value.signature
+          : signature // ignore: cast_nullable_to_non_nullable
+              as String?,
+      identifier: freezed == identifier
+          ? _value.identifier
+          : identifier // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$QrCodeImpl extends _QrCode {
+  const _$QrCodeImpl(
+      {required this.chassisNumber,
+      required this.engineNumber,
+      required this.model,
+      required this.color,
+      this.controlNumber,
+      this.id,
+      this.signature,
+      this.identifier})
+      : super._();
+
+  factory _$QrCodeImpl.fromJson(Map<String, dynamic> json) =>
+      _$$QrCodeImplFromJson(json);
+
+  @override
+  final String chassisNumber;
+  @override
+  final String engineNumber;
+  @override
+  final String model;
+  @override
+  final String color;
+  @override
+  final String? controlNumber;
+  @override
+  final int? id;
+  @override
+  final String? signature;
+  @override
+  final String? identifier;
+
+  @override
+  String toString() {
+    return 'QrCode(chassisNumber: $chassisNumber, engineNumber: $engineNumber, model: $model, color: $color, controlNumber: $controlNumber, id: $id, signature: $signature, identifier: $identifier)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$QrCodeImpl &&
+            (identical(other.chassisNumber, chassisNumber) ||
+                other.chassisNumber == chassisNumber) &&
+            (identical(other.engineNumber, engineNumber) ||
+                other.engineNumber == engineNumber) &&
+            (identical(other.model, model) || other.model == model) &&
+            (identical(other.color, color) || other.color == color) &&
+            (identical(other.controlNumber, controlNumber) ||
+                other.controlNumber == controlNumber) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.signature, signature) ||
+                other.signature == signature) &&
+            (identical(other.identifier, identifier) ||
+                other.identifier == identifier));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, chassisNumber, engineNumber,
+      model, color, controlNumber, id, signature, identifier);
+
+  /// Create a copy of QrCode
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$QrCodeImplCopyWith<_$QrCodeImpl> get copyWith =>
+      __$$QrCodeImplCopyWithImpl<_$QrCodeImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$QrCodeImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _QrCode extends QrCode {
+  const factory _QrCode(
+      {required final String chassisNumber,
+      required final String engineNumber,
+      required final String model,
+      required final String color,
+      final String? controlNumber,
+      final int? id,
+      final String? signature,
+      final String? identifier}) = _$QrCodeImpl;
+  const _QrCode._() : super._();
+
+  factory _QrCode.fromJson(Map<String, dynamic> json) = _$QrCodeImpl.fromJson;
+
+  @override
+  String get chassisNumber;
+  @override
+  String get engineNumber;
+  @override
+  String get model;
+  @override
+  String get color;
+  @override
+  String? get controlNumber;
+  @override
+  int? get id;
+  @override
+  String? get signature;
+  @override
+  String? get identifier;
+
+  /// Create a copy of QrCode
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$QrCodeImplCopyWith<_$QrCodeImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
 
 ScannedQrCode _$ScannedQrCodeFromJson(Map<String, dynamic> json) {
   return _ScannedQrCode.fromJson(json);
@@ -554,5 +851,210 @@ abstract class _ScannedQrCode extends ScannedQrCode {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ScannedQrCodeImplCopyWith<_$ScannedQrCodeImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+Status _$StatusFromJson(Map<String, dynamic> json) {
+  return _Status.fromJson(json);
+}
+
+/// @nodoc
+mixin _$Status {
+  int? get id => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
+  DateTime? get createdDate => throw _privateConstructorUsedError;
+
+  /// Serializes this Status to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $StatusCopyWith<Status> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $StatusCopyWith<$Res> {
+  factory $StatusCopyWith(Status value, $Res Function(Status) then) =
+      _$StatusCopyWithImpl<$Res, Status>;
+  @useResult
+  $Res call(
+      {int? id, String? name, String? description, DateTime? createdDate});
+}
+
+/// @nodoc
+class _$StatusCopyWithImpl<$Res, $Val extends Status>
+    implements $StatusCopyWith<$Res> {
+  _$StatusCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? description = freezed,
+    Object? createdDate = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdDate: freezed == createdDate
+          ? _value.createdDate
+          : createdDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$StatusImplCopyWith<$Res> implements $StatusCopyWith<$Res> {
+  factory _$$StatusImplCopyWith(
+          _$StatusImpl value, $Res Function(_$StatusImpl) then) =
+      __$$StatusImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {int? id, String? name, String? description, DateTime? createdDate});
+}
+
+/// @nodoc
+class __$$StatusImplCopyWithImpl<$Res>
+    extends _$StatusCopyWithImpl<$Res, _$StatusImpl>
+    implements _$$StatusImplCopyWith<$Res> {
+  __$$StatusImplCopyWithImpl(
+      _$StatusImpl _value, $Res Function(_$StatusImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? description = freezed,
+    Object? createdDate = freezed,
+  }) {
+    return _then(_$StatusImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdDate: freezed == createdDate
+          ? _value.createdDate
+          : createdDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(explicitToJson: true)
+class _$StatusImpl extends _Status {
+  const _$StatusImpl({this.id, this.name, this.description, this.createdDate})
+      : super._();
+
+  factory _$StatusImpl.fromJson(Map<String, dynamic> json) =>
+      _$$StatusImplFromJson(json);
+
+  @override
+  final int? id;
+  @override
+  final String? name;
+  @override
+  final String? description;
+  @override
+  final DateTime? createdDate;
+
+  @override
+  String toString() {
+    return 'Status(id: $id, name: $name, description: $description, createdDate: $createdDate)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$StatusImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.createdDate, createdDate) ||
+                other.createdDate == createdDate));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, id, name, description, createdDate);
+
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$StatusImplCopyWith<_$StatusImpl> get copyWith =>
+      __$$StatusImplCopyWithImpl<_$StatusImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$StatusImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _Status extends Status {
+  const factory _Status(
+      {final int? id,
+      final String? name,
+      final String? description,
+      final DateTime? createdDate}) = _$StatusImpl;
+  const _Status._() : super._();
+
+  factory _Status.fromJson(Map<String, dynamic> json) = _$StatusImpl.fromJson;
+
+  @override
+  int? get id;
+  @override
+  String? get name;
+  @override
+  String? get description;
+  @override
+  DateTime? get createdDate;
+
+  /// Create a copy of Status
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$StatusImplCopyWith<_$StatusImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

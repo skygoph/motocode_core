@@ -58,7 +58,7 @@ class DepotTypesService {
   ///
   /// Throws an error if the request fails for any reason.
   Future<void> createDepotType(DepotType data) =>
-      _apiClient.createDepotType(data.mapToRequest()).catchError((error) {
+      _apiClient.createDepotType(data.toJson()).catchError((error) {
         _crashlytics?.recordError(error, StackTrace.current);
         throw error;
       });
@@ -75,7 +75,7 @@ class DepotTypesService {
   Future<void> updateDepotType(DepotType data) {
     assert(data.id != null, 'Depot type id must not be null');
     return _apiClient
-        .updateDepotType(data.id!, data.mapToRequest())
+        .updateDepotType(data.id!, data.toJson())
         .catchError((error) {
       _crashlytics?.recordError(error, StackTrace.current);
       throw error;

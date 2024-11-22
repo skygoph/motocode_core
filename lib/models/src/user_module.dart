@@ -2,8 +2,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:motocode_core/enums/enums.dart';
 import 'package:motocode_core/models/models.dart';
 
-part 'user.freezed.dart';
-part 'user.g.dart';
+part 'user_module.freezed.dart';
+part 'user_module.g.dart';
 
 @freezed
 class User with _$User {
@@ -57,25 +57,32 @@ class User with _$User {
       statusId == UserScanningStateEnum.INSTALLMENT_SALE.id;
   bool get isRepossessed => statusId == UserScanningStateEnum.REPOSSESSED.id;
   bool get isScrapped => statusId == UserScanningStateEnum.SCRAPPED.id;
+}
 
-  Map<String, dynamic> mapToRequest() => {
-        'id': id,
-        'firstName': firstName,
-        'lastName': lastName,
-        'email': email,
-        'password': password,
-        'userRoleId': userRoleId ?? userRoles?.first.id,
-        'creatorId': creatorId,
-        'departmentId': departmentId,
-        'businessUnitId': businessUnitId,
-        'positionId': positionId,
-        'statusId': statusId,
-        'statusList': statuses?.map((e) => e.id).toList(),
-        'userStatus': userStatus,
-        'depotList': depots?.map((e) => e.id).toList(),
-        'roleName': roleName ?? userRoles?.first.name,
-        'latitude': latitude,
-        'longitude': longitude,
-        'createdDate': createdDate?.toUtc().toIso8601String(),
-      };
+@freezed
+class UserRole with _$UserRole {
+  const UserRole._();
+
+  const factory UserRole({
+    required String? id,
+    required String? name,
+  }) = _UserRole;
+
+  factory UserRole.fromJson(Map<String, dynamic> json) =>
+      _$UserRoleFromJson(json);
+}
+
+@freezed
+class Position with _$Position {
+  const Position._();
+
+  const factory Position({
+    required int? id,
+    required String? name,
+    required String? roleId,
+    required DateTime? createdDate,
+  }) = _Position;
+
+  factory Position.fromJson(Map<String, dynamic> json) =>
+      _$PositionFromJson(json);
 }

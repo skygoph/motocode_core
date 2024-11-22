@@ -58,7 +58,7 @@ class DepotsService {
   ///
   /// Throws an error if the request fails for any reason.
   Future<void> createDepot(Depot data) =>
-      _apiClient.createDepot(data.mapToRequest()).catchError((error) {
+      _apiClient.createDepot(data.toJson()).catchError((error) {
         _crashlytics?.recordError(error, StackTrace.current);
         throw error;
       });
@@ -77,9 +77,7 @@ class DepotsService {
       throw ArgumentError('Depot id cannot be null');
     }
 
-    return _apiClient
-        .updateDepot(data.id!, data.mapToRequest())
-        .catchError((error) {
+    return _apiClient.updateDepot(data.id!, data.toJson()).catchError((error) {
       _crashlytics?.recordError(error, StackTrace.current);
       throw error;
     });

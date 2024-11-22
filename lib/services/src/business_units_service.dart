@@ -60,9 +60,7 @@ class BusinessUnitsService {
   ///
   /// Throws an error if the request fails for any reason.
   Future<void> createBusinessUnit(BusinessUnit data) async {
-    return _apiClient
-        .createBusinessUnit(data.mapToRequest())
-        .catchError((error) {
+    return _apiClient.createBusinessUnit(data.toJson()).catchError((error) {
       _crashlytics?.recordError(error, StackTrace.current);
       throw error;
     });
@@ -82,7 +80,7 @@ class BusinessUnitsService {
   ) async {
     assert(data.id != null, 'Business unit id must not be null');
     return _apiClient
-        .updateBusinessUnit(data.id!, data.mapToRequest())
+        .updateBusinessUnit(data.id!, data.toJson())
         .catchError((error) {
       _crashlytics?.recordError(error, StackTrace.current);
       throw error;

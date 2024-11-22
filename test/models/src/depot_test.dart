@@ -1,7 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:motocode_core/models/src/business_unit.dart';
-import 'package:motocode_core/models/src/depot.dart';
-import 'package:motocode_core/models/src/depot_type.dart';
+import 'package:motocode_core/models/src/location_module.dart';
 
 void main() {
   group('Depot Model Tests -', () {
@@ -91,7 +89,7 @@ void main() {
         },
       );
       // When
-      var request = depot.mapToRequest();
+      var request = depot.toJson();
 
       // Then
       expect(request['id'], 1);

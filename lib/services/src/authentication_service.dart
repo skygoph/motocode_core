@@ -1,5 +1,5 @@
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
-import 'package:motocode_core/models/src/password_request_model.dart';
+import 'package:motocode_core/models/src/contracts_module.dart';
 import 'package:motocode_core/motocode_core.dart';
 
 /// Service to handle authentication

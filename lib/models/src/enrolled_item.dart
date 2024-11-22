@@ -3,24 +3,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'enrolled_item.freezed.dart';
 part 'enrolled_item.g.dart';
 
-/*
-  {
-    "id": 0,
-    "controlNumber": "string",
-    "chassisNumber": "string",
-    "engineNumber": "string",
-    "model": "string",
-    "manufacturingDate": "string",
-    "color": "string",
-    "batchNumber": "string",
-    "brand": "string",
-    "userId": "string",
-    "depotId": 0,
-    "statusId": 0,
-    "purchaseOrder": "string",
-    "signature": "string"
-  }
- */
 @freezed
 class EnrollmentItem with _$EnrollmentItem {
   const factory EnrollmentItem({
@@ -34,9 +16,8 @@ class EnrollmentItem with _$EnrollmentItem {
     required int statusId,
     required String purchaseOrder,
     required String signature,
-    String? manufacturingDate,
-    String? batchNumber,
-    String? brand,
+    required String invoiceNumber,
+    required String invoiceDate,
   }) = _EnrollmentItem;
 
   factory EnrollmentItem.fromJson(Map<String, dynamic> json) =>

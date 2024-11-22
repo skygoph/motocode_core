@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:motocode_core/models/src/department.dart';
+import 'package:motocode_core/models/src/location_module.dart';
 
 void main() {
   group('Department Model Tests -', () {
@@ -43,7 +43,7 @@ void main() {
       );
 
       // When
-      var request = department.mapToRequest();
+      var request = department.toJson();
 
       // Then
       expect(request['name'], 'name');

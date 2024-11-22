@@ -1,10 +1,33 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'scanned_qr_code.dart';
+part of 'qr_code_module.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
+
+_$QrCodeImpl _$$QrCodeImplFromJson(Map<String, dynamic> json) => _$QrCodeImpl(
+      chassisNumber: json['chassisNumber'] as String,
+      engineNumber: json['engineNumber'] as String,
+      model: json['model'] as String,
+      color: json['color'] as String,
+      controlNumber: json['controlNumber'] as String?,
+      id: (json['id'] as num?)?.toInt(),
+      signature: json['signature'] as String?,
+      identifier: json['identifier'] as String?,
+    );
+
+Map<String, dynamic> _$$QrCodeImplToJson(_$QrCodeImpl instance) =>
+    <String, dynamic>{
+      'chassisNumber': instance.chassisNumber,
+      'engineNumber': instance.engineNumber,
+      'model': instance.model,
+      'color': instance.color,
+      'controlNumber': instance.controlNumber,
+      'id': instance.id,
+      'signature': instance.signature,
+      'identifier': instance.identifier,
+    };
 
 _$ScannedQrCodeImpl _$$ScannedQrCodeImplFromJson(Map<String, dynamic> json) =>
     _$ScannedQrCodeImpl(
@@ -56,4 +79,21 @@ Map<String, dynamic> _$$ScannedQrCodeImplToJson(_$ScannedQrCodeImpl instance) =>
       'purchaseOrder': instance.purchaseOrder,
       'user': instance.user,
       'remarks': instance.remarks,
+    };
+
+_$StatusImpl _$$StatusImplFromJson(Map<String, dynamic> json) => _$StatusImpl(
+      id: (json['id'] as num?)?.toInt(),
+      name: json['name'] as String?,
+      description: json['description'] as String?,
+      createdDate: json['createdDate'] == null
+          ? null
+          : DateTime.parse(json['createdDate'] as String),
+    );
+
+Map<String, dynamic> _$$StatusImplToJson(_$StatusImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'description': instance.description,
+      'createdDate': instance.createdDate?.toIso8601String(),
     };

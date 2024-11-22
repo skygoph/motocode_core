@@ -16,67 +16,31 @@ class RolesService {
   /// The Crashlytics instance to log errors
   final FirebaseCrashlytics? _crashlytics;
 
-  /// Get all roles
-  ///
-  /// This function sends a request to the API client to get all roles.
-  /// If the request is successful, it returns a list of roles.
-  /// In case of an error, the error is recorded in Crashlytics and the error is rethrown.
-  ///
-  /// Returns a [Future<List<UserRole>>] containing a list of roles.
-  ///
-  /// Throws an error if the request fails for any reason.
+  /// Get all roles.
   Future<List<UserRole>> getRoles() =>
       _apiClient.getRoles().catchError((error) {
         _crashlytics?.recordError(error, StackTrace.current);
         throw error;
       });
 
-  /// Get a role by id
-  ///
-  /// This function sends a request to the API client to get a role by id.
-  /// If the request is successful, it returns the role.
-  /// In case of an error, the error is recorded in Crashlytics and the error is rethrown.
-  ///
-  /// [roleId] The id of the role to get.
-  ///
-  /// Returns a [Future<UserRole>] containing the role.
-  ///
-  /// Throws an error if the request fails for any reason.
+  /// Get a role by id.
   Future<UserRole> getRole(int roleId) =>
       _apiClient.getRole(roleId).catchError((error) {
         _crashlytics?.recordError(error, StackTrace.current);
         throw error;
       });
 
-  /// Create a role
-  ///
-  /// This function sends a request to the API client to create a role.
-  /// If the request is successful, it returns void.
-  /// In case of an error, the error is recorded in Crashlytics and the error is rethrown.
-  ///
-  /// [data] The data to create the role with.
-  ///
-  /// Throws an error if the request fails for any reason.
+  /// Creates a role.
   Future<void> createRole(UserRole data) =>
-      _apiClient.createRole(data.mapToRequest()).catchError((error) {
+      _apiClient.createRole(data.toJson()).catchError((error) {
         _crashlytics?.recordError(error, StackTrace.current);
         throw error;
       });
 
-  /// Update a role
-  ///
-  /// This function sends a request to the API client to update a role.
-  /// If the request is successful, it returns void.
-  /// In case of an error, the error is recorded in Crashlytics and the error is rethrown.
-  ///
-  /// [data] The data to update the role with.
-  ///
-  /// Throws an error if the request fails for any reason.
+  /// Updates a role.
   Future<void> updateRole(UserRole data) {
     assert(data.id != null, 'The id of the role must not be null');
-    return _apiClient
-        .updateRole(data.id!, data.mapToRequest())
-        .catchError((error) {
+    return _apiClient.updateRole(data.id!, data.toJson()).catchError((error) {
       _crashlytics?.recordError(error, StackTrace.current);
       throw error;
     });
