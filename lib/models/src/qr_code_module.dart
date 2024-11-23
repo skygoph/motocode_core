@@ -11,10 +11,10 @@ class QrCode with _$QrCode {
   const QrCode._();
 
   const factory QrCode({
-    required String chassisNumber,
-    required String engineNumber,
-    required String model,
-    required String color,
+    String? chassisNumber,
+    String? engineNumber,
+    String? model,
+    String? color,
     String? controlNumber,
     int? id,
     String? signature,

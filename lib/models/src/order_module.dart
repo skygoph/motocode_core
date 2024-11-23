@@ -5,12 +5,11 @@ part 'order_module.g.dart';
 
 @freezed
 class Order with _$Order {
-  const Order._();
-
   const factory Order({
-    int? id,
-    String? purchaseOrder,
-    DateTime? orderDate,
+    required int id,
+    required String purchaseOrder,
+    required String invoiceNumber,
+    required DateTime invoiceDate,
   }) = _Order;
 
   factory Order.fromJson(Map<String, dynamic> json) => _$OrderFromJson(json);
@@ -18,8 +17,6 @@ class Order with _$Order {
 
 @freezed
 class OrderForPrinting with _$OrderForPrinting {
-  const OrderForPrinting._();
-
   const factory OrderForPrinting({
     required String qrCodeInformation,
     required String identifier,

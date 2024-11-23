@@ -1,5 +1,9 @@
 # Release Notes
 
+## 1.0.2
+
+Update QrCode and Order model to make fields nullable.
+
 ## 1.0.0
 
 Refactor models and services: rename order model, remove unused models, and update imports

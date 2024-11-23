@@ -7,10 +7,10 @@ part of 'qr_code_module.dart';
 // **************************************************************************
 
 _$QrCodeImpl _$$QrCodeImplFromJson(Map<String, dynamic> json) => _$QrCodeImpl(
-      chassisNumber: json['chassisNumber'] as String,
-      engineNumber: json['engineNumber'] as String,
-      model: json['model'] as String,
-      color: json['color'] as String,
+      chassisNumber: json['chassisNumber'] as String?,
+      engineNumber: json['engineNumber'] as String?,
+      model: json['model'] as String?,
+      color: json['color'] as String?,
       controlNumber: json['controlNumber'] as String?,
       id: (json['id'] as num?)?.toInt(),
       signature: json['signature'] as String?,

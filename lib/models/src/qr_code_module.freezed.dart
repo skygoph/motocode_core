@@ -20,10 +20,10 @@ QrCode _$QrCodeFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$QrCode {
-  String get chassisNumber => throw _privateConstructorUsedError;
-  String get engineNumber => throw _privateConstructorUsedError;
-  String get model => throw _privateConstructorUsedError;
-  String get color => throw _privateConstructorUsedError;
+  String? get chassisNumber => throw _privateConstructorUsedError;
+  String? get engineNumber => throw _privateConstructorUsedError;
+  String? get model => throw _privateConstructorUsedError;
+  String? get color => throw _privateConstructorUsedError;
   String? get controlNumber => throw _privateConstructorUsedError;
   int? get id => throw _privateConstructorUsedError;
   String? get signature => throw _privateConstructorUsedError;
@@ -44,10 +44,10 @@ abstract class $QrCodeCopyWith<$Res> {
       _$QrCodeCopyWithImpl<$Res, QrCode>;
   @useResult
   $Res call(
-      {String chassisNumber,
-      String engineNumber,
-      String model,
-      String color,
+      {String? chassisNumber,
+      String? engineNumber,
+      String? model,
+      String? color,
       String? controlNumber,
       int? id,
       String? signature,
@@ -69,32 +69,32 @@ class _$QrCodeCopyWithImpl<$Res, $Val extends QrCode>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? chassisNumber = null,
-    Object? engineNumber = null,
-    Object? model = null,
-    Object? color = null,
+    Object? chassisNumber = freezed,
+    Object? engineNumber = freezed,
+    Object? model = freezed,
+    Object? color = freezed,
     Object? controlNumber = freezed,
     Object? id = freezed,
     Object? signature = freezed,
     Object? identifier = freezed,
   }) {
     return _then(_value.copyWith(
-      chassisNumber: null == chassisNumber
+      chassisNumber: freezed == chassisNumber
           ? _value.chassisNumber
           : chassisNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-      engineNumber: null == engineNumber
+              as String?,
+      engineNumber: freezed == engineNumber
           ? _value.engineNumber
           : engineNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-      model: null == model
+              as String?,
+      model: freezed == model
           ? _value.model
           : model // ignore: cast_nullable_to_non_nullable
-              as String,
-      color: null == color
+              as String?,
+      color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       controlNumber: freezed == controlNumber
           ? _value.controlNumber
           : controlNumber // ignore: cast_nullable_to_non_nullable
@@ -123,10 +123,10 @@ abstract class _$$QrCodeImplCopyWith<$Res> implements $QrCodeCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String chassisNumber,
-      String engineNumber,
-      String model,
-      String color,
+      {String? chassisNumber,
+      String? engineNumber,
+      String? model,
+      String? color,
       String? controlNumber,
       int? id,
       String? signature,
@@ -146,32 +146,32 @@ class __$$QrCodeImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? chassisNumber = null,
-    Object? engineNumber = null,
-    Object? model = null,
-    Object? color = null,
+    Object? chassisNumber = freezed,
+    Object? engineNumber = freezed,
+    Object? model = freezed,
+    Object? color = freezed,
     Object? controlNumber = freezed,
     Object? id = freezed,
     Object? signature = freezed,
     Object? identifier = freezed,
   }) {
     return _then(_$QrCodeImpl(
-      chassisNumber: null == chassisNumber
+      chassisNumber: freezed == chassisNumber
           ? _value.chassisNumber
           : chassisNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-      engineNumber: null == engineNumber
+              as String?,
+      engineNumber: freezed == engineNumber
           ? _value.engineNumber
           : engineNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-      model: null == model
+              as String?,
+      model: freezed == model
           ? _value.model
           : model // ignore: cast_nullable_to_non_nullable
-              as String,
-      color: null == color
+              as String?,
+      color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       controlNumber: freezed == controlNumber
           ? _value.controlNumber
           : controlNumber // ignore: cast_nullable_to_non_nullable
@@ -196,10 +196,10 @@ class __$$QrCodeImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$QrCodeImpl extends _QrCode {
   const _$QrCodeImpl(
-      {required this.chassisNumber,
-      required this.engineNumber,
-      required this.model,
-      required this.color,
+      {this.chassisNumber,
+      this.engineNumber,
+      this.model,
+      this.color,
       this.controlNumber,
       this.id,
       this.signature,
@@ -210,13 +210,13 @@ class _$QrCodeImpl extends _QrCode {
       _$$QrCodeImplFromJson(json);
 
   @override
-  final String chassisNumber;
+  final String? chassisNumber;
   @override
-  final String engineNumber;
+  final String? engineNumber;
   @override
-  final String model;
+  final String? model;
   @override
-  final String color;
+  final String? color;
   @override
   final String? controlNumber;
   @override
@@ -274,10 +274,10 @@ class _$QrCodeImpl extends _QrCode {
 
 abstract class _QrCode extends QrCode {
   const factory _QrCode(
-      {required final String chassisNumber,
-      required final String engineNumber,
-      required final String model,
-      required final String color,
+      {final String? chassisNumber,
+      final String? engineNumber,
+      final String? model,
+      final String? color,
       final String? controlNumber,
       final int? id,
       final String? signature,
@@ -287,13 +287,13 @@ abstract class _QrCode extends QrCode {
   factory _QrCode.fromJson(Map<String, dynamic> json) = _$QrCodeImpl.fromJson;
 
   @override
-  String get chassisNumber;
+  String? get chassisNumber;
   @override
-  String get engineNumber;
+  String? get engineNumber;
   @override
-  String get model;
+  String? get model;
   @override
-  String get color;
+  String? get color;
   @override
   String? get controlNumber;
   @override

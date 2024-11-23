@@ -20,9 +20,10 @@ Order _$OrderFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Order {
-  int? get id => throw _privateConstructorUsedError;
-  String? get purchaseOrder => throw _privateConstructorUsedError;
-  DateTime? get orderDate => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
+  String get purchaseOrder => throw _privateConstructorUsedError;
+  String get invoiceNumber => throw _privateConstructorUsedError;
+  DateTime get invoiceDate => throw _privateConstructorUsedError;
 
   /// Serializes this Order to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -38,7 +39,11 @@ abstract class $OrderCopyWith<$Res> {
   factory $OrderCopyWith(Order value, $Res Function(Order) then) =
       _$OrderCopyWithImpl<$Res, Order>;
   @useResult
-  $Res call({int? id, String? purchaseOrder, DateTime? orderDate});
+  $Res call(
+      {int id,
+      String purchaseOrder,
+      String invoiceNumber,
+      DateTime invoiceDate});
 }
 
 /// @nodoc
@@ -56,23 +61,28 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? purchaseOrder = freezed,
-    Object? orderDate = freezed,
+    Object? id = null,
+    Object? purchaseOrder = null,
+    Object? invoiceNumber = null,
+    Object? invoiceDate = null,
   }) {
     return _then(_value.copyWith(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      purchaseOrder: freezed == purchaseOrder
+              as int,
+      purchaseOrder: null == purchaseOrder
           ? _value.purchaseOrder
           : purchaseOrder // ignore: cast_nullable_to_non_nullable
-              as String?,
-      orderDate: freezed == orderDate
-          ? _value.orderDate
-          : orderDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as String,
+      invoiceNumber: null == invoiceNumber
+          ? _value.invoiceNumber
+          : invoiceNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      invoiceDate: null == invoiceDate
+          ? _value.invoiceDate
+          : invoiceDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ) as $Val);
   }
 }
@@ -84,7 +94,11 @@ abstract class _$$OrderImplCopyWith<$Res> implements $OrderCopyWith<$Res> {
       __$$OrderImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? id, String? purchaseOrder, DateTime? orderDate});
+  $Res call(
+      {int id,
+      String purchaseOrder,
+      String invoiceNumber,
+      DateTime invoiceDate});
 }
 
 /// @nodoc
@@ -100,45 +114,56 @@ class __$$OrderImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? purchaseOrder = freezed,
-    Object? orderDate = freezed,
+    Object? id = null,
+    Object? purchaseOrder = null,
+    Object? invoiceNumber = null,
+    Object? invoiceDate = null,
   }) {
     return _then(_$OrderImpl(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      purchaseOrder: freezed == purchaseOrder
+              as int,
+      purchaseOrder: null == purchaseOrder
           ? _value.purchaseOrder
           : purchaseOrder // ignore: cast_nullable_to_non_nullable
-              as String?,
-      orderDate: freezed == orderDate
-          ? _value.orderDate
-          : orderDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as String,
+      invoiceNumber: null == invoiceNumber
+          ? _value.invoiceNumber
+          : invoiceNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      invoiceDate: null == invoiceDate
+          ? _value.invoiceDate
+          : invoiceDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$OrderImpl extends _Order {
-  const _$OrderImpl({this.id, this.purchaseOrder, this.orderDate}) : super._();
+class _$OrderImpl implements _Order {
+  const _$OrderImpl(
+      {required this.id,
+      required this.purchaseOrder,
+      required this.invoiceNumber,
+      required this.invoiceDate});
 
   factory _$OrderImpl.fromJson(Map<String, dynamic> json) =>
       _$$OrderImplFromJson(json);
 
   @override
-  final int? id;
+  final int id;
   @override
-  final String? purchaseOrder;
+  final String purchaseOrder;
   @override
-  final DateTime? orderDate;
+  final String invoiceNumber;
+  @override
+  final DateTime invoiceDate;
 
   @override
   String toString() {
-    return 'Order(id: $id, purchaseOrder: $purchaseOrder, orderDate: $orderDate)';
+    return 'Order(id: $id, purchaseOrder: $purchaseOrder, invoiceNumber: $invoiceNumber, invoiceDate: $invoiceDate)';
   }
 
   @override
@@ -149,13 +174,16 @@ class _$OrderImpl extends _Order {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.purchaseOrder, purchaseOrder) ||
                 other.purchaseOrder == purchaseOrder) &&
-            (identical(other.orderDate, orderDate) ||
-                other.orderDate == orderDate));
+            (identical(other.invoiceNumber, invoiceNumber) ||
+                other.invoiceNumber == invoiceNumber) &&
+            (identical(other.invoiceDate, invoiceDate) ||
+                other.invoiceDate == invoiceDate));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, purchaseOrder, orderDate);
+  int get hashCode =>
+      Object.hash(runtimeType, id, purchaseOrder, invoiceNumber, invoiceDate);
 
   /// Create a copy of Order
   /// with the given fields replaced by the non-null parameter values.
@@ -173,21 +201,23 @@ class _$OrderImpl extends _Order {
   }
 }
 
-abstract class _Order extends Order {
+abstract class _Order implements Order {
   const factory _Order(
-      {final int? id,
-      final String? purchaseOrder,
-      final DateTime? orderDate}) = _$OrderImpl;
-  const _Order._() : super._();
+      {required final int id,
+      required final String purchaseOrder,
+      required final String invoiceNumber,
+      required final DateTime invoiceDate}) = _$OrderImpl;
 
   factory _Order.fromJson(Map<String, dynamic> json) = _$OrderImpl.fromJson;
 
   @override
-  int? get id;
+  int get id;
   @override
-  String? get purchaseOrder;
+  String get purchaseOrder;
   @override
-  DateTime? get orderDate;
+  String get invoiceNumber;
+  @override
+  DateTime get invoiceDate;
 
   /// Create a copy of Order
   /// with the given fields replaced by the non-null parameter values.
@@ -367,7 +397,7 @@ class __$$OrderForPrintingImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$OrderForPrintingImpl extends _OrderForPrinting {
+class _$OrderForPrintingImpl implements _OrderForPrinting {
   const _$OrderForPrintingImpl(
       {required this.qrCodeInformation,
       required this.identifier,
@@ -375,8 +405,7 @@ class _$OrderForPrintingImpl extends _OrderForPrinting {
       required this.engineNumber,
       required this.colorCode,
       required this.modelCode,
-      required this.brand})
-      : super._();
+      required this.brand});
 
   factory _$OrderForPrintingImpl.fromJson(Map<String, dynamic> json) =>
       _$$OrderForPrintingImplFromJson(json);
@@ -443,7 +472,7 @@ class _$OrderForPrintingImpl extends _OrderForPrinting {
   }
 }
 
-abstract class _OrderForPrinting extends OrderForPrinting {
+abstract class _OrderForPrinting implements OrderForPrinting {
   const factory _OrderForPrinting(
       {required final String qrCodeInformation,
       required final String identifier,
@@ -452,7 +481,6 @@ abstract class _OrderForPrinting extends OrderForPrinting {
       required final String colorCode,
       required final String modelCode,
       required final String brand}) = _$OrderForPrintingImpl;
-  const _OrderForPrinting._() : super._();
 
   factory _OrderForPrinting.fromJson(Map<String, dynamic> json) =
       _$OrderForPrintingImpl.fromJson;
