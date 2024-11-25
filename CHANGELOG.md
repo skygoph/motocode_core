@@ -1,5 +1,13 @@
 # Release Notes
 
+## 1.0.4
+
+Fixed Update user.
+
+## 1.0.3
+
+Update user model added mapToRequest back.
+
 ## 1.0.2
 
 Update QrCode and Order model to make fields nullable.

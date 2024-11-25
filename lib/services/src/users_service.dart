@@ -46,7 +46,7 @@ class UsersService {
 
   /// Create a user.
   Future<void> createUser(User data) =>
-      _apiClient.createUser(data.toJson()).catchError((error) {
+      _apiClient.createUser(data.mapToRequest()).catchError((error) {
         _crashlytics?.recordError(error, StackTrace.current);
         throw error;
       });
@@ -57,7 +57,9 @@ class UsersService {
       throw ArgumentError('User id cannot be null');
     }
 
-    return _apiClient.updateUser(data.id!, data.toJson()).catchError((error) {
+    return _apiClient
+        .updateUser(data.id!, data.mapToRequest())
+        .catchError((error) {
       _crashlytics?.recordError(error, StackTrace.current);
       throw error;
     });

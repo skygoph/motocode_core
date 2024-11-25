@@ -57,6 +57,27 @@ class User with _$User {
       statusId == UserScanningStateEnum.INSTALLMENT_SALE.id;
   bool get isRepossessed => statusId == UserScanningStateEnum.REPOSSESSED.id;
   bool get isScrapped => statusId == UserScanningStateEnum.SCRAPPED.id;
+
+  Map<String, dynamic> mapToRequest() => {
+        'id': id,
+        'firstName': firstName,
+        'lastName': lastName,
+        'email': email,
+        'password': password,
+        'userRoleId': userRoleId ?? userRoles?.first.id,
+        'creatorId': creatorId,
+        'departmentId': departmentId,
+        'businessUnitId': businessUnitId,
+        'positionId': positionId,
+        'statusId': statusId,
+        'statusList': statuses?.map((e) => e.id).toList(),
+        'userStatus': userStatus,
+        'depotList': depots?.map((e) => e.id).toList(),
+        'roleName': roleName ?? userRoles?.first.name,
+        'latitude': latitude,
+        'longitude': longitude,
+        'createdDate': createdDate?.toUtc().toIso8601String(),
+      };
 }
 
 @freezed
