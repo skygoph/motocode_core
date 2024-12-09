@@ -1,5 +1,9 @@
 # Release Notes
 
+## 1.0.6
+
+Update getDepots method to accept clusterOrRegion parameter in ApiClient and DepotsService
+
 ## 1.0.5
 
 Add cluster and internalRegion to Depot

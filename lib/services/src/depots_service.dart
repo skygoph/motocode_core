@@ -26,7 +26,8 @@ class DepotsService {
   /// Returns a [Future<List<Depot>>] containing a list of depots.
   ///
   /// Throws an error if the request fails for any reason.
-  Future<List<Depot>> getDepots() => _apiClient.getDepots().catchError((error) {
+  Future<List<Depot>> getDepots(String? clusterOrRegion) =>
+      _apiClient.getDepots(clusterOrRegion).catchError((error) {
         _crashlytics?.recordError(error, StackTrace.current);
         throw error;
       });
