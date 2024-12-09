@@ -78,6 +78,8 @@ _$DepotImpl _$$DepotImplFromJson(Map<String, dynamic> json) => _$DepotImpl(
       createdDate: json['createdDate'] == null
           ? null
           : DateTime.parse(json['createdDate'] as String),
+      cluster: json['cluster'] as String?,
+      internalRegion: json['internalRegion'] as String?,
     );
 
 Map<String, dynamic> _$$DepotImplToJson(_$DepotImpl instance) =>
@@ -95,6 +97,8 @@ Map<String, dynamic> _$$DepotImplToJson(_$DepotImpl instance) =>
       'internalArea': instance.internalArea,
       'internalAreaId': instance.internalAreaId,
       'createdDate': instance.createdDate?.toIso8601String(),
+      'cluster': instance.cluster,
+      'internalRegion': instance.internalRegion,
     };
 
 _$InternalAreaImpl _$$InternalAreaImplFromJson(Map<String, dynamic> json) =>

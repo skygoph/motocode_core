@@ -613,6 +613,8 @@ mixin _$Depot {
   InternalArea? get internalArea => throw _privateConstructorUsedError;
   int? get internalAreaId => throw _privateConstructorUsedError;
   DateTime? get createdDate => throw _privateConstructorUsedError;
+  String? get cluster => throw _privateConstructorUsedError;
+  String? get internalRegion => throw _privateConstructorUsedError;
 
   /// Serializes this Depot to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -641,7 +643,9 @@ abstract class $DepotCopyWith<$Res> {
       DepotType? depotType,
       InternalArea? internalArea,
       int? internalAreaId,
-      DateTime? createdDate});
+      DateTime? createdDate,
+      String? cluster,
+      String? internalRegion});
 
   $BusinessUnitCopyWith<$Res>? get businessUnit;
   $DepotTypeCopyWith<$Res>? get depotType;
@@ -676,6 +680,8 @@ class _$DepotCopyWithImpl<$Res, $Val extends Depot>
     Object? internalArea = freezed,
     Object? internalAreaId = freezed,
     Object? createdDate = freezed,
+    Object? cluster = freezed,
+    Object? internalRegion = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -730,6 +736,14 @@ class _$DepotCopyWithImpl<$Res, $Val extends Depot>
           ? _value.createdDate
           : createdDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      cluster: freezed == cluster
+          ? _value.cluster
+          : cluster // ignore: cast_nullable_to_non_nullable
+              as String?,
+      internalRegion: freezed == internalRegion
+          ? _value.internalRegion
+          : internalRegion // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -796,7 +810,9 @@ abstract class _$$DepotImplCopyWith<$Res> implements $DepotCopyWith<$Res> {
       DepotType? depotType,
       InternalArea? internalArea,
       int? internalAreaId,
-      DateTime? createdDate});
+      DateTime? createdDate,
+      String? cluster,
+      String? internalRegion});
 
   @override
   $BusinessUnitCopyWith<$Res>? get businessUnit;
@@ -832,6 +848,8 @@ class __$$DepotImplCopyWithImpl<$Res>
     Object? internalArea = freezed,
     Object? internalAreaId = freezed,
     Object? createdDate = freezed,
+    Object? cluster = freezed,
+    Object? internalRegion = freezed,
   }) {
     return _then(_$DepotImpl(
       id: freezed == id
@@ -886,6 +904,14 @@ class __$$DepotImplCopyWithImpl<$Res>
           ? _value.createdDate
           : createdDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      cluster: freezed == cluster
+          ? _value.cluster
+          : cluster // ignore: cast_nullable_to_non_nullable
+              as String?,
+      internalRegion: freezed == internalRegion
+          ? _value.internalRegion
+          : internalRegion // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -906,7 +932,9 @@ class _$DepotImpl extends _Depot {
       this.depotType,
       this.internalArea,
       this.internalAreaId,
-      this.createdDate})
+      this.createdDate,
+      this.cluster,
+      this.internalRegion})
       : super._();
 
   factory _$DepotImpl.fromJson(Map<String, dynamic> json) =>
@@ -938,10 +966,14 @@ class _$DepotImpl extends _Depot {
   final int? internalAreaId;
   @override
   final DateTime? createdDate;
+  @override
+  final String? cluster;
+  @override
+  final String? internalRegion;
 
   @override
   String toString() {
-    return 'Depot(id: $id, name: $name, location: $location, latitude: $latitude, longitude: $longitude, businessUnitId: $businessUnitId, depotTypeId: $depotTypeId, depotStatus: $depotStatus, businessUnit: $businessUnit, depotType: $depotType, internalArea: $internalArea, internalAreaId: $internalAreaId, createdDate: $createdDate)';
+    return 'Depot(id: $id, name: $name, location: $location, latitude: $latitude, longitude: $longitude, businessUnitId: $businessUnitId, depotTypeId: $depotTypeId, depotStatus: $depotStatus, businessUnit: $businessUnit, depotType: $depotType, internalArea: $internalArea, internalAreaId: $internalAreaId, createdDate: $createdDate, cluster: $cluster, internalRegion: $internalRegion)';
   }
 
   @override
@@ -972,7 +1004,10 @@ class _$DepotImpl extends _Depot {
             (identical(other.internalAreaId, internalAreaId) ||
                 other.internalAreaId == internalAreaId) &&
             (identical(other.createdDate, createdDate) ||
-                other.createdDate == createdDate));
+                other.createdDate == createdDate) &&
+            (identical(other.cluster, cluster) || other.cluster == cluster) &&
+            (identical(other.internalRegion, internalRegion) ||
+                other.internalRegion == internalRegion));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -991,7 +1026,9 @@ class _$DepotImpl extends _Depot {
       depotType,
       internalArea,
       internalAreaId,
-      createdDate);
+      createdDate,
+      cluster,
+      internalRegion);
 
   /// Create a copy of Depot
   /// with the given fields replaced by the non-null parameter values.
@@ -1023,7 +1060,9 @@ abstract class _Depot extends Depot {
       final DepotType? depotType,
       final InternalArea? internalArea,
       final int? internalAreaId,
-      final DateTime? createdDate}) = _$DepotImpl;
+      final DateTime? createdDate,
+      final String? cluster,
+      final String? internalRegion}) = _$DepotImpl;
   const _Depot._() : super._();
 
   factory _Depot.fromJson(Map<String, dynamic> json) = _$DepotImpl.fromJson;
@@ -1054,6 +1093,10 @@ abstract class _Depot extends Depot {
   int? get internalAreaId;
   @override
   DateTime? get createdDate;
+  @override
+  String? get cluster;
+  @override
+  String? get internalRegion;
 
   /// Create a copy of Depot
   /// with the given fields replaced by the non-null parameter values.

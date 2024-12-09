@@ -64,6 +64,8 @@ class Depot with _$Depot {
     InternalArea? internalArea,
     int? internalAreaId,
     DateTime? createdDate,
+    String? cluster,
+    String? internalRegion,
   }) = _Depot;
 
   factory Depot.fromJson(Map<String, dynamic> json) => _$DepotFromJson(json);

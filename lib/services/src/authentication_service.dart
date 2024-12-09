@@ -1,5 +1,4 @@
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
-import 'package:motocode_core/models/src/contracts_module.dart';
 import 'package:motocode_core/motocode_core.dart';
 
 /// Service to handle authentication
@@ -85,7 +84,8 @@ class AuthenticationService {
   ///
   /// [passwordRequestModel] The [PasswordRequestModel] containing the user's information.
   Future<void> changePasswordMobile(
-          PasswordRequestModel passwordRequestModel) =>
+    PasswordRequestModel passwordRequestModel,
+  ) =>
       _apiClient
           .changePasswordMobile(passwordRequestModel.toJson())
           .catchError((error) {
