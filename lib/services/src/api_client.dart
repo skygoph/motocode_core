@@ -72,7 +72,8 @@ abstract class ApiClient {
 
   /// ********** Depots API ********** ///
   @GET('/depots')
-  Future<List<Depot>> getDepots(@Query() String? clusterOrRegion);
+  Future<List<Depot>> getDepots(
+      @Query("clusterOrRegion") String? clusterOrRegion);
   @GET('/depots/{id}')
   Future<Depot> getDepot(@Path('id') int depotId);
   @POST('/depots')
