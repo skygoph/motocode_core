@@ -1,5 +1,21 @@
 # Release Notes
 
+## 1.1.1
+
+Wrong Variable Name
+
+## 1.1.0
+
+Wrong Variable Name
+
+## 1.0.9
+
+Update mapToRequest of UserRole to List string
+
+## 1.0.8
+
+Update mapToRequest of UserRole to List string
+
 ## 1.0.7
 
 Update getDepots method to accept clusterOrRegion parameter in ApiClient and DepotsService

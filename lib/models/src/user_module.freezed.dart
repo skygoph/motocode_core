@@ -34,7 +34,7 @@ mixin _$User {
   double? get latitude => throw _privateConstructorUsedError;
   double? get longitude => throw _privateConstructorUsedError;
   String? get password => throw _privateConstructorUsedError;
-  String? get roleName => throw _privateConstructorUsedError;
+  List<String>? get roleNames => throw _privateConstructorUsedError;
   int? get userStatus => throw _privateConstructorUsedError;
   Department? get department => throw _privateConstructorUsedError;
   BusinessUnit? get businessUnit => throw _privateConstructorUsedError;
@@ -73,7 +73,7 @@ abstract class $UserCopyWith<$Res> {
       double? latitude,
       double? longitude,
       String? password,
-      String? roleName,
+      List<String>? roleNames,
       int? userStatus,
       Department? department,
       BusinessUnit? businessUnit,
@@ -118,7 +118,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? latitude = freezed,
     Object? longitude = freezed,
     Object? password = freezed,
-    Object? roleName = freezed,
+    Object? roleNames = freezed,
     Object? userStatus = freezed,
     Object? department = freezed,
     Object? businessUnit = freezed,
@@ -185,10 +185,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String?,
-      roleName: freezed == roleName
-          ? _value.roleName
-          : roleName // ignore: cast_nullable_to_non_nullable
-              as String?,
+      roleNames: freezed == roleNames
+          ? _value.roleNames
+          : roleNames // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       userStatus: freezed == userStatus
           ? _value.userStatus
           : userStatus // ignore: cast_nullable_to_non_nullable
@@ -303,7 +303,7 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       double? latitude,
       double? longitude,
       String? password,
-      String? roleName,
+      List<String>? roleNames,
       int? userStatus,
       Department? department,
       BusinessUnit? businessUnit,
@@ -349,7 +349,7 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? latitude = freezed,
     Object? longitude = freezed,
     Object? password = freezed,
-    Object? roleName = freezed,
+    Object? roleNames = freezed,
     Object? userStatus = freezed,
     Object? department = freezed,
     Object? businessUnit = freezed,
@@ -416,10 +416,10 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String?,
-      roleName: freezed == roleName
-          ? _value.roleName
-          : roleName // ignore: cast_nullable_to_non_nullable
-              as String?,
+      roleNames: freezed == roleNames
+          ? _value._roleNames
+          : roleNames // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       userStatus: freezed == userStatus
           ? _value.userStatus
           : userStatus // ignore: cast_nullable_to_non_nullable
@@ -474,7 +474,7 @@ class _$UserImpl extends _User {
       this.latitude,
       this.longitude,
       this.password,
-      this.roleName,
+      final List<String>? roleNames,
       this.userStatus,
       this.department,
       this.businessUnit,
@@ -483,7 +483,8 @@ class _$UserImpl extends _User {
       final List<UserRole>? userRoles,
       final List<Depot>? depots,
       final List<Status>? statuses})
-      : _userRoles = userRoles,
+      : _roleNames = roleNames,
+        _userRoles = userRoles,
         _depots = depots,
         _statuses = statuses,
         super._();
@@ -519,8 +520,16 @@ class _$UserImpl extends _User {
   final double? longitude;
   @override
   final String? password;
+  final List<String>? _roleNames;
   @override
-  final String? roleName;
+  List<String>? get roleNames {
+    final value = _roleNames;
+    if (value == null) return null;
+    if (_roleNames is EqualUnmodifiableListView) return _roleNames;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final int? userStatus;
   @override
@@ -563,7 +572,7 @@ class _$UserImpl extends _User {
 
   @override
   String toString() {
-    return 'User(id: $id, firstName: $firstName, lastName: $lastName, email: $email, statusId: $statusId, departmentId: $departmentId, businessUnitId: $businessUnitId, positionId: $positionId, creatorId: $creatorId, createdDate: $createdDate, userRoleId: $userRoleId, latitude: $latitude, longitude: $longitude, password: $password, roleName: $roleName, userStatus: $userStatus, department: $department, businessUnit: $businessUnit, position: $position, status: $status, userRoles: $userRoles, depots: $depots, statuses: $statuses)';
+    return 'User(id: $id, firstName: $firstName, lastName: $lastName, email: $email, statusId: $statusId, departmentId: $departmentId, businessUnitId: $businessUnitId, positionId: $positionId, creatorId: $creatorId, createdDate: $createdDate, userRoleId: $userRoleId, latitude: $latitude, longitude: $longitude, password: $password, roleNames: $roleNames, userStatus: $userStatus, department: $department, businessUnit: $businessUnit, position: $position, status: $status, userRoles: $userRoles, depots: $depots, statuses: $statuses)';
   }
 
   @override
@@ -597,8 +606,8 @@ class _$UserImpl extends _User {
                 other.longitude == longitude) &&
             (identical(other.password, password) ||
                 other.password == password) &&
-            (identical(other.roleName, roleName) ||
-                other.roleName == roleName) &&
+            const DeepCollectionEquality()
+                .equals(other._roleNames, _roleNames) &&
             (identical(other.userStatus, userStatus) ||
                 other.userStatus == userStatus) &&
             (identical(other.department, department) ||
@@ -632,7 +641,7 @@ class _$UserImpl extends _User {
         latitude,
         longitude,
         password,
-        roleName,
+        const DeepCollectionEquality().hash(_roleNames),
         userStatus,
         department,
         businessUnit,
@@ -675,7 +684,7 @@ abstract class _User extends User {
       final double? latitude,
       final double? longitude,
       final String? password,
-      final String? roleName,
+      final List<String>? roleNames,
       final int? userStatus,
       final Department? department,
       final BusinessUnit? businessUnit,
@@ -717,7 +726,7 @@ abstract class _User extends User {
   @override
   String? get password;
   @override
-  String? get roleName;
+  List<String>? get roleNames;
   @override
   int? get userStatus;
   @override
