@@ -40,9 +40,11 @@ abstract class ApiClient {
   Future<LoginResponse> loginWithEmailAndPasswordV2(
       @Body() Map<String, dynamic> data);
   @POST('/password/ChangePassword')
-  Future<void> changePassword(@Body() Map<String, dynamic> data);
+  Future<ChangePasswordResponse> changePassword(
+      @Body() Map<String, dynamic> data);
   @POST('/password/MobileChangePassword')
-  Future<void> changePasswordMobile(@Body() Map<String, dynamic> data);
+  Future<ChangePasswordResponse> changePasswordMobile(
+      @Body() Map<String, dynamic> data);
   @POST('/password/ForgotPassword/{email}')
   Future<void> forgotPassword(@Path('email') String email);
   @POST('/password/ResetPassword')
@@ -257,6 +259,11 @@ List<InternalArea> deserializeInternalAreaList(List<dynamic> data) {
 
 LoginResponse deserializeLoginResponse(Map<String, dynamic> data) {
   return LoginResponse.fromJson(data);
+}
+
+ChangePasswordResponse deserializeChangePasswordResponse(
+    Map<String, dynamic> data) {
+  return ChangePasswordResponse.fromJson(data);
 }
 
 Order deserializeOrder(Map<String, dynamic> data) {

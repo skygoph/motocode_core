@@ -64,11 +64,13 @@ class AuthenticationService {
   /// Attempts to change the password of a user.
   ///
   /// This function sends a request to the API client with the provided [PasswordRequestModel].
-  /// If the password change is successful, it returns a [Future<void>]. In case of an error,
+  /// If the password change is successful, it returns a [Future<ChangePasswordResponse>]. In case of an error,
   /// the error is recorded in Crashlytics and the error is rethrown.
   ///
   /// [passwordRequestModel] The [PasswordRequestModel] containing the user's information.
-  Future<void> changePassword(PasswordRequestModel passwordRequestModel) =>
+  Future<ChangePasswordResponse> changePassword(
+    PasswordRequestModel passwordRequestModel,
+  ) =>
       _apiClient
           .changePassword(passwordRequestModel.toJson())
           .catchError((error) {
@@ -83,7 +85,7 @@ class AuthenticationService {
   /// the error is recorded in Crashlytics and the error is rethrown.
   ///
   /// [passwordRequestModel] The [PasswordRequestModel] containing the user's information.
-  Future<void> changePasswordMobile(
+  Future<ChangePasswordResponse> changePasswordMobile(
     PasswordRequestModel passwordRequestModel,
   ) =>
       _apiClient

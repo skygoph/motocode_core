@@ -1,4 +1,15 @@
 # Release Notes
+## 1.1.4
+
+Fix ChangePasswordResponse deserializer
+
+## 1.1.3
+
+Fix ChangePasswordResponse getter
+
+## 1.1.2
+
+Change Password Response from void to ChangePasswordResponse()
 
 ## 1.1.1
 

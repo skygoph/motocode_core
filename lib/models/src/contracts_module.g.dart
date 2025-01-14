@@ -43,3 +43,17 @@ Map<String, dynamic> _$$LoginResponseImplToJson(_$LoginResponseImpl instance) =>
       'expiresAt': instance.expiresAt.toIso8601String(),
       'user': instance.user,
     };
+
+_$ChangePasswordResponseImpl _$$ChangePasswordResponseImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ChangePasswordResponseImpl(
+      flag: json['flag'] as bool,
+      message: json['message'] as String,
+    );
+
+Map<String, dynamic> _$$ChangePasswordResponseImplToJson(
+        _$ChangePasswordResponseImpl instance) =>
+    <String, dynamic>{
+      'flag': instance.flag,
+      'message': instance.message,
+    };

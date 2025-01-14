@@ -31,3 +31,14 @@ class LoginResponse with _$LoginResponse {
   factory LoginResponse.fromJson(Map<String, dynamic> json) =>
       _$LoginResponseFromJson(json);
 }
+
+@freezed
+class ChangePasswordResponse with _$ChangePasswordResponse {
+  factory ChangePasswordResponse({
+    required bool flag,
+    required String message,
+  }) = _ChangePasswordResponse;
+
+  factory ChangePasswordResponse.fromJson(Map<String, dynamic> json) =>
+      _$ChangePasswordResponseFromJson(json);
+}
