@@ -1,4 +1,9 @@
 # Release Notes
+
+## 1.1.5
+
+Update mapToRequest of Scannedqrcodes
+
 ## 1.1.4
 
 Fix ChangePasswordResponse deserializer

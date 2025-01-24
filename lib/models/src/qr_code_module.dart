@@ -65,6 +65,18 @@ class ScannedQrCode with _$ScannedQrCode {
 
   factory ScannedQrCode.fromJson(Map<String, dynamic> json) =>
       _$ScannedQrCodeFromJson(json);
+
+  Map<String, dynamic> mapToRequest() => {
+        'id': id,
+        'chassisNumber': qrCode?.chassisNumber,
+        'engineNumber': qrCode?.engineNumber,
+        'model': qrCode?.model,
+        'color': qrCode?.color,
+        'depotId': depot?.id ?? depotId,
+        'statusId': status?.id ?? statusId,
+        'userId': user?.id ?? userId,
+        'remarks': remarks,
+      };
 }
 
 @freezed

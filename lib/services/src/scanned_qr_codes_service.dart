@@ -33,7 +33,7 @@ class ScannedQrCodesService {
 
   /// Create a scanned qr code.
   Future<void> createScannedQrCode(ScannedQrCode data) =>
-      _apiClient.createScannedQrCode(data.toJson()).catchError((error) {
+      _apiClient.createScannedQrCode(data.mapToRequest()).catchError((error) {
         _crashlytics?.recordError(error, StackTrace.current);
         throw error;
       });
