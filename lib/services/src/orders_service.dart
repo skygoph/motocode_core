@@ -63,4 +63,11 @@ class OrdersService {
         unawaited(_crashlytics?.recordError(error, StackTrace.current));
         throw error;
       });
+
+  // Delete order
+  Future<void> deleteOrder(int id) =>
+      _apiClient.deleteOrder(id: id).catchError((error) async {
+        unawaited(_crashlytics?.recordError(error, StackTrace.current));
+        throw error;
+      });
 }

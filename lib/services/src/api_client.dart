@@ -143,6 +143,9 @@ abstract class ApiClient {
   Future<List<OrderForPrinting>> getOrderForPrinting(
       @Path('purchaseNumber') String purchaseNumber);
 
+  @DELETE('/orders/{id}')
+  Future<void> deleteOrder({@Path('id') required int id});
+
   /// ********** Roles API ********** ///
   @GET('/roles')
   Future<List<UserRole>> getRoles();
