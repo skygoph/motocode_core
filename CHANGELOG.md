@@ -1,5 +1,19 @@
 # Release Notes
 
+## 1.1.9
+
+add order object in the qrcode model
+
+## 1.1.8
+
+generate Report: Change Datatype to String 
+
+## 1.1.7
+
+Add Generate Report endpoint
+
+# Release Notes
+
 ## 1.1.6
 
 Add Delete Order endpoint

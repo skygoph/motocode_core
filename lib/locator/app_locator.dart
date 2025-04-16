@@ -68,4 +68,6 @@ Future<void> setupMotocodeLocator({
       () => StickerService(apiClient: apiClient, crashlytics: crashlytics));
   locator.registerLazySingleton(
       () => AreaService(apiClient: apiClient, crashlytics: crashlytics));
+  locator.registerLazySingleton(
+      () => ReportService(apiClient: apiClient, crashlytics: crashlytics));
 }

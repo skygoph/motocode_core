@@ -13,6 +13,13 @@ abstract class ApiClient {
   @GET('/accounts/sig-keys')
   Future<Signature> getSignatureKeys();
 
+  /// ********** Report API ********** ///
+  @GET('/report/generate')
+  Future<List<ScannedQrCode>> generateReport(
+    @Query('businessUnitId') int businessUnitId,
+    @Query('date') String date,
+  );
+
   /// ********** Areas API ********** ///
   @GET('/area/islands')
   Future<List<IslandGroup>> getIslandGroups();

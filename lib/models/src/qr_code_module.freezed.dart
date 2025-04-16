@@ -26,6 +26,7 @@ mixin _$QrCode {
   String? get color => throw _privateConstructorUsedError;
   String? get controlNumber => throw _privateConstructorUsedError;
   int? get id => throw _privateConstructorUsedError;
+  Order? get order => throw _privateConstructorUsedError;
   String? get signature => throw _privateConstructorUsedError;
   String? get identifier => throw _privateConstructorUsedError;
 
@@ -50,8 +51,11 @@ abstract class $QrCodeCopyWith<$Res> {
       String? color,
       String? controlNumber,
       int? id,
+      Order? order,
       String? signature,
       String? identifier});
+
+  $OrderCopyWith<$Res>? get order;
 }
 
 /// @nodoc
@@ -75,6 +79,7 @@ class _$QrCodeCopyWithImpl<$Res, $Val extends QrCode>
     Object? color = freezed,
     Object? controlNumber = freezed,
     Object? id = freezed,
+    Object? order = freezed,
     Object? signature = freezed,
     Object? identifier = freezed,
   }) {
@@ -103,6 +108,10 @@ class _$QrCodeCopyWithImpl<$Res, $Val extends QrCode>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
+      order: freezed == order
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as Order?,
       signature: freezed == signature
           ? _value.signature
           : signature // ignore: cast_nullable_to_non_nullable
@@ -112,6 +121,20 @@ class _$QrCodeCopyWithImpl<$Res, $Val extends QrCode>
           : identifier // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
+  }
+
+  /// Create a copy of QrCode
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $OrderCopyWith<$Res>? get order {
+    if (_value.order == null) {
+      return null;
+    }
+
+    return $OrderCopyWith<$Res>(_value.order!, (value) {
+      return _then(_value.copyWith(order: value) as $Val);
+    });
   }
 }
 
@@ -129,8 +152,12 @@ abstract class _$$QrCodeImplCopyWith<$Res> implements $QrCodeCopyWith<$Res> {
       String? color,
       String? controlNumber,
       int? id,
+      Order? order,
       String? signature,
       String? identifier});
+
+  @override
+  $OrderCopyWith<$Res>? get order;
 }
 
 /// @nodoc
@@ -152,6 +179,7 @@ class __$$QrCodeImplCopyWithImpl<$Res>
     Object? color = freezed,
     Object? controlNumber = freezed,
     Object? id = freezed,
+    Object? order = freezed,
     Object? signature = freezed,
     Object? identifier = freezed,
   }) {
@@ -180,6 +208,10 @@ class __$$QrCodeImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
+      order: freezed == order
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as Order?,
       signature: freezed == signature
           ? _value.signature
           : signature // ignore: cast_nullable_to_non_nullable
@@ -202,6 +234,7 @@ class _$QrCodeImpl extends _QrCode {
       this.color,
       this.controlNumber,
       this.id,
+      this.order,
       this.signature,
       this.identifier})
       : super._();
@@ -222,13 +255,15 @@ class _$QrCodeImpl extends _QrCode {
   @override
   final int? id;
   @override
+  final Order? order;
+  @override
   final String? signature;
   @override
   final String? identifier;
 
   @override
   String toString() {
-    return 'QrCode(chassisNumber: $chassisNumber, engineNumber: $engineNumber, model: $model, color: $color, controlNumber: $controlNumber, id: $id, signature: $signature, identifier: $identifier)';
+    return 'QrCode(chassisNumber: $chassisNumber, engineNumber: $engineNumber, model: $model, color: $color, controlNumber: $controlNumber, id: $id, order: $order, signature: $signature, identifier: $identifier)';
   }
 
   @override
@@ -245,6 +280,7 @@ class _$QrCodeImpl extends _QrCode {
             (identical(other.controlNumber, controlNumber) ||
                 other.controlNumber == controlNumber) &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.order, order) || other.order == order) &&
             (identical(other.signature, signature) ||
                 other.signature == signature) &&
             (identical(other.identifier, identifier) ||
@@ -254,7 +290,7 @@ class _$QrCodeImpl extends _QrCode {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, chassisNumber, engineNumber,
-      model, color, controlNumber, id, signature, identifier);
+      model, color, controlNumber, id, order, signature, identifier);
 
   /// Create a copy of QrCode
   /// with the given fields replaced by the non-null parameter values.
@@ -280,6 +316,7 @@ abstract class _QrCode extends QrCode {
       final String? color,
       final String? controlNumber,
       final int? id,
+      final Order? order,
       final String? signature,
       final String? identifier}) = _$QrCodeImpl;
   const _QrCode._() : super._();
@@ -298,6 +335,8 @@ abstract class _QrCode extends QrCode {
   String? get controlNumber;
   @override
   int? get id;
+  @override
+  Order? get order;
   @override
   String? get signature;
   @override

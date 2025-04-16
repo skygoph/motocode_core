@@ -13,6 +13,9 @@ _$QrCodeImpl _$$QrCodeImplFromJson(Map<String, dynamic> json) => _$QrCodeImpl(
       color: json['color'] as String?,
       controlNumber: json['controlNumber'] as String?,
       id: (json['id'] as num?)?.toInt(),
+      order: json['order'] == null
+          ? null
+          : Order.fromJson(json['order'] as Map<String, dynamic>),
       signature: json['signature'] as String?,
       identifier: json['identifier'] as String?,
     );
@@ -25,6 +28,7 @@ Map<String, dynamic> _$$QrCodeImplToJson(_$QrCodeImpl instance) =>
       'color': instance.color,
       'controlNumber': instance.controlNumber,
       'id': instance.id,
+      'order': instance.order,
       'signature': instance.signature,
       'identifier': instance.identifier,
     };

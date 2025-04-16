@@ -10,6 +10,7 @@ export 'src/enrollments_service.dart';
 export 'src/orders_service.dart';
 export 'src/positions_service.dart';
 export 'src/qr_codes_service.dart';
+export 'src/report_service.dart';
 export 'src/roles_service.dart';
 export 'src/scanned_qr_codes_service.dart';
 export 'src/statuses_service.dart';

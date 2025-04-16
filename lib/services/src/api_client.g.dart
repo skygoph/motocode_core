@@ -55,6 +55,48 @@ class _ApiClient implements ApiClient {
   }
 
   @override
+  Future<List<ScannedQrCode>> generateReport(
+    int businessUnitId,
+    String date,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'businessUnitId': businessUnitId,
+      r'date': date,
+    };
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<List<ScannedQrCode>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/report/generate',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<ScannedQrCode> _value;
+    try {
+      _value = await compute(
+        deserializeScannedQrCodeList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
   Future<List<IslandGroup>> getIslandGroups() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};

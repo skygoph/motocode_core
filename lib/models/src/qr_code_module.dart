@@ -17,6 +17,7 @@ class QrCode with _$QrCode {
     String? color,
     String? controlNumber,
     int? id,
+    Order? order,
     String? signature,
     String? identifier,
   }) = _QrCode;
