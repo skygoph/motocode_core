@@ -166,7 +166,13 @@ abstract class ApiClient {
 
   /// ********** ScannedQrCodes API ********** ///
   @GET('/scanned-qr-codes')
-  Future<List<ScannedQrCode>> getScannedQrCodes();
+  Future<PaginatedResponse<ScannedQrCode>> getScannedQrCodes(
+    @Query('page') int page,
+    @Query('PageSize') int pageSize,
+    @Query('searchTerm') String? searchQuery,
+    @Query('sortColumn') String? sortColumn,
+    @Query('sortOrder') String? sortOrder,
+  );
   @GET('/scanned-qr-codes/{id}')
   Future<ScannedQrCode> getScannedQrCode(@Path('id') int scannedQrCodeId);
   @POST('/scanned-qr-codes')
@@ -230,6 +236,12 @@ abstract class ApiClient {
 // **************************************************************************
 // ************************   Deserializers  ********************************
 // **************************************************************************
+//PaginatedResponse deserializer
+PaginatedResponse<ScannedQrCode> deserializePaginatedResponseScannedQrCode(
+        Map<String, dynamic> data) =>
+    PaginatedResponse<ScannedQrCode>.fromJson(
+        data, (data) => ScannedQrCode.fromJson(data as Map<String, dynamic>));
+
 Signature deserializeSignature(Map<String, dynamic> data) {
   return Signature.fromJson(data);
 }

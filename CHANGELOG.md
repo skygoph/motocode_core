@@ -1,5 +1,9 @@
 # Release Notes
 
+## 1.2.0
+
+Move PaginatedQRCodeService to motocode_core
+
 ## 1.1.9
 
 add order object in the qrcode model

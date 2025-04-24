@@ -1684,12 +1684,25 @@ class _ApiClient implements ApiClient {
   }
 
   @override
-  Future<List<ScannedQrCode>> getScannedQrCodes() async {
+  Future<PaginatedResponse<ScannedQrCode>> getScannedQrCodes(
+    int page,
+    int pageSize,
+    String? searchQuery,
+    String? sortColumn,
+    String? sortOrder,
+  ) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'page': page,
+      r'PageSize': pageSize,
+      r'searchTerm': searchQuery,
+      r'sortColumn': sortColumn,
+      r'sortOrder': sortOrder,
+    };
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<ScannedQrCode>>(Options(
+    final _options = _setStreamType<PaginatedResponse<ScannedQrCode>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -1705,13 +1718,11 @@ class _ApiClient implements ApiClient {
           _dio.options.baseUrl,
           baseUrl,
         )));
-    final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<ScannedQrCode> _value;
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late PaginatedResponse<ScannedQrCode> _value;
     try {
       _value = await compute(
-        deserializeScannedQrCodeList,
-        _result.data!.cast<Map<String, dynamic>>(),
-      );
+          deserializePaginatedResponseScannedQrCode, _result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

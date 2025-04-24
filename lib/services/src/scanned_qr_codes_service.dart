@@ -1,4 +1,5 @@
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:motocode_core/models/src/paginated_response.dart';
 import 'package:motocode_core/models/src/qr_code_module.dart';
 import 'package:motocode_core/services/src/api_client.dart';
 
@@ -18,11 +19,21 @@ class ScannedQrCodesService {
   final FirebaseCrashlytics? _crashlytics;
 
   /// Get all scanned qr codes.
-  Future<List<ScannedQrCode>> getScannedQrCodes() =>
-      _apiClient.getScannedQrCodes().catchError((error) {
-        _crashlytics?.recordError(error, StackTrace.current);
-        throw error;
-      });
+  Future<PaginatedResponse<ScannedQrCode>> getScannedQrCodes({
+    required int pageNumber,
+    required int pageSize,
+    String? searchQuery,
+    String? sortColumn,
+    String? sortOrder,
+  }) async {
+    return await _apiClient
+        .getScannedQrCodes(
+            pageNumber, pageSize, searchQuery, sortColumn, sortOrder)
+        .catchError((error) {
+      _crashlytics?.recordError(error, StackTrace.current);
+      throw error;
+    });
+  }
 
   /// Get a scanned qr code by id.
   Future<ScannedQrCode> getScannedQrCode(int scannedQrCodeId) =>
