@@ -371,6 +371,8 @@ mixin _$ScannedQrCode {
   String? get purchaseOrder => throw _privateConstructorUsedError;
   User? get user => throw _privateConstructorUsedError;
   String? get remarks => throw _privateConstructorUsedError;
+  List<ScannedQrCodeTag>? get scannedQrCodeTag =>
+      throw _privateConstructorUsedError;
 
   /// Serializes this ScannedQrCode to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -403,7 +405,8 @@ abstract class $ScannedQrCodeCopyWith<$Res> {
       String? orderId,
       String? purchaseOrder,
       User? user,
-      String? remarks});
+      String? remarks,
+      List<ScannedQrCodeTag>? scannedQrCodeTag});
 
   $DepotCopyWith<$Res>? get depot;
   $QrCodeCopyWith<$Res>? get qrCode;
@@ -442,6 +445,7 @@ class _$ScannedQrCodeCopyWithImpl<$Res, $Val extends ScannedQrCode>
     Object? purchaseOrder = freezed,
     Object? user = freezed,
     Object? remarks = freezed,
+    Object? scannedQrCodeTag = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -504,6 +508,10 @@ class _$ScannedQrCodeCopyWithImpl<$Res, $Val extends ScannedQrCode>
           ? _value.remarks
           : remarks // ignore: cast_nullable_to_non_nullable
               as String?,
+      scannedQrCodeTag: freezed == scannedQrCodeTag
+          ? _value.scannedQrCodeTag
+          : scannedQrCodeTag // ignore: cast_nullable_to_non_nullable
+              as List<ScannedQrCodeTag>?,
     ) as $Val);
   }
 
@@ -601,7 +609,8 @@ abstract class _$$ScannedQrCodeImplCopyWith<$Res>
       String? orderId,
       String? purchaseOrder,
       User? user,
-      String? remarks});
+      String? remarks,
+      List<ScannedQrCodeTag>? scannedQrCodeTag});
 
   @override
   $DepotCopyWith<$Res>? get depot;
@@ -643,6 +652,7 @@ class __$$ScannedQrCodeImplCopyWithImpl<$Res>
     Object? purchaseOrder = freezed,
     Object? user = freezed,
     Object? remarks = freezed,
+    Object? scannedQrCodeTag = freezed,
   }) {
     return _then(_$ScannedQrCodeImpl(
       id: freezed == id
@@ -705,6 +715,10 @@ class __$$ScannedQrCodeImplCopyWithImpl<$Res>
           ? _value.remarks
           : remarks // ignore: cast_nullable_to_non_nullable
               as String?,
+      scannedQrCodeTag: freezed == scannedQrCodeTag
+          ? _value._scannedQrCodeTag
+          : scannedQrCodeTag // ignore: cast_nullable_to_non_nullable
+              as List<ScannedQrCodeTag>?,
     ));
   }
 }
@@ -727,8 +741,10 @@ class _$ScannedQrCodeImpl extends _ScannedQrCode {
       this.orderId,
       this.purchaseOrder,
       this.user,
-      this.remarks})
-      : super._();
+      this.remarks,
+      final List<ScannedQrCodeTag>? scannedQrCodeTag})
+      : _scannedQrCodeTag = scannedQrCodeTag,
+        super._();
 
   factory _$ScannedQrCodeImpl.fromJson(Map<String, dynamic> json) =>
       _$$ScannedQrCodeImplFromJson(json);
@@ -763,10 +779,20 @@ class _$ScannedQrCodeImpl extends _ScannedQrCode {
   final User? user;
   @override
   final String? remarks;
+  final List<ScannedQrCodeTag>? _scannedQrCodeTag;
+  @override
+  List<ScannedQrCodeTag>? get scannedQrCodeTag {
+    final value = _scannedQrCodeTag;
+    if (value == null) return null;
+    if (_scannedQrCodeTag is EqualUnmodifiableListView)
+      return _scannedQrCodeTag;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
-    return 'ScannedQrCode(id: $id, qrCodeId: $qrCodeId, depotId: $depotId, statusId: $statusId, userId: $userId, createdDate: $createdDate, endedDate: $endedDate, depot: $depot, qrCode: $qrCode, status: $status, order: $order, orderId: $orderId, purchaseOrder: $purchaseOrder, user: $user, remarks: $remarks)';
+    return 'ScannedQrCode(id: $id, qrCodeId: $qrCodeId, depotId: $depotId, statusId: $statusId, userId: $userId, createdDate: $createdDate, endedDate: $endedDate, depot: $depot, qrCode: $qrCode, status: $status, order: $order, orderId: $orderId, purchaseOrder: $purchaseOrder, user: $user, remarks: $remarks, scannedQrCodeTag: $scannedQrCodeTag)';
   }
 
   @override
@@ -793,7 +819,9 @@ class _$ScannedQrCodeImpl extends _ScannedQrCode {
             (identical(other.purchaseOrder, purchaseOrder) ||
                 other.purchaseOrder == purchaseOrder) &&
             (identical(other.user, user) || other.user == user) &&
-            (identical(other.remarks, remarks) || other.remarks == remarks));
+            (identical(other.remarks, remarks) || other.remarks == remarks) &&
+            const DeepCollectionEquality()
+                .equals(other._scannedQrCodeTag, _scannedQrCodeTag));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -814,7 +842,8 @@ class _$ScannedQrCodeImpl extends _ScannedQrCode {
       orderId,
       purchaseOrder,
       user,
-      remarks);
+      remarks,
+      const DeepCollectionEquality().hash(_scannedQrCodeTag));
 
   /// Create a copy of ScannedQrCode
   /// with the given fields replaced by the non-null parameter values.
@@ -848,7 +877,8 @@ abstract class _ScannedQrCode extends ScannedQrCode {
       final String? orderId,
       final String? purchaseOrder,
       final User? user,
-      final String? remarks}) = _$ScannedQrCodeImpl;
+      final String? remarks,
+      final List<ScannedQrCodeTag>? scannedQrCodeTag}) = _$ScannedQrCodeImpl;
   const _ScannedQrCode._() : super._();
 
   factory _ScannedQrCode.fromJson(Map<String, dynamic> json) =
@@ -884,6 +914,8 @@ abstract class _ScannedQrCode extends ScannedQrCode {
   User? get user;
   @override
   String? get remarks;
+  @override
+  List<ScannedQrCodeTag>? get scannedQrCodeTag;
 
   /// Create a copy of ScannedQrCode
   /// with the given fields replaced by the non-null parameter values.

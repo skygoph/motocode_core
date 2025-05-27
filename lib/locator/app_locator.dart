@@ -70,4 +70,8 @@ Future<void> setupMotocodeLocator({
       () => AreaService(apiClient: apiClient, crashlytics: crashlytics));
   locator.registerLazySingleton(
       () => ReportService(apiClient: apiClient, crashlytics: crashlytics));
+  locator.registerLazySingleton(
+      () => TagsService(apiClient: apiClient, crashlytics: crashlytics));
+  locator.registerLazySingleton(() =>
+      ScannedQrcodeTagService(apiClient: apiClient, crashlytics: crashlytics));
 }

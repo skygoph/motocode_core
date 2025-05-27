@@ -1,5 +1,41 @@
 # Release Notes
 
+## 1.2.9
+
+Change RemoveAttachedTag validation to data.tagId from data.id
+
+## 1.2.8
+
+Change Attachtag map from TagIdList to TagId
+
+## 1.2.7
+
+Forgot to add deserialization for List<Tag>
+
+## 1.2.6
+
+Add Get list of tags **Not paginated used for dropdowns
+
+## 1.2.5
+
+Add AttachedOnUtc in ScannedQrCode Model
+
+## 1.2.4
+
+Set scannedQrCodeTag as list
+
+## 1.2.3
+
+Add Feature for Scanned Qrcode Tag: Created ScannedQrcodeTagModule, ScannedQrcodeTagService
+
+## 1.2.2
+
+Forgot to add the deserializeBaseCommandResponse
+
+## 1.2.1
+
+Add Feature for Tag: Created TagModule, TagsService
+
 ## 1.2.0
 
 Move PaginatedQRCodeService to motocode_core

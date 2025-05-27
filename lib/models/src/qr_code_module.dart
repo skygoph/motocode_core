@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:motocode_core/models/src/location_module.dart';
 import 'package:motocode_core/models/src/order_module.dart';
+import 'package:motocode_core/models/src/tag_module.dart';
 import 'package:motocode_core/models/src/user_module.dart';
 
 part 'qr_code_module.freezed.dart';
@@ -62,6 +63,7 @@ class ScannedQrCode with _$ScannedQrCode {
     String? purchaseOrder,
     User? user,
     String? remarks,
+    List<ScannedQrCodeTag>? scannedQrCodeTag,
   }) = _ScannedQrCode;
 
   factory ScannedQrCode.fromJson(Map<String, dynamic> json) =>

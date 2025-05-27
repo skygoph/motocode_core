@@ -231,6 +231,47 @@ abstract class ApiClient {
   Future<List<Position>> getPositionsWithUser(@Path('id') String userId);
   @GET('/users/{creatorId}/users')
   Future<List<User>> getUsersWithCreator(@Path('creatorId') String creatorId);
+
+  /// ************ Tags API ******************** ///
+  @GET('/tags/paginated')
+  Future<PaginatedResponse<Tag>> getPaginatedTags(
+    @Query('page') int page,
+    @Query('PageSize') int pageSize,
+    @Query('searchTerm') String? searchQuery,
+    @Query('onlyNoAttachedMc') bool? onlyNoAttachedMc,
+  );
+
+  @GET('/tags')
+  Future<List<Tag>> getTags();
+
+  @GET('/tags/{id}')
+  Future<Tag> GetTagDetails(@Path('id') int tagId);
+
+  @POST('/tags')
+  Future<BaseCommandResponse> createTag(@Body() Map<String, dynamic> data);
+
+  @PUT('/tags')
+  Future<void> updateTag(@Body() Map<String, dynamic> data);
+
+  @DELETE('/tags')
+  Future<void> deleteTag(@Body() Map<String, dynamic> data);
+
+  /// ************ ScannedQrcodeTags API ******************** ///
+  @GET('/scanned-qrcode-tag/{tagId}')
+  Future<PaginatedResponse<ScannedQrCode>> GetAllScannedQrcodeByTag(
+    @Path('tagId') int tagId,
+    @Query('page') int page,
+    @Query('PageSize') int pageSize,
+    @Query('searchTerm') String? searchQuery,
+  );
+
+  @POST('/scanned-qrcode-tag')
+  Future<BaseCommandResponse> createScannedQrcodeTag(
+      @Body() Map<String, dynamic> data);
+
+  @DELETE('/scanned-qrcode-tag')
+  Future<BaseCommandResponse> deleteScannedQrcodeTag(
+      @Body() Map<String, dynamic> data);
 }
 
 // **************************************************************************
@@ -242,12 +283,25 @@ PaginatedResponse<ScannedQrCode> deserializePaginatedResponseScannedQrCode(
     PaginatedResponse<ScannedQrCode>.fromJson(
         data, (data) => ScannedQrCode.fromJson(data as Map<String, dynamic>));
 
+PaginatedResponse<Tag> deserializePaginatedResponseTag(
+        Map<String, dynamic> data) =>
+    PaginatedResponse<Tag>.fromJson(
+        data, (data) => Tag.fromJson(data as Map<String, dynamic>));
+
+BaseCommandResponse deserializeBaseCommandResponse(Map<String, dynamic> data) {
+  return BaseCommandResponse.fromJson(data);
+}
+
 Signature deserializeSignature(Map<String, dynamic> data) {
   return Signature.fromJson(data);
 }
 
 BusinessUnit deserializeBusinessUnit(Map<String, dynamic> data) {
   return BusinessUnit.fromJson(data);
+}
+
+Tag deserializeTag(Map<String, dynamic> data) {
+  return Tag.fromJson(data);
 }
 
 Department deserializeDepartment(Map<String, dynamic> data) {
@@ -322,6 +376,10 @@ UserRole deserializeUserRole(Map<String, dynamic> data) {
 
 List<BusinessUnit> deserializeBusinessUnitList(List<dynamic> data) {
   return data.map((e) => BusinessUnit.fromJson(e)).toList();
+}
+
+List<Tag> deserializeTagList(List<dynamic> data) {
+  return data.map((e) => Tag.fromJson(e)).toList();
 }
 
 List<Department> deserializeDepartmentList(List<dynamic> data) {

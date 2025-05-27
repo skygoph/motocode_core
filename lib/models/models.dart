@@ -1,3 +1,4 @@
+export 'src/base_command_response.dart';
 export 'src/contracts_module.dart';
 export 'src/enrolled_item.dart';
 export 'src/location_module.dart';
@@ -6,4 +7,5 @@ export 'src/order_module.dart';
 export 'src/paginated_response.dart';
 export 'src/qr_code_module.dart';
 export 'src/sticker_module.dart';
+export 'src/tag_module.dart';
 export 'src/user_module.dart';
