@@ -170,8 +170,9 @@ abstract class ApiClient {
     @Query('page') int page,
     @Query('PageSize') int pageSize,
     @Query('searchTerm') String? searchQuery,
-    @Query('sortColumn') String? sortColumn,
-    @Query('sortOrder') String? sortOrder,
+    @Query('depots') List<String>? depots,
+    @Query('statuses') List<String>? statuses,
+    @Query('tags') List<String>? tags,
   );
   @GET('/scanned-qr-codes/{id}')
   Future<ScannedQrCode> getScannedQrCode(@Path('id') int scannedQrCodeId);

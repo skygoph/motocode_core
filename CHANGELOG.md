@@ -1,5 +1,9 @@
 # Release Notes
 
+## 1.3.0
+
+Add new query parameter to the get-scanned-qrcodes endpoint
+
 ## 1.2.9
 
 Change RemoveAttachedTag validation to data.tagId from data.id

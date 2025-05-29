@@ -1688,16 +1688,18 @@ class _ApiClient implements ApiClient {
     int page,
     int pageSize,
     String? searchQuery,
-    String? sortColumn,
-    String? sortOrder,
+    List<String>? depots,
+    List<String>? statuses,
+    List<String>? tags,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'page': page,
       r'PageSize': pageSize,
       r'searchTerm': searchQuery,
-      r'sortColumn': sortColumn,
-      r'sortOrder': sortOrder,
+      r'depots': depots,
+      r'statuses': statuses,
+      r'tags': tags,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};

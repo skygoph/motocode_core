@@ -23,12 +23,19 @@ class ScannedQrCodesService {
     required int pageNumber,
     required int pageSize,
     String? searchQuery,
-    String? sortColumn,
-    String? sortOrder,
+    List<String>? depots,
+    List<String>? statuses,
+    List<String>? tags,
   }) async {
     return await _apiClient
         .getScannedQrCodes(
-            pageNumber, pageSize, searchQuery, sortColumn, sortOrder)
+      pageNumber,
+      pageSize,
+      searchQuery,
+      depots,
+      statuses,
+      tags,
+    )
         .catchError((error) {
       _crashlytics?.recordError(error, StackTrace.current);
       throw error;
