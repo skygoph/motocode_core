@@ -11,6 +11,7 @@ _$TagImpl _$$TagImplFromJson(Map<String, dynamic> json) => _$TagImpl(
       name: json['name'] as String?,
       createdBy: json['createdBy'] as String?,
       count: (json['count'] as num?)?.toInt(),
+      color: json['color'] as String?,
       createdOnUtc: json['createdOnUtc'] == null
           ? null
           : DateTime.parse(json['createdOnUtc'] as String),
@@ -26,6 +27,7 @@ Map<String, dynamic> _$$TagImplToJson(_$TagImpl instance) => <String, dynamic>{
       'name': instance.name,
       'createdBy': instance.createdBy,
       'count': instance.count,
+      'color': instance.color,
       'createdOnUtc': instance.createdOnUtc?.toIso8601String(),
       'user': instance.user,
       'updatedByUserId': instance.updatedByUserId,

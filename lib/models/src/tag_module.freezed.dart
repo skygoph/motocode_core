@@ -24,6 +24,7 @@ mixin _$Tag {
   String? get name => throw _privateConstructorUsedError;
   String? get createdBy => throw _privateConstructorUsedError;
   int? get count => throw _privateConstructorUsedError;
+  String? get color => throw _privateConstructorUsedError;
   DateTime? get createdOnUtc => throw _privateConstructorUsedError;
   User? get user => throw _privateConstructorUsedError;
   String? get updatedByUserId => throw _privateConstructorUsedError;
@@ -48,6 +49,7 @@ abstract class $TagCopyWith<$Res> {
       String? name,
       String? createdBy,
       int? count,
+      String? color,
       DateTime? createdOnUtc,
       User? user,
       String? updatedByUserId,
@@ -74,6 +76,7 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
     Object? name = freezed,
     Object? createdBy = freezed,
     Object? count = freezed,
+    Object? color = freezed,
     Object? createdOnUtc = freezed,
     Object? user = freezed,
     Object? updatedByUserId = freezed,
@@ -96,6 +99,10 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
               as int?,
+      color: freezed == color
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as String?,
       createdOnUtc: freezed == createdOnUtc
           ? _value.createdOnUtc
           : createdOnUtc // ignore: cast_nullable_to_non_nullable
@@ -141,6 +148,7 @@ abstract class _$$TagImplCopyWith<$Res> implements $TagCopyWith<$Res> {
       String? name,
       String? createdBy,
       int? count,
+      String? color,
       DateTime? createdOnUtc,
       User? user,
       String? updatedByUserId,
@@ -165,6 +173,7 @@ class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
     Object? name = freezed,
     Object? createdBy = freezed,
     Object? count = freezed,
+    Object? color = freezed,
     Object? createdOnUtc = freezed,
     Object? user = freezed,
     Object? updatedByUserId = freezed,
@@ -187,6 +196,10 @@ class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
               as int?,
+      color: freezed == color
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as String?,
       createdOnUtc: freezed == createdOnUtc
           ? _value.createdOnUtc
           : createdOnUtc // ignore: cast_nullable_to_non_nullable
@@ -215,6 +228,7 @@ class _$TagImpl extends _Tag {
       this.name,
       this.createdBy,
       this.count,
+      this.color,
       this.createdOnUtc,
       this.user,
       this.updatedByUserId,
@@ -233,6 +247,8 @@ class _$TagImpl extends _Tag {
   @override
   final int? count;
   @override
+  final String? color;
+  @override
   final DateTime? createdOnUtc;
   @override
   final User? user;
@@ -243,7 +259,7 @@ class _$TagImpl extends _Tag {
 
   @override
   String toString() {
-    return 'Tag(id: $id, name: $name, createdBy: $createdBy, count: $count, createdOnUtc: $createdOnUtc, user: $user, updatedByUserId: $updatedByUserId, deletedByUserId: $deletedByUserId)';
+    return 'Tag(id: $id, name: $name, createdBy: $createdBy, count: $count, color: $color, createdOnUtc: $createdOnUtc, user: $user, updatedByUserId: $updatedByUserId, deletedByUserId: $deletedByUserId)';
   }
 
   @override
@@ -256,6 +272,7 @@ class _$TagImpl extends _Tag {
             (identical(other.createdBy, createdBy) ||
                 other.createdBy == createdBy) &&
             (identical(other.count, count) || other.count == count) &&
+            (identical(other.color, color) || other.color == color) &&
             (identical(other.createdOnUtc, createdOnUtc) ||
                 other.createdOnUtc == createdOnUtc) &&
             (identical(other.user, user) || other.user == user) &&
@@ -268,7 +285,7 @@ class _$TagImpl extends _Tag {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, createdBy, count,
-      createdOnUtc, user, updatedByUserId, deletedByUserId);
+      color, createdOnUtc, user, updatedByUserId, deletedByUserId);
 
   /// Create a copy of Tag
   /// with the given fields replaced by the non-null parameter values.
@@ -292,6 +309,7 @@ abstract class _Tag extends Tag {
       final String? name,
       final String? createdBy,
       final int? count,
+      final String? color,
       final DateTime? createdOnUtc,
       final User? user,
       final String? updatedByUserId,
@@ -308,6 +326,8 @@ abstract class _Tag extends Tag {
   String? get createdBy;
   @override
   int? get count;
+  @override
+  String? get color;
   @override
   DateTime? get createdOnUtc;
   @override

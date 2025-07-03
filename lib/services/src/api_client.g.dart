@@ -1766,13 +1766,14 @@ class _ApiClient implements ApiClient {
   }
 
   @override
-  Future<void> createScannedQrCode(Map<String, dynamic> data) async {
+  Future<BaseCommandResponse> createScannedQrCode(
+      Map<String, dynamic> data) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    final _options = _setStreamType<void>(Options(
+    final _options = _setStreamType<BaseCommandResponse>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -1788,7 +1789,15 @@ class _ApiClient implements ApiClient {
           _dio.options.baseUrl,
           baseUrl,
         )));
-    await _dio.fetch<void>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late BaseCommandResponse _value;
+    try {
+      _value = await compute(deserializeBaseCommandResponse, _result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
   }
 
   @override

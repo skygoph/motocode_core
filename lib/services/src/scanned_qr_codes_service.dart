@@ -1,4 +1,5 @@
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:motocode_core/models/src/base_command_response.dart';
 import 'package:motocode_core/models/src/paginated_response.dart';
 import 'package:motocode_core/models/src/qr_code_module.dart';
 import 'package:motocode_core/services/src/api_client.dart';
@@ -50,7 +51,7 @@ class ScannedQrCodesService {
       });
 
   /// Create a scanned qr code.
-  Future<void> createScannedQrCode(ScannedQrCode data) =>
+  Future<BaseCommandResponse> createScannedQrCode(ScannedQrCode data) =>
       _apiClient.createScannedQrCode(data.mapToRequest()).catchError((error) {
         _crashlytics?.recordError(error, StackTrace.current);
         throw error;

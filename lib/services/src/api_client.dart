@@ -177,7 +177,8 @@ abstract class ApiClient {
   @GET('/scanned-qr-codes/{id}')
   Future<ScannedQrCode> getScannedQrCode(@Path('id') int scannedQrCodeId);
   @POST('/scanned-qr-codes')
-  Future<void> createScannedQrCode(@Body() Map<String, dynamic> data);
+  Future<BaseCommandResponse> createScannedQrCode(
+      @Body() Map<String, dynamic> data);
 
   /// ********** Sticker API ********** ///
   @GET('/sticker')

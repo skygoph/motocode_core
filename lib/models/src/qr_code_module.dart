@@ -63,6 +63,7 @@ class ScannedQrCode with _$ScannedQrCode {
     String? purchaseOrder,
     User? user,
     String? remarks,
+    List<int>? tagList,
     List<ScannedQrCodeTag>? scannedQrCodeTag,
   }) = _ScannedQrCode;
 
@@ -78,6 +79,7 @@ class ScannedQrCode with _$ScannedQrCode {
         'depotId': depot?.id ?? depotId,
         'statusId': status?.id ?? statusId,
         'userId': user?.id ?? userId,
+        'tagList': tagList,
         'remarks': remarks,
       };
 }

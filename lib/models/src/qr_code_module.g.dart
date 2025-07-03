@@ -64,6 +64,9 @@ _$ScannedQrCodeImpl _$$ScannedQrCodeImplFromJson(Map<String, dynamic> json) =>
           ? null
           : User.fromJson(json['user'] as Map<String, dynamic>),
       remarks: json['remarks'] as String?,
+      tagList: (json['tagList'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList(),
       scannedQrCodeTag: (json['scannedQrCodeTag'] as List<dynamic>?)
           ?.map((e) => ScannedQrCodeTag.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -86,6 +89,7 @@ Map<String, dynamic> _$$ScannedQrCodeImplToJson(_$ScannedQrCodeImpl instance) =>
       'purchaseOrder': instance.purchaseOrder,
       'user': instance.user,
       'remarks': instance.remarks,
+      'tagList': instance.tagList,
       'scannedQrCodeTag': instance.scannedQrCodeTag,
     };
 

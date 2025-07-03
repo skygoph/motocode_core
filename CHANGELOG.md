@@ -1,5 +1,19 @@
 # Release Notes
 
+## 2.0.2
+Ive mistakenly place the Color to the ScannedQrcodeTag Model
+
+## 2.0.1
+Forgot to Add Color in the Tag Model(The color will be in the db now)
+
+## 2.0.0
+Added Shared Components
+
+## 1.3.1
+
+Update createScannedQrCode endpoints response to BaseCommandResponse
+- Added the Taglist in the ScannedQrCodes mapToRequest
+
 ## 1.3.0
 
 Add new query parameter to the get-scanned-qrcodes endpoint

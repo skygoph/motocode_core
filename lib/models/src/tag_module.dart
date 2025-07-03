@@ -14,6 +14,7 @@ class Tag with _$Tag {
     String? name,
     String? createdBy,
     int? count,
+    String? color,
     DateTime? createdOnUtc,
     User? user,
     String? updatedByUserId,
