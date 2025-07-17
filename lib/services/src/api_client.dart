@@ -137,6 +137,8 @@ abstract class ApiClient {
   @GET('/qr-codes/{id}/scanned-qr-codes')
   Future<List<ScannedQrCode>> getScannedQrCodesWithQrCode(
       @Path('id') int qrCodeId);
+  @GET('/qr-codes/upload-validators')
+  Future<UploadValidators> GetUploadValidators();
 
   /// ********** Orders API ********** ///
   @GET('/orders')
@@ -426,6 +428,10 @@ List<User> deserializeUserList(List<dynamic> data) {
 
 List<UserRole> deserializeUserRoleList(List<dynamic> data) {
   return data.map((e) => UserRole.fromJson(e)).toList();
+}
+
+UploadValidators deserializeUploadValidators(Map<String, dynamic> data) {
+  return UploadValidators.fromJson(data);
 }
 
 // **************************************************************************

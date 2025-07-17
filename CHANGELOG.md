@@ -1,5 +1,8 @@
 # Release Notes
 
+## 2.0.3
+Add Enrollment Upload validator that fetches the current or existing orders,colors, and model
+
 ## 2.0.2
 Ive mistakenly place the Color to the ScannedQrcodeTag Model
 

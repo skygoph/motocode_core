@@ -56,3 +56,22 @@ Map<String, dynamic> _$$CreateEnrollmentResponseImplToJson(
       'successfulEnrollments': instance.successfulEnrollments,
       'failedEnrollments': instance.failedEnrollments,
     };
+
+_$UploadValidatorsImpl _$$UploadValidatorsImplFromJson(
+        Map<String, dynamic> json) =>
+    _$UploadValidatorsImpl(
+      models:
+          (json['models'] as List<dynamic>).map((e) => e as String).toList(),
+      colors:
+          (json['colors'] as List<dynamic>).map((e) => e as String).toList(),
+      orders:
+          (json['orders'] as List<dynamic>).map((e) => e as String).toList(),
+    );
+
+Map<String, dynamic> _$$UploadValidatorsImplToJson(
+        _$UploadValidatorsImpl instance) =>
+    <String, dynamic>{
+      'models': instance.models,
+      'colors': instance.colors,
+      'orders': instance.orders,
+    };

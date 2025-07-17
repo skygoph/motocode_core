@@ -26,4 +26,11 @@ class EnrollmentsService {
         unawaited(_crashlytics?.recordError(error, StackTrace.current));
         throw error;
       });
+
+  /// Get upload enrollment validators
+  Future<UploadValidators> getUploadValidators() async =>
+      _apiClient.GetUploadValidators().catchError((error) {
+        _crashlytics?.recordError(error, StackTrace.current);
+        throw error;
+      });
 }

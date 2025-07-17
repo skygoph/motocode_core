@@ -34,3 +34,15 @@ class CreateEnrollmentResponse with _$CreateEnrollmentResponse {
   factory CreateEnrollmentResponse.fromJson(Map<String, dynamic> json) =>
       _$CreateEnrollmentResponseFromJson(json);
 }
+
+@freezed
+class UploadValidators with _$UploadValidators {
+  factory UploadValidators({
+    required List<String> models,
+    required List<String> colors,
+    required List<String> orders,
+  }) = _UploadValidators;
+
+  factory UploadValidators.fromJson(Map<String, dynamic> json) =>
+      _$UploadValidatorsFromJson(json);
+}

@@ -606,3 +606,215 @@ abstract class _CreateEnrollmentResponse implements CreateEnrollmentResponse {
   _$$CreateEnrollmentResponseImplCopyWith<_$CreateEnrollmentResponseImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
+
+UploadValidators _$UploadValidatorsFromJson(Map<String, dynamic> json) {
+  return _UploadValidators.fromJson(json);
+}
+
+/// @nodoc
+mixin _$UploadValidators {
+  List<String> get models => throw _privateConstructorUsedError;
+  List<String> get colors => throw _privateConstructorUsedError;
+  List<String> get orders => throw _privateConstructorUsedError;
+
+  /// Serializes this UploadValidators to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of UploadValidators
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $UploadValidatorsCopyWith<UploadValidators> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UploadValidatorsCopyWith<$Res> {
+  factory $UploadValidatorsCopyWith(
+          UploadValidators value, $Res Function(UploadValidators) then) =
+      _$UploadValidatorsCopyWithImpl<$Res, UploadValidators>;
+  @useResult
+  $Res call({List<String> models, List<String> colors, List<String> orders});
+}
+
+/// @nodoc
+class _$UploadValidatorsCopyWithImpl<$Res, $Val extends UploadValidators>
+    implements $UploadValidatorsCopyWith<$Res> {
+  _$UploadValidatorsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of UploadValidators
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? models = null,
+    Object? colors = null,
+    Object? orders = null,
+  }) {
+    return _then(_value.copyWith(
+      models: null == models
+          ? _value.models
+          : models // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      colors: null == colors
+          ? _value.colors
+          : colors // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      orders: null == orders
+          ? _value.orders
+          : orders // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$UploadValidatorsImplCopyWith<$Res>
+    implements $UploadValidatorsCopyWith<$Res> {
+  factory _$$UploadValidatorsImplCopyWith(_$UploadValidatorsImpl value,
+          $Res Function(_$UploadValidatorsImpl) then) =
+      __$$UploadValidatorsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<String> models, List<String> colors, List<String> orders});
+}
+
+/// @nodoc
+class __$$UploadValidatorsImplCopyWithImpl<$Res>
+    extends _$UploadValidatorsCopyWithImpl<$Res, _$UploadValidatorsImpl>
+    implements _$$UploadValidatorsImplCopyWith<$Res> {
+  __$$UploadValidatorsImplCopyWithImpl(_$UploadValidatorsImpl _value,
+      $Res Function(_$UploadValidatorsImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UploadValidators
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? models = null,
+    Object? colors = null,
+    Object? orders = null,
+  }) {
+    return _then(_$UploadValidatorsImpl(
+      models: null == models
+          ? _value._models
+          : models // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      colors: null == colors
+          ? _value._colors
+          : colors // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      orders: null == orders
+          ? _value._orders
+          : orders // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$UploadValidatorsImpl implements _UploadValidators {
+  _$UploadValidatorsImpl(
+      {required final List<String> models,
+      required final List<String> colors,
+      required final List<String> orders})
+      : _models = models,
+        _colors = colors,
+        _orders = orders;
+
+  factory _$UploadValidatorsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UploadValidatorsImplFromJson(json);
+
+  final List<String> _models;
+  @override
+  List<String> get models {
+    if (_models is EqualUnmodifiableListView) return _models;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_models);
+  }
+
+  final List<String> _colors;
+  @override
+  List<String> get colors {
+    if (_colors is EqualUnmodifiableListView) return _colors;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_colors);
+  }
+
+  final List<String> _orders;
+  @override
+  List<String> get orders {
+    if (_orders is EqualUnmodifiableListView) return _orders;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_orders);
+  }
+
+  @override
+  String toString() {
+    return 'UploadValidators(models: $models, colors: $colors, orders: $orders)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UploadValidatorsImpl &&
+            const DeepCollectionEquality().equals(other._models, _models) &&
+            const DeepCollectionEquality().equals(other._colors, _colors) &&
+            const DeepCollectionEquality().equals(other._orders, _orders));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_models),
+      const DeepCollectionEquality().hash(_colors),
+      const DeepCollectionEquality().hash(_orders));
+
+  /// Create a copy of UploadValidators
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UploadValidatorsImplCopyWith<_$UploadValidatorsImpl> get copyWith =>
+      __$$UploadValidatorsImplCopyWithImpl<_$UploadValidatorsImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UploadValidatorsImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _UploadValidators implements UploadValidators {
+  factory _UploadValidators(
+      {required final List<String> models,
+      required final List<String> colors,
+      required final List<String> orders}) = _$UploadValidatorsImpl;
+
+  factory _UploadValidators.fromJson(Map<String, dynamic> json) =
+      _$UploadValidatorsImpl.fromJson;
+
+  @override
+  List<String> get models;
+  @override
+  List<String> get colors;
+  @override
+  List<String> get orders;
+
+  /// Create a copy of UploadValidators
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UploadValidatorsImplCopyWith<_$UploadValidatorsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
