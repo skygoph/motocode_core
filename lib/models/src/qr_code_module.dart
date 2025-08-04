@@ -85,6 +85,22 @@ class ScannedQrCode with _$ScannedQrCode {
 }
 
 @freezed
+class ScannedQrCodeHistory with _$ScannedQrCodeHistory {
+  const ScannedQrCodeHistory._();
+
+  @JsonSerializable(explicitToJson: true)
+  const factory ScannedQrCodeHistory({
+    required String date,
+    required String status,
+    required int scannedItemCount,
+    required List<ScannedQrCode> scannedItems,
+  }) = _ScannedQrCodeHistory;
+
+  factory ScannedQrCodeHistory.fromJson(Map<String, dynamic> json) =>
+      _$ScannedQrCodeHistoryFromJson(json);
+}
+
+@freezed
 class Status with _$Status {
   const Status._();
 

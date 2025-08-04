@@ -1,5 +1,14 @@
 # Release Notes
 
+## 2.0.6
+Encorrect Datatype in ScannedQrCodeHistory - the date should be String type
+
+## 2.0.5
+Add PaginatedScannedQrCodeByUserId endpoint that will response a ScannedQrCodeHistory which the scanned qr codes are groupby the created date
+
+## 2.0.4
+Add PaginatedOrders endpoint
+
 ## 2.0.3
 Add Enrollment Upload validator that fetches the current or existing orders,colors, and model
 

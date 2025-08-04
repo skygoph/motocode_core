@@ -93,6 +93,26 @@ Map<String, dynamic> _$$ScannedQrCodeImplToJson(_$ScannedQrCodeImpl instance) =>
       'scannedQrCodeTag': instance.scannedQrCodeTag,
     };
 
+_$ScannedQrCodeHistoryImpl _$$ScannedQrCodeHistoryImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ScannedQrCodeHistoryImpl(
+      date: json['date'] as String,
+      status: json['status'] as String,
+      scannedItemCount: (json['scannedItemCount'] as num).toInt(),
+      scannedItems: (json['scannedItems'] as List<dynamic>)
+          .map((e) => ScannedQrCode.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$ScannedQrCodeHistoryImplToJson(
+        _$ScannedQrCodeHistoryImpl instance) =>
+    <String, dynamic>{
+      'date': instance.date,
+      'status': instance.status,
+      'scannedItemCount': instance.scannedItemCount,
+      'scannedItems': instance.scannedItems.map((e) => e.toJson()).toList(),
+    };
+
 _$StatusImpl _$$StatusImplFromJson(Map<String, dynamic> json) => _$StatusImpl(
       id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,

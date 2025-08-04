@@ -1462,6 +1462,48 @@ class _ApiClient implements ApiClient {
   }
 
   @override
+  Future<PaginatedResponse<Order>> getPaginatedOrders(
+    int page,
+    int pageSize,
+    String? searchQuery,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'page': page,
+      r'PageSize': pageSize,
+      r'searchTerm': searchQuery,
+    };
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<PaginatedResponse<Order>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/orders/items-count',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late PaginatedResponse<Order> _value;
+    try {
+      _value = await compute(deserializePaginatedResponseOrder, _result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
   Future<Order> getOrder(String purchaseNumber) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -2288,34 +2330,43 @@ class _ApiClient implements ApiClient {
   }
 
   @override
-  Future<List<ScannedQrCode>> getScannedQrCodesWithUser(String userId) async {
+  Future<PaginatedResponse<ScannedQrCodeHistory>> getScannedQrCodesWithUser(
+    String userId,
+    int page,
+    int pageSize,
+    String? searchQuery,
+  ) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'Page': page,
+      r'PageSize': pageSize,
+      r'SearchTerm': searchQuery,
+    };
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<ScannedQrCode>>(Options(
+    final _options =
+        _setStreamType<PaginatedResponse<ScannedQrCodeHistory>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-        .compose(
-          _dio.options,
-          '/users/${userId}/scanned-qr-codes',
-          queryParameters: queryParameters,
-          data: _data,
-        )
-        .copyWith(
-            baseUrl: _combineBaseUrls(
-          _dio.options.baseUrl,
-          baseUrl,
-        )));
-    final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<ScannedQrCode> _value;
+            .compose(
+              _dio.options,
+              '/users/${userId}/scanned-qr-codes',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late PaginatedResponse<ScannedQrCodeHistory> _value;
     try {
       _value = await compute(
-        deserializeScannedQrCodeList,
-        _result.data!.cast<Map<String, dynamic>>(),
-      );
+          deserializePaginatedResponseScannedQrCodeHistory, _result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

@@ -24,6 +24,8 @@ mixin _$Order {
   String get purchaseOrder => throw _privateConstructorUsedError;
   String get invoiceNumber => throw _privateConstructorUsedError;
   DateTime get invoiceDate => throw _privateConstructorUsedError;
+  int? get itemCount => throw _privateConstructorUsedError;
+  int? get statusCount => throw _privateConstructorUsedError;
 
   /// Serializes this Order to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -43,7 +45,9 @@ abstract class $OrderCopyWith<$Res> {
       {int id,
       String purchaseOrder,
       String invoiceNumber,
-      DateTime invoiceDate});
+      DateTime invoiceDate,
+      int? itemCount,
+      int? statusCount});
 }
 
 /// @nodoc
@@ -65,6 +69,8 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
     Object? purchaseOrder = null,
     Object? invoiceNumber = null,
     Object? invoiceDate = null,
+    Object? itemCount = freezed,
+    Object? statusCount = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -83,6 +89,14 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
           ? _value.invoiceDate
           : invoiceDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      itemCount: freezed == itemCount
+          ? _value.itemCount
+          : itemCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      statusCount: freezed == statusCount
+          ? _value.statusCount
+          : statusCount // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 }
@@ -98,7 +112,9 @@ abstract class _$$OrderImplCopyWith<$Res> implements $OrderCopyWith<$Res> {
       {int id,
       String purchaseOrder,
       String invoiceNumber,
-      DateTime invoiceDate});
+      DateTime invoiceDate,
+      int? itemCount,
+      int? statusCount});
 }
 
 /// @nodoc
@@ -118,6 +134,8 @@ class __$$OrderImplCopyWithImpl<$Res>
     Object? purchaseOrder = null,
     Object? invoiceNumber = null,
     Object? invoiceDate = null,
+    Object? itemCount = freezed,
+    Object? statusCount = freezed,
   }) {
     return _then(_$OrderImpl(
       id: null == id
@@ -136,6 +154,14 @@ class __$$OrderImplCopyWithImpl<$Res>
           ? _value.invoiceDate
           : invoiceDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      itemCount: freezed == itemCount
+          ? _value.itemCount
+          : itemCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      statusCount: freezed == statusCount
+          ? _value.statusCount
+          : statusCount // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -147,7 +173,9 @@ class _$OrderImpl implements _Order {
       {required this.id,
       required this.purchaseOrder,
       required this.invoiceNumber,
-      required this.invoiceDate});
+      required this.invoiceDate,
+      this.itemCount,
+      this.statusCount});
 
   factory _$OrderImpl.fromJson(Map<String, dynamic> json) =>
       _$$OrderImplFromJson(json);
@@ -160,10 +188,14 @@ class _$OrderImpl implements _Order {
   final String invoiceNumber;
   @override
   final DateTime invoiceDate;
+  @override
+  final int? itemCount;
+  @override
+  final int? statusCount;
 
   @override
   String toString() {
-    return 'Order(id: $id, purchaseOrder: $purchaseOrder, invoiceNumber: $invoiceNumber, invoiceDate: $invoiceDate)';
+    return 'Order(id: $id, purchaseOrder: $purchaseOrder, invoiceNumber: $invoiceNumber, invoiceDate: $invoiceDate, itemCount: $itemCount, statusCount: $statusCount)';
   }
 
   @override
@@ -177,13 +209,17 @@ class _$OrderImpl implements _Order {
             (identical(other.invoiceNumber, invoiceNumber) ||
                 other.invoiceNumber == invoiceNumber) &&
             (identical(other.invoiceDate, invoiceDate) ||
-                other.invoiceDate == invoiceDate));
+                other.invoiceDate == invoiceDate) &&
+            (identical(other.itemCount, itemCount) ||
+                other.itemCount == itemCount) &&
+            (identical(other.statusCount, statusCount) ||
+                other.statusCount == statusCount));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, purchaseOrder, invoiceNumber, invoiceDate);
+  int get hashCode => Object.hash(runtimeType, id, purchaseOrder, invoiceNumber,
+      invoiceDate, itemCount, statusCount);
 
   /// Create a copy of Order
   /// with the given fields replaced by the non-null parameter values.
@@ -206,7 +242,9 @@ abstract class _Order implements Order {
       {required final int id,
       required final String purchaseOrder,
       required final String invoiceNumber,
-      required final DateTime invoiceDate}) = _$OrderImpl;
+      required final DateTime invoiceDate,
+      final int? itemCount,
+      final int? statusCount}) = _$OrderImpl;
 
   factory _Order.fromJson(Map<String, dynamic> json) = _$OrderImpl.fromJson;
 
@@ -218,6 +256,10 @@ abstract class _Order implements Order {
   String get invoiceNumber;
   @override
   DateTime get invoiceDate;
+  @override
+  int? get itemCount;
+  @override
+  int? get statusCount;
 
   /// Create a copy of Order
   /// with the given fields replaced by the non-null parameter values.

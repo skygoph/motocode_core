@@ -66,11 +66,24 @@ class UsersService {
   }
 
   /// Get all the list of [ScannedQrCode] from the [User].
-  Future<List<ScannedQrCode>> getScannedQrCodesWithUser(String userId) =>
-      _apiClient.getScannedQrCodesWithUser(userId).catchError((error) {
-        _crashlytics?.recordError(error, StackTrace.current);
-        throw error;
-      });
+  Future<PaginatedResponse<ScannedQrCodeHistory>> getScannedQrCodesWithUser({
+    required String userId,
+    required int page,
+    required int pageSize,
+    String? searchQuery,
+  }) async {
+    return await _apiClient
+        .getScannedQrCodesWithUser(
+      userId,
+      page,
+      pageSize,
+      searchQuery,
+    )
+        .catchError((error) {
+      _crashlytics?.recordError(error, StackTrace.current);
+      throw error;
+    });
+  }
 
   /// Get all the list of [Status] from the [User].
   Future<List<Status>> getStatusesWithUser(String userId) =>

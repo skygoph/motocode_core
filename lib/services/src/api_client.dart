@@ -143,6 +143,13 @@ abstract class ApiClient {
   /// ********** Orders API ********** ///
   @GET('/orders')
   Future<List<Order>> getOrders();
+
+  @GET('/orders/items-count')
+  Future<PaginatedResponse<Order>> getPaginatedOrders(
+    @Query('page') int page,
+    @Query('PageSize') int pageSize,
+    @Query('searchTerm') String? searchQuery,
+  );
   @GET('/orders/{purchaseNumber}')
   Future<Order> getOrder(@Path('purchaseNumber') String purchaseNumber);
   @GET('/orders/{purchaseNumber}/qr-codes')
@@ -219,9 +226,12 @@ abstract class ApiClient {
   @PUT('/users/{id}')
   Future<void> updateUser(
       @Path('id') String id, @Body() Map<String, dynamic> data);
-  @GET('/users/{id}/scanned-qr-codes')
-  Future<List<ScannedQrCode>> getScannedQrCodesWithUser(
-      @Path('id') String userId);
+  @GET('/users/{userId}/scanned-qr-codes')
+  Future<PaginatedResponse<ScannedQrCodeHistory>> getScannedQrCodesWithUser(
+      @Path('userId') String userId,
+      @Query('Page') int page,
+      @Query('PageSize') int pageSize,
+      @Query('SearchTerm') String? searchQuery);
   @GET('/users/{id}/statuses')
   Future<List<Status>> getStatusesWithUser(@Path('id') String userId);
   @GET('/users/{id}/depots')
@@ -286,6 +296,22 @@ PaginatedResponse<ScannedQrCode> deserializePaginatedResponseScannedQrCode(
         Map<String, dynamic> data) =>
     PaginatedResponse<ScannedQrCode>.fromJson(
         data, (data) => ScannedQrCode.fromJson(data as Map<String, dynamic>));
+
+PaginatedResponse<ScannedQrCodeHistory>
+    deserializePaginatedResponseScannedQrCodeHistory(
+            Map<String, dynamic> data) =>
+        PaginatedResponse<ScannedQrCodeHistory>.fromJson(
+            data,
+            (data) =>
+                ScannedQrCodeHistory.fromJson(data as Map<String, dynamic>));
+
+PaginatedResponse<Order> deserializePaginatedResponseOrder(
+  Map<String, dynamic> data,
+) =>
+    PaginatedResponse<Order>.fromJson(
+      data,
+      (data) => Order.fromJson(data as Map<String, dynamic>),
+    );
 
 PaginatedResponse<Tag> deserializePaginatedResponseTag(
         Map<String, dynamic> data) =>

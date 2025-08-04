@@ -955,6 +955,235 @@ abstract class _ScannedQrCode extends ScannedQrCode {
       throw _privateConstructorUsedError;
 }
 
+ScannedQrCodeHistory _$ScannedQrCodeHistoryFromJson(Map<String, dynamic> json) {
+  return _ScannedQrCodeHistory.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ScannedQrCodeHistory {
+  String get date => throw _privateConstructorUsedError;
+  String get status => throw _privateConstructorUsedError;
+  int get scannedItemCount => throw _privateConstructorUsedError;
+  List<ScannedQrCode> get scannedItems => throw _privateConstructorUsedError;
+
+  /// Serializes this ScannedQrCodeHistory to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of ScannedQrCodeHistory
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ScannedQrCodeHistoryCopyWith<ScannedQrCodeHistory> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ScannedQrCodeHistoryCopyWith<$Res> {
+  factory $ScannedQrCodeHistoryCopyWith(ScannedQrCodeHistory value,
+          $Res Function(ScannedQrCodeHistory) then) =
+      _$ScannedQrCodeHistoryCopyWithImpl<$Res, ScannedQrCodeHistory>;
+  @useResult
+  $Res call(
+      {String date,
+      String status,
+      int scannedItemCount,
+      List<ScannedQrCode> scannedItems});
+}
+
+/// @nodoc
+class _$ScannedQrCodeHistoryCopyWithImpl<$Res,
+        $Val extends ScannedQrCodeHistory>
+    implements $ScannedQrCodeHistoryCopyWith<$Res> {
+  _$ScannedQrCodeHistoryCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of ScannedQrCodeHistory
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? date = null,
+    Object? status = null,
+    Object? scannedItemCount = null,
+    Object? scannedItems = null,
+  }) {
+    return _then(_value.copyWith(
+      date: null == date
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as String,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      scannedItemCount: null == scannedItemCount
+          ? _value.scannedItemCount
+          : scannedItemCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      scannedItems: null == scannedItems
+          ? _value.scannedItems
+          : scannedItems // ignore: cast_nullable_to_non_nullable
+              as List<ScannedQrCode>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ScannedQrCodeHistoryImplCopyWith<$Res>
+    implements $ScannedQrCodeHistoryCopyWith<$Res> {
+  factory _$$ScannedQrCodeHistoryImplCopyWith(_$ScannedQrCodeHistoryImpl value,
+          $Res Function(_$ScannedQrCodeHistoryImpl) then) =
+      __$$ScannedQrCodeHistoryImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String date,
+      String status,
+      int scannedItemCount,
+      List<ScannedQrCode> scannedItems});
+}
+
+/// @nodoc
+class __$$ScannedQrCodeHistoryImplCopyWithImpl<$Res>
+    extends _$ScannedQrCodeHistoryCopyWithImpl<$Res, _$ScannedQrCodeHistoryImpl>
+    implements _$$ScannedQrCodeHistoryImplCopyWith<$Res> {
+  __$$ScannedQrCodeHistoryImplCopyWithImpl(_$ScannedQrCodeHistoryImpl _value,
+      $Res Function(_$ScannedQrCodeHistoryImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ScannedQrCodeHistory
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? date = null,
+    Object? status = null,
+    Object? scannedItemCount = null,
+    Object? scannedItems = null,
+  }) {
+    return _then(_$ScannedQrCodeHistoryImpl(
+      date: null == date
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as String,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      scannedItemCount: null == scannedItemCount
+          ? _value.scannedItemCount
+          : scannedItemCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      scannedItems: null == scannedItems
+          ? _value._scannedItems
+          : scannedItems // ignore: cast_nullable_to_non_nullable
+              as List<ScannedQrCode>,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(explicitToJson: true)
+class _$ScannedQrCodeHistoryImpl extends _ScannedQrCodeHistory {
+  const _$ScannedQrCodeHistoryImpl(
+      {required this.date,
+      required this.status,
+      required this.scannedItemCount,
+      required final List<ScannedQrCode> scannedItems})
+      : _scannedItems = scannedItems,
+        super._();
+
+  factory _$ScannedQrCodeHistoryImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ScannedQrCodeHistoryImplFromJson(json);
+
+  @override
+  final String date;
+  @override
+  final String status;
+  @override
+  final int scannedItemCount;
+  final List<ScannedQrCode> _scannedItems;
+  @override
+  List<ScannedQrCode> get scannedItems {
+    if (_scannedItems is EqualUnmodifiableListView) return _scannedItems;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_scannedItems);
+  }
+
+  @override
+  String toString() {
+    return 'ScannedQrCodeHistory(date: $date, status: $status, scannedItemCount: $scannedItemCount, scannedItems: $scannedItems)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ScannedQrCodeHistoryImpl &&
+            (identical(other.date, date) || other.date == date) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.scannedItemCount, scannedItemCount) ||
+                other.scannedItemCount == scannedItemCount) &&
+            const DeepCollectionEquality()
+                .equals(other._scannedItems, _scannedItems));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, date, status, scannedItemCount,
+      const DeepCollectionEquality().hash(_scannedItems));
+
+  /// Create a copy of ScannedQrCodeHistory
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ScannedQrCodeHistoryImplCopyWith<_$ScannedQrCodeHistoryImpl>
+      get copyWith =>
+          __$$ScannedQrCodeHistoryImplCopyWithImpl<_$ScannedQrCodeHistoryImpl>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ScannedQrCodeHistoryImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ScannedQrCodeHistory extends ScannedQrCodeHistory {
+  const factory _ScannedQrCodeHistory(
+          {required final String date,
+          required final String status,
+          required final int scannedItemCount,
+          required final List<ScannedQrCode> scannedItems}) =
+      _$ScannedQrCodeHistoryImpl;
+  const _ScannedQrCodeHistory._() : super._();
+
+  factory _ScannedQrCodeHistory.fromJson(Map<String, dynamic> json) =
+      _$ScannedQrCodeHistoryImpl.fromJson;
+
+  @override
+  String get date;
+  @override
+  String get status;
+  @override
+  int get scannedItemCount;
+  @override
+  List<ScannedQrCode> get scannedItems;
+
+  /// Create a copy of ScannedQrCodeHistory
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ScannedQrCodeHistoryImplCopyWith<_$ScannedQrCodeHistoryImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
 Status _$StatusFromJson(Map<String, dynamic> json) {
   return _Status.fromJson(json);
 }

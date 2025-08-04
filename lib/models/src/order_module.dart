@@ -10,6 +10,8 @@ class Order with _$Order {
     required String purchaseOrder,
     required String invoiceNumber,
     required DateTime invoiceDate,
+    int? itemCount,
+    int? statusCount,
   }) = _Order;
 
   factory Order.fromJson(Map<String, dynamic> json) => _$OrderFromJson(json);

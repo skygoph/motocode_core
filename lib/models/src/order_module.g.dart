@@ -11,6 +11,8 @@ _$OrderImpl _$$OrderImplFromJson(Map<String, dynamic> json) => _$OrderImpl(
       purchaseOrder: json['purchaseOrder'] as String,
       invoiceNumber: json['invoiceNumber'] as String,
       invoiceDate: DateTime.parse(json['invoiceDate'] as String),
+      itemCount: (json['itemCount'] as num?)?.toInt(),
+      statusCount: (json['statusCount'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$OrderImplToJson(_$OrderImpl instance) =>
@@ -19,6 +21,8 @@ Map<String, dynamic> _$$OrderImplToJson(_$OrderImpl instance) =>
       'purchaseOrder': instance.purchaseOrder,
       'invoiceNumber': instance.invoiceNumber,
       'invoiceDate': instance.invoiceDate.toIso8601String(),
+      'itemCount': instance.itemCount,
+      'statusCount': instance.statusCount,
     };
 
 _$OrderForPrintingImpl _$$OrderForPrintingImplFromJson(
