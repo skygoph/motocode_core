@@ -2634,6 +2634,7 @@ class _ApiClient implements ApiClient {
     int pageSize,
     String? searchQuery,
     bool? onlyNoAttachedMc,
+    int? tagCategoryId,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
@@ -2641,6 +2642,7 @@ class _ApiClient implements ApiClient {
       r'PageSize': pageSize,
       r'searchTerm': searchQuery,
       r'onlyNoAttachedMc': onlyNoAttachedMc,
+      r'tagCategoryId': tagCategoryId,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -2825,6 +2827,75 @@ class _ApiClient implements ApiClient {
           baseUrl,
         )));
     await _dio.fetch<void>(_options);
+  }
+
+  @override
+  Future<List<TagCategory>> getTagCategories() async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<List<TagCategory>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/tags/categories',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<TagCategory> _value;
+    try {
+      _value = await compute(
+        deserializeTagCategoryList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<Tag> GetTagByCategory(String category) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'category': category};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<Tag>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/tags/by-categories',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late Tag _value;
+    try {
+      _value = await compute(deserializeTag, _result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
   }
 
   @override

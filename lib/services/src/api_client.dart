@@ -257,6 +257,7 @@ abstract class ApiClient {
     @Query('PageSize') int pageSize,
     @Query('searchTerm') String? searchQuery,
     @Query('onlyNoAttachedMc') bool? onlyNoAttachedMc,
+    @Query('tagCategoryId') int? tagCategoryId,
   );
 
   @GET('/tags')
@@ -273,6 +274,12 @@ abstract class ApiClient {
 
   @DELETE('/tags')
   Future<void> deleteTag(@Body() Map<String, dynamic> data);
+
+  @GET('/tags/categories')
+  Future<List<TagCategory>> getTagCategories();
+
+  @GET('/tags/by-categories')
+  Future<Tag> GetTagByCategory(@Query('category') String category);
 
   /// ************ ScannedQrcodeTags API ******************** ///
   @GET('/scanned-qrcode-tag/{tagId}')

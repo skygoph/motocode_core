@@ -1,5 +1,10 @@
 # Release Notes
 
+## 2.0.9
+-New Endpoint Tag Categories
+-Add Category on Creating tag
+-Add filter query for fetching the paginated tags 
+
 ## 2.0.8
 Add Filter parameter for fetching Orders to support the multiple business unit setup
 

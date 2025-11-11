@@ -14,6 +14,160 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
+TagCategory _$TagCategoryFromJson(Map<String, dynamic> json) {
+  return _TagCategory.fromJson(json);
+}
+
+/// @nodoc
+mixin _$TagCategory {
+  int? get id => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TagCategoryCopyWith<TagCategory> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TagCategoryCopyWith<$Res> {
+  factory $TagCategoryCopyWith(
+          TagCategory value, $Res Function(TagCategory) then) =
+      _$TagCategoryCopyWithImpl<$Res, TagCategory>;
+  @useResult
+  $Res call({int? id, String? name});
+}
+
+/// @nodoc
+class _$TagCategoryCopyWithImpl<$Res, $Val extends TagCategory>
+    implements $TagCategoryCopyWith<$Res> {
+  _$TagCategoryCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$TagCategoryImplCopyWith<$Res>
+    implements $TagCategoryCopyWith<$Res> {
+  factory _$$TagCategoryImplCopyWith(
+          _$TagCategoryImpl value, $Res Function(_$TagCategoryImpl) then) =
+      __$$TagCategoryImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int? id, String? name});
+}
+
+/// @nodoc
+class __$$TagCategoryImplCopyWithImpl<$Res>
+    extends _$TagCategoryCopyWithImpl<$Res, _$TagCategoryImpl>
+    implements _$$TagCategoryImplCopyWith<$Res> {
+  __$$TagCategoryImplCopyWithImpl(
+      _$TagCategoryImpl _value, $Res Function(_$TagCategoryImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+  }) {
+    return _then(_$TagCategoryImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$TagCategoryImpl extends _TagCategory {
+  const _$TagCategoryImpl({this.id, this.name}) : super._();
+
+  factory _$TagCategoryImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TagCategoryImplFromJson(json);
+
+  @override
+  final int? id;
+  @override
+  final String? name;
+
+  @override
+  String toString() {
+    return 'TagCategory(id: $id, name: $name)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TagCategoryImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, name);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TagCategoryImplCopyWith<_$TagCategoryImpl> get copyWith =>
+      __$$TagCategoryImplCopyWithImpl<_$TagCategoryImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TagCategoryImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _TagCategory extends TagCategory {
+  const factory _TagCategory({final int? id, final String? name}) =
+      _$TagCategoryImpl;
+  const _TagCategory._() : super._();
+
+  factory _TagCategory.fromJson(Map<String, dynamic> json) =
+      _$TagCategoryImpl.fromJson;
+
+  @override
+  int? get id;
+  @override
+  String? get name;
+  @override
+  @JsonKey(ignore: true)
+  _$$TagCategoryImplCopyWith<_$TagCategoryImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 Tag _$TagFromJson(Map<String, dynamic> json) {
   return _Tag.fromJson(json);
 }
@@ -29,6 +183,7 @@ mixin _$Tag {
   User? get user => throw _privateConstructorUsedError;
   String? get updatedByUserId => throw _privateConstructorUsedError;
   String? get deletedByUserId => throw _privateConstructorUsedError;
+  int? get tagCategoryId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -49,7 +204,8 @@ abstract class $TagCopyWith<$Res> {
       DateTime? createdOnUtc,
       User? user,
       String? updatedByUserId,
-      String? deletedByUserId});
+      String? deletedByUserId,
+      int? tagCategoryId});
 
   $UserCopyWith<$Res>? get user;
 }
@@ -75,6 +231,7 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
     Object? user = freezed,
     Object? updatedByUserId = freezed,
     Object? deletedByUserId = freezed,
+    Object? tagCategoryId = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -113,6 +270,10 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
           ? _value.deletedByUserId
           : deletedByUserId // ignore: cast_nullable_to_non_nullable
               as String?,
+      tagCategoryId: freezed == tagCategoryId
+          ? _value.tagCategoryId
+          : tagCategoryId // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 
@@ -144,7 +305,8 @@ abstract class _$$TagImplCopyWith<$Res> implements $TagCopyWith<$Res> {
       DateTime? createdOnUtc,
       User? user,
       String? updatedByUserId,
-      String? deletedByUserId});
+      String? deletedByUserId,
+      int? tagCategoryId});
 
   @override
   $UserCopyWith<$Res>? get user;
@@ -168,6 +330,7 @@ class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
     Object? user = freezed,
     Object? updatedByUserId = freezed,
     Object? deletedByUserId = freezed,
+    Object? tagCategoryId = freezed,
   }) {
     return _then(_$TagImpl(
       id: freezed == id
@@ -206,6 +369,10 @@ class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
           ? _value.deletedByUserId
           : deletedByUserId // ignore: cast_nullable_to_non_nullable
               as String?,
+      tagCategoryId: freezed == tagCategoryId
+          ? _value.tagCategoryId
+          : tagCategoryId // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -222,7 +389,8 @@ class _$TagImpl extends _Tag {
       this.createdOnUtc,
       this.user,
       this.updatedByUserId,
-      this.deletedByUserId})
+      this.deletedByUserId,
+      this.tagCategoryId})
       : super._();
 
   factory _$TagImpl.fromJson(Map<String, dynamic> json) =>
@@ -246,10 +414,12 @@ class _$TagImpl extends _Tag {
   final String? updatedByUserId;
   @override
   final String? deletedByUserId;
+  @override
+  final int? tagCategoryId;
 
   @override
   String toString() {
-    return 'Tag(id: $id, name: $name, createdBy: $createdBy, count: $count, color: $color, createdOnUtc: $createdOnUtc, user: $user, updatedByUserId: $updatedByUserId, deletedByUserId: $deletedByUserId)';
+    return 'Tag(id: $id, name: $name, createdBy: $createdBy, count: $count, color: $color, createdOnUtc: $createdOnUtc, user: $user, updatedByUserId: $updatedByUserId, deletedByUserId: $deletedByUserId, tagCategoryId: $tagCategoryId)';
   }
 
   @override
@@ -269,13 +439,25 @@ class _$TagImpl extends _Tag {
             (identical(other.updatedByUserId, updatedByUserId) ||
                 other.updatedByUserId == updatedByUserId) &&
             (identical(other.deletedByUserId, deletedByUserId) ||
-                other.deletedByUserId == deletedByUserId));
+                other.deletedByUserId == deletedByUserId) &&
+            (identical(other.tagCategoryId, tagCategoryId) ||
+                other.tagCategoryId == tagCategoryId));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, createdBy, count,
-      color, createdOnUtc, user, updatedByUserId, deletedByUserId);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      createdBy,
+      count,
+      color,
+      createdOnUtc,
+      user,
+      updatedByUserId,
+      deletedByUserId,
+      tagCategoryId);
 
   @JsonKey(ignore: true)
   @override
@@ -301,7 +483,8 @@ abstract class _Tag extends Tag {
       final DateTime? createdOnUtc,
       final User? user,
       final String? updatedByUserId,
-      final String? deletedByUserId}) = _$TagImpl;
+      final String? deletedByUserId,
+      final int? tagCategoryId}) = _$TagImpl;
   const _Tag._() : super._();
 
   factory _Tag.fromJson(Map<String, dynamic> json) = _$TagImpl.fromJson;
@@ -324,6 +507,8 @@ abstract class _Tag extends Tag {
   String? get updatedByUserId;
   @override
   String? get deletedByUserId;
+  @override
+  int? get tagCategoryId;
   @override
   @JsonKey(ignore: true)
   _$$TagImplCopyWith<_$TagImpl> get copyWith =>

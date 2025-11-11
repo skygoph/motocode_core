@@ -22,6 +22,7 @@ class TagsService {
     required int pageSize,
     String? searchQuery,
     bool onlyNoAttachedMc = false,
+    int? tagCategoryId,
   }) async {
     return await _apiClient
         .getPaginatedTags(
@@ -29,6 +30,7 @@ class TagsService {
       pageSize,
       searchQuery,
       onlyNoAttachedMc,
+      tagCategoryId,
     )
         .catchError((error) {
       _crashlytics?.recordError(error, StackTrace.current);
@@ -77,4 +79,18 @@ class TagsService {
       throw error;
     });
   }
+
+  /// Get all TagCategories
+  Future<List<TagCategory>> getTagCategories() =>
+      _apiClient.getTagCategories().catchError((error) {
+        _crashlytics?.recordError(error, StackTrace.current);
+        throw error;
+      });
+
+  /// Get Tag by Category
+  Future<Tag> getTagByCategory(String category) =>
+      _apiClient.GetTagByCategory(category).catchError((error) {
+        _crashlytics?.recordError(error, StackTrace.current);
+        throw error;
+      });
 }

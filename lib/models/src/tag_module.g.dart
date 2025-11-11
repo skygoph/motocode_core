@@ -6,6 +6,18 @@ part of 'tag_module.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+_$TagCategoryImpl _$$TagCategoryImplFromJson(Map<String, dynamic> json) =>
+    _$TagCategoryImpl(
+      id: (json['id'] as num?)?.toInt(),
+      name: json['name'] as String?,
+    );
+
+Map<String, dynamic> _$$TagCategoryImplToJson(_$TagCategoryImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+    };
+
 _$TagImpl _$$TagImplFromJson(Map<String, dynamic> json) => _$TagImpl(
       id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
@@ -20,6 +32,7 @@ _$TagImpl _$$TagImplFromJson(Map<String, dynamic> json) => _$TagImpl(
           : User.fromJson(json['user'] as Map<String, dynamic>),
       updatedByUserId: json['updatedByUserId'] as String?,
       deletedByUserId: json['deletedByUserId'] as String?,
+      tagCategoryId: (json['tagCategoryId'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$TagImplToJson(_$TagImpl instance) => <String, dynamic>{
@@ -32,6 +45,7 @@ Map<String, dynamic> _$$TagImplToJson(_$TagImpl instance) => <String, dynamic>{
       'user': instance.user,
       'updatedByUserId': instance.updatedByUserId,
       'deletedByUserId': instance.deletedByUserId,
+      'tagCategoryId': instance.tagCategoryId,
     };
 
 _$ScannedQrCodeTagImpl _$$ScannedQrCodeTagImplFromJson(

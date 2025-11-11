@@ -6,6 +6,23 @@ part 'tag_module.freezed.dart';
 part 'tag_module.g.dart';
 
 @freezed
+class TagCategory with _$TagCategory {
+  const TagCategory._();
+
+  const factory TagCategory({
+    int? id,
+    String? name,
+  }) = _TagCategory;
+
+  factory TagCategory.fromJson(Map<String, dynamic> json) =>
+      _$TagCategoryFromJson(json);
+
+  Map<String, dynamic> createTagCategoryMapToRequest() => {
+        'name': name,
+      };
+}
+
+@freezed
 class Tag with _$Tag {
   const Tag._();
 
@@ -19,12 +36,14 @@ class Tag with _$Tag {
     User? user,
     String? updatedByUserId,
     String? deletedByUserId,
+    int? tagCategoryId,
   }) = _Tag;
 
   factory Tag.fromJson(Map<String, dynamic> json) => _$TagFromJson(json);
 
   Map<String, dynamic> createTagMapToRequest() => {
         'name': name,
+        'category': tagCategoryId,
         'createdBy': createdBy,
       };
 
