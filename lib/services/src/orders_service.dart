@@ -40,12 +40,14 @@ class OrdersService {
     required int pageNumber,
     required int pageSize,
     String? searchQuery,
+    int? businessUnitId,
   }) async {
     return await _apiClient
         .getPaginatedOrders(
       pageNumber,
       pageSize,
       searchQuery,
+      businessUnitId,
     )
         .catchError((error) {
       _crashlytics?.recordError(error, StackTrace.current);

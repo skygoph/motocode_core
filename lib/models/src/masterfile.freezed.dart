@@ -24,12 +24,8 @@ mixin _$MCColor {
   String get name => throw _privateConstructorUsedError;
   String get abbr => throw _privateConstructorUsedError;
 
-  /// Serializes this MCColor to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of MCColor
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $MCColorCopyWith<MCColor> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -51,8 +47,6 @@ class _$MCColorCopyWithImpl<$Res, $Val extends MCColor>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of MCColor
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -95,8 +89,6 @@ class __$$MCColorImplCopyWithImpl<$Res>
       _$MCColorImpl _value, $Res Function(_$MCColorImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of MCColor
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -151,13 +143,11 @@ class _$MCColorImpl implements _MCColor {
             (identical(other.abbr, abbr) || other.abbr == abbr));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, abbr);
 
-  /// Create a copy of MCColor
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$MCColorImplCopyWith<_$MCColorImpl> get copyWith =>
@@ -185,11 +175,8 @@ abstract class _MCColor implements MCColor {
   String get name;
   @override
   String get abbr;
-
-  /// Create a copy of MCColor
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$MCColorImplCopyWith<_$MCColorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -207,12 +194,8 @@ mixin _$MCModel {
   String get brand => throw _privateConstructorUsedError;
   int get status => throw _privateConstructorUsedError;
 
-  /// Serializes this MCModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of MCModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $MCModelCopyWith<MCModel> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -240,8 +223,6 @@ class _$MCModelCopyWithImpl<$Res, $Val extends MCModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of MCModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -305,8 +286,6 @@ class __$$MCModelImplCopyWithImpl<$Res>
       _$MCModelImpl _value, $Res Function(_$MCModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of MCModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -392,14 +371,12 @@ class _$MCModelImpl implements _MCModel {
             (identical(other.status, status) || other.status == status));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, id, productName, model, abbr, brand, status);
 
-  /// Create a copy of MCModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$MCModelImplCopyWith<_$MCModelImpl> get copyWith =>
@@ -436,11 +413,8 @@ abstract class _MCModel implements MCModel {
   String get brand;
   @override
   int get status;
-
-  /// Create a copy of MCModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$MCModelImplCopyWith<_$MCModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -454,12 +428,8 @@ mixin _$Signature {
   String get privateKey => throw _privateConstructorUsedError;
   String get publicKey => throw _privateConstructorUsedError;
 
-  /// Serializes this Signature to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of Signature
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $SignatureCopyWith<Signature> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -482,8 +452,6 @@ class _$SignatureCopyWithImpl<$Res, $Val extends Signature>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of Signature
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -522,8 +490,6 @@ class __$$SignatureImplCopyWithImpl<$Res>
       _$SignatureImpl _value, $Res Function(_$SignatureImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of Signature
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -572,13 +538,11 @@ class _$SignatureImpl implements _Signature {
                 other.publicKey == publicKey));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, privateKey, publicKey);
 
-  /// Create a copy of Signature
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SignatureImplCopyWith<_$SignatureImpl> get copyWith =>
@@ -604,11 +568,8 @@ abstract class _Signature implements Signature {
   String get privateKey;
   @override
   String get publicKey;
-
-  /// Create a copy of Signature
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SignatureImplCopyWith<_$SignatureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

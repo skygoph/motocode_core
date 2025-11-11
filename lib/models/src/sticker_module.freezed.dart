@@ -24,12 +24,8 @@ mixin _$Sticker {
   String? get name => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
 
-  /// Serializes this Sticker to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of Sticker
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $StickerCopyWith<Sticker> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -51,8 +47,6 @@ class _$StickerCopyWithImpl<$Res, $Val extends Sticker>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of Sticker
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -95,8 +89,6 @@ class __$$StickerImplCopyWithImpl<$Res>
       _$StickerImpl _value, $Res Function(_$StickerImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of Sticker
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -152,13 +144,11 @@ class _$StickerImpl extends _Sticker {
                 other.description == description));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, description);
 
-  /// Create a copy of Sticker
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$StickerImplCopyWith<_$StickerImpl> get copyWith =>
@@ -187,11 +177,8 @@ abstract class _Sticker extends Sticker {
   String? get name;
   @override
   String? get description;
-
-  /// Create a copy of Sticker
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$StickerImplCopyWith<_$StickerImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -210,12 +197,8 @@ mixin _$StickerTransaction {
   DateTime? get createdDate => throw _privateConstructorUsedError;
   DateTime? get endedDate => throw _privateConstructorUsedError;
 
-  /// Serializes this StickerTransaction to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of StickerTransaction
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $StickerTransactionCopyWith<StickerTransaction> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -249,8 +232,6 @@ class _$StickerTransactionCopyWithImpl<$Res, $Val extends StickerTransaction>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of StickerTransaction
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -294,8 +275,6 @@ class _$StickerTransactionCopyWithImpl<$Res, $Val extends StickerTransaction>
     ) as $Val);
   }
 
-  /// Create a copy of StickerTransaction
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $QrCodeCopyWith<$Res>? get qrCode {
@@ -308,8 +287,6 @@ class _$StickerTransactionCopyWithImpl<$Res, $Val extends StickerTransaction>
     });
   }
 
-  /// Create a copy of StickerTransaction
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StickerCopyWith<$Res>? get sticker {
@@ -354,8 +331,6 @@ class __$$StickerTransactionImplCopyWithImpl<$Res>
       $Res Function(_$StickerTransactionImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of StickerTransaction
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -454,14 +429,12 @@ class _$StickerTransactionImpl extends _StickerTransaction {
                 other.endedDate == endedDate));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, qrCode, qrCodeId, sticker,
       stickerId, createdDate, endedDate);
 
-  /// Create a copy of StickerTransaction
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$StickerTransactionImplCopyWith<_$StickerTransactionImpl> get copyWith =>
@@ -504,11 +477,8 @@ abstract class _StickerTransaction extends StickerTransaction {
   DateTime? get createdDate;
   @override
   DateTime? get endedDate;
-
-  /// Create a copy of StickerTransaction
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$StickerTransactionImplCopyWith<_$StickerTransactionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

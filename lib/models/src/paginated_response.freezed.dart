@@ -26,13 +26,9 @@ mixin _$PaginatedResponse<T> {
   int get totalRecords => throw _privateConstructorUsedError;
   List<T> get data => throw _privateConstructorUsedError;
 
-  /// Serializes this PaginatedResponse to a JSON map.
   Map<String, dynamic> toJson(Object? Function(T) toJsonT) =>
       throw _privateConstructorUsedError;
-
-  /// Create a copy of PaginatedResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $PaginatedResponseCopyWith<T, PaginatedResponse<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -57,8 +53,6 @@ class _$PaginatedResponseCopyWithImpl<T, $Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of PaginatedResponse
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -107,8 +101,6 @@ class __$$PaginatedResponseImplCopyWithImpl<T, $Res>
       $Res Function(_$PaginatedResponseImpl<T>) _then)
       : super(_value, _then);
 
-  /// Create a copy of PaginatedResponse
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -185,14 +177,12 @@ class _$PaginatedResponseImpl<T> implements _PaginatedResponse<T> {
             const DeepCollectionEquality().equals(other._data, _data));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, pageNumber, pageSize,
       totalRecords, const DeepCollectionEquality().hash(_data));
 
-  /// Create a copy of PaginatedResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$PaginatedResponseImplCopyWith<T, _$PaginatedResponseImpl<T>>
@@ -225,11 +215,8 @@ abstract class _PaginatedResponse<T> implements PaginatedResponse<T> {
   int get totalRecords;
   @override
   List<T> get data;
-
-  /// Create a copy of PaginatedResponse
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$PaginatedResponseImplCopyWith<T, _$PaginatedResponseImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -24,12 +24,8 @@ mixin _$BusinessUnit {
   String? get name => throw _privateConstructorUsedError;
   DateTime? get createdDate => throw _privateConstructorUsedError;
 
-  /// Serializes this BusinessUnit to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of BusinessUnit
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $BusinessUnitCopyWith<BusinessUnit> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -53,8 +49,6 @@ class _$BusinessUnitCopyWithImpl<$Res, $Val extends BusinessUnit>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of BusinessUnit
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -98,8 +92,6 @@ class __$$BusinessUnitImplCopyWithImpl<$Res>
       _$BusinessUnitImpl _value, $Res Function(_$BusinessUnitImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of BusinessUnit
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -155,13 +147,11 @@ class _$BusinessUnitImpl extends _BusinessUnit {
                 other.createdDate == createdDate));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, createdDate);
 
-  /// Create a copy of BusinessUnit
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$BusinessUnitImplCopyWith<_$BusinessUnitImpl> get copyWith =>
@@ -191,11 +181,8 @@ abstract class _BusinessUnit extends BusinessUnit {
   String? get name;
   @override
   DateTime? get createdDate;
-
-  /// Create a copy of BusinessUnit
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$BusinessUnitImplCopyWith<_$BusinessUnitImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -210,12 +197,8 @@ mixin _$Department {
   String? get name => throw _privateConstructorUsedError;
   DateTime? get createdDate => throw _privateConstructorUsedError;
 
-  /// Serializes this Department to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of Department
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $DepartmentCopyWith<Department> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -239,8 +222,6 @@ class _$DepartmentCopyWithImpl<$Res, $Val extends Department>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of Department
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -284,8 +265,6 @@ class __$$DepartmentImplCopyWithImpl<$Res>
       _$DepartmentImpl _value, $Res Function(_$DepartmentImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of Department
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -341,13 +320,11 @@ class _$DepartmentImpl extends _Department {
                 other.createdDate == createdDate));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, createdDate);
 
-  /// Create a copy of Department
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$DepartmentImplCopyWith<_$DepartmentImpl> get copyWith =>
@@ -377,11 +354,8 @@ abstract class _Department extends Department {
   String? get name;
   @override
   DateTime? get createdDate;
-
-  /// Create a copy of Department
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$DepartmentImplCopyWith<_$DepartmentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -397,12 +371,8 @@ mixin _$DepotType {
   String? get description => throw _privateConstructorUsedError;
   DateTime? get createdDate => throw _privateConstructorUsedError;
 
-  /// Serializes this DepotType to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of DepotType
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $DepotTypeCopyWith<DepotType> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -426,8 +396,6 @@ class _$DepotTypeCopyWithImpl<$Res, $Val extends DepotType>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of DepotType
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -477,8 +445,6 @@ class __$$DepotTypeImplCopyWithImpl<$Res>
       _$DepotTypeImpl _value, $Res Function(_$DepotTypeImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of DepotType
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -545,14 +511,12 @@ class _$DepotTypeImpl extends _DepotType {
                 other.createdDate == createdDate));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, id, name, description, createdDate);
 
-  /// Create a copy of DepotType
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$DepotTypeImplCopyWith<_$DepotTypeImpl> get copyWith =>
@@ -585,11 +549,8 @@ abstract class _DepotType extends DepotType {
   String? get description;
   @override
   DateTime? get createdDate;
-
-  /// Create a copy of DepotType
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$DepotTypeImplCopyWith<_$DepotTypeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -616,12 +577,8 @@ mixin _$Depot {
   String? get cluster => throw _privateConstructorUsedError;
   String? get internalRegion => throw _privateConstructorUsedError;
 
-  /// Serializes this Depot to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of Depot
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $DepotCopyWith<Depot> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -662,8 +619,6 @@ class _$DepotCopyWithImpl<$Res, $Val extends Depot>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of Depot
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -747,8 +702,6 @@ class _$DepotCopyWithImpl<$Res, $Val extends Depot>
     ) as $Val);
   }
 
-  /// Create a copy of Depot
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $BusinessUnitCopyWith<$Res>? get businessUnit {
@@ -761,8 +714,6 @@ class _$DepotCopyWithImpl<$Res, $Val extends Depot>
     });
   }
 
-  /// Create a copy of Depot
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DepotTypeCopyWith<$Res>? get depotType {
@@ -775,8 +726,6 @@ class _$DepotCopyWithImpl<$Res, $Val extends Depot>
     });
   }
 
-  /// Create a copy of Depot
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $InternalAreaCopyWith<$Res>? get internalArea {
@@ -830,8 +779,6 @@ class __$$DepotImplCopyWithImpl<$Res>
       _$DepotImpl _value, $Res Function(_$DepotImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of Depot
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1010,7 +957,7 @@ class _$DepotImpl extends _Depot {
                 other.internalRegion == internalRegion));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1030,9 +977,7 @@ class _$DepotImpl extends _Depot {
       cluster,
       internalRegion);
 
-  /// Create a copy of Depot
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$DepotImplCopyWith<_$DepotImpl> get copyWith =>
@@ -1097,11 +1042,8 @@ abstract class _Depot extends Depot {
   String? get cluster;
   @override
   String? get internalRegion;
-
-  /// Create a copy of Depot
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$DepotImplCopyWith<_$DepotImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1116,12 +1058,8 @@ mixin _$InternalArea {
   String get name => throw _privateConstructorUsedError;
   int? get regionalAreaId => throw _privateConstructorUsedError;
 
-  /// Serializes this InternalArea to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of InternalArea
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $InternalAreaCopyWith<InternalArea> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1145,8 +1083,6 @@ class _$InternalAreaCopyWithImpl<$Res, $Val extends InternalArea>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of InternalArea
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1190,8 +1126,6 @@ class __$$InternalAreaImplCopyWithImpl<$Res>
       _$InternalAreaImpl _value, $Res Function(_$InternalAreaImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of InternalArea
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1248,13 +1182,11 @@ class _$InternalAreaImpl implements _InternalArea {
                 other.regionalAreaId == regionalAreaId));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, regionalAreaId);
 
-  /// Create a copy of InternalArea
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$InternalAreaImplCopyWith<_$InternalAreaImpl> get copyWith =>
@@ -1283,11 +1215,8 @@ abstract class _InternalArea implements InternalArea {
   String get name;
   @override
   int? get regionalAreaId;
-
-  /// Create a copy of InternalArea
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$InternalAreaImplCopyWith<_$InternalAreaImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1302,12 +1231,8 @@ mixin _$IslandGroup {
   String get name => throw _privateConstructorUsedError;
   List<RegionalArea>? get regionalAreas => throw _privateConstructorUsedError;
 
-  /// Serializes this IslandGroup to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of IslandGroup
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $IslandGroupCopyWith<IslandGroup> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1331,8 +1256,6 @@ class _$IslandGroupCopyWithImpl<$Res, $Val extends IslandGroup>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of IslandGroup
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1376,8 +1299,6 @@ class __$$IslandGroupImplCopyWithImpl<$Res>
       _$IslandGroupImpl _value, $Res Function(_$IslandGroupImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of IslandGroup
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1444,14 +1365,12 @@ class _$IslandGroupImpl implements _IslandGroup {
                 .equals(other._regionalAreas, _regionalAreas));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, name,
       const DeepCollectionEquality().hash(_regionalAreas));
 
-  /// Create a copy of IslandGroup
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$IslandGroupImplCopyWith<_$IslandGroupImpl> get copyWith =>
@@ -1480,11 +1399,8 @@ abstract class _IslandGroup implements IslandGroup {
   String get name;
   @override
   List<RegionalArea>? get regionalAreas;
-
-  /// Create a copy of IslandGroup
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$IslandGroupImplCopyWith<_$IslandGroupImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1499,12 +1415,8 @@ mixin _$RegionalArea {
   String get name => throw _privateConstructorUsedError;
   int? get islandGroupId => throw _privateConstructorUsedError;
 
-  /// Serializes this RegionalArea to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of RegionalArea
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $RegionalAreaCopyWith<RegionalArea> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1528,8 +1440,6 @@ class _$RegionalAreaCopyWithImpl<$Res, $Val extends RegionalArea>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of RegionalArea
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1573,8 +1483,6 @@ class __$$RegionalAreaImplCopyWithImpl<$Res>
       _$RegionalAreaImpl _value, $Res Function(_$RegionalAreaImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of RegionalArea
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1631,13 +1539,11 @@ class _$RegionalAreaImpl implements _RegionalArea {
                 other.islandGroupId == islandGroupId));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, islandGroupId);
 
-  /// Create a copy of RegionalArea
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$RegionalAreaImplCopyWith<_$RegionalAreaImpl> get copyWith =>
@@ -1666,11 +1572,8 @@ abstract class _RegionalArea implements RegionalArea {
   String get name;
   @override
   int? get islandGroupId;
-
-  /// Create a copy of RegionalArea
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$RegionalAreaImplCopyWith<_$RegionalAreaImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

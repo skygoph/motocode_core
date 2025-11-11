@@ -149,6 +149,7 @@ abstract class ApiClient {
     @Query('page') int page,
     @Query('PageSize') int pageSize,
     @Query('searchTerm') String? searchQuery,
+    @Query('businessUnitId') int? businessUnitId,
   );
   @GET('/orders/{purchaseNumber}')
   Future<Order> getOrder(@Path('purchaseNumber') String purchaseNumber);

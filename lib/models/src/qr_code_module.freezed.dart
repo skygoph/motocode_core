@@ -30,12 +30,8 @@ mixin _$QrCode {
   String? get signature => throw _privateConstructorUsedError;
   String? get identifier => throw _privateConstructorUsedError;
 
-  /// Serializes this QrCode to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of QrCode
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $QrCodeCopyWith<QrCode> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -68,8 +64,6 @@ class _$QrCodeCopyWithImpl<$Res, $Val extends QrCode>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of QrCode
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -123,8 +117,6 @@ class _$QrCodeCopyWithImpl<$Res, $Val extends QrCode>
     ) as $Val);
   }
 
-  /// Create a copy of QrCode
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OrderCopyWith<$Res>? get order {
@@ -168,8 +160,6 @@ class __$$QrCodeImplCopyWithImpl<$Res>
       _$QrCodeImpl _value, $Res Function(_$QrCodeImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of QrCode
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -287,14 +277,12 @@ class _$QrCodeImpl extends _QrCode {
                 other.identifier == identifier));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, chassisNumber, engineNumber,
       model, color, controlNumber, id, order, signature, identifier);
 
-  /// Create a copy of QrCode
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$QrCodeImplCopyWith<_$QrCodeImpl> get copyWith =>
@@ -341,11 +329,8 @@ abstract class _QrCode extends QrCode {
   String? get signature;
   @override
   String? get identifier;
-
-  /// Create a copy of QrCode
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$QrCodeImplCopyWith<_$QrCodeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -375,12 +360,8 @@ mixin _$ScannedQrCode {
   List<ScannedQrCodeTag>? get scannedQrCodeTag =>
       throw _privateConstructorUsedError;
 
-  /// Serializes this ScannedQrCode to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of ScannedQrCode
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $ScannedQrCodeCopyWith<ScannedQrCode> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -427,8 +408,6 @@ class _$ScannedQrCodeCopyWithImpl<$Res, $Val extends ScannedQrCode>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ScannedQrCode
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -522,8 +501,6 @@ class _$ScannedQrCodeCopyWithImpl<$Res, $Val extends ScannedQrCode>
     ) as $Val);
   }
 
-  /// Create a copy of ScannedQrCode
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DepotCopyWith<$Res>? get depot {
@@ -536,8 +513,6 @@ class _$ScannedQrCodeCopyWithImpl<$Res, $Val extends ScannedQrCode>
     });
   }
 
-  /// Create a copy of ScannedQrCode
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $QrCodeCopyWith<$Res>? get qrCode {
@@ -550,8 +525,6 @@ class _$ScannedQrCodeCopyWithImpl<$Res, $Val extends ScannedQrCode>
     });
   }
 
-  /// Create a copy of ScannedQrCode
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StatusCopyWith<$Res>? get status {
@@ -564,8 +537,6 @@ class _$ScannedQrCodeCopyWithImpl<$Res, $Val extends ScannedQrCode>
     });
   }
 
-  /// Create a copy of ScannedQrCode
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OrderCopyWith<$Res>? get order {
@@ -578,8 +549,6 @@ class _$ScannedQrCodeCopyWithImpl<$Res, $Val extends ScannedQrCode>
     });
   }
 
-  /// Create a copy of ScannedQrCode
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get user {
@@ -640,8 +609,6 @@ class __$$ScannedQrCodeImplCopyWithImpl<$Res>
       _$ScannedQrCodeImpl _value, $Res Function(_$ScannedQrCodeImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ScannedQrCode
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -850,7 +817,7 @@ class _$ScannedQrCodeImpl extends _ScannedQrCode {
                 .equals(other._scannedQrCodeTag, _scannedQrCodeTag));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -872,9 +839,7 @@ class _$ScannedQrCodeImpl extends _ScannedQrCode {
       const DeepCollectionEquality().hash(_tagList),
       const DeepCollectionEquality().hash(_scannedQrCodeTag));
 
-  /// Create a copy of ScannedQrCode
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ScannedQrCodeImplCopyWith<_$ScannedQrCodeImpl> get copyWith =>
@@ -946,11 +911,8 @@ abstract class _ScannedQrCode extends ScannedQrCode {
   List<int>? get tagList;
   @override
   List<ScannedQrCodeTag>? get scannedQrCodeTag;
-
-  /// Create a copy of ScannedQrCode
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ScannedQrCodeImplCopyWith<_$ScannedQrCodeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -966,12 +928,8 @@ mixin _$ScannedQrCodeHistory {
   int get scannedItemCount => throw _privateConstructorUsedError;
   List<ScannedQrCode> get scannedItems => throw _privateConstructorUsedError;
 
-  /// Serializes this ScannedQrCodeHistory to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of ScannedQrCodeHistory
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $ScannedQrCodeHistoryCopyWith<ScannedQrCodeHistory> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1000,8 +958,6 @@ class _$ScannedQrCodeHistoryCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ScannedQrCodeHistory
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1054,8 +1010,6 @@ class __$$ScannedQrCodeHistoryImplCopyWithImpl<$Res>
       $Res Function(_$ScannedQrCodeHistoryImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ScannedQrCodeHistory
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1132,14 +1086,12 @@ class _$ScannedQrCodeHistoryImpl extends _ScannedQrCodeHistory {
                 .equals(other._scannedItems, _scannedItems));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, date, status, scannedItemCount,
       const DeepCollectionEquality().hash(_scannedItems));
 
-  /// Create a copy of ScannedQrCodeHistory
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ScannedQrCodeHistoryImplCopyWith<_$ScannedQrCodeHistoryImpl>
@@ -1175,11 +1127,8 @@ abstract class _ScannedQrCodeHistory extends ScannedQrCodeHistory {
   int get scannedItemCount;
   @override
   List<ScannedQrCode> get scannedItems;
-
-  /// Create a copy of ScannedQrCodeHistory
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ScannedQrCodeHistoryImplCopyWith<_$ScannedQrCodeHistoryImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1195,12 +1144,8 @@ mixin _$Status {
   String? get description => throw _privateConstructorUsedError;
   DateTime? get createdDate => throw _privateConstructorUsedError;
 
-  /// Serializes this Status to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of Status
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $StatusCopyWith<Status> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1223,8 +1168,6 @@ class _$StatusCopyWithImpl<$Res, $Val extends Status>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of Status
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1273,8 +1216,6 @@ class __$$StatusImplCopyWithImpl<$Res>
       _$StatusImpl _value, $Res Function(_$StatusImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of Status
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1341,14 +1282,12 @@ class _$StatusImpl extends _Status {
                 other.createdDate == createdDate));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, id, name, description, createdDate);
 
-  /// Create a copy of Status
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$StatusImplCopyWith<_$StatusImpl> get copyWith =>
@@ -1380,11 +1319,8 @@ abstract class _Status extends Status {
   String? get description;
   @override
   DateTime? get createdDate;
-
-  /// Create a copy of Status
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$StatusImplCopyWith<_$StatusImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

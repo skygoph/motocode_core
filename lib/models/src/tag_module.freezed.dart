@@ -30,12 +30,8 @@ mixin _$Tag {
   String? get updatedByUserId => throw _privateConstructorUsedError;
   String? get deletedByUserId => throw _privateConstructorUsedError;
 
-  /// Serializes this Tag to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of Tag
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $TagCopyWith<Tag> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -67,8 +63,6 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of Tag
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -122,8 +116,6 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
     ) as $Val);
   }
 
-  /// Create a copy of Tag
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get user {
@@ -164,8 +156,6 @@ class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
   __$$TagImplCopyWithImpl(_$TagImpl _value, $Res Function(_$TagImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of Tag
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -282,14 +272,12 @@ class _$TagImpl extends _Tag {
                 other.deletedByUserId == deletedByUserId));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, createdBy, count,
       color, createdOnUtc, user, updatedByUserId, deletedByUserId);
 
-  /// Create a copy of Tag
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$TagImplCopyWith<_$TagImpl> get copyWith =>
@@ -336,11 +324,8 @@ abstract class _Tag extends Tag {
   String? get updatedByUserId;
   @override
   String? get deletedByUserId;
-
-  /// Create a copy of Tag
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$TagImplCopyWith<_$TagImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -363,12 +348,8 @@ mixin _$ScannedQrCodeTag {
   Tag? get tag => throw _privateConstructorUsedError;
   ScannedQrCode? get scannedQrCode => throw _privateConstructorUsedError;
 
-  /// Serializes this ScannedQrCodeTag to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of ScannedQrCodeTag
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $ScannedQrCodeTagCopyWith<ScannedQrCodeTag> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -407,8 +388,6 @@ class _$ScannedQrCodeTagCopyWithImpl<$Res, $Val extends ScannedQrCodeTag>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ScannedQrCodeTag
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -472,8 +451,6 @@ class _$ScannedQrCodeTagCopyWithImpl<$Res, $Val extends ScannedQrCodeTag>
     ) as $Val);
   }
 
-  /// Create a copy of ScannedQrCodeTag
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get user {
@@ -486,8 +463,6 @@ class _$ScannedQrCodeTagCopyWithImpl<$Res, $Val extends ScannedQrCodeTag>
     });
   }
 
-  /// Create a copy of ScannedQrCodeTag
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TagCopyWith<$Res>? get tag {
@@ -500,8 +475,6 @@ class _$ScannedQrCodeTagCopyWithImpl<$Res, $Val extends ScannedQrCodeTag>
     });
   }
 
-  /// Create a copy of ScannedQrCodeTag
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ScannedQrCodeCopyWith<$Res>? get scannedQrCode {
@@ -552,8 +525,6 @@ class __$$ScannedQrCodeTagImplCopyWithImpl<$Res>
       $Res Function(_$ScannedQrCodeTagImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ScannedQrCodeTag
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -699,7 +670,7 @@ class _$ScannedQrCodeTagImpl extends _ScannedQrCodeTag {
                 other.scannedQrCode == scannedQrCode));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -715,9 +686,7 @@ class _$ScannedQrCodeTagImpl extends _ScannedQrCodeTag {
       tag,
       scannedQrCode);
 
-  /// Create a copy of ScannedQrCodeTag
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ScannedQrCodeTagImplCopyWith<_$ScannedQrCodeTagImpl> get copyWith =>
@@ -772,11 +741,8 @@ abstract class _ScannedQrCodeTag extends ScannedQrCodeTag {
   Tag? get tag;
   @override
   ScannedQrCode? get scannedQrCode;
-
-  /// Create a copy of ScannedQrCodeTag
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ScannedQrCodeTagImplCopyWith<_$ScannedQrCodeTagImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

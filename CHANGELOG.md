@@ -1,5 +1,8 @@
 # Release Notes
 
+## 2.0.8
+Add Filter parameter for fetching Orders to support the multiple business unit setup
+
 ## 2.0.7
 Revert the Add User/{id}/ScannedQrCodeByUser so that the older version wont be affected in the changes
 

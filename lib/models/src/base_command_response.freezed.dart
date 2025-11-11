@@ -25,12 +25,8 @@ mixin _$BaseCommandResponse {
   String get message => throw _privateConstructorUsedError;
   List<String> get errors => throw _privateConstructorUsedError;
 
-  /// Serializes this BaseCommandResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of BaseCommandResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $BaseCommandResponseCopyWith<BaseCommandResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -54,8 +50,6 @@ class _$BaseCommandResponseCopyWithImpl<$Res, $Val extends BaseCommandResponse>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of BaseCommandResponse
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -104,8 +98,6 @@ class __$$BaseCommandResponseImplCopyWithImpl<$Res>
       $Res Function(_$BaseCommandResponseImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of BaseCommandResponse
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -181,14 +173,12 @@ class _$BaseCommandResponseImpl implements _BaseCommandResponse {
             const DeepCollectionEquality().equals(other._errors, _errors));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, success, message,
       const DeepCollectionEquality().hash(_errors));
 
-  /// Create a copy of BaseCommandResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$BaseCommandResponseImplCopyWith<_$BaseCommandResponseImpl> get copyWith =>
@@ -221,11 +211,8 @@ abstract class _BaseCommandResponse implements BaseCommandResponse {
   String get message;
   @override
   List<String> get errors;
-
-  /// Create a copy of BaseCommandResponse
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$BaseCommandResponseImplCopyWith<_$BaseCommandResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

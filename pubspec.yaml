@@ -3,7 +3,7 @@ description: >
   Motocode is a QR Code system for tracking spare parts and motorcycle products.
   It improves inventory accuracy and operational efficiency by enabling
   real-time tracking and reducing manual data entry.
-version: 2.0.7
+version: 2.0.8
 repository: https://github.com/skygoph/motocode_core
 
 environment:

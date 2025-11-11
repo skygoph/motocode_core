@@ -33,12 +33,8 @@ mixin _$EnrollmentItem {
   String get invoiceNumber => throw _privateConstructorUsedError;
   String get invoiceDate => throw _privateConstructorUsedError;
 
-  /// Serializes this EnrollmentItem to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of EnrollmentItem
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $EnrollmentItemCopyWith<EnrollmentItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -74,8 +70,6 @@ class _$EnrollmentItemCopyWithImpl<$Res, $Val extends EnrollmentItem>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of EnrollmentItem
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -176,8 +170,6 @@ class __$$EnrollmentItemImplCopyWithImpl<$Res>
       _$EnrollmentItemImpl _value, $Res Function(_$EnrollmentItemImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of EnrollmentItem
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -324,7 +316,7 @@ class _$EnrollmentItemImpl implements _EnrollmentItem {
                 other.invoiceDate == invoiceDate));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -341,9 +333,7 @@ class _$EnrollmentItemImpl implements _EnrollmentItem {
       invoiceNumber,
       invoiceDate);
 
-  /// Create a copy of EnrollmentItem
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$EnrollmentItemImplCopyWith<_$EnrollmentItemImpl> get copyWith =>
@@ -400,11 +390,8 @@ abstract class _EnrollmentItem implements EnrollmentItem {
   String get invoiceNumber;
   @override
   String get invoiceDate;
-
-  /// Create a copy of EnrollmentItem
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$EnrollmentItemImplCopyWith<_$EnrollmentItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -419,12 +406,8 @@ mixin _$CreateEnrollmentResponse {
   List<String> get successfulEnrollments => throw _privateConstructorUsedError;
   List<String> get failedEnrollments => throw _privateConstructorUsedError;
 
-  /// Serializes this CreateEnrollmentResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of CreateEnrollmentResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $CreateEnrollmentResponseCopyWith<CreateEnrollmentResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -450,8 +433,6 @@ class _$CreateEnrollmentResponseCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of CreateEnrollmentResponse
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -494,8 +475,6 @@ class __$$CreateEnrollmentResponseImplCopyWithImpl<$Res>
       $Res Function(_$CreateEnrollmentResponseImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CreateEnrollmentResponse
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -561,16 +540,14 @@ class _$CreateEnrollmentResponseImpl implements _CreateEnrollmentResponse {
                 .equals(other._failedEnrollments, _failedEnrollments));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_successfulEnrollments),
       const DeepCollectionEquality().hash(_failedEnrollments));
 
-  /// Create a copy of CreateEnrollmentResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$CreateEnrollmentResponseImplCopyWith<_$CreateEnrollmentResponseImpl>
@@ -598,11 +575,8 @@ abstract class _CreateEnrollmentResponse implements CreateEnrollmentResponse {
   List<String> get successfulEnrollments;
   @override
   List<String> get failedEnrollments;
-
-  /// Create a copy of CreateEnrollmentResponse
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$CreateEnrollmentResponseImplCopyWith<_$CreateEnrollmentResponseImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -617,12 +591,8 @@ mixin _$UploadValidators {
   List<String> get colors => throw _privateConstructorUsedError;
   List<String> get orders => throw _privateConstructorUsedError;
 
-  /// Serializes this UploadValidators to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of UploadValidators
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $UploadValidatorsCopyWith<UploadValidators> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -646,8 +616,6 @@ class _$UploadValidatorsCopyWithImpl<$Res, $Val extends UploadValidators>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of UploadValidators
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -691,8 +659,6 @@ class __$$UploadValidatorsImplCopyWithImpl<$Res>
       $Res Function(_$UploadValidatorsImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of UploadValidators
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -770,7 +736,7 @@ class _$UploadValidatorsImpl implements _UploadValidators {
             const DeepCollectionEquality().equals(other._orders, _orders));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -778,9 +744,7 @@ class _$UploadValidatorsImpl implements _UploadValidators {
       const DeepCollectionEquality().hash(_colors),
       const DeepCollectionEquality().hash(_orders));
 
-  /// Create a copy of UploadValidators
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$UploadValidatorsImplCopyWith<_$UploadValidatorsImpl> get copyWith =>
@@ -810,11 +774,8 @@ abstract class _UploadValidators implements UploadValidators {
   List<String> get colors;
   @override
   List<String> get orders;
-
-  /// Create a copy of UploadValidators
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$UploadValidatorsImplCopyWith<_$UploadValidatorsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
