@@ -423,6 +423,10 @@ List<Tag> deserializeTagList(List<dynamic> data) {
   return data.map((e) => Tag.fromJson(e)).toList();
 }
 
+List<TagCategory> deserializeTagCategoryList(List<dynamic> data) {
+  return data.map((e) => TagCategory.fromJson(e)).toList();
+}
+
 List<Department> deserializeDepartmentList(List<dynamic> data) {
   return data.map((e) => Department.fromJson(e)).toList();
 }

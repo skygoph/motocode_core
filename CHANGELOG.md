@@ -1,5 +1,8 @@
 # Release Notes
 
+## 2.1.0
+Add deserializer for TagCategory list in API client
+
 ## 2.0.9
 -New Endpoint Tag Categories
 -Add Category on Creating tag
