@@ -2330,7 +2330,43 @@ class _ApiClient implements ApiClient {
   }
 
   @override
-  Future<PaginatedResponse<ScannedQrCodeHistory>> getScannedQrCodesWithUser(
+  Future<List<ScannedQrCode>> getScannedQrCodesWithUser(String userId) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<List<ScannedQrCode>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/users/${userId}/scanned-qr-codes',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<ScannedQrCode> _value;
+    try {
+      _value = await compute(
+        deserializeScannedQrCodeList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<PaginatedResponse<ScannedQrCodeHistory>> getScannedQrCodesWithUserV2(
     String userId,
     int page,
     int pageSize,
@@ -2353,7 +2389,7 @@ class _ApiClient implements ApiClient {
     )
             .compose(
               _dio.options,
-              '/users/${userId}/scanned-qr-codes',
+              '/users/${userId}/v2/scanned-qr-codes',
               queryParameters: queryParameters,
               data: _data,
             )

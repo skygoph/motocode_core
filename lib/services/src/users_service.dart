@@ -66,14 +66,21 @@ class UsersService {
   }
 
   /// Get all the list of [ScannedQrCode] from the [User].
-  Future<PaginatedResponse<ScannedQrCodeHistory>> getScannedQrCodesWithUser({
+  Future<List<ScannedQrCode>> getScannedQrCodesWithUser(String userId) =>
+      _apiClient.getScannedQrCodesWithUser(userId).catchError((error) {
+        _crashlytics?.recordError(error, StackTrace.current);
+        throw error;
+      });
+
+  /// Get all the list of [ScannedQrCode] from the [User] Version 2.
+  Future<PaginatedResponse<ScannedQrCodeHistory>> getScannedQrCodesWithUserV2({
     required String userId,
     required int page,
     required int pageSize,
     String? searchQuery,
   }) async {
     return await _apiClient
-        .getScannedQrCodesWithUser(
+        .getScannedQrCodesWithUserV2(
       userId,
       page,
       pageSize,

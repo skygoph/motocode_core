@@ -226,8 +226,11 @@ abstract class ApiClient {
   @PUT('/users/{id}')
   Future<void> updateUser(
       @Path('id') String id, @Body() Map<String, dynamic> data);
-  @GET('/users/{userId}/scanned-qr-codes')
-  Future<PaginatedResponse<ScannedQrCodeHistory>> getScannedQrCodesWithUser(
+  @GET('/users/{id}/scanned-qr-codes')
+  Future<List<ScannedQrCode>> getScannedQrCodesWithUser(
+      @Path('id') String userId);
+  @GET('/users/{userId}/v2/scanned-qr-codes')
+  Future<PaginatedResponse<ScannedQrCodeHistory>> getScannedQrCodesWithUserV2(
       @Path('userId') String userId,
       @Query('Page') int page,
       @Query('PageSize') int pageSize,

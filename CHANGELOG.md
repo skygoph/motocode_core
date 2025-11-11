@@ -1,5 +1,8 @@
 # Release Notes
 
+## 2.0.7
+Revert the Add User/{id}/ScannedQrCodeByUser so that the older version wont be affected in the changes
+
 ## 2.0.6
 Encorrect Datatype in ScannedQrCodeHistory - the date should be String type
 
