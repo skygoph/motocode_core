@@ -43,7 +43,12 @@ enum UserScanningStateEnum {
   REPOSSESSED(11),
   SCRAPPED(12),
   DAMAGED(13),
-  OFFLOAD(14);
+  OFFLOAD(14),
+  DEPOSIT(17),
+  PRE_ASSEMBLY(19),
+  QC_IN_PROGRESS(20),
+  QC_PASSED(21),
+  IN_STAGING_AREA(22);
 
   const UserScanningStateEnum(this.id);
   final int id;

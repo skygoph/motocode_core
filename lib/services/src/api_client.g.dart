@@ -2866,12 +2866,12 @@ class _ApiClient implements ApiClient {
   }
 
   @override
-  Future<Tag> GetTagByCategory(String category) async {
+  Future<List<Tag>> GetTagByCategory(String category) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'category': category};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<Tag>(Options(
+    final _options = _setStreamType<List<Tag>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -2887,10 +2887,13 @@ class _ApiClient implements ApiClient {
           _dio.options.baseUrl,
           baseUrl,
         )));
-    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late Tag _value;
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<Tag> _value;
     try {
-      _value = await compute(deserializeTag, _result.data!);
+      _value = await compute(
+        deserializeTagList,
+        _result.data!.cast<Map<String, dynamic>>(),
+      );
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

@@ -88,7 +88,7 @@ class TagsService {
       });
 
   /// Get Tag by Category
-  Future<Tag> getTagByCategory(String category) =>
+  Future<List<Tag>> getTagByCategory(String category) =>
       _apiClient.GetTagByCategory(category).catchError((error) {
         _crashlytics?.recordError(error, StackTrace.current);
         throw error;

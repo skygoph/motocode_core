@@ -279,7 +279,7 @@ abstract class ApiClient {
   Future<List<TagCategory>> getTagCategories();
 
   @GET('/tags/by-categories')
-  Future<Tag> GetTagByCategory(@Query('category') String category);
+  Future<List<Tag>> GetTagByCategory(@Query('category') String category);
 
   /// ************ ScannedQrcodeTags API ******************** ///
   @GET('/scanned-qrcode-tag/{tagId}')

@@ -1,5 +1,16 @@
 # Release Notes
 
+## 2.1.2
+Add new UserScanningStateEnum 
+DEPOSIT(17),
+PRE_ASSEMBLY(19),
+QC_IN_PROGRESS(20),
+QC_PASSED(21),
+IN_STAGING_AREA(22)
+
+## 2.1.1
+GetTagbyCategory should response a List of tags
+
 ## 2.1.0
 Add deserializer for TagCategory list in API client
 
