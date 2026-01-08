@@ -59,11 +59,18 @@ class User with _$User {
   bool get isScrapped => statusId == UserScanningStateEnum.SCRAPPED.id;
   bool get isDeposited => statusId == UserScanningStateEnum.DEPOSIT.id;
   bool get isPreAssembly => statusId == UserScanningStateEnum.PRE_ASSEMBLY.id;
-  bool get isQCInProgress =>
-      statusId == UserScanningStateEnum.QC_IN_PROGRESS.id;
+  bool get isQCFunctionalCompleted =>
+      statusId == UserScanningStateEnum.QC_FUNCTIONAL_COMPLETED.id;
+  bool get isQCFunctionalDamaged =>
+      statusId == UserScanningStateEnum.QC_FUNCTIONAL_DAMAGED.id;
+  bool get isQCVisualCompleted =>
+      statusId == UserScanningStateEnum.QC_VISUAL_COMPLETED.id;
+  bool get isQCVisualDamaged =>
+      statusId == UserScanningStateEnum.QC_VISUAL_DAMAGED.id;
   bool get isQCPassed => statusId == UserScanningStateEnum.QC_PASSED.id;
   bool get isInStagingArea =>
       statusId == UserScanningStateEnum.IN_STAGING_AREA.id;
+  bool get isDamaged => statusId == UserScanningStateEnum.DAMAGED.id;
 
   Map<String, dynamic> mapToRequest() => {
         'id': id,

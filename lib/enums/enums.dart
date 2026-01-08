@@ -46,9 +46,12 @@ enum UserScanningStateEnum {
   OFFLOAD(14),
   DEPOSIT(17),
   PRE_ASSEMBLY(19),
-  QC_IN_PROGRESS(20),
+  QC_FUNCTIONAL_COMPLETED(20),
   QC_PASSED(21),
-  IN_STAGING_AREA(22);
+  IN_STAGING_AREA(22),
+  QC_FUNCTIONAL_DAMAGED(23),
+  QC_VISUAL_COMPLETED(24),
+  QC_VISUAL_DAMAGED(25);
 
   const UserScanningStateEnum(this.id);
   final int id;

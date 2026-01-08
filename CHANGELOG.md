@@ -1,5 +1,12 @@
 # Release Notes
 
+## 2.1.3
+Add new UserScanningStateEnum 
+QC_FUNCTIONAL_COMPLETED(20),
+QC_FUNCTIONAL_DAMAGED(23),
+QC_VISUAL_COMPLETED(24),
+QC_VISUAL_DAMAGED(25);
+
 ## 2.1.2
 Add new UserScanningStateEnum 
 DEPOSIT(17),
