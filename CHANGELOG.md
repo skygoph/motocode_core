@@ -1,5 +1,8 @@
 # Release Notes
 
+## 2.1.4
+Add new entity to QrCode Model: PurchaseOrderNumber
+
 ## 2.1.3
 Add new UserScanningStateEnum 
 QC_FUNCTIONAL_COMPLETED(20),

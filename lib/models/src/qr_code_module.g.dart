@@ -18,6 +18,7 @@ _$QrCodeImpl _$$QrCodeImplFromJson(Map<String, dynamic> json) => _$QrCodeImpl(
           : Order.fromJson(json['order'] as Map<String, dynamic>),
       signature: json['signature'] as String?,
       identifier: json['identifier'] as String?,
+      purchaseOrderNumber: json['purchaseOrderNumber'] as String?,
     );
 
 Map<String, dynamic> _$$QrCodeImplToJson(_$QrCodeImpl instance) =>
@@ -31,6 +32,7 @@ Map<String, dynamic> _$$QrCodeImplToJson(_$QrCodeImpl instance) =>
       'order': instance.order,
       'signature': instance.signature,
       'identifier': instance.identifier,
+      'purchaseOrderNumber': instance.purchaseOrderNumber,
     };
 
 _$ScannedQrCodeImpl _$$ScannedQrCodeImplFromJson(Map<String, dynamic> json) =>

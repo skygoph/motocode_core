@@ -29,6 +29,7 @@ mixin _$QrCode {
   Order? get order => throw _privateConstructorUsedError;
   String? get signature => throw _privateConstructorUsedError;
   String? get identifier => throw _privateConstructorUsedError;
+  String? get purchaseOrderNumber => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -49,7 +50,8 @@ abstract class $QrCodeCopyWith<$Res> {
       int? id,
       Order? order,
       String? signature,
-      String? identifier});
+      String? identifier,
+      String? purchaseOrderNumber});
 
   $OrderCopyWith<$Res>? get order;
 }
@@ -76,6 +78,7 @@ class _$QrCodeCopyWithImpl<$Res, $Val extends QrCode>
     Object? order = freezed,
     Object? signature = freezed,
     Object? identifier = freezed,
+    Object? purchaseOrderNumber = freezed,
   }) {
     return _then(_value.copyWith(
       chassisNumber: freezed == chassisNumber
@@ -114,6 +117,10 @@ class _$QrCodeCopyWithImpl<$Res, $Val extends QrCode>
           ? _value.identifier
           : identifier // ignore: cast_nullable_to_non_nullable
               as String?,
+      purchaseOrderNumber: freezed == purchaseOrderNumber
+          ? _value.purchaseOrderNumber
+          : purchaseOrderNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -146,7 +153,8 @@ abstract class _$$QrCodeImplCopyWith<$Res> implements $QrCodeCopyWith<$Res> {
       int? id,
       Order? order,
       String? signature,
-      String? identifier});
+      String? identifier,
+      String? purchaseOrderNumber});
 
   @override
   $OrderCopyWith<$Res>? get order;
@@ -172,6 +180,7 @@ class __$$QrCodeImplCopyWithImpl<$Res>
     Object? order = freezed,
     Object? signature = freezed,
     Object? identifier = freezed,
+    Object? purchaseOrderNumber = freezed,
   }) {
     return _then(_$QrCodeImpl(
       chassisNumber: freezed == chassisNumber
@@ -210,6 +219,10 @@ class __$$QrCodeImplCopyWithImpl<$Res>
           ? _value.identifier
           : identifier // ignore: cast_nullable_to_non_nullable
               as String?,
+      purchaseOrderNumber: freezed == purchaseOrderNumber
+          ? _value.purchaseOrderNumber
+          : purchaseOrderNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -226,7 +239,8 @@ class _$QrCodeImpl extends _QrCode {
       this.id,
       this.order,
       this.signature,
-      this.identifier})
+      this.identifier,
+      this.purchaseOrderNumber})
       : super._();
 
   factory _$QrCodeImpl.fromJson(Map<String, dynamic> json) =>
@@ -250,10 +264,12 @@ class _$QrCodeImpl extends _QrCode {
   final String? signature;
   @override
   final String? identifier;
+  @override
+  final String? purchaseOrderNumber;
 
   @override
   String toString() {
-    return 'QrCode(chassisNumber: $chassisNumber, engineNumber: $engineNumber, model: $model, color: $color, controlNumber: $controlNumber, id: $id, order: $order, signature: $signature, identifier: $identifier)';
+    return 'QrCode(chassisNumber: $chassisNumber, engineNumber: $engineNumber, model: $model, color: $color, controlNumber: $controlNumber, id: $id, order: $order, signature: $signature, identifier: $identifier, purchaseOrderNumber: $purchaseOrderNumber)';
   }
 
   @override
@@ -274,13 +290,25 @@ class _$QrCodeImpl extends _QrCode {
             (identical(other.signature, signature) ||
                 other.signature == signature) &&
             (identical(other.identifier, identifier) ||
-                other.identifier == identifier));
+                other.identifier == identifier) &&
+            (identical(other.purchaseOrderNumber, purchaseOrderNumber) ||
+                other.purchaseOrderNumber == purchaseOrderNumber));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, chassisNumber, engineNumber,
-      model, color, controlNumber, id, order, signature, identifier);
+  int get hashCode => Object.hash(
+      runtimeType,
+      chassisNumber,
+      engineNumber,
+      model,
+      color,
+      controlNumber,
+      id,
+      order,
+      signature,
+      identifier,
+      purchaseOrderNumber);
 
   @JsonKey(ignore: true)
   @override
@@ -306,7 +334,8 @@ abstract class _QrCode extends QrCode {
       final int? id,
       final Order? order,
       final String? signature,
-      final String? identifier}) = _$QrCodeImpl;
+      final String? identifier,
+      final String? purchaseOrderNumber}) = _$QrCodeImpl;
   const _QrCode._() : super._();
 
   factory _QrCode.fromJson(Map<String, dynamic> json) = _$QrCodeImpl.fromJson;
@@ -329,6 +358,8 @@ abstract class _QrCode extends QrCode {
   String? get signature;
   @override
   String? get identifier;
+  @override
+  String? get purchaseOrderNumber;
   @override
   @JsonKey(ignore: true)
   _$$QrCodeImplCopyWith<_$QrCodeImpl> get copyWith =>

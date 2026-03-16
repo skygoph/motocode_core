@@ -21,6 +21,7 @@ class QrCode with _$QrCode {
     Order? order,
     String? signature,
     String? identifier,
+    String? purchaseOrderNumber,
   }) = _QrCode;
 
   factory QrCode.fromScannedItem(String scannedQrCode) {
@@ -79,6 +80,7 @@ class ScannedQrCode with _$ScannedQrCode {
         'depotId': depot?.id ?? depotId,
         'statusId': status?.id ?? statusId,
         'userId': user?.id ?? userId,
+        'purchaseOrderNumber': qrCode?.purchaseOrderNumber,
         'tagList': tagList,
         'remarks': remarks,
       };
